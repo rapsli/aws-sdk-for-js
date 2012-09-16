@@ -1,4 +1,3 @@
-
 function RequestCore(){}
 RequestCore.prototype = {
   ENDPOINT:'https://__SERVICE__.__REGION__.amazonaws.com/',
@@ -221,3 +220,20 @@ function XMLToJSON(ajax)
   }
   return loopParse(xmlDoc);
 }
+function urlEncode(url) {
+  return encodeURIComponent(url)
+  .replace(/!/g, '%21')
+  .replace(/'/g, '%27')
+  .replace(/\(/g, '%28')
+  .replace(/\)/g, '%29')
+  .replace(/\*/g, '%2A');
+}
+function check_authorize(access_key,secret_key){
+  var e = new EC2(access_key,secret_key,'ap-northeast-1');
+  var result = e.describe_instances();
+  if(result == false){
+    return false;
+  }else{
+    return true;
+  }
+};

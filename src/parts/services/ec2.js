@@ -1,100 +1,161 @@
-function AmazonEC2(access_key,secret_key,region){
-  this.initialize(access_key, secret_key, region);
+function AmazonEC2(access_key,secret_key){
+  this.__proto__ = $.extend(this.__proto__,AWS.prototype);
+  this.initialize(access_key,secret_key);
 }
 AmazonEC2.prototype = {
-  access_key:'',
-  secret_key:'',
-  subdomain:'ec2',
-  amazonlinux:{
-    ap_north_east_1:{
-      _64bit:"ami-e47acbe5",
-      _32bit:"ami-087acb09"
-    }
+  service:'ec2',
+  version:'2012-07-20',
+  auth_class:'AuthV2Query',
+  /**
+   * @memberOf AmazonEC2
+   */
+  initialize : function(access_key,secret_key){
+    this.init(access_key,secret_key);
   },
-  initialize : function(access_key,secret_key,region){
-    if(access_key == undefined || secret_key == undefined){
-      throw "access_key and secret_key have to require.";
-    }
-    if(region != undefined){
-      this.region = region;
-    }else{
-      this.region = 'us-east-1';
-    }
-    this.access_key = access_key;
-    this.secret_key = secret_key; 
-    this.request = new RequestCore();
-  },
-  run_instance:function(ImageId,MinCount,MaxCount,InstanceType,KeyName){
-    if(InstanceType == undefined){
-      InstanceType = "t1.micro";
-    }
-    if(KeyName == undefined ){
-      KeyName = "id_rsa";
-    }
-    if(MaxCount == undefined){
-      MaxCount = 1;
-    }
-    if(MinCount == undefined){
-      MinCount = 1;
-    }
-    if(ImageId == undefined){
-      ImageId = this.amazonlinux.ap_north_east_1._64bit;
-    }
-    
-    var param = {
-      "ImageId":ImageId,
-      "MinCount":MinCount,
-      "MaxCount":MaxCount,
-      "KeyName":KeyName
-    //    "InstanceType":InstanceType
 
-    };
-    var post_param = {
-      "InstanceType":InstanceType
-    }
-    
-    var endpoint = "https://"+this.subdomain+".";
-    if(this.region != undefined){
-      endpoint += this.region+".";
-    }
-    endpoint += "amazonaws.com";
-    var url = this.request.generateSignedURL('RunInstances',param,this.access_key,this.secret_key,endpoint,"2012-05-01")
-    var response = {};
-    $.ajax({
-      url:url,
-      //      data:param,
-      type:"POST",
-      async:false,
-      dataType:'xml',
-      success:function(xhr){
-        response = $.xml2json(xhr);
-      }
-    });
+  activate_license: function(capacity,license_id){},
+  allocate_address: function(){},
+  assign_private_ip_addresses: function(network_interface_id){},
+  associate_address: function(instance_id,public_ip){},
+  associate_dhcp_options: function(dhcp_options_id,vpc_id){},
+  associate_route_table: function(route_table_id,subnet_id){},
+  attach_internet_gateway: function(internet_gateway_id,vpc_id){},
+  attach_network_interface: function(device_index,instance_id,network_interface_id){},
+  attach_volume: function(device,instance_id,volume_id){},
+  attach_vpn_gateway: function(vpc_id,vpn_gateway_id){},
+  authorize_security_group_egress: function(group_id){},
+  authorize_security_group_ingress: function(){},
+  bundle_instance: function(instance_id,policy){},
+  cancel_bundle_task: function(bundle_id){},
+  cancel_conversion_task: function(conversion_task_id){},
+  cancel_export_task: function(export_task_id){},
+  cancel_spot_instance_requests: function(spot_instance_request_id){},
+  confirm_product_instance: function(instance_id,product_code){},
+  create_customer_gateway: function(bgp_asn,ip_address,type){},
+  create_dhcp_options: function(dhcp_configuration){},
+  create_image: function(instance_id,name){},
+  create_instance_export_task: function(instance_id){},
+  create_internet_gateway: function(){},
+  create_key_pair: function(key_name){},
+  create_network_acl: function(vpc_id){},
+  create_network_acl_entry: function(cidr_block,egress,network_acl_id,protocol,rule_action,rule_number){},
+  create_network_interface: function(subnet_id){},
+  create_placement_group: function(group_name,strategy){},
+  create_route: function(destination_cidr_block,route_table_id){},
+  create_route_table: function(vpc_id){},
+  create_security_group: function(group_description,group_name){},
+  create_snapshot: function(volume_id){},
+  create_spot_datafeed_subscription: function(bucket){},
+  create_subnet: function(cidr_block,vpc_id){},
+  create_tags: function(resource_id,tag){},
+  create_volume: function(availability_zone){},
+  create_vpc: function(cidr_block){},
+  create_vpn_connection: function(customer_gateway_id,type,vpn_gateway_id){},
+  create_vpn_gateway: function(type){},
+  deactivate_license: function(capacity,license_id){},
+  delete_customer_gateway: function(customer_gateway_id){},
+  delete_dhcp_options: function(dhcp_options_id){},
+  delete_internet_gateway: function(internet_gateway_id){},
+  delete_key_pair: function(key_name){},
+  delete_network_acl: function(network_acl_id){},
+  delete_network_acl_entry: function(egress,network_acl_id,rule_number){},
+  delete_network_interface: function(network_interface_id){},
+  delete_placement_group: function(group_name){},
+  delete_route: function(destination_cidr_block,route_table_id){},
+  delete_route_table: function(route_table_id){},
+  delete_security_group: function(){},
+  delete_snapshot: function(snapshot_id){},
+  delete_spot_datafeed_subscription: function(){},
+  delete_subnet: function(subnet_id){},
+  delete_tags: function(resource_id){},
+  delete_volume: function(volume_id){},
+  delete_vpc: function(vpc_id){},
+  delete_vpn_connection: function(vpn_connection_id){},
+  delete_vpn_gateway: function(vpn_gateway_id){},
+  deregister_image: function(image_id){},
+  describe_addresses: function(){},
+  describe_availability_zones: function(){},
+  describe_bundle_tasks: function(){},
+  describe_conversion_tasks: function(){},
+  describe_customer_gateways: function(){},
+  describe_dhcp_options: function(){},
+  describe_export_tasks: function(){},
+  describe_image_attribute: function(attribute,image_id){},
+  describe_images: function(){
+    var param = {};
+    var response = this.request("GET", "DescribeImages", param );
     return response;
   },
-
+  describe_instance_attribute: function(attribute,instance_id){},
+  describe_instance_status: function(){},
   describe_instances: function(){
     var param = {};
-    var endpoint = "https://"+this.subdomain+".";
-    if(this.region != undefined){
-      endpoint += this.region+".";
-    }
-    endpoint += "amazonaws.com";
-    var instances = {};
-    var url = this.request.generateSignedURL("DescribeInstances",param, this.access_key, this.secret_key, endpoint, "2009-08-15");
-    $.ajax({
-      url:url,
-      type:"GET",
-      async:false,
-      dataType:'xml',
-      success:function(xhr){
-        instances = $.xml2json(xhr);
-        instances = instances;
-      },
-      error:function(xhr){
-        instances =  false;
-      }
-    });
-    return instances;
-  }
-};
+    var response = this.request("GET", "DescribeInstances", param );
+    return response;
+  },
+  describe_internet_gateways: function(){},
+  describe_key_pairs: function(){},
+  describe_licenses: function(){},
+  describe_network_acls: function(){},
+  describe_network_interface_attribute: function(network_interface_id){},
+  describe_network_interfaces: function(){},
+  describe_placement_groups: function(){},
+  describe_regions: function(){},
+  describe_reserved_instances: function(){},
+  describe_reserved_instances_offerings: function(){},
+  describe_route_tables: function(){},
+  describe_security_groups: function(){},
+  describe_snapshot_attribute: function(attribute,snapshot_id){},
+  describe_snapshots: function(){},
+  describe_spot_datafeed_subscription: function(){},
+  describe_spot_instance_requests: function(){},
+  describe_spot_price_history: function(){},
+  describe_subnets: function(){},
+  describe_tags: function(){},
+  describe_volume_attribute: function(volume_id){},
+  describe_volume_status: function(){},
+  describe_volumes: function(){},
+  describe_vpcs: function(){},
+  describe_vpn_connections: function(){},
+  describe_vpn_gateways: function(){},
+  detach_internet_gateway: function(internet_gateway_id,vpc_id){},
+  detach_network_interface: function(attachment_id){},
+  detach_volume: function(volume_id){},
+  detach_vpn_gateway: function(vpc_id,vpn_gateway_id){},
+  disassociate_address: function(public_ip){},
+  disassociate_route_table: function(association_id){},
+  enable_volume_io: function(volume_id){},
+  get_console_output: function(instance_id){},
+  get_password_data: function(instance_id){},
+  import_instance: function(platform){},
+  import_key_pair: function(key_name,public_key_material){},
+  import_volume: function(){},
+  modify_image_attribute: function(image_id){},
+  modify_instance_attribute: function(instance_id){},
+  modify_network_interface_attribute: function(network_interface_id){},
+  modify_snapshot_attribute: function(snapshot_id){},
+  modify_volume_attribute: function(volume_id){},
+  monitor_instances: function(instance_id){},
+  purchase_reserved_instances_offering: function(instance_count,reserved_instances_offering_id){},
+  reboot_instances: function(instance_id){},
+  register_image: function(){},
+  release_address: function(){},
+  replace_network_acl_association: function(association_id,network_acl_id){},
+  replace_network_acl_entry: function(cidr_block,egress,network_acl_id,protocol,rule_action,rule_number){},
+  replace_route: function(destination_cidr_block,route_table_id){},
+  replace_route_table_association: function(association_id,route_table_id){},
+  report_instance_status: function(){},
+  request_spot_instances: function(spot_price){},
+  reset_image_attribute: function(attribute,image_id){},
+  reset_instance_attribute: function(attribute,instance_id){},
+  reset_network_interface_attribute: function(network_interface_id){},
+  reset_snapshot_attribute: function(attribute,snapshot_id){},
+  revoke_security_group_egress: function(group_id){},
+  revoke_security_group_ingress: function(){},
+  run_instances: function(image_id,max_count,min_count){},
+  start_instances: function(instance_id){},
+  stop_instances: function(instance_id){},
+  terminate_instances: function(instance_id){},
+  unassign_private_ip_addresses: function(network_interface_id,private_ip_address){},
+  unmonitor_instances: function(instance_id){}
+}

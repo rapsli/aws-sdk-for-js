@@ -28,11 +28,11 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   check_dns_availability: function(cnameprefix,opt){
-    var param = {};
+    var payload = {};
     param.cnameprefix = cnameprefix;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CheckDnsAvailability", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CheckDnsAvailability", payload );
     return resposne;
   }, 
   /**
@@ -52,11 +52,11 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_application: function(application_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateApplication", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateApplication", payload );
     return resposne;
   }, 
   /**
@@ -84,12 +84,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_application_version: function(application_name,version_label,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.version_label = version_label;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateApplicationVersion", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateApplicationVersion", payload );
     return resposne;
   }, 
   /**
@@ -128,12 +128,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_configuration_template: function(application_name,template_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.template_name = template_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateConfigurationTemplate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateConfigurationTemplate", payload );
     return resposne;
   }, 
   /**
@@ -165,12 +165,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_environment: function(application_name,environment_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.environment_name = environment_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateEnvironment", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateEnvironment", payload );
     return resposne;
   }, 
   /**
@@ -184,10 +184,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_storage_location: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateStorageLocation", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateStorageLocation", payload );
     return resposne;
   }, 
   /**
@@ -204,11 +204,11 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_application: function(application_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteApplication", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteApplication", payload );
     return resposne;
   }, 
   /**
@@ -227,12 +227,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_application_version: function(application_name,version_label,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.version_label = version_label;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteApplicationVersion", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteApplicationVersion", payload );
     return resposne;
   }, 
   /**
@@ -252,12 +252,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_configuration_template: function(application_name,template_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.template_name = template_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteConfigurationTemplate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteConfigurationTemplate", payload );
     return resposne;
   }, 
   /**
@@ -277,12 +277,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_environment_configuration: function(application_name,environment_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.environment_name = environment_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteEnvironmentConfiguration", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteEnvironmentConfiguration", payload );
     return resposne;
   }, 
   /**
@@ -296,10 +296,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_application_versions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeApplicationVersions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeApplicationVersions", payload );
     return resposne;
   }, 
   /**
@@ -312,10 +312,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_applications: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeApplications", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeApplications", payload );
     return resposne;
   }, 
   /**
@@ -340,10 +340,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_configuration_options: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeConfigurationOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeConfigurationOptions", payload );
     return resposne;
   }, 
   /**
@@ -370,11 +370,11 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_configuration_settings: function(application_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeConfigurationSettings", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeConfigurationSettings", payload );
     return resposne;
   }, 
   /**
@@ -388,10 +388,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_environment_resources: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeEnvironmentResources", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeEnvironmentResources", payload );
     return resposne;
   }, 
   /**
@@ -409,10 +409,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_environments: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeEnvironments", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeEnvironments", payload );
     return resposne;
   }, 
   /**
@@ -439,10 +439,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_events: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeEvents", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeEvents", payload );
     return resposne;
   }, 
   /**
@@ -454,10 +454,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_available_solution_stacks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListAvailableSolutionStacks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListAvailableSolutionStacks", payload );
     return resposne;
   }, 
   /**
@@ -472,10 +472,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   rebuild_environment: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RebuildEnvironment", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RebuildEnvironment", payload );
     return resposne;
   }, 
   /**
@@ -500,11 +500,11 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   request_environment_info: function(info_type,opt){
-    var param = {};
+    var payload = {};
     param.info_type = info_type;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RequestEnvironmentInfo", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RequestEnvironmentInfo", payload );
     return resposne;
   }, 
   /**
@@ -519,10 +519,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   restart_app_server: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RestartAppServer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RestartAppServer", payload );
     return resposne;
   }, 
   /**
@@ -543,11 +543,11 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   retrieve_environment_info: function(info_type,opt){
-    var param = {};
+    var payload = {};
     param.info_type = info_type;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RetrieveEnvironmentInfo", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RetrieveEnvironmentInfo", payload );
     return resposne;
   }, 
   /**
@@ -563,10 +563,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   swap_environment_cnames: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SwapEnvironmentCnames", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SwapEnvironmentCnames", payload );
     return resposne;
   }, 
   /**
@@ -581,10 +581,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   terminate_environment: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "TerminateEnvironment", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"TerminateEnvironment", payload );
     return resposne;
   }, 
   /**
@@ -603,11 +603,11 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_application: function(application_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateApplication", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateApplication", payload );
     return resposne;
   }, 
   /**
@@ -627,12 +627,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_application_version: function(application_name,version_label,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.version_label = version_label;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateApplicationVersion", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateApplicationVersion", payload );
     return resposne;
   }, 
   /**
@@ -671,12 +671,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_configuration_template: function(application_name,template_name,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.template_name = template_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateConfigurationTemplate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateConfigurationTemplate", payload );
     return resposne;
   }, 
   /**
@@ -715,10 +715,10 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_environment: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateEnvironment", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateEnvironment", payload );
     return resposne;
   }, 
   /**
@@ -744,12 +744,12 @@ AmazonElasticBeanstalk.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   validate_configuration_settings: function(application_name,option_settings,opt){
-    var param = {};
+    var payload = {};
     param.application_name = application_name;
     param.option_settings = option_settings;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ValidateConfigurationSettings", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ValidateConfigurationSettings", payload );
     return resposne;
   }
 }

@@ -30,12 +30,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   apply_security_groups_to_load_balancer: function(load_balancer_name,security_groups,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.security_groups = security_groups;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ApplySecurityGroupsToLoadBalancer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ApplySecurityGroupsToLoadBalancer", payload );
     return resposne;
   }, 
   /**
@@ -51,12 +51,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   attach_load_balancer_to_subnets: function(load_balancer_name,subnets,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.subnets = subnets;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AttachLoadBalancerToSubnets", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AttachLoadBalancerToSubnets", payload );
     return resposne;
   }, 
   /**
@@ -78,12 +78,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   configure_health_check: function(load_balancer_name,health_check,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.health_check = health_check;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ConfigureHealthCheck", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ConfigureHealthCheck", payload );
     return resposne;
   }, 
   /**
@@ -114,13 +114,13 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_app_cookie_stickiness_policy: function(load_balancer_name,policy_name,cookie_name,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.policy_name = policy_name;
     param.cookie_name = cookie_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateAppCookieStickinessPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateAppCookieStickinessPolicy", payload );
     return resposne;
   }, 
   /**
@@ -147,12 +147,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_lb_cookie_stickiness_policy: function(load_balancer_name,policy_name,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateLbCookieStickinessPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateLbCookieStickinessPolicy", payload );
     return resposne;
   }, 
   /**
@@ -201,12 +201,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_load_balancer: function(load_balancer_name,listeners,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.listeners = listeners;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateLoadBalancer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateLoadBalancer", payload );
     return resposne;
   }, 
   /**
@@ -230,12 +230,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_load_balancer_listeners: function(load_balancer_name,listeners,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.listeners = listeners;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateLoadBalancerListeners", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateLoadBalancerListeners", payload );
     return resposne;
   }, 
   /**
@@ -258,13 +258,13 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_load_balancer_policy: function(load_balancer_name,policy_name,policy_type_name,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.policy_name = policy_name;
     param.policy_type_name = policy_type_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateLoadBalancerPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateLoadBalancerPolicy", payload );
     return resposne;
   }, 
   /**
@@ -291,11 +291,11 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_load_balancer: function(load_balancer_name,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteLoadBalancer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteLoadBalancer", payload );
     return resposne;
   }, 
   /**
@@ -309,12 +309,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_load_balancer_listeners: function(load_balancer_name,load_balancer_ports,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.load_balancer_ports = load_balancer_ports;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteLoadBalancerListeners", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteLoadBalancerListeners", payload );
     return resposne;
   }, 
   /**
@@ -329,12 +329,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_load_balancer_policy: function(load_balancer_name,policy_name,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteLoadBalancerPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteLoadBalancerPolicy", payload );
     return resposne;
   }, 
   /**
@@ -356,12 +356,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   deregister_instances_from_load_balancer: function(load_balancer_name,instances,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.instances = instances;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeregisterInstancesFromLoadBalancer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeregisterInstancesFromLoadBalancer", payload );
     return resposne;
   }, 
   /**
@@ -386,11 +386,11 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_instance_health: function(load_balancer_name,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeInstanceHealth", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeInstanceHealth", payload );
     return resposne;
   }, 
   /**
@@ -408,10 +408,10 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_load_balancer_policies: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeLoadBalancerPolicies", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeLoadBalancerPolicies", payload );
     return resposne;
   }, 
   /**
@@ -427,10 +427,10 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_load_balancer_policy_types: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeLoadBalancerPolicyTypes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeLoadBalancerPolicyTypes", payload );
     return resposne;
   }, 
   /**
@@ -452,10 +452,10 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_load_balancers: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeLoadBalancers", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeLoadBalancers", payload );
     return resposne;
   }, 
   /**
@@ -474,12 +474,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   detach_load_balancer_from_subnets: function(load_balancer_name,subnets,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.subnets = subnets;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DetachLoadBalancerFromSubnets", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DetachLoadBalancerFromSubnets", payload );
     return resposne;
   }, 
   /**
@@ -508,12 +508,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   disable_availability_zones_for_load_balancer: function(load_balancer_name,availability_zones,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.availability_zones = availability_zones;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DisableAvailabilityZonesForLoadBalancer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DisableAvailabilityZonesForLoadBalancer", payload );
     return resposne;
   }, 
   /**
@@ -536,12 +536,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   enable_availability_zones_for_load_balancer: function(load_balancer_name,availability_zones,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.availability_zones = availability_zones;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "EnableAvailabilityZonesForLoadBalancer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"EnableAvailabilityZonesForLoadBalancer", payload );
     return resposne;
   }, 
   /**
@@ -574,12 +574,12 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   register_instances_with_load_balancer: function(load_balancer_name,instances,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.instances = instances;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RegisterInstancesWithLoadBalancer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RegisterInstancesWithLoadBalancer", payload );
     return resposne;
   }, 
   /**
@@ -595,13 +595,13 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_load_balancer_listener_ssl_certificate: function(load_balancer_name,load_balancer_port,ssl_certificate_id,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.load_balancer_port = load_balancer_port;
     param.ssl_certificate_id = ssl_certificate_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetLoadBalancerListenerSslCertificate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetLoadBalancerListenerSslCertificate", payload );
     return resposne;
   }, 
   /**
@@ -620,13 +620,13 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_load_balancer_policies_for_backend_server: function(load_balancer_name,instance_port,policy_names,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.instance_port = instance_port;
     param.policy_names = policy_names;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetLoadBalancerPoliciesForBackendServer", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetLoadBalancerPoliciesForBackendServer", payload );
     return resposne;
   }, 
   /**
@@ -642,13 +642,13 @@ AmazonELB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_load_balancer_policies_of_listener: function(load_balancer_name,load_balancer_port,policy_names,opt){
-    var param = {};
+    var payload = {};
     param.load_balancer_name = load_balancer_name;
     param.load_balancer_port = load_balancer_port;
     param.policy_names = policy_names;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetLoadBalancerPoliciesOfListener", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetLoadBalancerPoliciesOfListener", payload );
     return resposne;
   }
 }

@@ -64,12 +64,12 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   batch_delete_attributes: function(domain_name,item_keypairs,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.item_keypairs = item_keypairs;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "BatchDeleteAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"BatchDeleteAttributes", payload );
     return resposne;
   }, 
   /**
@@ -124,13 +124,13 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   batch_put_attributes: function(domain_name,item_keypairs,replace,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.item_keypairs = item_keypairs;
     param.replace = replace;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "BatchPutAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"BatchPutAttributes", payload );
     return resposne;
   }, 
   /**
@@ -154,11 +154,11 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_domain: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDomain", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDomain", payload );
     return resposne;
   }, 
   /**
@@ -197,13 +197,13 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_attributes: function(domain_name,item_name,attributes,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.item_name = item_name;
     param.attributes = attributes;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteAttributes", payload );
     return resposne;
   }, 
   /**
@@ -223,11 +223,11 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_domain: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDomain", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDomain", payload );
     return resposne;
   }, 
   /**
@@ -241,11 +241,11 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   domain_metadata: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DomainMetadata", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DomainMetadata", payload );
     return resposne;
   }, 
   /**
@@ -269,13 +269,13 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_attributes: function(domain_name,item_name,attribute_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.item_name = item_name;
     param.attribute_name = attribute_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetAttributes", payload );
     return resposne;
   }, 
   /**
@@ -295,10 +295,10 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_domains: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListDomains", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListDomains", payload );
     return resposne;
   }, 
   /**
@@ -350,14 +350,14 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_attributes: function(domain_name,item_name,keypairs,replace,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.item_name = item_name;
     param.keypairs = keypairs;
     param.replace = replace;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutAttributes", payload );
     return resposne;
   }, 
   /**
@@ -383,11 +383,11 @@ AmazonSDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   select: function(select_expression,opt){
-    var param = {};
+    var payload = {};
     param.select_expression = select_expression;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "Select", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"Select", payload );
     return resposne;
   }
 }

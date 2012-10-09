@@ -29,12 +29,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   add_role_to_instance_profile: function(instance_profile_name,role_name,opt){
-    var param = {};
+    var payload = {};
     param.instance_profile_name = instance_profile_name;
     param.role_name = role_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AddRoleToInstanceProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AddRoleToInstanceProfile", payload );
     return resposne;
   }, 
   /**
@@ -48,12 +48,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   add_user_to_group: function(group_name,user_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AddUserToGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AddUserToGroup", payload );
     return resposne;
   }, 
   /**
@@ -70,12 +70,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   change_password: function(old_password,new_password,opt){
-    var param = {};
+    var payload = {};
     param.old_password = old_password;
     param.new_password = new_password;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ChangePassword", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ChangePassword", payload );
     return resposne;
   }, 
   /**
@@ -106,10 +106,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_access_key: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateAccessKey", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateAccessKey", payload );
     return resposne;
   }, 
   /**
@@ -125,11 +125,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_account_alias: function(account_alias,opt){
-    var param = {};
+    var payload = {};
     param.account_alias = account_alias;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateAccountAlias", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateAccountAlias", payload );
     return resposne;
   }, 
   /**
@@ -148,11 +148,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_group: function(group_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateGroup", payload );
     return resposne;
   }, 
   /**
@@ -171,11 +171,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_instance_profile: function(instance_profile_name,opt){
-    var param = {};
+    var payload = {};
     param.instance_profile_name = instance_profile_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateInstanceProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateInstanceProfile", payload );
     return resposne;
   }, 
   /**
@@ -192,12 +192,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_login_profile: function(user_name,password,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
     param.password = password;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateLoginProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateLoginProfile", payload );
     return resposne;
   }, 
   /**
@@ -217,12 +217,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_role: function(role_name,assume_role_policy_document,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
     param.assume_role_policy_document = assume_role_policy_document;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateRole", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateRole", payload );
     return resposne;
   }, 
   /**
@@ -241,11 +241,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_user: function(user_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateUser", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateUser", payload );
     return resposne;
   }, 
   /**
@@ -277,11 +277,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_virtual_mfa_device: function(virtual_mfa_device_name,opt){
-    var param = {};
+    var payload = {};
     param.virtual_mfa_device_name = virtual_mfa_device_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateVirtualMfaDevice", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateVirtualMfaDevice", payload );
     return resposne;
   }, 
   /**
@@ -296,12 +296,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   deactivate_mfa_device: function(user_name,serial_number,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
     param.serial_number = serial_number;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeactivateMfaDevice", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeactivateMfaDevice", payload );
     return resposne;
   }, 
   /**
@@ -320,11 +320,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_access_key: function(access_key_id,opt){
-    var param = {};
+    var payload = {};
     param.access_key_id = access_key_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteAccessKey", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteAccessKey", payload );
     return resposne;
   }, 
   /**
@@ -340,11 +340,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_account_alias: function(account_alias,opt){
-    var param = {};
+    var payload = {};
     param.account_alias = account_alias;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteAccountAlias", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteAccountAlias", payload );
     return resposne;
   }, 
   /**
@@ -356,10 +356,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_account_password_policy: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteAccountPasswordPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteAccountPasswordPolicy", payload );
     return resposne;
   }, 
   /**
@@ -373,11 +373,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_group: function(group_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteGroup", payload );
     return resposne;
   }, 
   /**
@@ -391,12 +391,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_group_policy: function(group_name,policy_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteGroupPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteGroupPolicy", payload );
     return resposne;
   }, 
   /**
@@ -409,11 +409,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_instance_profile: function(instance_profile_name,opt){
-    var param = {};
+    var payload = {};
     param.instance_profile_name = instance_profile_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteInstanceProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteInstanceProfile", payload );
     return resposne;
   }, 
   /**
@@ -434,11 +434,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_login_profile: function(user_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteLoginProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteLoginProfile", payload );
     return resposne;
   }, 
   /**
@@ -451,11 +451,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_role: function(role_name,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteRole", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteRole", payload );
     return resposne;
   }, 
   /**
@@ -469,12 +469,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_role_policy: function(role_name,policy_name,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteRolePolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteRolePolicy", payload );
     return resposne;
   }, 
   /**
@@ -499,11 +499,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_server_certificate: function(server_certificate_name,opt){
-    var param = {};
+    var payload = {};
     param.server_certificate_name = server_certificate_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteServerCertificate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteServerCertificate", payload );
     return resposne;
   }, 
   /**
@@ -522,11 +522,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_signing_certificate: function(certificate_id,opt){
-    var param = {};
+    var payload = {};
     param.certificate_id = certificate_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteSigningCertificate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteSigningCertificate", payload );
     return resposne;
   }, 
   /**
@@ -540,11 +540,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_user: function(user_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteUser", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteUser", payload );
     return resposne;
   }, 
   /**
@@ -558,12 +558,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_user_policy: function(user_name,policy_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteUserPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteUserPolicy", payload );
     return resposne;
   }, 
   /**
@@ -582,11 +582,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_virtual_mfa_device: function(serial_number,opt){
-    var param = {};
+    var payload = {};
     param.serial_number = serial_number;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteVirtualMfaDevice", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteVirtualMfaDevice", payload );
     return resposne;
   }, 
   /**
@@ -604,14 +604,14 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   enable_mfa_device: function(user_name,serial_number,authentication_code1,authentication_code2,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
     param.serial_number = serial_number;
     param.authentication_code1 = authentication_code1;
     param.authentication_code2 = authentication_code2;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "EnableMfaDevice", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"EnableMfaDevice", payload );
     return resposne;
   }, 
   /**
@@ -626,10 +626,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_account_password_policy: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetAccountPasswordPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetAccountPasswordPolicy", payload );
     return resposne;
   }, 
   /**
@@ -646,10 +646,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_account_summary: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetAccountSummary", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetAccountSummary", payload );
     return resposne;
   }, 
   /**
@@ -665,11 +665,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_group: function(group_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetGroup", payload );
     return resposne;
   }, 
   /**
@@ -685,12 +685,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_group_policy: function(group_name,policy_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetGroupPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetGroupPolicy", payload );
     return resposne;
   }, 
   /**
@@ -704,11 +704,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_instance_profile: function(instance_profile_name,opt){
-    var param = {};
+    var payload = {};
     param.instance_profile_name = instance_profile_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetInstanceProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetInstanceProfile", payload );
     return resposne;
   }, 
   /**
@@ -721,11 +721,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_login_profile: function(user_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetLoginProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetLoginProfile", payload );
     return resposne;
   }, 
   /**
@@ -739,11 +739,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_role: function(role_name,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetRole", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetRole", payload );
     return resposne;
   }, 
   /**
@@ -759,12 +759,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_role_policy: function(role_name,policy_name,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetRolePolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetRolePolicy", payload );
     return resposne;
   }, 
   /**
@@ -777,11 +777,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_server_certificate: function(server_certificate_name,opt){
-    var param = {};
+    var payload = {};
     param.server_certificate_name = server_certificate_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetServerCertificate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetServerCertificate", payload );
     return resposne;
   }, 
   /**
@@ -797,10 +797,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_user: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetUser", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetUser", payload );
     return resposne;
   }, 
   /**
@@ -816,12 +816,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_user_policy: function(user_name,policy_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetUserPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetUserPolicy", payload );
     return resposne;
   }, 
   /**
@@ -850,10 +850,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_access_keys: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListAccessKeys", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListAccessKeys", payload );
     return resposne;
   }, 
   /**
@@ -874,10 +874,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_account_aliases: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListAccountAliases", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListAccountAliases", payload );
     return resposne;
   }, 
   /**
@@ -896,11 +896,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_group_policies: function(group_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListGroupPolicies", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListGroupPolicies", payload );
     return resposne;
   }, 
   /**
@@ -918,10 +918,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListGroups", payload );
     return resposne;
   }, 
   /**
@@ -939,11 +939,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_groups_for_user: function(user_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListGroupsForUser", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListGroupsForUser", payload );
     return resposne;
   }, 
   /**
@@ -962,10 +962,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_instance_profiles: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListInstanceProfiles", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListInstanceProfiles", payload );
     return resposne;
   }, 
   /**
@@ -984,11 +984,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_instance_profiles_for_role: function(role_name,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListInstanceProfilesForRole", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListInstanceProfilesForRole", payload );
     return resposne;
   }, 
   /**
@@ -1008,10 +1008,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_mfa_devices: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListMfaDevices", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListMfaDevices", payload );
     return resposne;
   }, 
   /**
@@ -1030,11 +1030,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_role_policies: function(role_name,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListRolePolicies", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListRolePolicies", payload );
     return resposne;
   }, 
   /**
@@ -1053,10 +1053,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_roles: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListRoles", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListRoles", payload );
     return resposne;
   }, 
   /**
@@ -1075,10 +1075,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_server_certificates: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListServerCertificates", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListServerCertificates", payload );
     return resposne;
   }, 
   /**
@@ -1102,10 +1102,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_signing_certificates: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListSigningCertificates", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListSigningCertificates", payload );
     return resposne;
   }, 
   /**
@@ -1124,11 +1124,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_user_policies: function(user_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListUserPolicies", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListUserPolicies", payload );
     return resposne;
   }, 
   /**
@@ -1147,10 +1147,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_users: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListUsers", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListUsers", payload );
     return resposne;
   }, 
   /**
@@ -1170,10 +1170,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_virtual_mfa_devices: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListVirtualMfaDevices", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListVirtualMfaDevices", payload );
     return resposne;
   }, 
   /**
@@ -1208,13 +1208,13 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_group_policy: function(group_name,policy_name,policy_document,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
     param.policy_name = policy_name;
     param.policy_document = policy_document;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutGroupPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutGroupPolicy", payload );
     return resposne;
   }, 
   /**
@@ -1249,13 +1249,13 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_role_policy: function(role_name,policy_name,policy_document,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
     param.policy_name = policy_name;
     param.policy_document = policy_document;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutRolePolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutRolePolicy", payload );
     return resposne;
   }, 
   /**
@@ -1290,13 +1290,13 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_user_policy: function(user_name,policy_name,policy_document,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
     param.policy_name = policy_name;
     param.policy_document = policy_document;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutUserPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutUserPolicy", payload );
     return resposne;
   }, 
   /**
@@ -1310,12 +1310,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   remove_role_from_instance_profile: function(instance_profile_name,role_name,opt){
-    var param = {};
+    var payload = {};
     param.instance_profile_name = instance_profile_name;
     param.role_name = role_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RemoveRoleFromInstanceProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RemoveRoleFromInstanceProfile", payload );
     return resposne;
   }, 
   /**
@@ -1329,12 +1329,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   remove_user_from_group: function(group_name,user_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RemoveUserFromGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RemoveUserFromGroup", payload );
     return resposne;
   }, 
   /**
@@ -1350,14 +1350,14 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   resync_mfa_device: function(user_name,serial_number,authentication_code1,authentication_code2,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
     param.serial_number = serial_number;
     param.authentication_code1 = authentication_code1;
     param.authentication_code2 = authentication_code2;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ResyncMfaDevice", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ResyncMfaDevice", payload );
     return resposne;
   }, 
   /**
@@ -1383,12 +1383,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_access_key: function(access_key_id,status,opt){
-    var param = {};
+    var payload = {};
     param.access_key_id = access_key_id;
     param.status = status;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateAccessKey", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateAccessKey", payload );
     return resposne;
   }, 
   /**
@@ -1409,10 +1409,10 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_account_password_policy: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateAccountPasswordPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateAccountPasswordPolicy", payload );
     return resposne;
   }, 
   /**
@@ -1426,12 +1426,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_assume_role_policy: function(role_name,policy_document,opt){
-    var param = {};
+    var payload = {};
     param.role_name = role_name;
     param.policy_document = policy_document;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateAssumeRolePolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateAssumeRolePolicy", payload );
     return resposne;
   }, 
   /**
@@ -1461,11 +1461,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_group: function(group_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateGroup", payload );
     return resposne;
   }, 
   /**
@@ -1479,11 +1479,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_login_profile: function(user_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateLoginProfile", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateLoginProfile", payload );
     return resposne;
   }, 
   /**
@@ -1513,11 +1513,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_server_certificate: function(server_certificate_name,opt){
-    var param = {};
+    var payload = {};
     param.server_certificate_name = server_certificate_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateServerCertificate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateServerCertificate", payload );
     return resposne;
   }, 
   /**
@@ -1544,12 +1544,12 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_signing_certificate: function(certificate_id,status,opt){
-    var param = {};
+    var payload = {};
     param.certificate_id = certificate_id;
     param.status = status;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateSigningCertificate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateSigningCertificate", payload );
     return resposne;
   }, 
   /**
@@ -1579,11 +1579,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_user: function(user_name,opt){
-    var param = {};
+    var payload = {};
     param.user_name = user_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateUser", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateUser", payload );
     return resposne;
   }, 
   /**
@@ -1618,13 +1618,13 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   upload_server_certificate: function(server_certificate_name,certificate_body,private_key,opt){
-    var param = {};
+    var payload = {};
     param.server_certificate_name = server_certificate_name;
     param.certificate_body = certificate_body;
     param.private_key = private_key;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UploadServerCertificate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UploadServerCertificate", payload );
     return resposne;
   }, 
   /**
@@ -1657,11 +1657,11 @@ AmazonIAM.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   upload_signing_certificate: function(certificate_body,opt){
-    var param = {};
+    var payload = {};
     param.certificate_body = certificate_body;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UploadSigningCertificate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UploadSigningCertificate", payload );
     return resposne;
   }
 }

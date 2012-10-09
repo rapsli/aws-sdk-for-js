@@ -28,11 +28,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_identity: function(identity,opt){
-    var param = {};
+    var payload = {};
     param.identity = identity;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteIdentity", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteIdentity", payload );
     return resposne;
   }, 
   /**
@@ -50,11 +50,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_verified_email_address: function(email_address,opt){
-    var param = {};
+    var payload = {};
     param.email_address = email_address;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteVerifiedEmailAddress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteVerifiedEmailAddress", payload );
     return resposne;
   }, 
   /**
@@ -84,11 +84,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_identity_dkim_attributes: function(identities,opt){
-    var param = {};
+    var payload = {};
     param.identities = identities;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetIdentityDkimAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetIdentityDkimAttributes", payload );
     return resposne;
   }, 
   /**
@@ -104,11 +104,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_identity_notification_attributes: function(identities,opt){
-    var param = {};
+    var payload = {};
     param.identities = identities;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetIdentityNotificationAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetIdentityNotificationAttributes", payload );
     return resposne;
   }, 
   /**
@@ -122,11 +122,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_identity_verification_attributes: function(identities,opt){
-    var param = {};
+    var payload = {};
     param.identities = identities;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetIdentityVerificationAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetIdentityVerificationAttributes", payload );
     return resposne;
   }, 
   /**
@@ -138,10 +138,10 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_send_quota: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetSendQuota", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetSendQuota", payload );
     return resposne;
   }, 
   /**
@@ -156,10 +156,10 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_send_statistics: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetSendStatistics", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetSendStatistics", payload );
     return resposne;
   }, 
   /**
@@ -175,10 +175,10 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_identities: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListIdentities", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListIdentities", payload );
     return resposne;
   }, 
   /**
@@ -195,10 +195,10 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_verified_email_addresses: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListVerifiedEmailAddresses", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListVerifiedEmailAddresses", payload );
     return resposne;
   }, 
   /**
@@ -266,13 +266,13 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   send_email: function(source,destination,message,opt){
-    var param = {};
+    var payload = {};
     param.source = source;
     param.destination = destination;
     param.message = message;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SendEmail", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SendEmail", payload );
     return resposne;
   }, 
   /**
@@ -313,11 +313,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   send_raw_email: function(raw_message,opt){
-    var param = {};
+    var payload = {};
     param.raw_message = raw_message;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SendRawEmail", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SendRawEmail", payload );
     return resposne;
   }, 
   /**
@@ -346,12 +346,12 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_identity_dkim_enabled: function(identity,dkim_enabled,opt){
-    var param = {};
+    var payload = {};
     param.identity = identity;
     param.dkim_enabled = dkim_enabled;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetIdentityDkimEnabled", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetIdentityDkimEnabled", payload );
     return resposne;
   }, 
   /**
@@ -368,12 +368,12 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_identity_feedback_forwarding_enabled: function(identity,forwarding_enabled,opt){
-    var param = {};
+    var payload = {};
     param.identity = identity;
     param.forwarding_enabled = forwarding_enabled;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetIdentityFeedbackForwardingEnabled", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetIdentityFeedbackForwardingEnabled", payload );
     return resposne;
   }, 
   /**
@@ -392,12 +392,12 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_identity_notification_topic: function(identity,notification_type,opt){
-    var param = {};
+    var payload = {};
     param.identity = identity;
     param.notification_type = notification_type;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetIdentityNotificationTopic", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetIdentityNotificationTopic", payload );
     return resposne;
   }, 
   /**
@@ -421,11 +421,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   verify_domain_dkim: function(domain,opt){
-    var param = {};
+    var payload = {};
     param.domain = domain;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "VerifyDomainDkim", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"VerifyDomainDkim", payload );
     return resposne;
   }, 
   /**
@@ -438,11 +438,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   verify_domain_identity: function(domain,opt){
-    var param = {};
+    var payload = {};
     param.domain = domain;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "VerifyDomainIdentity", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"VerifyDomainIdentity", payload );
     return resposne;
   }, 
   /**
@@ -461,11 +461,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   verify_email_address: function(email_address,opt){
-    var param = {};
+    var payload = {};
     param.email_address = email_address;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "VerifyEmailAddress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"VerifyEmailAddress", payload );
     return resposne;
   }, 
   /**
@@ -479,11 +479,11 @@ AmazonSES.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   verify_email_identity: function(email_address,opt){
-    var param = {};
+    var payload = {};
     param.email_address = email_address;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "VerifyEmailIdentity", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"VerifyEmailIdentity", payload );
     return resposne;
   }
 }

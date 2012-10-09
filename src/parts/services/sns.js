@@ -32,14 +32,14 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   add_permission: function(topic_arn,label,aws_account_id,action_name,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
     param.label = label;
     param.aws_account_id = aws_account_id;
     param.action_name = action_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AddPermission", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AddPermission", payload );
     return resposne;
   }, 
   /**
@@ -57,12 +57,12 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   confirm_subscription: function(topic_arn,token,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
     param.token = token;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ConfirmSubscription", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ConfirmSubscription", payload );
     return resposne;
   }, 
   /**
@@ -77,11 +77,11 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_topic: function(name,opt){
-    var param = {};
+    var payload = {};
     param.name = name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateTopic", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateTopic", payload );
     return resposne;
   }, 
   /**
@@ -96,11 +96,11 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_topic: function(topic_arn,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteTopic", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteTopic", payload );
     return resposne;
   }, 
   /**
@@ -113,11 +113,11 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_subscription_attributes: function(subscription_arn,opt){
-    var param = {};
+    var payload = {};
     param.subscription_arn = subscription_arn;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetSubscriptionAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetSubscriptionAttributes", payload );
     return resposne;
   }, 
   /**
@@ -131,11 +131,11 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_topic_attributes: function(topic_arn,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetTopicAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetTopicAttributes", payload );
     return resposne;
   }, 
   /**
@@ -151,10 +151,10 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_subscriptions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListSubscriptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListSubscriptions", payload );
     return resposne;
   }, 
   /**
@@ -171,11 +171,11 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_subscriptions_by_topic: function(topic_arn,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListSubscriptionsByTopic", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListSubscriptionsByTopic", payload );
     return resposne;
   }, 
   /**
@@ -190,10 +190,10 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_topics: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListTopics", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListTopics", payload );
     return resposne;
   }, 
   /**
@@ -212,12 +212,12 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   publish: function(topic_arn,message,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
     param.message = message;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "Publish", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"Publish", payload );
     return resposne;
   }, 
   /**
@@ -231,12 +231,12 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   remove_permission: function(topic_arn,label,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
     param.label = label;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RemovePermission", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RemovePermission", payload );
     return resposne;
   }, 
   /**
@@ -252,13 +252,13 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_subscription_attributes: function(subscription_arn,attribute_name,attribute_value,opt){
-    var param = {};
+    var payload = {};
     param.subscription_arn = subscription_arn;
     param.attribute_name = attribute_name;
     param.attribute_value = attribute_value;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetSubscriptionAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetSubscriptionAttributes", payload );
     return resposne;
   }, 
   /**
@@ -274,13 +274,13 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_topic_attributes: function(topic_arn,attribute_name,attribute_value,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
     param.attribute_name = attribute_name;
     param.attribute_value = attribute_value;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetTopicAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetTopicAttributes", payload );
     return resposne;
   }, 
   /**
@@ -298,13 +298,13 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   subscribe: function(topic_arn,protocol,endpoint,opt){
-    var param = {};
+    var payload = {};
     param.topic_arn = topic_arn;
     param.protocol = protocol;
     param.endpoint = endpoint;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "Subscribe", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"Subscribe", payload );
     return resposne;
   }, 
   /**
@@ -322,11 +322,11 @@ AmazonSNS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   unsubscribe: function(subscription_arn,opt){
-    var param = {};
+    var payload = {};
     param.subscription_arn = subscription_arn;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "Unsubscribe", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"Unsubscribe", payload );
     return resposne;
   }
 }

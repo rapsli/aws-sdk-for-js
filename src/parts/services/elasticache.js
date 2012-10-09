@@ -37,13 +37,13 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   authorize_cache_security_group_ingress: function(cache_security_group_name,ec2_security_group_name,ec2_security_group_owner_id,opt){
-    var param = {};
+    var payload = {};
     param.cache_security_group_name = cache_security_group_name;
     param.ec2_security_group_name = ec2_security_group_name;
     param.ec2_security_group_owner_id = ec2_security_group_owner_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AuthorizeCacheSecurityGroupIngress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AuthorizeCacheSecurityGroupIngress", payload );
     return resposne;
   }, 
   /**
@@ -67,15 +67,15 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_cache_cluster: function(cache_cluster_id,num_cache_nodes,cache_node_type,engine,cache_security_group_names,opt){
-    var param = {};
+    var payload = {};
     param.cache_cluster_id = cache_cluster_id;
     param.num_cache_nodes = num_cache_nodes;
     param.cache_node_type = cache_node_type;
     param.engine = engine;
     param.cache_security_group_names = cache_security_group_names;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateCacheCluster", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateCacheCluster", payload );
     return resposne;
   }, 
   /**
@@ -91,13 +91,13 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_cache_parameter_group: function(cache_parameter_group_name,cache_parameter_group_family,description,opt){
-    var param = {};
+    var payload = {};
     param.cache_parameter_group_name = cache_parameter_group_name;
     param.cache_parameter_group_family = cache_parameter_group_family;
     param.description = description;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateCacheParameterGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateCacheParameterGroup", payload );
     return resposne;
   }, 
   /**
@@ -112,12 +112,12 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_cache_security_group: function(cache_security_group_name,description,opt){
-    var param = {};
+    var payload = {};
     param.cache_security_group_name = cache_security_group_name;
     param.description = description;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateCacheSecurityGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateCacheSecurityGroup", payload );
     return resposne;
   }, 
   /**
@@ -133,11 +133,11 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_cache_cluster: function(cache_cluster_id,opt){
-    var param = {};
+    var payload = {};
     param.cache_cluster_id = cache_cluster_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteCacheCluster", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteCacheCluster", payload );
     return resposne;
   }, 
   /**
@@ -151,11 +151,11 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_cache_parameter_group: function(cache_parameter_group_name,opt){
-    var param = {};
+    var payload = {};
     param.cache_parameter_group_name = cache_parameter_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteCacheParameterGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteCacheParameterGroup", payload );
     return resposne;
   }, 
   /**
@@ -172,11 +172,11 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_cache_security_group: function(cache_security_group_name,opt){
-    var param = {};
+    var payload = {};
     param.cache_security_group_name = cache_security_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteCacheSecurityGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteCacheSecurityGroup", payload );
     return resposne;
   }, 
   /**
@@ -211,10 +211,10 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_cache_clusters: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeCacheClusters", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeCacheClusters", payload );
     return resposne;
   }, 
   /**
@@ -230,10 +230,10 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_cache_parameter_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeCacheParameterGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeCacheParameterGroups", payload );
     return resposne;
   }, 
   /**
@@ -249,11 +249,11 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_cache_parameters: function(cache_parameter_group_name,opt){
-    var param = {};
+    var payload = {};
     param.cache_parameter_group_name = cache_parameter_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeCacheParameters", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeCacheParameters", payload );
     return resposne;
   }, 
   /**
@@ -269,10 +269,10 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_cache_security_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeCacheSecurityGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeCacheSecurityGroups", payload );
     return resposne;
   }, 
   /**
@@ -287,11 +287,11 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_engine_default_parameters: function(cache_parameter_group_family,opt){
-    var param = {};
+    var payload = {};
     param.cache_parameter_group_family = cache_parameter_group_family;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeEngineDefaultParameters", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeEngineDefaultParameters", payload );
     return resposne;
   }, 
   /**
@@ -313,10 +313,10 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_events: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeEvents", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeEvents", payload );
     return resposne;
   }, 
   /**
@@ -337,10 +337,10 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_reserved_cache_nodes: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeReservedCacheNodes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeReservedCacheNodes", payload );
     return resposne;
   }, 
   /**
@@ -359,10 +359,10 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_reserved_cache_nodes_offerings: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeReservedCacheNodesOfferings", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeReservedCacheNodesOfferings", payload );
     return resposne;
   }, 
   /**
@@ -386,11 +386,11 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_cache_cluster: function(cache_cluster_id,opt){
-    var param = {};
+    var payload = {};
     param.cache_cluster_id = cache_cluster_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyCacheCluster", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyCacheCluster", payload );
     return resposne;
   }, 
   /**
@@ -411,12 +411,12 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_cache_parameter_group: function(cache_parameter_group_name,parameter_name_values,opt){
-    var param = {};
+    var payload = {};
     param.cache_parameter_group_name = cache_parameter_group_name;
     param.parameter_name_values = parameter_name_values;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyCacheParameterGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyCacheParameterGroup", payload );
     return resposne;
   }, 
   /**
@@ -431,11 +431,11 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   purchase_reserved_cache_nodes_offering: function(reserved_cache_nodes_offering_id,opt){
-    var param = {};
+    var payload = {};
     param.reserved_cache_nodes_offering_id = reserved_cache_nodes_offering_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PurchaseReservedCacheNodesOffering", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PurchaseReservedCacheNodesOffering", payload );
     return resposne;
   }, 
   /**
@@ -454,12 +454,12 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reboot_cache_cluster: function(cache_cluster_id,cache_node_ids_to_reboot,opt){
-    var param = {};
+    var payload = {};
     param.cache_cluster_id = cache_cluster_id;
     param.cache_node_ids_to_reboot = cache_node_ids_to_reboot;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RebootCacheCluster", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RebootCacheCluster", payload );
     return resposne;
   }, 
   /**
@@ -481,12 +481,12 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reset_cache_parameter_group: function(cache_parameter_group_name,parameter_name_values,opt){
-    var param = {};
+    var payload = {};
     param.cache_parameter_group_name = cache_parameter_group_name;
     param.parameter_name_values = parameter_name_values;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ResetCacheParameterGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ResetCacheParameterGroup", payload );
     return resposne;
   }, 
   /**
@@ -501,13 +501,13 @@ AmazonElastiCache.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   revoke_cache_security_group_ingress: function(cache_security_group_name,ec2_security_group_name,ec2_security_group_owner_id,opt){
-    var param = {};
+    var payload = {};
     param.cache_security_group_name = cache_security_group_name;
     param.ec2_security_group_name = ec2_security_group_name;
     param.ec2_security_group_owner_id = ec2_security_group_owner_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RevokeCacheSecurityGroupIngress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RevokeCacheSecurityGroupIngress", payload );
     return resposne;
   }
 }

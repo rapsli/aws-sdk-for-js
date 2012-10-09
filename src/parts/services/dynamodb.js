@@ -64,10 +64,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   batch_get_item: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "BatchGetItem", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"BatchGetItem", payload );
     return resposne;
   }, 
   /**
@@ -129,10 +129,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   batch_write_item: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "BatchWriteItem", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"BatchWriteItem", payload );
     return resposne;
   }, 
   /**
@@ -167,10 +167,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_table: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateTable", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateTable", payload );
     return resposne;
   }, 
   /**
@@ -218,10 +218,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_item: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteItem", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteItem", payload );
     return resposne;
   }, 
   /**
@@ -239,10 +239,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_table: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteTable", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteTable", payload );
     return resposne;
   }, 
   /**
@@ -258,10 +258,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_table: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeTable", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeTable", payload );
     return resposne;
   }, 
   /**
@@ -299,10 +299,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_item: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetItem", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetItem", payload );
     return resposne;
   }, 
   /**
@@ -317,10 +317,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_tables: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListTables", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListTables", payload );
     return resposne;
   }, 
   /**
@@ -362,10 +362,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_item: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutItem", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutItem", payload );
     return resposne;
   }, 
   /**
@@ -427,10 +427,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   query: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "Query", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"Query", payload );
     return resposne;
   }, 
   /**
@@ -481,10 +481,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   scan: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "Scan", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"Scan", payload );
     return resposne;
   }, 
   /**
@@ -545,10 +545,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_item: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateItem", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateItem", payload );
     return resposne;
   }, 
   /**
@@ -568,10 +568,10 @@ AmazonDynamoDB.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_table: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateTable", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateTable", payload );
     return resposne;
   }
 }

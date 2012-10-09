@@ -28,11 +28,11 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_alarms: function(alarm_names,opt){
-    var param = {};
+    var payload = {};
     param.alarm_names = alarm_names;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteAlarms", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteAlarms", payload );
     return resposne;
   }, 
   /**
@@ -56,10 +56,10 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_alarm_history: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAlarmHistory", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAlarmHistory", payload );
     return resposne;
   }, 
   /**
@@ -79,10 +79,10 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_alarms: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAlarms", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAlarms", payload );
     return resposne;
   }, 
   /**
@@ -106,12 +106,12 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_alarms_for_metric: function(metric_name,namespace,opt){
-    var param = {};
+    var payload = {};
     param.metric_name = metric_name;
     param.namespace = namespace;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAlarmsForMetric", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAlarmsForMetric", payload );
     return resposne;
   }, 
   /**
@@ -125,11 +125,11 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   disable_alarm_actions: function(alarm_names,opt){
-    var param = {};
+    var payload = {};
     param.alarm_names = alarm_names;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DisableAlarmActions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DisableAlarmActions", payload );
     return resposne;
   }, 
   /**
@@ -142,11 +142,11 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   enable_alarm_actions: function(alarm_names,opt){
-    var param = {};
+    var payload = {};
     param.alarm_names = alarm_names;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "EnableAlarmActions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"EnableAlarmActions", payload );
     return resposne;
   }, 
   /**
@@ -197,7 +197,7 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_metric_statistics: function(namespace,metric_name,start_time,end_time,period,statistics,unit,opt){
-    var param = {};
+    var payload = {};
     param.namespace = namespace;
     param.metric_name = metric_name;
     param.start_time = start_time;
@@ -206,8 +206,8 @@ AmazonCloudWatch.prototype = {
     param.statistics = statistics;
     param.unit = unit;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetMetricStatistics", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetMetricStatistics", payload );
     return resposne;
   }, 
   /**
@@ -239,10 +239,10 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_metrics: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListMetrics", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListMetrics", payload );
     return resposne;
   }, 
   /**
@@ -284,7 +284,7 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_metric_alarm: function(alarm_name,metric_name,namespace,statistic,period,evaluation_periods,threshold,comparison_operator,opt){
-    var param = {};
+    var payload = {};
     param.alarm_name = alarm_name;
     param.metric_name = metric_name;
     param.namespace = namespace;
@@ -294,8 +294,8 @@ AmazonCloudWatch.prototype = {
     param.threshold = threshold;
     param.comparison_operator = comparison_operator;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutMetricAlarm", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutMetricAlarm", payload );
     return resposne;
   }, 
   /**
@@ -346,12 +346,12 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_metric_data: function(namespace,metric_data,opt){
-    var param = {};
+    var payload = {};
     param.namespace = namespace;
     param.metric_data = metric_data;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutMetricData", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutMetricData", payload );
     return resposne;
   }, 
   /**
@@ -370,13 +370,13 @@ AmazonCloudWatch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_alarm_state: function(alarm_name,state_value,state_reason,opt){
-    var param = {};
+    var payload = {};
     param.alarm_name = alarm_name;
     param.state_value = state_value;
     param.state_reason = state_reason;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetAlarmState", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetAlarmState", payload );
     return resposne;
   }
 }

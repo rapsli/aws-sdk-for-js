@@ -39,10 +39,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   activate_gateway: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ActivateGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ActivateGateway", payload );
     return resposne;
   }, 
   /**
@@ -59,10 +59,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   add_working_storage: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AddWorkingStorage", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AddWorkingStorage", payload );
     return resposne;
   }, 
   /**
@@ -98,10 +98,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_snapshot: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateSnapshot", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateSnapshot", payload );
     return resposne;
   }, 
   /**
@@ -127,10 +127,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_stored_iscsi_volume: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateStoredIscsiVolume", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateStoredIscsiVolume", payload );
     return resposne;
   }, 
   /**
@@ -147,10 +147,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_bandwidth_rate_limit: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteBandwidthRateLimit", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteBandwidthRateLimit", payload );
     return resposne;
   }, 
   /**
@@ -165,10 +165,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_chap_credentials: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteChapCredentials", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteChapCredentials", payload );
     return resposne;
   }, 
   /**
@@ -187,10 +187,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_gateway: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteGateway", payload );
     return resposne;
   }, 
   /**
@@ -215,10 +215,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_volume: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteVolume", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteVolume", payload );
     return resposne;
   }, 
   /**
@@ -237,10 +237,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_bandwidth_rate_limit: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeBandwidthRateLimit", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeBandwidthRateLimit", payload );
     return resposne;
   }, 
   /**
@@ -254,10 +254,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_chap_credentials: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeChapCredentials", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeChapCredentials", payload );
     return resposne;
   }, 
   /**
@@ -272,10 +272,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_gateway_information: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeGatewayInformation", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeGatewayInformation", payload );
     return resposne;
   }, 
   /**
@@ -289,10 +289,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_maintenance_start_time: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeMaintenanceStartTime", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeMaintenanceStartTime", payload );
     return resposne;
   }, 
   /**
@@ -307,10 +307,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_snapshot_schedule: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSnapshotSchedule", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSnapshotSchedule", payload );
     return resposne;
   }, 
   /**
@@ -325,10 +325,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_stored_iscsi_volumes: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeStoredIscsiVolumes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeStoredIscsiVolumes", payload );
     return resposne;
   }, 
   /**
@@ -343,10 +343,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_working_storage: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeWorkingStorage", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeWorkingStorage", payload );
     return resposne;
   }, 
   /**
@@ -368,10 +368,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_gateways: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListGateways", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListGateways", payload );
     return resposne;
   }, 
   /**
@@ -388,10 +388,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_local_disks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListLocalDisks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListLocalDisks", payload );
     return resposne;
   }, 
   /**
@@ -414,10 +414,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_volumes: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListVolumes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListVolumes", payload );
     return resposne;
   }, 
   /**
@@ -450,10 +450,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   shutdown_gateway: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ShutdownGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ShutdownGateway", payload );
     return resposne;
   }, 
   /**
@@ -478,10 +478,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   start_gateway: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "StartGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"StartGateway", payload );
     return resposne;
   }, 
   /**
@@ -505,10 +505,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_bandwidth_rate_limit: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateBandwidthRateLimit", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateBandwidthRateLimit", payload );
     return resposne;
   }, 
   /**
@@ -526,10 +526,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_chap_credentials: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateChapCredentials", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateChapCredentials", payload );
     return resposne;
   }, 
   /**
@@ -546,10 +546,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_gateway_information: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateGatewayInformation", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateGatewayInformation", payload );
     return resposne;
   }, 
   /**
@@ -575,10 +575,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_gateway_software_now: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateGatewaySoftwareNow", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateGatewaySoftwareNow", payload );
     return resposne;
   }, 
   /**
@@ -595,10 +595,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_maintenance_start_time: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateMaintenanceStartTime", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateMaintenanceStartTime", payload );
     return resposne;
   }, 
   /**
@@ -621,10 +621,10 @@ AmazonStorageGateway.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_snapshot_schedule: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateSnapshotSchedule", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateSnapshotSchedule", payload );
     return resposne;
   }
 }

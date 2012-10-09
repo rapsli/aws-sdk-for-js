@@ -46,11 +46,11 @@ AmazonSTS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_federation_token: function(name,opt){
-    var param = {};
+    var payload = {};
     param.name = name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetFederationToken", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetFederationToken", payload );
     return resposne;
   }, 
   /**
@@ -75,10 +75,10 @@ AmazonSTS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_session_token: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetSessionToken", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetSessionToken", payload );
     return resposne;
   }
 }

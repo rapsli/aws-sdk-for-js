@@ -38,12 +38,12 @@ AmazonEMR.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   add_instance_groups: function(instance_groups,job_flow_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_groups = instance_groups;
     param.job_flow_id = job_flow_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AddInstanceGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AddInstanceGroups", payload );
     return resposne;
   }, 
   /**
@@ -97,12 +97,12 @@ AmazonEMR.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   add_job_flow_steps: function(job_flow_id,steps,opt){
-    var param = {};
+    var payload = {};
     param.job_flow_id = job_flow_id;
     param.steps = steps;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AddJobFlowSteps", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AddJobFlowSteps", payload );
     return resposne;
   }, 
   /**
@@ -134,10 +134,10 @@ AmazonEMR.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_job_flows: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeJobFlows", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeJobFlows", payload );
     return resposne;
   }, 
   /**
@@ -157,10 +157,10 @@ AmazonEMR.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_instance_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyInstanceGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyInstanceGroups", payload );
     return resposne;
   }, 
   /**
@@ -257,12 +257,12 @@ AmazonEMR.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   run_job_flow: function(name,instances,opt){
-    var param = {};
+    var payload = {};
     param.name = name;
     param.instances = instances;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RunJobFlow", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RunJobFlow", payload );
     return resposne;
   }, 
   /**
@@ -293,12 +293,12 @@ AmazonEMR.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_termination_protection: function(job_flow_ids,termination_protected,opt){
-    var param = {};
+    var payload = {};
     param.job_flow_ids = job_flow_ids;
     param.termination_protected = termination_protected;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetTerminationProtection", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetTerminationProtection", payload );
     return resposne;
   }, 
   /**
@@ -314,11 +314,11 @@ AmazonEMR.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   terminate_job_flows: function(job_flow_ids,opt){
-    var param = {};
+    var payload = {};
     param.job_flow_ids = job_flow_ids;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "TerminateJobFlows", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"TerminateJobFlows", payload );
     return resposne;
   }
 }

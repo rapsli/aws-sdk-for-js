@@ -45,14 +45,14 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   add_permission: function(queue_url,label,aws_account_id,action_name,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.label = label;
     param.aws_account_id = aws_account_id;
     param.action_name = action_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AddPermission", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AddPermission", payload );
     return resposne;
   }, 
   /**
@@ -92,13 +92,13 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   change_message_visibility: function(queue_url,receipt_handle,visibility_timeout,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.receipt_handle = receipt_handle;
     param.visibility_timeout = visibility_timeout;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ChangeMessageVisibility", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ChangeMessageVisibility", payload );
     return resposne;
   }, 
   /**
@@ -120,12 +120,12 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   change_message_visibility_batch: function(queue_url,change_message_visibility_batch_request_entry,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.change_message_visibility_batch_request_entry = change_message_visibility_batch_request_entry;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ChangeMessageVisibilityBatch", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ChangeMessageVisibilityBatch", payload );
     return resposne;
   }, 
   /**
@@ -154,11 +154,11 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_queue: function(queue_name,opt){
-    var param = {};
+    var payload = {};
     param.queue_name = queue_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateQueue", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateQueue", payload );
     return resposne;
   }, 
   /**
@@ -174,12 +174,12 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_message: function(queue_url,receipt_handle,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.receipt_handle = receipt_handle;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteMessage", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteMessage", payload );
     return resposne;
   }, 
   /**
@@ -200,12 +200,12 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_message_batch: function(queue_url,delete_message_batch_request_entry,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.delete_message_batch_request_entry = delete_message_batch_request_entry;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteMessageBatch", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteMessageBatch", payload );
     return resposne;
   }, 
   /**
@@ -222,11 +222,11 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_queue: function(queue_url,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteQueue", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteQueue", payload );
     return resposne;
   }, 
   /**
@@ -266,11 +266,11 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_queue_attributes: function(queue_url,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetQueueAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetQueueAttributes", payload );
     return resposne;
   }, 
   /**
@@ -284,11 +284,11 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_queue_url: function(queue_name,opt){
-    var param = {};
+    var payload = {};
     param.queue_name = queue_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetQueueUrl", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetQueueUrl", payload );
     return resposne;
   }, 
   /**
@@ -301,10 +301,10 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_queues: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListQueues", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListQueues", payload );
     return resposne;
   }, 
   /**
@@ -325,11 +325,11 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   receive_message: function(queue_url,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ReceiveMessage", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ReceiveMessage", payload );
     return resposne;
   }, 
   /**
@@ -345,12 +345,12 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   remove_permission: function(queue_url,label,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.label = label;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RemovePermission", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RemovePermission", payload );
     return resposne;
   }, 
   /**
@@ -365,12 +365,12 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   send_message: function(queue_url,message_body,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.message_body = message_body;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SendMessage", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SendMessage", payload );
     return resposne;
   }, 
   /**
@@ -392,12 +392,12 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   send_message_batch: function(queue_url,send_message_batch_request_entry,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.send_message_batch_request_entry = send_message_batch_request_entry;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SendMessageBatch", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SendMessageBatch", payload );
     return resposne;
   }, 
   /**
@@ -417,12 +417,12 @@ AmazonSQS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_queue_attributes: function(queue_url,attribute,opt){
-    var param = {};
+    var payload = {};
     param.queue_url = queue_url;
     param.attribute = attribute;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetQueueAttributes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetQueueAttributes", payload );
     return resposne;
   }
 }

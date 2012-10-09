@@ -55,10 +55,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   count_closed_workflow_executions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CountClosedWorkflowExecutions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CountClosedWorkflowExecutions", payload );
     return resposne;
   }, 
   /**
@@ -91,10 +91,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   count_open_workflow_executions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CountOpenWorkflowExecutions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CountOpenWorkflowExecutions", payload );
     return resposne;
   }, 
   /**
@@ -112,10 +112,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   count_pending_activity_tasks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CountPendingActivityTasks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CountPendingActivityTasks", payload );
     return resposne;
   }, 
   /**
@@ -133,10 +133,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   count_pending_decision_tasks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CountPendingDecisionTasks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CountPendingDecisionTasks", payload );
     return resposne;
   }, 
   /**
@@ -160,10 +160,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   deprecate_activity_type: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeprecateActivityType", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeprecateActivityType", payload );
     return resposne;
   }, 
   /**
@@ -184,10 +184,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   deprecate_domain: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeprecateDomain", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeprecateDomain", payload );
     return resposne;
   }, 
   /**
@@ -212,10 +212,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   deprecate_workflow_type: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeprecateWorkflowType", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeprecateWorkflowType", payload );
     return resposne;
   }, 
   /**
@@ -233,10 +233,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_activity_type: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeActivityType", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeActivityType", payload );
     return resposne;
   }, 
   /**
@@ -249,10 +249,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_domain: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDomain", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDomain", payload );
     return resposne;
   }, 
   /**
@@ -275,10 +275,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_workflow_execution: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeWorkflowExecution", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeWorkflowExecution", payload );
     return resposne;
   }, 
   /**
@@ -297,10 +297,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_workflow_type: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeWorkflowType", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeWorkflowType", payload );
     return resposne;
   }, 
   /**
@@ -327,10 +327,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_workflow_execution_history: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetWorkflowExecutionHistory", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetWorkflowExecutionHistory", payload );
     return resposne;
   }, 
   /**
@@ -352,10 +352,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_activity_types: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListActivityTypes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListActivityTypes", payload );
     return resposne;
   }, 
   /**
@@ -399,10 +399,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_closed_workflow_executions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListClosedWorkflowExecutions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListClosedWorkflowExecutions", payload );
     return resposne;
   }, 
   /**
@@ -425,10 +425,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_domains: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListDomains", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListDomains", payload );
     return resposne;
   }, 
   /**
@@ -465,10 +465,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_open_workflow_executions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListOpenWorkflowExecutions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListOpenWorkflowExecutions", payload );
     return resposne;
   }, 
   /**
@@ -487,10 +487,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_workflow_types: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListWorkflowTypes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListWorkflowTypes", payload );
     return resposne;
   }, 
   /**
@@ -518,10 +518,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   poll_for_activity_task: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PollForActivityTask", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PollForActivityTask", payload );
     return resposne;
   }, 
   /**
@@ -564,10 +564,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   poll_for_decision_task: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PollForDecisionTask", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PollForDecisionTask", payload );
     return resposne;
   }, 
   /**
@@ -611,10 +611,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   record_activity_task_heartbeat: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RecordActivityTaskHeartbeat", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RecordActivityTaskHeartbeat", payload );
     return resposne;
   }, 
   /**
@@ -644,10 +644,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   register_activity_type: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RegisterActivityType", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RegisterActivityType", payload );
     return resposne;
   }, 
   /**
@@ -662,10 +662,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   register_domain: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RegisterDomain", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RegisterDomain", payload );
     return resposne;
   }, 
   /**
@@ -693,10 +693,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   register_workflow_type: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RegisterWorkflowType", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RegisterWorkflowType", payload );
     return resposne;
   }, 
   /**
@@ -724,10 +724,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   request_cancel_workflow_execution: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RequestCancelWorkflowExecution", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RequestCancelWorkflowExecution", payload );
     return resposne;
   }, 
   /**
@@ -752,10 +752,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   respond_activity_task_canceled: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RespondActivityTaskCanceled", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RespondActivityTaskCanceled", payload );
     return resposne;
   }, 
   /**
@@ -780,10 +780,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   respond_activity_task_completed: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RespondActivityTaskCompleted", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RespondActivityTaskCompleted", payload );
     return resposne;
   }, 
   /**
@@ -802,10 +802,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   respond_activity_task_failed: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RespondActivityTaskFailed", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RespondActivityTaskFailed", payload );
     return resposne;
   }, 
   /**
@@ -910,10 +910,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   respond_decision_task_completed: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RespondDecisionTaskCompleted", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RespondDecisionTaskCompleted", payload );
     return resposne;
   }, 
   /**
@@ -942,10 +942,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   signal_workflow_execution: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SignalWorkflowExecution", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SignalWorkflowExecution", payload );
     return resposne;
   }, 
   /**
@@ -974,10 +974,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   start_workflow_execution: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "StartWorkflowExecution", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"StartWorkflowExecution", payload );
     return resposne;
   }, 
   /**
@@ -1011,10 +1011,10 @@ AmazonSWF.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   terminate_workflow_execution: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "TerminateWorkflowExecution", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"TerminateWorkflowExecution", payload );
     return resposne;
   }
 }

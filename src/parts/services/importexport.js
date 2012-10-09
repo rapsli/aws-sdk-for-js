@@ -29,11 +29,11 @@ AmazonImportExport.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   cancel_job: function(job_id,opt){
-    var param = {};
+    var payload = {};
     param.job_id = job_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CancelJob", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CancelJob", payload );
     return resposne;
   }, 
   /**
@@ -52,13 +52,13 @@ AmazonImportExport.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_job: function(job_type,manifest,validate_only,opt){
-    var param = {};
+    var payload = {};
     param.job_type = job_type;
     param.manifest = manifest;
     param.validate_only = validate_only;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateJob", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateJob", payload );
     return resposne;
   }, 
   /**
@@ -73,11 +73,11 @@ AmazonImportExport.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_status: function(job_id,opt){
-    var param = {};
+    var payload = {};
     param.job_id = job_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetStatus", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetStatus", payload );
     return resposne;
   }, 
   /**
@@ -94,10 +94,10 @@ AmazonImportExport.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_jobs: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListJobs", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListJobs", payload );
     return resposne;
   }, 
   /**
@@ -116,14 +116,14 @@ AmazonImportExport.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_job: function(job_id,manifest,job_type,validate_only,opt){
-    var param = {};
+    var payload = {};
     param.job_id = job_id;
     param.manifest = manifest;
     param.job_type = job_type;
     param.validate_only = validate_only;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateJob", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateJob", payload );
     return resposne;
   }
 }

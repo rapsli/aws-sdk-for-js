@@ -30,12 +30,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   activate_license: function(license_id,capacity,opt){
-    var param = {};
+    var payload = {};
     param.license_id = license_id;
     param.capacity = capacity;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ActivateLicense", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ActivateLicense", payload );
     return resposne;
   }, 
   /**
@@ -48,10 +48,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   allocate_address: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AllocateAddress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AllocateAddress", payload );
     return resposne;
   }, 
   /**
@@ -67,11 +67,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   assign_private_ip_addresses: function(network_interface_id,opt){
-    var param = {};
+    var payload = {};
     param.network_interface_id = network_interface_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AssignPrivateIpAddresses", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AssignPrivateIpAddresses", payload );
     return resposne;
   }, 
   /**
@@ -93,12 +93,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   associate_address: function(instance_id,public_ip,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
     param.public_ip = public_ip;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AssociateAddress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AssociateAddress", payload );
     return resposne;
   }, 
   /**
@@ -118,12 +118,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   associate_dhcp_options: function(dhcp_options_id,vpc_id,opt){
-    var param = {};
+    var payload = {};
     param.dhcp_options_id = dhcp_options_id;
     param.vpc_id = vpc_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AssociateDhcpOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AssociateDhcpOptions", payload );
     return resposne;
   }, 
   /**
@@ -145,12 +145,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   associate_route_table: function(subnet_id,route_table_id,opt){
-    var param = {};
+    var payload = {};
     param.subnet_id = subnet_id;
     param.route_table_id = route_table_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AssociateRouteTable", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AssociateRouteTable", payload );
     return resposne;
   }, 
   /**
@@ -166,12 +166,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   attach_internet_gateway: function(internet_gateway_id,vpc_id,opt){
-    var param = {};
+    var payload = {};
     param.internet_gateway_id = internet_gateway_id;
     param.vpc_id = vpc_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AttachInternetGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AttachInternetGateway", payload );
     return resposne;
   }, 
   /**
@@ -186,13 +186,13 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   attach_network_interface: function(network_interface_id,instance_id,device_index,opt){
-    var param = {};
+    var payload = {};
     param.network_interface_id = network_interface_id;
     param.instance_id = instance_id;
     param.device_index = device_index;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AttachNetworkInterface", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AttachNetworkInterface", payload );
     return resposne;
   }, 
   /**
@@ -207,13 +207,13 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   attach_volume: function(volume_id,instance_id,device,opt){
-    var param = {};
+    var payload = {};
     param.volume_id = volume_id;
     param.instance_id = instance_id;
     param.device = device;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AttachVolume", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AttachVolume", payload );
     return resposne;
   }, 
   /**
@@ -229,12 +229,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   attach_vpn_gateway: function(vpn_gateway_id,vpc_id,opt){
-    var param = {};
+    var payload = {};
     param.vpn_gateway_id = vpn_gateway_id;
     param.vpc_id = vpc_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AttachVpnGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AttachVpnGateway", payload );
     return resposne;
   }, 
   /**
@@ -279,11 +279,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   authorize_security_group_egress: function(group_id,opt){
-    var param = {};
+    var payload = {};
     param.group_id = group_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AuthorizeSecurityGroupEgress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AuthorizeSecurityGroupEgress", payload );
     return resposne;
   }, 
   /**
@@ -320,10 +320,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   authorize_security_group_ingress: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AuthorizeSecurityGroupIngress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AuthorizeSecurityGroupIngress", payload );
     return resposne;
   }, 
   /**
@@ -344,12 +344,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   bundle_instance: function(instance_id,policy,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
     param.policy = policy;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "BundleInstance", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"BundleInstance", payload );
     return resposne;
   }, 
   /**
@@ -365,11 +365,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   cancel_bundle_task: function(bundle_id,opt){
-    var param = {};
+    var payload = {};
     param.bundle_id = bundle_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CancelBundleTask", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CancelBundleTask", payload );
     return resposne;
   }, 
   /**
@@ -383,11 +383,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   cancel_conversion_task: function(conversion_task_id,opt){
-    var param = {};
+    var payload = {};
     param.conversion_task_id = conversion_task_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CancelConversionTask", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CancelConversionTask", payload );
     return resposne;
   }, 
   /**
@@ -400,11 +400,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   cancel_export_task: function(export_task_id,opt){
-    var param = {};
+    var payload = {};
     param.export_task_id = export_task_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CancelExportTask", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CancelExportTask", payload );
     return resposne;
   }, 
   /**
@@ -427,11 +427,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   cancel_spot_instance_requests: function(spot_instance_request_id,opt){
-    var param = {};
+    var payload = {};
     param.spot_instance_request_id = spot_instance_request_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CancelSpotInstanceRequests", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CancelSpotInstanceRequests", payload );
     return resposne;
   }, 
   /**
@@ -451,12 +451,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   confirm_product_instance: function(product_code,instance_id,opt){
-    var param = {};
+    var payload = {};
     param.product_code = product_code;
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ConfirmProductInstance", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ConfirmProductInstance", payload );
     return resposne;
   }, 
   /**
@@ -485,13 +485,13 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_customer_gateway: function(type,ip_address,bgp_asn,opt){
-    var param = {};
+    var payload = {};
     param.type = type;
     param.ip_address = ip_address;
     param.bgp_asn = bgp_asn;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateCustomerGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateCustomerGateway", payload );
     return resposne;
   }, 
   /**
@@ -513,11 +513,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_dhcp_options: function(dhcp_configuration,opt){
-    var param = {};
+    var payload = {};
     param.dhcp_configuration = dhcp_configuration;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDhcpOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDhcpOptions", payload );
     return resposne;
   }, 
   /**
@@ -551,12 +551,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_image: function(instance_id,name,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
     param.name = name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateImage", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateImage", payload );
     return resposne;
   }, 
   /**
@@ -579,11 +579,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_instance_export_task: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateInstanceExportTask", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateInstanceExportTask", payload );
     return resposne;
   }, 
   /**
@@ -597,10 +597,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_internet_gateway: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateInternetGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateInternetGateway", payload );
     return resposne;
   }, 
   /**
@@ -615,11 +615,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_key_pair: function(key_name,opt){
-    var param = {};
+    var payload = {};
     param.key_name = key_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateKeyPair", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateKeyPair", payload );
     return resposne;
   }, 
   /**
@@ -634,11 +634,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_network_acl: function(vpc_id,opt){
-    var param = {};
+    var payload = {};
     param.vpc_id = vpc_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateNetworkAcl", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateNetworkAcl", payload );
     return resposne;
   }, 
   /**
@@ -681,7 +681,7 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_network_acl_entry: function(network_acl_id,rule_number,protocol,rule_action,egress,cidr_block,opt){
-    var param = {};
+    var payload = {};
     param.network_acl_id = network_acl_id;
     param.rule_number = rule_number;
     param.protocol = protocol;
@@ -689,8 +689,8 @@ AmazonEC2.prototype = {
     param.egress = egress;
     param.cidr_block = cidr_block;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateNetworkAclEntry", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateNetworkAclEntry", payload );
     return resposne;
   }, 
   /**
@@ -713,11 +713,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_network_interface: function(subnet_id,opt){
-    var param = {};
+    var payload = {};
     param.subnet_id = subnet_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateNetworkInterface", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateNetworkInterface", payload );
     return resposne;
   }, 
   /**
@@ -732,12 +732,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_placement_group: function(group_name,strategy,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
     param.strategy = strategy;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreatePlacementGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreatePlacementGroup", payload );
     return resposne;
   }, 
   /**
@@ -771,12 +771,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_route: function(route_table_id,destination_cidr_block,opt){
-    var param = {};
+    var payload = {};
     param.route_table_id = route_table_id;
     param.destination_cidr_block = destination_cidr_block;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateRoute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateRoute", payload );
     return resposne;
   }, 
   /**
@@ -792,11 +792,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_route_table: function(vpc_id,opt){
-    var param = {};
+    var payload = {};
     param.vpc_id = vpc_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateRouteTable", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateRouteTable", payload );
     return resposne;
   }, 
   /**
@@ -818,12 +818,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_security_group: function(group_name,group_description,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
     param.group_description = group_description;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateSecurityGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateSecurityGroup", payload );
     return resposne;
   }, 
   /**
@@ -846,11 +846,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_snapshot: function(volume_id,opt){
-    var param = {};
+    var payload = {};
     param.volume_id = volume_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateSnapshot", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateSnapshot", payload );
     return resposne;
   }, 
   /**
@@ -871,11 +871,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_spot_datafeed_subscription: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateSpotDatafeedSubscription", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateSpotDatafeedSubscription", payload );
     return resposne;
   }, 
   /**
@@ -902,12 +902,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_subnet: function(vpc_id,cidr_block,opt){
-    var param = {};
+    var payload = {};
     param.vpc_id = vpc_id;
     param.cidr_block = cidr_block;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateSubnet", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateSubnet", payload );
     return resposne;
   }, 
   /**
@@ -927,12 +927,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_tags: function(resource_id,tag,opt){
-    var param = {};
+    var payload = {};
     param.resource_id = resource_id;
     param.tag = tag;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateTags", payload );
     return resposne;
   }, 
   /**
@@ -949,11 +949,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_volume: function(availability_zone,opt){
-    var param = {};
+    var payload = {};
     param.availability_zone = availability_zone;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateVolume", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateVolume", payload );
     return resposne;
   }, 
   /**
@@ -973,11 +973,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_vpc: function(cidr_block,opt){
-    var param = {};
+    var payload = {};
     param.cidr_block = cidr_block;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateVpc", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateVpc", payload );
     return resposne;
   }, 
   /**
@@ -1008,13 +1008,13 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_vpn_connection: function(type,customer_gateway_id,vpn_gateway_id,opt){
-    var param = {};
+    var payload = {};
     param.type = type;
     param.customer_gateway_id = customer_gateway_id;
     param.vpn_gateway_id = vpn_gateway_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateVpnConnection", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateVpnConnection", payload );
     return resposne;
   }, 
   /**
@@ -1029,11 +1029,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_vpn_gateway: function(type,opt){
-    var param = {};
+    var payload = {};
     param.type = type;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateVpnGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateVpnGateway", payload );
     return resposne;
   }, 
   /**
@@ -1048,12 +1048,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   deactivate_license: function(license_id,capacity,opt){
-    var param = {};
+    var payload = {};
     param.license_id = license_id;
     param.capacity = capacity;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeactivateLicense", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeactivateLicense", payload );
     return resposne;
   }, 
   /**
@@ -1071,11 +1071,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_customer_gateway: function(customer_gateway_id,opt){
-    var param = {};
+    var payload = {};
     param.customer_gateway_id = customer_gateway_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteCustomerGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteCustomerGateway", payload );
     return resposne;
   }, 
   /**
@@ -1090,11 +1090,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_dhcp_options: function(dhcp_options_id,opt){
-    var param = {};
+    var payload = {};
     param.dhcp_options_id = dhcp_options_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDhcpOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDhcpOptions", payload );
     return resposne;
   }, 
   /**
@@ -1109,11 +1109,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_internet_gateway: function(internet_gateway_id,opt){
-    var param = {};
+    var payload = {};
     param.internet_gateway_id = internet_gateway_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteInternetGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteInternetGateway", payload );
     return resposne;
   }, 
   /**
@@ -1126,11 +1126,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_key_pair: function(key_name,opt){
-    var param = {};
+    var payload = {};
     param.key_name = key_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteKeyPair", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteKeyPair", payload );
     return resposne;
   }, 
   /**
@@ -1145,11 +1145,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_network_acl: function(network_acl_id,opt){
-    var param = {};
+    var payload = {};
     param.network_acl_id = network_acl_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteNetworkAcl", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteNetworkAcl", payload );
     return resposne;
   }, 
   /**
@@ -1165,13 +1165,13 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_network_acl_entry: function(network_acl_id,rule_number,egress,opt){
-    var param = {};
+    var payload = {};
     param.network_acl_id = network_acl_id;
     param.rule_number = rule_number;
     param.egress = egress;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteNetworkAclEntry", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteNetworkAclEntry", payload );
     return resposne;
   }, 
   /**
@@ -1184,11 +1184,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_network_interface: function(network_interface_id,opt){
-    var param = {};
+    var payload = {};
     param.network_interface_id = network_interface_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteNetworkInterface", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteNetworkInterface", payload );
     return resposne;
   }, 
   /**
@@ -1202,11 +1202,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_placement_group: function(group_name,opt){
-    var param = {};
+    var payload = {};
     param.group_name = group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeletePlacementGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeletePlacementGroup", payload );
     return resposne;
   }, 
   /**
@@ -1223,12 +1223,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_route: function(route_table_id,destination_cidr_block,opt){
-    var param = {};
+    var payload = {};
     param.route_table_id = route_table_id;
     param.destination_cidr_block = destination_cidr_block;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteRoute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteRoute", payload );
     return resposne;
   }, 
   /**
@@ -1244,11 +1244,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_route_table: function(route_table_id,opt){
-    var param = {};
+    var payload = {};
     param.route_table_id = route_table_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteRouteTable", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteRouteTable", payload );
     return resposne;
   }, 
   /**
@@ -1269,10 +1269,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_security_group: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteSecurityGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteSecurityGroup", payload );
     return resposne;
   }, 
   /**
@@ -1285,11 +1285,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_snapshot: function(snapshot_id,opt){
-    var param = {};
+    var payload = {};
     param.snapshot_id = snapshot_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteSnapshot", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteSnapshot", payload );
     return resposne;
   }, 
   /**
@@ -1307,10 +1307,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_spot_datafeed_subscription: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteSpotDatafeedSubscription", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteSpotDatafeedSubscription", payload );
     return resposne;
   }, 
   /**
@@ -1324,11 +1324,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_subnet: function(subnet_id,opt){
-    var param = {};
+    var payload = {};
     param.subnet_id = subnet_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteSubnet", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteSubnet", payload );
     return resposne;
   }, 
   /**
@@ -1347,11 +1347,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_tags: function(resource_id,opt){
-    var param = {};
+    var payload = {};
     param.resource_id = resource_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteTags", payload );
     return resposne;
   }, 
   /**
@@ -1365,11 +1365,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_volume: function(volume_id,opt){
-    var param = {};
+    var payload = {};
     param.volume_id = volume_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteVolume", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteVolume", payload );
     return resposne;
   }, 
   /**
@@ -1384,11 +1384,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_vpc: function(vpc_id,opt){
-    var param = {};
+    var payload = {};
     param.vpc_id = vpc_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteVpc", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteVpc", payload );
     return resposne;
   }, 
   /**
@@ -1409,11 +1409,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_vpn_connection: function(vpn_connection_id,opt){
-    var param = {};
+    var payload = {};
     param.vpn_connection_id = vpn_connection_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteVpnConnection", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteVpnConnection", payload );
     return resposne;
   }, 
   /**
@@ -1430,11 +1430,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_vpn_gateway: function(vpn_gateway_id,opt){
-    var param = {};
+    var payload = {};
     param.vpn_gateway_id = vpn_gateway_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteVpnGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteVpnGateway", payload );
     return resposne;
   }, 
   /**
@@ -1448,11 +1448,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   deregister_image: function(image_id,opt){
-    var param = {};
+    var payload = {};
     param.image_id = image_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeregisterImage", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeregisterImage", payload );
     return resposne;
   }, 
   /**
@@ -1472,10 +1472,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_addresses: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAddresses", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAddresses", payload );
     return resposne;
   }, 
   /**
@@ -1499,10 +1499,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_availability_zones: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAvailabilityZones", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAvailabilityZones", payload );
     return resposne;
   }, 
   /**
@@ -1523,10 +1523,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_bundle_tasks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeBundleTasks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeBundleTasks", payload );
     return resposne;
   }, 
   /**
@@ -1545,10 +1545,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_conversion_tasks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeConversionTasks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeConversionTasks", payload );
     return resposne;
   }, 
   /**
@@ -1574,10 +1574,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_customer_gateways: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeCustomerGateways", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeCustomerGateways", payload );
     return resposne;
   }, 
   /**
@@ -1603,10 +1603,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_dhcp_options: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDhcpOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDhcpOptions", payload );
     return resposne;
   }, 
   /**
@@ -1619,10 +1619,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_export_tasks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeExportTasks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeExportTasks", payload );
     return resposne;
   }, 
   /**
@@ -1637,12 +1637,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_image_attribute: function(image_id,attribute,opt){
-    var param = {};
+    var payload = {};
     param.image_id = image_id;
     param.attribute = attribute;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeImageAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeImageAttribute", payload );
     return resposne;
   }, 
   /**
@@ -1699,10 +1699,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_images: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeImages", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeImages", payload );
     return resposne;
   }, 
   /**
@@ -1717,12 +1717,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_instance_attribute: function(instance_id,attribute,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
     param.attribute = attribute;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeInstanceAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeInstanceAttribute", payload );
     return resposne;
   }, 
   /**
@@ -1791,10 +1791,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_instance_status: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeInstanceStatus", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeInstanceStatus", payload );
     return resposne;
   }, 
   /**
@@ -1821,10 +1821,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_instances: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeInstances", payload );
     return resposne;
   }, 
   /**
@@ -1856,10 +1856,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_internet_gateways: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeInternetGateways", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeInternetGateways", payload );
     return resposne;
   }, 
   /**
@@ -1880,10 +1880,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_key_pairs: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeKeyPairs", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeKeyPairs", payload );
     return resposne;
   }, 
   /**
@@ -1903,10 +1903,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_licenses: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeLicenses", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeLicenses", payload );
     return resposne;
   }, 
   /**
@@ -1938,10 +1938,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_network_acls: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeNetworkAcls", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeNetworkAcls", payload );
     return resposne;
   }, 
   /**
@@ -1958,11 +1958,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_network_interface_attribute: function(network_interface_id,opt){
-    var param = {};
+    var payload = {};
     param.network_interface_id = network_interface_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeNetworkInterfaceAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeNetworkInterfaceAttribute", payload );
     return resposne;
   }, 
   /**
@@ -1981,10 +1981,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_network_interfaces: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeNetworkInterfaces", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeNetworkInterfaces", payload );
     return resposne;
   }, 
   /**
@@ -2004,10 +2004,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_placement_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribePlacementGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribePlacementGroups", payload );
     return resposne;
   }, 
   /**
@@ -2027,10 +2027,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_regions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeRegions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeRegions", payload );
     return resposne;
   }, 
   /**
@@ -2051,10 +2051,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_reserved_instances: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeReservedInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeReservedInstances", payload );
     return resposne;
   }, 
   /**
@@ -2081,10 +2081,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_reserved_instances_offerings: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeReservedInstancesOfferings", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeReservedInstancesOfferings", payload );
     return resposne;
   }, 
   /**
@@ -2117,10 +2117,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_route_tables: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeRouteTables", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeRouteTables", payload );
     return resposne;
   }, 
   /**
@@ -2144,10 +2144,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_security_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSecurityGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSecurityGroups", payload );
     return resposne;
   }, 
   /**
@@ -2162,12 +2162,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_snapshot_attribute: function(snapshot_id,attribute,opt){
-    var param = {};
+    var payload = {};
     param.snapshot_id = snapshot_id;
     param.attribute = attribute;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSnapshotAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSnapshotAttribute", payload );
     return resposne;
   }, 
   /**
@@ -2191,10 +2191,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_snapshots: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSnapshots", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSnapshots", payload );
     return resposne;
   }, 
   /**
@@ -2212,10 +2212,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_spot_datafeed_subscription: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSpotDatafeedSubscription", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSpotDatafeedSubscription", payload );
     return resposne;
   }, 
   /**
@@ -2258,10 +2258,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_spot_instance_requests: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSpotInstanceRequests", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSpotInstanceRequests", payload );
     return resposne;
   }, 
   /**
@@ -2296,10 +2296,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_spot_price_history: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSpotPriceHistory", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSpotPriceHistory", payload );
     return resposne;
   }, 
   /**
@@ -2327,10 +2327,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_subnets: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSubnets", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSubnets", payload );
     return resposne;
   }, 
   /**
@@ -2348,10 +2348,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_tags: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeTags", payload );
     return resposne;
   }, 
   /**
@@ -2365,11 +2365,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_volume_attribute: function(volume_id,opt){
-    var param = {};
+    var payload = {};
     param.volume_id = volume_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeVolumeAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeVolumeAttribute", payload );
     return resposne;
   }, 
   /**
@@ -2390,10 +2390,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_volume_status: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeVolumeStatus", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeVolumeStatus", payload );
     return resposne;
   }, 
   /**
@@ -2413,10 +2413,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_volumes: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeVolumes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeVolumes", payload );
     return resposne;
   }, 
   /**
@@ -2444,10 +2444,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_vpcs: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeVpcs", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeVpcs", payload );
     return resposne;
   }, 
   /**
@@ -2478,10 +2478,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_vpn_connections: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeVpnConnections", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeVpnConnections", payload );
     return resposne;
   }, 
   /**
@@ -2509,10 +2509,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_vpn_gateways: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeVpnGateways", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeVpnGateways", payload );
     return resposne;
   }, 
   /**
@@ -2531,12 +2531,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   detach_internet_gateway: function(internet_gateway_id,vpc_id,opt){
-    var param = {};
+    var payload = {};
     param.internet_gateway_id = internet_gateway_id;
     param.vpc_id = vpc_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DetachInternetGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DetachInternetGateway", payload );
     return resposne;
   }, 
   /**
@@ -2550,11 +2550,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   detach_network_interface: function(attachment_id,opt){
-    var param = {};
+    var payload = {};
     param.attachment_id = attachment_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DetachNetworkInterface", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DetachNetworkInterface", payload );
     return resposne;
   }, 
   /**
@@ -2570,11 +2570,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   detach_volume: function(volume_id,opt){
-    var param = {};
+    var payload = {};
     param.volume_id = volume_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DetachVolume", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DetachVolume", payload );
     return resposne;
   }, 
   /**
@@ -2593,12 +2593,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   detach_vpn_gateway: function(vpn_gateway_id,vpc_id,opt){
-    var param = {};
+    var payload = {};
     param.vpn_gateway_id = vpn_gateway_id;
     param.vpc_id = vpc_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DetachVpnGateway", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DetachVpnGateway", payload );
     return resposne;
   }, 
   /**
@@ -2614,11 +2614,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   disassociate_address: function(public_ip,opt){
-    var param = {};
+    var payload = {};
     param.public_ip = public_ip;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DisassociateAddress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DisassociateAddress", payload );
     return resposne;
   }, 
   /**
@@ -2637,11 +2637,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   disassociate_route_table: function(association_id,opt){
-    var param = {};
+    var payload = {};
     param.association_id = association_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DisassociateRouteTable", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DisassociateRouteTable", payload );
     return resposne;
   }, 
   /**
@@ -2654,11 +2654,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   enable_volume_io: function(volume_id,opt){
-    var param = {};
+    var payload = {};
     param.volume_id = volume_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "EnableVolumeIo", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"EnableVolumeIo", payload );
     return resposne;
   }, 
   /**
@@ -2675,11 +2675,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response. The value of <code>output</code> is automatically Base64-decoded.
    */
   get_console_output: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetConsoleOutput", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetConsoleOutput", payload );
     return resposne;
   }, 
   /**
@@ -2697,11 +2697,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_password_data: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetPasswordData", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetPasswordData", payload );
     return resposne;
   }, 
   /**
@@ -2769,11 +2769,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   import_instance: function(platform,opt){
-    var param = {};
+    var payload = {};
     param.platform = platform;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ImportInstance", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ImportInstance", payload );
     return resposne;
   }, 
   /**
@@ -2800,12 +2800,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   import_key_pair: function(key_name,public_key_material,opt){
-    var param = {};
+    var payload = {};
     param.key_name = key_name;
     param.public_key_material = public_key_material;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ImportKeyPair", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ImportKeyPair", payload );
     return resposne;
   }, 
   /**
@@ -2831,10 +2831,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   import_volume: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ImportVolume", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ImportVolume", payload );
     return resposne;
   }, 
   /**
@@ -2870,11 +2870,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_image_attribute: function(image_id,opt){
-    var param = {};
+    var payload = {};
     param.image_id = image_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyImageAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyImageAttribute", payload );
     return resposne;
   }, 
   /**
@@ -2911,11 +2911,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_instance_attribute: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyInstanceAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyInstanceAttribute", payload );
     return resposne;
   }, 
   /**
@@ -2937,11 +2937,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_network_interface_attribute: function(network_interface_id,opt){
-    var param = {};
+    var payload = {};
     param.network_interface_id = network_interface_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyNetworkInterfaceAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyNetworkInterfaceAttribute", payload );
     return resposne;
   }, 
   /**
@@ -2974,11 +2974,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_snapshot_attribute: function(snapshot_id,opt){
-    var param = {};
+    var payload = {};
     param.snapshot_id = snapshot_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifySnapshotAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifySnapshotAttribute", payload );
     return resposne;
   }, 
   /**
@@ -2992,11 +2992,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_volume_attribute: function(volume_id,opt){
-    var param = {};
+    var payload = {};
     param.volume_id = volume_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyVolumeAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyVolumeAttribute", payload );
     return resposne;
   }, 
   /**
@@ -3009,11 +3009,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   monitor_instances: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "MonitorInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"MonitorInstances", payload );
     return resposne;
   }, 
   /**
@@ -3030,12 +3030,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   purchase_reserved_instances_offering: function(reserved_instances_offering_id,instance_count,opt){
-    var param = {};
+    var payload = {};
     param.reserved_instances_offering_id = reserved_instances_offering_id;
     param.instance_count = instance_count;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PurchaseReservedInstancesOffering", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PurchaseReservedInstancesOffering", payload );
     return resposne;
   }, 
   /**
@@ -3051,11 +3051,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reboot_instances: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RebootInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RebootInstances", payload );
     return resposne;
   }, 
   /**
@@ -3099,10 +3099,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   register_image: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RegisterImage", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RegisterImage", payload );
     return resposne;
   }, 
   /**
@@ -3128,10 +3128,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   release_address: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ReleaseAddress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ReleaseAddress", payload );
     return resposne;
   }, 
   /**
@@ -3147,12 +3147,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   replace_network_acl_association: function(association_id,network_acl_id,opt){
-    var param = {};
+    var payload = {};
     param.association_id = association_id;
     param.network_acl_id = network_acl_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ReplaceNetworkAclAssociation", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ReplaceNetworkAclAssociation", payload );
     return resposne;
   }, 
   /**
@@ -3183,7 +3183,7 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   replace_network_acl_entry: function(network_acl_id,rule_number,protocol,rule_action,egress,cidr_block,opt){
-    var param = {};
+    var payload = {};
     param.network_acl_id = network_acl_id;
     param.rule_number = rule_number;
     param.protocol = protocol;
@@ -3191,8 +3191,8 @@ AmazonEC2.prototype = {
     param.egress = egress;
     param.cidr_block = cidr_block;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ReplaceNetworkAclEntry", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ReplaceNetworkAclEntry", payload );
     return resposne;
   }, 
   /**
@@ -3212,12 +3212,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   replace_route: function(route_table_id,destination_cidr_block,opt){
-    var param = {};
+    var payload = {};
     param.route_table_id = route_table_id;
     param.destination_cidr_block = destination_cidr_block;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ReplaceRoute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ReplaceRoute", payload );
     return resposne;
   }, 
   /**
@@ -3239,12 +3239,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   replace_route_table_association: function(association_id,route_table_id,opt){
-    var param = {};
+    var payload = {};
     param.association_id = association_id;
     param.route_table_id = route_table_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ReplaceRouteTableAssociation", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ReplaceRouteTableAssociation", payload );
     return resposne;
   }, 
   /**
@@ -3262,10 +3262,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   report_instance_status: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ReportInstanceStatus", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ReportInstanceStatus", payload );
     return resposne;
   }, 
   /**
@@ -3361,11 +3361,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   request_spot_instances: function(spot_price,opt){
-    var param = {};
+    var payload = {};
     param.spot_price = spot_price;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RequestSpotInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RequestSpotInstances", payload );
     return resposne;
   }, 
   /**
@@ -3383,12 +3383,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reset_image_attribute: function(image_id,attribute,opt){
-    var param = {};
+    var payload = {};
     param.image_id = image_id;
     param.attribute = attribute;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ResetImageAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ResetImageAttribute", payload );
     return resposne;
   }, 
   /**
@@ -3402,12 +3402,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reset_instance_attribute: function(instance_id,attribute,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
     param.attribute = attribute;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ResetInstanceAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ResetInstanceAttribute", payload );
     return resposne;
   }, 
   /**
@@ -3421,11 +3421,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reset_network_interface_attribute: function(network_interface_id,opt){
-    var param = {};
+    var payload = {};
     param.network_interface_id = network_interface_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ResetNetworkInterfaceAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ResetNetworkInterfaceAttribute", payload );
     return resposne;
   }, 
   /**
@@ -3439,12 +3439,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reset_snapshot_attribute: function(snapshot_id,attribute,opt){
-    var param = {};
+    var payload = {};
     param.snapshot_id = snapshot_id;
     param.attribute = attribute;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ResetSnapshotAttribute", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ResetSnapshotAttribute", payload );
     return resposne;
   }, 
   /**
@@ -3485,11 +3485,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   revoke_security_group_egress: function(group_id,opt){
-    var param = {};
+    var payload = {};
     param.group_id = group_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RevokeSecurityGroupEgress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RevokeSecurityGroupEgress", payload );
     return resposne;
   }, 
   /**
@@ -3527,10 +3527,10 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   revoke_security_group_ingress: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RevokeSecurityGroupIngress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RevokeSecurityGroupIngress", payload );
     return resposne;
   }, 
   /**
@@ -3652,13 +3652,13 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   run_instances: function(image_id,min_count,max_count,opt){
-    var param = {};
+    var payload = {};
     param.image_id = image_id;
     param.min_count = min_count;
     param.max_count = max_count;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RunInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RunInstances", payload );
     return resposne;
   }, 
   /**
@@ -3680,11 +3680,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   start_instances: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "StartInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"StartInstances", payload );
     return resposne;
   }, 
   /**
@@ -3709,11 +3709,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   stop_instances: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "StopInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"StopInstances", payload );
     return resposne;
   }, 
   /**
@@ -3729,11 +3729,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   terminate_instances: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "TerminateInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"TerminateInstances", payload );
     return resposne;
   }, 
   /**
@@ -3747,12 +3747,12 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   unassign_private_ip_addresses: function(network_interface_id,private_ip_address,opt){
-    var param = {};
+    var payload = {};
     param.network_interface_id = network_interface_id;
     param.private_ip_address = private_ip_address;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UnassignPrivateIpAddresses", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UnassignPrivateIpAddresses", payload );
     return resposne;
   }, 
   /**
@@ -3765,11 +3765,11 @@ AmazonEC2.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   unmonitor_instances: function(instance_id,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UnmonitorInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UnmonitorInstances", payload );
     return resposne;
   }
 }

@@ -39,12 +39,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   add_tags_to_resource: function(resource_name,tags,opt){
-    var param = {};
+    var payload = {};
     param.resource_name = resource_name;
     param.tags = tags;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AddTagsToResource", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AddTagsToResource", payload );
     return resposne;
   }, 
   /**
@@ -74,11 +74,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   authorize_db_security_group_ingress: function(db_security_group_name,opt){
-    var param = {};
+    var payload = {};
     param.db_security_group_name = db_security_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AuthorizeDbSecurityGroupIngress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AuthorizeDbSecurityGroupIngress", payload );
     return resposne;
   }, 
   /**
@@ -92,12 +92,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   copy_db_snapshot: function(source_db_snapshot_identifier,target_db_snapshot_identifier,opt){
-    var param = {};
+    var payload = {};
     param.source_db_snapshot_identifier = source_db_snapshot_identifier;
     param.target_db_snapshot_identifier = target_db_snapshot_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CopyDbSnapshot", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CopyDbSnapshot", payload );
     return resposne;
   }, 
   /**
@@ -130,7 +130,7 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_db_instance: function(db_instance_identifier,allocated_storage,db_instance_class,engine,master_username,master_user_password,opt){
-    var param = {};
+    var payload = {};
     param.db_instance_identifier = db_instance_identifier;
     param.allocated_storage = allocated_storage;
     param.db_instance_class = db_instance_class;
@@ -138,8 +138,8 @@ AmazonRDS.prototype = {
     param.master_username = master_username;
     param.master_user_password = master_user_password;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDbInstance", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDbInstance", payload );
     return resposne;
   }, 
   /**
@@ -165,12 +165,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_db_instance_read_replica: function(db_instance_identifier,source_db_instance_identifier,opt){
-    var param = {};
+    var payload = {};
     param.db_instance_identifier = db_instance_identifier;
     param.source_db_instance_identifier = source_db_instance_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDbInstanceReadReplica", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDbInstanceReadReplica", payload );
     return resposne;
   }, 
   /**
@@ -193,13 +193,13 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_db_parameter_group: function(db_parameter_group_name,db_parameter_group_family,description,opt){
-    var param = {};
+    var payload = {};
     param.db_parameter_group_name = db_parameter_group_name;
     param.db_parameter_group_family = db_parameter_group_family;
     param.description = description;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDbParameterGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDbParameterGroup", payload );
     return resposne;
   }, 
   /**
@@ -214,12 +214,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_db_security_group: function(db_security_group_name,db_security_group_description,opt){
-    var param = {};
+    var payload = {};
     param.db_security_group_name = db_security_group_name;
     param.db_security_group_description = db_security_group_description;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDbSecurityGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDbSecurityGroup", payload );
     return resposne;
   }, 
   /**
@@ -233,12 +233,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_db_snapshot: function(db_snapshot_identifier,db_instance_identifier,opt){
-    var param = {};
+    var payload = {};
     param.db_snapshot_identifier = db_snapshot_identifier;
     param.db_instance_identifier = db_instance_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDbSnapshot", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDbSnapshot", payload );
     return resposne;
   }, 
   /**
@@ -254,13 +254,13 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_db_subnet_group: function(db_subnet_group_name,db_subnet_group_description,subnet_ids,opt){
-    var param = {};
+    var payload = {};
     param.db_subnet_group_name = db_subnet_group_name;
     param.db_subnet_group_description = db_subnet_group_description;
     param.subnet_ids = subnet_ids;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDbSubnetGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDbSubnetGroup", payload );
     return resposne;
   }, 
   /**
@@ -276,14 +276,14 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_option_group: function(option_group_name,engine_name,major_engine_version,option_group_description,opt){
-    var param = {};
+    var payload = {};
     param.option_group_name = option_group_name;
     param.engine_name = engine_name;
     param.major_engine_version = major_engine_version;
     param.option_group_description = option_group_description;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateOptionGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateOptionGroup", payload );
     return resposne;
   }, 
   /**
@@ -302,11 +302,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_db_instance: function(db_instance_identifier,opt){
-    var param = {};
+    var payload = {};
     param.db_instance_identifier = db_instance_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDbInstance", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDbInstance", payload );
     return resposne;
   }, 
   /**
@@ -324,11 +324,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_db_parameter_group: function(db_parameter_group_name,opt){
-    var param = {};
+    var payload = {};
     param.db_parameter_group_name = db_parameter_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDbParameterGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDbParameterGroup", payload );
     return resposne;
   }, 
   /**
@@ -345,11 +345,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_db_security_group: function(db_security_group_name,opt){
-    var param = {};
+    var payload = {};
     param.db_security_group_name = db_security_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDbSecurityGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDbSecurityGroup", payload );
     return resposne;
   }, 
   /**
@@ -366,11 +366,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_db_snapshot: function(db_snapshot_identifier,opt){
-    var param = {};
+    var payload = {};
     param.db_snapshot_identifier = db_snapshot_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDbSnapshot", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDbSnapshot", payload );
     return resposne;
   }, 
   /**
@@ -387,11 +387,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_db_subnet_group: function(db_subnet_group_name,opt){
-    var param = {};
+    var payload = {};
     param.db_subnet_group_name = db_subnet_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDbSubnetGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDbSubnetGroup", payload );
     return resposne;
   }, 
   /**
@@ -404,11 +404,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_option_group: function(option_group_name,opt){
-    var param = {};
+    var payload = {};
     param.option_group_name = option_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteOptionGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteOptionGroup", payload );
     return resposne;
   }, 
   /**
@@ -427,10 +427,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_db_engine_versions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDbEngineVersions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDbEngineVersions", payload );
     return resposne;
   }, 
   /**
@@ -445,10 +445,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_db_instances: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDbInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDbInstances", payload );
     return resposne;
   }, 
   /**
@@ -464,10 +464,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_db_parameter_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDbParameterGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDbParameterGroups", payload );
     return resposne;
   }, 
   /**
@@ -483,11 +483,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_db_parameters: function(db_parameter_group_name,opt){
-    var param = {};
+    var payload = {};
     param.db_parameter_group_name = db_parameter_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDbParameters", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDbParameters", payload );
     return resposne;
   }, 
   /**
@@ -506,10 +506,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_db_security_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDbSecurityGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDbSecurityGroups", payload );
     return resposne;
   }, 
   /**
@@ -526,10 +526,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_db_snapshots: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDbSnapshots", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDbSnapshots", payload );
     return resposne;
   }, 
   /**
@@ -548,10 +548,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_db_subnet_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDbSubnetGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDbSubnetGroups", payload );
     return resposne;
   }, 
   /**
@@ -566,11 +566,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_engine_default_parameters: function(db_parameter_group_family,opt){
-    var param = {};
+    var payload = {};
     param.db_parameter_group_family = db_parameter_group_family;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeEngineDefaultParameters", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeEngineDefaultParameters", payload );
     return resposne;
   }, 
   /**
@@ -592,10 +592,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_events: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeEvents", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeEvents", payload );
     return resposne;
   }, 
   /**
@@ -611,11 +611,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_option_group_options: function(engine_name,opt){
-    var param = {};
+    var payload = {};
     param.engine_name = engine_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeOptionGroupOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeOptionGroupOptions", payload );
     return resposne;
   }, 
   /**
@@ -632,10 +632,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_option_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeOptionGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeOptionGroups", payload );
     return resposne;
   }, 
   /**
@@ -654,11 +654,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_orderable_db_instance_options: function(engine,opt){
-    var param = {};
+    var payload = {};
     param.engine = engine;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeOrderableDbInstanceOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeOrderableDbInstanceOptions", payload );
     return resposne;
   }, 
   /**
@@ -680,10 +680,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_reserved_db_instances: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeReservedDbInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeReservedDbInstances", payload );
     return resposne;
   }, 
   /**
@@ -703,10 +703,10 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_reserved_db_instances_offerings: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeReservedDbInstancesOfferings", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeReservedDbInstancesOfferings", payload );
     return resposne;
   }, 
   /**
@@ -723,11 +723,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_tags_for_resource: function(resource_name,opt){
-    var param = {};
+    var payload = {};
     param.resource_name = resource_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListTagsForResource", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListTagsForResource", payload );
     return resposne;
   }, 
   /**
@@ -755,11 +755,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_db_instance: function(db_instance_identifier,opt){
-    var param = {};
+    var payload = {};
     param.db_instance_identifier = db_instance_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyDbInstance", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyDbInstance", payload );
     return resposne;
   }, 
   /**
@@ -794,12 +794,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_db_parameter_group: function(db_parameter_group_name,parameters,opt){
-    var param = {};
+    var payload = {};
     param.db_parameter_group_name = db_parameter_group_name;
     param.parameters = parameters;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyDbParameterGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyDbParameterGroup", payload );
     return resposne;
   }, 
   /**
@@ -815,12 +815,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_db_subnet_group: function(db_subnet_group_name,subnet_ids,opt){
-    var param = {};
+    var payload = {};
     param.db_subnet_group_name = db_subnet_group_name;
     param.subnet_ids = subnet_ids;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyDbSubnetGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyDbSubnetGroup", payload );
     return resposne;
   }, 
   /**
@@ -842,11 +842,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   modify_option_group: function(option_group_name,opt){
-    var param = {};
+    var payload = {};
     param.option_group_name = option_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ModifyOptionGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ModifyOptionGroup", payload );
     return resposne;
   }, 
   /**
@@ -861,11 +861,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   purchase_reserved_db_instances_offering: function(reserved_db_instances_offering_id,opt){
-    var param = {};
+    var payload = {};
     param.reserved_db_instances_offering_id = reserved_db_instances_offering_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PurchaseReservedDbInstancesOffering", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PurchaseReservedDbInstancesOffering", payload );
     return resposne;
   }, 
   /**
@@ -884,11 +884,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reboot_db_instance: function(db_instance_identifier,opt){
-    var param = {};
+    var payload = {};
     param.db_instance_identifier = db_instance_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RebootDbInstance", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RebootDbInstance", payload );
     return resposne;
   }, 
   /**
@@ -906,12 +906,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   remove_tags_from_resource: function(resource_name,tag_keys,opt){
-    var param = {};
+    var payload = {};
     param.resource_name = resource_name;
     param.tag_keys = tag_keys;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RemoveTagsFromResource", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RemoveTagsFromResource", payload );
     return resposne;
   }, 
   /**
@@ -944,11 +944,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   reset_db_parameter_group: function(db_parameter_group_name,opt){
-    var param = {};
+    var payload = {};
     param.db_parameter_group_name = db_parameter_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ResetDbParameterGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ResetDbParameterGroup", payload );
     return resposne;
   }, 
   /**
@@ -974,12 +974,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   restore_db_instance_from_db_snapshot: function(db_instance_identifier,db_snapshot_identifier,opt){
-    var param = {};
+    var payload = {};
     param.db_instance_identifier = db_instance_identifier;
     param.db_snapshot_identifier = db_snapshot_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RestoreDbInstanceFromDbSnapshot", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RestoreDbInstanceFromDbSnapshot", payload );
     return resposne;
   }, 
   /**
@@ -1008,12 +1008,12 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   restore_db_instance_to_point_in_time: function(source_db_instance_identifier,target_db_instance_identifier,opt){
-    var param = {};
+    var payload = {};
     param.source_db_instance_identifier = source_db_instance_identifier;
     param.target_db_instance_identifier = target_db_instance_identifier;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RestoreDbInstanceToPointInTime", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RestoreDbInstanceToPointInTime", payload );
     return resposne;
   }, 
   /**
@@ -1032,11 +1032,11 @@ AmazonRDS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   revoke_db_security_group_ingress: function(db_security_group_name,opt){
-    var param = {};
+    var payload = {};
     param.db_security_group_name = db_security_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "RevokeDbSecurityGroupIngress", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"RevokeDbSecurityGroupIngress", payload );
     return resposne;
   }
 }

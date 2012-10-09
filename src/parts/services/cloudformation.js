@@ -52,11 +52,11 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_stack: function(stack_name,opt){
-    var param = {};
+    var payload = {};
     param.stack_name = stack_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateStack", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateStack", payload );
     return resposne;
   }, 
   /**
@@ -71,11 +71,11 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_stack: function(stack_name,opt){
-    var param = {};
+    var payload = {};
     param.stack_name = stack_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteStack", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteStack", payload );
     return resposne;
   }, 
   /**
@@ -98,10 +98,10 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_stack_events: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeStackEvents", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeStackEvents", payload );
     return resposne;
   }, 
   /**
@@ -118,12 +118,12 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_stack_resource: function(stack_name,logical_resource_id,opt){
-    var param = {};
+    var payload = {};
     param.stack_name = stack_name;
     param.logical_resource_id = logical_resource_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeStackResource", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeStackResource", payload );
     return resposne;
   }, 
   /**
@@ -162,10 +162,10 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_stack_resources: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeStackResources", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeStackResources", payload );
     return resposne;
   }, 
   /**
@@ -180,10 +180,10 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_stacks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeStacks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeStacks", payload );
     return resposne;
   }, 
   /**
@@ -204,10 +204,10 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   estimate_template_cost: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "EstimateTemplateCost", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"EstimateTemplateCost", payload );
     return resposne;
   }, 
   /**
@@ -228,11 +228,11 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_template: function(stack_name,opt){
-    var param = {};
+    var payload = {};
     param.stack_name = stack_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetTemplate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetTemplate", payload );
     return resposne;
   }, 
   /**
@@ -249,11 +249,11 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_stack_resources: function(stack_name,opt){
-    var param = {};
+    var payload = {};
     param.stack_name = stack_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListStackResources", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListStackResources", payload );
     return resposne;
   }, 
   /**
@@ -270,10 +270,10 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_stacks: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListStacks", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListStacks", payload );
     return resposne;
   }, 
   /**
@@ -308,11 +308,11 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_stack: function(stack_name,opt){
-    var param = {};
+    var payload = {};
     param.stack_name = stack_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateStack", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateStack", payload );
     return resposne;
   }, 
   /**
@@ -326,10 +326,10 @@ AmazonCloudFormation.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   validate_template: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ValidateTemplate", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ValidateTemplate", payload );
     return resposne;
   }
 }

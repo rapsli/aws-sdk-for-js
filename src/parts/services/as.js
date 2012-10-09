@@ -54,15 +54,15 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_auto_scaling_group: function(auto_scaling_group_name,launch_configuration_name,min_size,max_size,availability_zones,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
     param.launch_configuration_name = launch_configuration_name;
     param.min_size = min_size;
     param.max_size = max_size;
     param.availability_zones = availability_zones;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateAutoScalingGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateAutoScalingGroup", payload );
     return resposne;
   }, 
   /**
@@ -113,13 +113,13 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_launch_configuration: function(launch_configuration_name,image_id,instance_type,opt){
-    var param = {};
+    var payload = {};
     param.launch_configuration_name = launch_configuration_name;
     param.image_id = image_id;
     param.instance_type = instance_type;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateLaunchConfiguration", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateLaunchConfiguration", payload );
     return resposne;
   }, 
   /**
@@ -140,11 +140,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_or_update_tags: function(tags,opt){
-    var param = {};
+    var payload = {};
     param.tags = tags;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateOrUpdateTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateOrUpdateTags", payload );
     return resposne;
   }, 
   /**
@@ -165,11 +165,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_auto_scaling_group: function(auto_scaling_group_name,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteAutoScalingGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteAutoScalingGroup", payload );
     return resposne;
   }, 
   /**
@@ -185,11 +185,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_launch_configuration: function(launch_configuration_name,opt){
-    var param = {};
+    var payload = {};
     param.launch_configuration_name = launch_configuration_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteLaunchConfiguration", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteLaunchConfiguration", payload );
     return resposne;
   }, 
   /**
@@ -203,12 +203,12 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_notification_configuration: function(auto_scaling_group_name,topic_arn,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
     param.topic_arn = topic_arn;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteNotificationConfiguration", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteNotificationConfiguration", payload );
     return resposne;
   }, 
   /**
@@ -222,11 +222,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_policy: function(policy_name,opt){
-    var param = {};
+    var payload = {};
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeletePolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeletePolicy", payload );
     return resposne;
   }, 
   /**
@@ -241,11 +241,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_scheduled_action: function(scheduled_action_name,opt){
-    var param = {};
+    var payload = {};
     param.scheduled_action_name = scheduled_action_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteScheduledAction", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteScheduledAction", payload );
     return resposne;
   }, 
   /**
@@ -266,11 +266,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_tags: function(tags,opt){
-    var param = {};
+    var payload = {};
     param.tags = tags;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteTags", payload );
     return resposne;
   }, 
   /**
@@ -282,10 +282,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_adjustment_types: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAdjustmentTypes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAdjustmentTypes", payload );
     return resposne;
   }, 
   /**
@@ -306,10 +306,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_auto_scaling_groups: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAutoScalingGroups", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAutoScalingGroups", payload );
     return resposne;
   }, 
   /**
@@ -330,10 +330,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_auto_scaling_instances: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAutoScalingInstances", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAutoScalingInstances", payload );
     return resposne;
   }, 
   /**
@@ -345,10 +345,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_auto_scaling_notification_types: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeAutoScalingNotificationTypes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeAutoScalingNotificationTypes", payload );
     return resposne;
   }, 
   /**
@@ -365,10 +365,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_launch_configurations: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeLaunchConfigurations", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeLaunchConfigurations", payload );
     return resposne;
   }, 
   /**
@@ -380,10 +380,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_metric_collection_types: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeMetricCollectionTypes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeMetricCollectionTypes", payload );
     return resposne;
   }, 
   /**
@@ -399,10 +399,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_notification_configurations: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeNotificationConfigurations", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeNotificationConfigurations", payload );
     return resposne;
   }, 
   /**
@@ -420,10 +420,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_policies: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribePolicies", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribePolicies", payload );
     return resposne;
   }, 
   /**
@@ -447,10 +447,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_scaling_activities: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeScalingActivities", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeScalingActivities", payload );
     return resposne;
   }, 
   /**
@@ -463,10 +463,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_scaling_process_types: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeScalingProcessTypes", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeScalingProcessTypes", payload );
     return resposne;
   }, 
   /**
@@ -486,10 +486,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_scheduled_actions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeScheduledActions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeScheduledActions", payload );
     return resposne;
   }, 
   /**
@@ -509,10 +509,10 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_tags: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeTags", payload );
     return resposne;
   }, 
   /**
@@ -527,11 +527,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   disable_metrics_collection: function(auto_scaling_group_name,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DisableMetricsCollection", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DisableMetricsCollection", payload );
     return resposne;
   }, 
   /**
@@ -550,12 +550,12 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   enable_metrics_collection: function(auto_scaling_group_name,granularity,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
     param.granularity = granularity;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "EnableMetricsCollection", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"EnableMetricsCollection", payload );
     return resposne;
   }, 
   /**
@@ -570,11 +570,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   execute_policy: function(policy_name,opt){
-    var param = {};
+    var payload = {};
     param.policy_name = policy_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ExecutePolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ExecutePolicy", payload );
     return resposne;
   }, 
   /**
@@ -593,13 +593,13 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_notification_configuration: function(auto_scaling_group_name,topic_arn,notification_types,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
     param.topic_arn = topic_arn;
     param.notification_types = notification_types;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutNotificationConfiguration", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutNotificationConfiguration", payload );
     return resposne;
   }, 
   /**
@@ -619,14 +619,14 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_scaling_policy: function(auto_scaling_group_name,policy_name,scaling_adjustment,adjustment_type,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
     param.policy_name = policy_name;
     param.scaling_adjustment = scaling_adjustment;
     param.adjustment_type = adjustment_type;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutScalingPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutScalingPolicy", payload );
     return resposne;
   }, 
   /**
@@ -648,12 +648,12 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   put_scheduled_update_group_action: function(auto_scaling_group_name,scheduled_action_name,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
     param.scheduled_action_name = scheduled_action_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "PutScheduledUpdateGroupAction", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"PutScheduledUpdateGroupAction", payload );
     return resposne;
   }, 
   /**
@@ -668,11 +668,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   resume_processes: function(auto_scaling_group_name,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ResumeProcesses", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ResumeProcesses", payload );
     return resposne;
   }, 
   /**
@@ -708,12 +708,12 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_desired_capacity: function(auto_scaling_group_name,desired_capacity,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
     param.desired_capacity = desired_capacity;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetDesiredCapacity", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetDesiredCapacity", payload );
     return resposne;
   }, 
   /**
@@ -728,12 +728,12 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   set_instance_health: function(instance_id,health_status,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
     param.health_status = health_status;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetInstanceHealth", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetInstanceHealth", payload );
     return resposne;
   }, 
   /**
@@ -756,11 +756,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   suspend_processes: function(auto_scaling_group_name,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SuspendProcesses", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SuspendProcesses", payload );
     return resposne;
   }, 
   /**
@@ -779,12 +779,12 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   terminate_instance_in_auto_scaling_group: function(instance_id,should_decrement_desired_capacity,opt){
-    var param = {};
+    var payload = {};
     param.instance_id = instance_id;
     param.should_decrement_desired_capacity = should_decrement_desired_capacity;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "TerminateInstanceInAutoScalingGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"TerminateInstanceInAutoScalingGroup", payload );
     return resposne;
   }, 
   /**
@@ -825,11 +825,11 @@ AmazonAS.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_auto_scaling_group: function(auto_scaling_group_name,opt){
-    var param = {};
+    var payload = {};
     param.auto_scaling_group_name = auto_scaling_group_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateAutoScalingGroup", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateAutoScalingGroup", payload );
     return resposne;
   }
 }

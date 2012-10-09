@@ -35,13 +35,13 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/UsingBucket.html Working with Amazon S3 Buckets
    */
   create_bucket: function(bucket,region,acl,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.region = region;
     param.acl = acl;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateBucket", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateBucket", payload );
     return resposne;
   }, 
   /**
@@ -54,11 +54,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_bucket_region: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetBucketRegion", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetBucketRegion", payload );
     return resposne;
   }, 
   /**
@@ -72,11 +72,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_bucket_headers: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetBucketHeaders", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetBucketHeaders", payload );
     return resposne;
   }, 
   /**
@@ -89,10 +89,10 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_buckets: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListBuckets", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListBuckets", payload );
     return resposne;
   }, 
   /**
@@ -107,11 +107,11 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAccessPolicy.html REST Access Control Policy
    */
   get_bucket_acl: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetBucketAcl", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetBucketAcl", payload );
     return resposne;
   }, 
   /**
@@ -126,12 +126,12 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAccessPolicy.html REST Access Control Policy
    */
   set_bucket_acl: function(bucket,acl,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.acl = acl;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetBucketAcl", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetBucketAcl", payload );
     return resposne;
   }, 
   /**
@@ -160,12 +160,12 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAccessPolicy.html REST Access Control Policy
    */
   create_object: function(bucket,filename,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateObject", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateObject", payload );
     return resposne;
   }, 
   /**
@@ -190,12 +190,12 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_object: function(bucket,filename,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetObject", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetObject", payload );
     return resposne;
   }, 
   /**
@@ -214,12 +214,12 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_object_headers: function(bucket,filename,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetObjectHeaders", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetObjectHeaders", payload );
     return resposne;
   }, 
   /**
@@ -237,12 +237,12 @@ AmazonS3.prototype = {
    * @link http://aws.amazon.com/mfa/ Multi-Factor Authentication
    */
   delete_object: function(bucket,filename,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteObject", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteObject", payload );
     return resposne;
   }, 
   /**
@@ -266,11 +266,11 @@ AmazonS3.prototype = {
    * @link http://aws.amazon.com/mfa/ Multi-Factor Authentication
    */
   delete_objects: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteObjects", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteObjects", payload );
     return resposne;
   }, 
   /**
@@ -290,11 +290,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_objects: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListObjects", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListObjects", payload );
     return resposne;
   }, 
   /**
@@ -324,12 +324,12 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/API/RESTObjectCOPY.html Copying Amazon S3 Objects
    */
   copy_object: function(source,dest,opt){
-    var param = {};
+    var payload = {};
     param.source = source;
     param.dest = dest;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CopyObject", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CopyObject", payload );
     return resposne;
   }, 
   /**
@@ -348,12 +348,12 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/API/RESTObjectCOPY.html Copying Amazon S3 Objects
    */
   update_object: function(bucket,filename,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateObject", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateObject", payload );
     return resposne;
   }, 
   /**
@@ -370,12 +370,12 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAccessPolicy.html REST Access Control Policy
    */
   get_object_acl: function(bucket,filename,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetObjectAcl", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetObjectAcl", payload );
     return resposne;
   }, 
   /**
@@ -391,13 +391,13 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAccessPolicy.html REST Access Control Policy
    */
   set_object_acl: function(bucket,filename,acl,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
     param.acl = acl;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetObjectAcl", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetObjectAcl", payload );
     return resposne;
   }, 
   /**
@@ -412,11 +412,11 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/ServerLogs.html Server Access Logging
    */
   get_logs: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetLogs", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetLogs", payload );
     return resposne;
   }, 
   /**
@@ -433,13 +433,13 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/LoggingAPI.html Server Access Logging Configuration API
    */
   enable_logging: function(bucket,target_bucket,target_prefix,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.target_bucket = target_bucket;
     param.target_prefix = target_prefix;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "EnableLogging", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"EnableLogging", payload );
     return resposne;
   }, 
   /**
@@ -453,11 +453,11 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/LoggingAPI.html Server Access Logging Configuration API
    */
   disable_logging: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DisableLogging", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DisableLogging", payload );
     return resposne;
   }, 
   /**
@@ -472,13 +472,13 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   change_content_type: function(bucket,filename,contentType,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
     param.contentType = contentType;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ChangeContentType", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ChangeContentType", payload );
     return resposne;
   }, 
   /**
@@ -493,13 +493,13 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   change_storage_redundancy: function(bucket,filename,storage,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
     param.storage = storage;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ChangeStorageRedundancy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ChangeStorageRedundancy", payload );
     return resposne;
   }, 
   /**
@@ -516,11 +516,11 @@ AmazonS3.prototype = {
    * @link http://aws.amazon.com/mfa/ Multi-Factor Authentication
    */
   enable_versioning: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "EnableVersioning", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"EnableVersioning", payload );
     return resposne;
   }, 
   /**
@@ -537,11 +537,11 @@ AmazonS3.prototype = {
    * @link http://aws.amazon.com/mfa/ Multi-Factor Authentication
    */
   disable_versioning: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DisableVersioning", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DisableVersioning", payload );
     return resposne;
   }, 
   /**
@@ -555,11 +555,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_versioning_status: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetVersioningStatus", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetVersioningStatus", payload );
     return resposne;
   }, 
   /**
@@ -578,11 +578,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_bucket_object_versions: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListBucketObjectVersions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListBucketObjectVersions", payload );
     return resposne;
   }, 
   /**
@@ -603,12 +603,12 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/AccessPolicyLanguage.html Appendix: The Access Policy Language
    */
   set_bucket_policy: function(bucket,policy,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.policy = policy;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetBucketPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetBucketPolicy", payload );
     return resposne;
   }, 
   /**
@@ -627,11 +627,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_bucket_policy: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetBucketPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetBucketPolicy", payload );
     return resposne;
   }, 
   /**
@@ -645,11 +645,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response. If you do not have `DeletePolicy` permissions, Amazon S3 returns a `403 Access Denied` error. If you have the correct permissions, but are not the bucket owner, Amazon S3 returns a `405 Method Not Allowed` error. If the bucket doesn't have a policy, Amazon S3 returns a `204 No Content` error.
    */
   delete_bucket_policy: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteBucketPolicy", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteBucketPolicy", payload );
     return resposne;
   }, 
   /**
@@ -682,13 +682,13 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/NotificationHowTo.html Setting Up Notification of Bucket Events
    */
   create_bucket_notification: function(bucket,topic_arn,event,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.topic_arn = topic_arn;
     param.event = event;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateBucketNotification", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateBucketNotification", payload );
     return resposne;
   }, 
   /**
@@ -712,11 +712,11 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/NotificationHowTo.html Setting Up Notification of Bucket Events
    */
   get_bucket_notifications: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetBucketNotifications", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetBucketNotifications", payload );
     return resposne;
   }, 
   /**
@@ -730,11 +730,11 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/NotificationHowTo.html Setting Up Notification of Bucket Events
    */
   delete_bucket_notification: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteBucketNotification", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteBucketNotification", payload );
     return resposne;
   }, 
   /**
@@ -755,12 +755,12 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAccessPolicy.html REST Access Control Policy
    */
   initiate_multipart_upload: function(bucket,filename,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "InitiateMultipartUpload", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"InitiateMultipartUpload", payload );
     return resposne;
   }, 
   /**
@@ -787,13 +787,13 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   upload_part: function(bucket,filename,upload_id,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
     param.upload_id = upload_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UploadPart", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UploadPart", payload );
     return resposne;
   }, 
   /**
@@ -810,13 +810,13 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_parts: function(bucket,filename,upload_id,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
     param.upload_id = upload_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListParts", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListParts", payload );
     return resposne;
   }, 
   /**
@@ -831,13 +831,13 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   abort_multipart_upload: function(bucket,filename,upload_id,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
     param.upload_id = upload_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "AbortMultipartUpload", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"AbortMultipartUpload", payload );
     return resposne;
   }, 
   /**
@@ -854,14 +854,14 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   complete_multipart_upload: function(bucket,filename,upload_id,parts,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
     param.upload_id = upload_id;
     param.parts = parts;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CompleteMultipartUpload", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CompleteMultipartUpload", payload );
     return resposne;
   }, 
   /**
@@ -877,11 +877,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   list_multipart_uploads: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListMultipartUploads", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListMultipartUploads", payload );
     return resposne;
   }, 
   /**
@@ -919,14 +919,14 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   copy_part: function(source,dest,upload_id,part_number,opt){
-    var param = {};
+    var payload = {};
     param.source = source;
     param.dest = dest;
     param.upload_id = upload_id;
     param.part_number = part_number;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CopyPart", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CopyPart", payload );
     return resposne;
   }, 
   /**
@@ -966,12 +966,12 @@ AmazonS3.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonS3/latest/dev/RESTAccessPolicy.html REST Access Control Policy
    */
   create_mpu_object: function(bucket,filename,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
     param.filename = filename;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateMpuObject", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateMpuObject", payload );
     return resposne;
   }, 
   /**
@@ -995,11 +995,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_website_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateWebsiteConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateWebsiteConfig", payload );
     return resposne;
   }, 
   /**
@@ -1014,11 +1014,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_website_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetWebsiteConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetWebsiteConfig", payload );
     return resposne;
   }, 
   /**
@@ -1031,11 +1031,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_website_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteWebsiteConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteWebsiteConfig", payload );
     return resposne;
   }, 
   /**
@@ -1062,11 +1062,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_object_expiration_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateObjectExpirationConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateObjectExpirationConfig", payload );
     return resposne;
   }, 
   /**
@@ -1081,11 +1081,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_object_expiration_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetObjectExpirationConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetObjectExpirationConfig", payload );
     return resposne;
   }, 
   /**
@@ -1100,11 +1100,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_object_expiration_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteObjectExpirationConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteObjectExpirationConfig", payload );
     return resposne;
   }, 
   /**
@@ -1124,11 +1124,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_bucket_tags: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateBucketTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateBucketTags", payload );
     return resposne;
   }, 
   /**
@@ -1141,11 +1141,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_bucket_tags: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetBucketTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetBucketTags", payload );
     return resposne;
   }, 
   /**
@@ -1158,11 +1158,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_bucket_tags: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteBucketTags", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteBucketTags", payload );
     return resposne;
   }, 
   /**
@@ -1185,11 +1185,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_cors_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateCorsConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateCorsConfig", payload );
     return resposne;
   }, 
   /**
@@ -1202,11 +1202,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   get_cors_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetCorsConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetCorsConfig", payload );
     return resposne;
   }, 
   /**
@@ -1219,11 +1219,11 @@ AmazonS3.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_cors_config: function(bucket,opt){
-    var param = {};
+    var payload = {};
     param.bucket = bucket;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteCorsConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteCorsConfig", payload );
     return resposne;
   }
 }

@@ -10,6 +10,7 @@ REGION.SA_EAST_1 = "sa-east-1";
 var AWS = function(){}
 
 AWS.prototype = {
+  VERSION:'0.0.1',
   endpoint : "",
   access_key:'',
   secret_key:'',
@@ -36,16 +37,17 @@ AWS.prototype = {
     endpoint += "amazonaws.com";
     return endpoint;
   },
-  request:function(method,action,params,datatype){
+  request:function(operation,payload,datatype){
     if(datatype == undefined){
       datatype = 'xml';
     }
-    var url = this.generateSignedURL(action, params, this.access_key, this.secret_key, this.get_endpoint(), this.version);
-    params = this.optimize_params(params);
+    var url = this.auth_class.generateSignedURL(operation, payload, this.access_key, this.secret_key, this.get_endpoint(), this.version);
+    //    var url = this.generateSignedURL(operation, payload, this.access_key, this.secret_key, this.get_endpoint(), this.version);
+    payload = this.optimize_params(payload);
     var response = {};
     $.ajax({
       url:url,
-      data:params,
+      data:payload,
       type:method,
       async:false,
       dataType:datatype,
@@ -68,8 +70,8 @@ AWS.prototype = {
     if(date == null) date = new Date(); // assume now
     date.setTime(date.getTime());
     var yyyymmdd = [date.getUTCFullYear(),
-      this.pad(date.getUTCMonth()+1), // month index starts at 0
-      this.pad(date.getUTCDate())].join('-');
+    this.pad(date.getUTCMonth()+1), // month index starts at 0
+    this.pad(date.getUTCDate())].join('-');
     var hhmmss = [this.pad(date.getUTCHours()), this.pad(date.getUTCMinutes()), this.pad(date.getUTCSeconds())].join(':');
     return yyyymmdd+'T'+hhmmss+'Z';
   },

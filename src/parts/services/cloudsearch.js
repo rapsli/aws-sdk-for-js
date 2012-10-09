@@ -28,11 +28,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   create_domain: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDomain", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDomain", payload );
     return resposne;
   }, 
   /**
@@ -103,12 +103,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   define_index_field: function(domain_name,index_field,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.index_field = index_field;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DefineIndexField", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DefineIndexField", payload );
     return resposne;
   }, 
   /**
@@ -129,12 +129,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   define_rank_expression: function(domain_name,rank_expression,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.rank_expression = rank_expression;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DefineRankExpression", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DefineRankExpression", payload );
     return resposne;
   }, 
   /**
@@ -147,11 +147,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_domain: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDomain", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDomain", payload );
     return resposne;
   }, 
   /**
@@ -165,12 +165,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_index_field: function(domain_name,index_field_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.index_field_name = index_field_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteIndexField", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteIndexField", payload );
     return resposne;
   }, 
   /**
@@ -184,12 +184,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   delete_rank_expression: function(domain_name,rank_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.rank_name = rank_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteRankExpression", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteRankExpression", payload );
     return resposne;
   }, 
   /**
@@ -202,11 +202,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_default_search_field: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDefaultSearchField", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDefaultSearchField", payload );
     return resposne;
   }, 
   /**
@@ -220,10 +220,10 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_domains: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeDomains", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeDomains", payload );
     return resposne;
   }, 
   /**
@@ -238,11 +238,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_index_fields: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeIndexFields", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeIndexFields", payload );
     return resposne;
   }, 
   /**
@@ -257,11 +257,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_rank_expressions: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeRankExpressions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeRankExpressions", payload );
     return resposne;
   }, 
   /**
@@ -275,11 +275,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_service_access_policies: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeServiceAccessPolicies", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeServiceAccessPolicies", payload );
     return resposne;
   }, 
   /**
@@ -292,11 +292,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_stemming_options: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeStemmingOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeStemmingOptions", payload );
     return resposne;
   }, 
   /**
@@ -309,11 +309,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_stopword_options: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeStopwordOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeStopwordOptions", payload );
     return resposne;
   }, 
   /**
@@ -326,11 +326,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   describe_synonym_options: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DescribeSynonymOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DescribeSynonymOptions", payload );
     return resposne;
   }, 
   /**
@@ -346,11 +346,11 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   index_documents: function(domain_name,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "IndexDocuments", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"IndexDocuments", payload );
     return resposne;
   }, 
   /**
@@ -366,12 +366,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_default_search_field: function(domain_name,default_search_field,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.default_search_field = default_search_field;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateDefaultSearchField", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateDefaultSearchField", payload );
     return resposne;
   }, 
   /**
@@ -386,12 +386,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_service_access_policies: function(domain_name,access_policies,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.access_policies = access_policies;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateServiceAccessPolicies", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateServiceAccessPolicies", payload );
     return resposne;
   }, 
   /**
@@ -407,12 +407,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_stemming_options: function(domain_name,stems,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.stems = stems;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateStemmingOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateStemmingOptions", payload );
     return resposne;
   }, 
   /**
@@ -427,12 +427,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_stopword_options: function(domain_name,stopwords,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.stopwords = stopwords;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateStopwordOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateStopwordOptions", payload );
     return resposne;
   }, 
   /**
@@ -448,12 +448,12 @@ AmazonCloudSearch.prototype = {
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
    */
   update_synonym_options: function(domain_name,synonyms,opt){
-    var param = {};
+    var payload = {};
     param.domain_name = domain_name;
     param.synonyms = synonyms;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "UpdateSynonymOptions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"UpdateSynonymOptions", payload );
     return resposne;
   }
 }

@@ -46,12 +46,12 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/CreateStreamingDistribution.html POST Streaming Distribution
    */
   create_distribution: function(origin,caller_reference,opt){
-    var param = {};
+    var payload = {};
     param.origin = origin;
     param.caller_reference = caller_reference;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateDistribution", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateDistribution", payload );
     return resposne;
   }, 
   /**
@@ -72,10 +72,10 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/ListStreamingDistributions.html GET Streaming Distribution List
    */
   list_distributions: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListDistributions", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListDistributions", payload );
     return resposne;
   }, 
   /**
@@ -94,11 +94,11 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/GetStreamingDistribution.html GET Streaming Distribution
    */
   get_distribution_info: function(distribution_id,opt){
-    var param = {};
+    var payload = {};
     param.distribution_id = distribution_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetDistributionInfo", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetDistributionInfo", payload );
     return resposne;
   }, 
   /**
@@ -120,12 +120,12 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/DeleteStreamingDistribution.html DELETE Streaming Distribution
    */
   delete_distribution: function(distribution_id,etag,opt){
-    var param = {};
+    var payload = {};
     param.distribution_id = distribution_id;
     param.etag = etag;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteDistribution", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteDistribution", payload );
     return resposne;
   }, 
   /**
@@ -144,11 +144,11 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/GetStreamingDistConfig.html GET Streaming Distribution Config
    */
   get_distribution_config: function(distribution_id,opt){
-    var param = {};
+    var payload = {};
     param.distribution_id = distribution_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetDistributionConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetDistributionConfig", payload );
     return resposne;
   }, 
   /**
@@ -169,13 +169,13 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/PutStreamingDistConfig.html PUT Streaming Distribution Config
    */
   set_distribution_config: function(distribution_id,xml,etag,opt){
-    var param = {};
+    var payload = {};
     param.distribution_id = distribution_id;
     param.xml = xml;
     param.etag = etag;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetDistributionConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetDistributionConfig", payload );
     return resposne;
   }, 
   /**
@@ -191,11 +191,11 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/CreateOAI.html POST Origin Access Identity
    */
   create_oai: function(caller_reference,opt){
-    var param = {};
+    var payload = {};
     param.caller_reference = caller_reference;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateOai", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateOai", payload );
     return resposne;
   }, 
   /**
@@ -212,10 +212,10 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/ListOAIs.html GET Origin Access Identity List
    */
   list_oais: function(opt){
-    var param = {};
+    var payload = {};
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListOais", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListOais", payload );
     return resposne;
   }, 
   /**
@@ -229,11 +229,11 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/GetOAI.html GET Origin Access Identity
    */
   get_oai: function(identity_id,opt){
-    var param = {};
+    var payload = {};
     param.identity_id = identity_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetOai", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetOai", payload );
     return resposne;
   }, 
   /**
@@ -251,12 +251,12 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/DeleteOAI.html DELETE Origin Access Identity
    */
   delete_oai: function(identity_id,etag,opt){
-    var param = {};
+    var payload = {};
     param.identity_id = identity_id;
     param.etag = etag;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "DeleteOai", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"DeleteOai", payload );
     return resposne;
   }, 
   /**
@@ -270,11 +270,11 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/GetOAIConfig.html GET Origin Access Identity Config
    */
   get_oai_config: function(identity_id,opt){
-    var param = {};
+    var payload = {};
     param.identity_id = identity_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetOaiConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetOaiConfig", payload );
     return resposne;
   }, 
   /**
@@ -296,13 +296,13 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/PutOAIConfig.html PUT Origin Access Identity Config
    */
   set_oai_config: function(identity_id,xml,etag,opt){
-    var param = {};
+    var payload = {};
     param.identity_id = identity_id;
     param.xml = xml;
     param.etag = etag;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "SetOaiConfig", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"SetOaiConfig", payload );
     return resposne;
   }, 
   /**
@@ -318,13 +318,13 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/CreateInvalidation.html POST Invalidation
    */
   create_invalidation: function(distribution_id,caller_reference,paths,opt){
-    var param = {};
+    var payload = {};
     param.distribution_id = distribution_id;
     param.caller_reference = caller_reference;
     param.paths = paths;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "CreateInvalidation", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"CreateInvalidation", payload );
     return resposne;
   }, 
   /**
@@ -341,11 +341,11 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/ListInvalidation.html GET Invalidation List
    */
   list_invalidations: function(distribution_id,opt){
-    var param = {};
+    var payload = {};
     param.distribution_id = distribution_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "ListInvalidations", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"ListInvalidations", payload );
     return resposne;
   }, 
   /**
@@ -360,12 +360,12 @@ AmazonCloudFront.prototype = {
    * @link http://docs.amazonwebservices.com/AmazonCloudFront/latest/APIReference/GetInvalidation.html GET Invalidation
    */
   get_invalidation: function(distribution_id,invalidation_id,opt){
-    var param = {};
+    var payload = {};
     param.distribution_id = distribution_id;
     param.invalidation_id = invalidation_id;
 
-    param = this.marge_param(param,opt);
-    var response = this.request(, "GetInvalidation", param );
+    payload = this.marge_param(payload,opt);
+    var response = this.request({"GetInvalidation", payload );
     return resposne;
   }
 }

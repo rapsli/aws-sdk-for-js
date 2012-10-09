@@ -31,7 +31,7 @@ AmazonElastiCache.prototype = {
    * @param {String} cache_security_group_name (Required) The name of the Cache Security Group to authorize.
    * @param {String} ec2_security_group_name (Required) Name of the EC2 Security Group to include in the authorization.
    * @param {String} ec2_security_group_owner_id (Required) AWS Account Number of the owner of the security group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an acceptable value.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -54,7 +54,7 @@ AmazonElastiCache.prototype = {
    * @param {String} cache_node_type (Required) The compute and memory capacity of nodes in a Cache Cluster. Valid values: <code>cache.m1.large | cache.m1.xlarge | cache.m2.xlarge | cache.m2.2xlarge | cache.m2.4xlarge | cache.c1.xlarge</code>
    * @param {String} engine (Required) The name of the cache engine to be used for this Cache Cluster. <p class="note">Currently, <em>memcached</em> is the only cache engine supported by the service.</p>
    * @param string|array $cache_security_group_names (Required) A list of Cache Security Group Names to associate with this Cache Cluster. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>EngineVersion</code> - <code>string</code> - Optional - The version of the cache engine to be used for this cluster.</li>
    *   <li><code>CacheParameterGroupName</code> - <code>string</code> - Optional - The name of the cache parameter group to associate with this Cache cluster. If this argument is omitted, the default CacheParameterGroup for the specified engine will be used.</li>
    *   <li><code>PreferredAvailabilityZone</code> - <code>string</code> - Optional - The EC2 Availability Zone that the Cache Cluster will be created in. In normal use, all CacheNodes belonging to a CacheCluster are placed in the preferred availability zone. In rare circumstances, some of the CacheNodes might temporarily be in a different availability zone. Default: System chosen (random) availability zone.</li>
@@ -85,7 +85,7 @@ AmazonElastiCache.prototype = {
    * @param {String} cache_parameter_group_name (Required) The name of the Cache Parameter Group.
    * @param {String} cache_parameter_group_family (Required) The name of the Cache Parameter Group Family the Cache Parameter Group can be used with. <p class="note">Currently, <em>memcached1.4</em> is the only cache parameter group family supported by the service.</p>
    * @param {String} description (Required) The description for the Cache Parameter Group.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -106,7 +106,7 @@ AmazonElastiCache.prototype = {
    *
    * @param {String} cache_security_group_name (Required) The name for the Cache Security Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default". Example: <code>mysecuritygroup</code>
    * @param {String} description (Required) The description for the Cache Security Group.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -127,7 +127,7 @@ AmazonElastiCache.prototype = {
    * itself.
    *
    * @param {String} cache_cluster_id (Required) The Cache Cluster identifier for the Cache Cluster to be deleted. This parameter isn't case sensitive.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -145,7 +145,7 @@ AmazonElastiCache.prototype = {
    * associated with any cache clusters.
    *
    * @param {String} cache_parameter_group_name (Required) The name of the Cache Parameter Group to delete. <p class="note">The specified cache security group must not be associated with any Cache clusters.</p>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -166,7 +166,7 @@ AmazonElastiCache.prototype = {
    * </p>
    *
    * @param {String} cache_security_group_name (Required) The name of the Cache Security Group to delete. <p class="note">You cannot delete the default security group.</p>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -201,7 +201,7 @@ AmazonElastiCache.prototype = {
    *  
    * DescribeCacheClusters supports pagination.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CacheClusterId</code> - <code>string</code> - Optional - The user-supplied cluster identifier. If this parameter is specified, only information about that specific Cache Cluster is returned. This parameter isn't case sensitive.</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <em>MaxRecords</em> value, a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeCacheClusters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <em>MaxRecords</em>.</li>
@@ -221,7 +221,7 @@ AmazonElastiCache.prototype = {
    * Returns a list of CacheParameterGroup descriptions. If a CacheParameterGroupName is specified,
    * the list will contain only the descriptions of the specified CacheParameterGroup.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CacheParameterGroupName</code> - <code>string</code> - Optional - The name of a specific cache parameter group to return details for.</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <em>MaxRecords</em> value, a marker is included in the response so that the remaining results may be retrieved.</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeCacheParameterGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <em>MaxRecords</em>.</li>
@@ -240,7 +240,7 @@ AmazonElastiCache.prototype = {
    * Returns the detailed parameter list for a particular CacheParameterGroup.
    *
    * @param {String} cache_parameter_group_name (Required) The name of a specific cache parameter group to return details for.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Source</code> - <code>string</code> - Optional - The parameter types to return. Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <em>MaxRecords</em> value, a marker is included in the response so that the remaining results may be retrieved.</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeCacheClusters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <em>MaxRecords</em>.</li>
@@ -260,7 +260,7 @@ AmazonElastiCache.prototype = {
    * Returns a list of CacheSecurityGroup descriptions. If a CacheSecurityGroupName is specified,
    * the list will contain only the description of the specified CacheSecurityGroup.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CacheSecurityGroupName</code> - <code>string</code> - Optional - The name of the Cache Security Group to return details for.</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <em>MaxRecords</em> value, a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeCacheClusters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <em>MaxRecords</em>.</li>
@@ -279,7 +279,7 @@ AmazonElastiCache.prototype = {
    * Returns the default engine and system parameter information for the specified cache engine.
    *
    * @param {String} cache_parameter_group_family (Required) The name of the Cache Parameter Group Family. <p class="note">Currently, <em>memcached1.4</em> is the only cache parameter group family supported by the service.</p>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <em>MaxRecords</em> value, a marker is included in the response so that the remaining results may be retrieved.</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeCacheClusters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <em>MaxRecords</em>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -300,7 +300,7 @@ AmazonElastiCache.prototype = {
    * Parameter Group can be obtained by providing the name as a parameter. By default, the past hour
    * of events are returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>SourceIdentifier</code> - <code>string</code> - Optional - The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</li>
    *   <li><code>SourceType</code> - <code>string</code> - Optional - The event source to retrieve events for. If no value is specified, all events are returned. [Allowed values: <code>cache-cluster</code>, <code>cache-parameter-group</code>, <code>cache-security-group</code>]</li>
    *   <li><code>StartTime</code> - <code>string</code> - Optional - The beginning of the time interval to retrieve events for, specified in ISO 8601 format. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -323,7 +323,7 @@ AmazonElastiCache.prototype = {
    * Returns information about reserved Cache Nodes for this account, or about a specified reserved
    * Cache Node.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReservedCacheNodeId</code> - <code>string</code> - Optional - The reserved Cache Node identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</li>
    *   <li><code>ReservedCacheNodesOfferingId</code> - <code>string</code> - Optional - The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</li>
    *   <li><code>CacheNodeType</code> - <code>string</code> - Optional - The Cache Node type filter value. Specify this parameter to show only those reservations matching the specified Cache Nodes type.</li>
@@ -346,7 +346,7 @@ AmazonElastiCache.prototype = {
   /**
    * Lists available reserved Cache Node offerings.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReservedCacheNodesOfferingId</code> - <code>string</code> - Optional - The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier. Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></li>
    *   <li><code>CacheNodeType</code> - <code>string</code> - Optional - The Cache Node type filter value. Specify this parameter to show only the available offerings matching the specified Cache Node type.</li>
    *   <li><code>Duration</code> - <code>string</code> - Optional - Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration. Valid Values: <code>1 | 3 | 31536000 | 94608000</code></li>
@@ -370,7 +370,7 @@ AmazonElastiCache.prototype = {
    * parameters by specifying the parameters and the new values in the request.
    *
    * @param {String} cache_cluster_id (Required) The Cache Cluster identifier. This value is stored as a lowercase string.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NumCacheNodes</code> - <code>integer</code> - Optional - The number of Cache Nodes the Cache Cluster should have. If NumCacheNodes is greater than the existing number of Cache Nodes, Cache Nodes will be added. If NumCacheNodes is less than the existing number of Cache Nodes, Cache Nodes will be removed. When removing Cache Nodes, the Ids of the specific Cache Nodes to be removed must be supplied using the CacheNodeIdsToRemove parameter.</li>
    *   <li><code>CacheNodeIdsToRemove</code> - <code>string|array</code> - Optional - The list of Cache Node IDs to be removed. This parameter is only valid when NumCacheNodes is less than the existing number of Cache Nodes. The number of Cache Node Ids supplied in this parameter must match the difference between the existing number of Cache Nodes in the cluster and the new NumCacheNodes requested. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>CacheSecurityGroupNames</code> - <code>string|array</code> - Optional - A list of Cache Security Group Names to authorize on this Cache Cluster. This change is asynchronously applied as soon as possible. Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default". Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -399,13 +399,13 @@ AmazonElastiCache.prototype = {
    * in a single request.
    *
    * @param {String} cache_parameter_group_name (Required) The name of the cache parameter group to modify.
-   * @param array $parameter_name_values (Required) An array of parameter names and values for the parameter update. At least one parameter name and value must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. <ul>
+   * @param parameter_name_values (Required) An array of parameter names and values for the parameter update. At least one parameter name and value must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>ParameterName</code> - <code>string</code> - Optional - Specifies the name of the parameter.</li>
    *     <li><code>ParameterValue</code> - <code>string</code> - Optional - Specifies the value of the parameter.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -423,7 +423,7 @@ AmazonElastiCache.prototype = {
    * Purchases a reserved Cache Node offering.
    *
    * @param {String} reserved_cache_nodes_offering_id (Required) The ID of the Reserved Cache Node offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReservedCacheNodeId</code> - <code>string</code> - Optional - Customer-specified identifier to track this reservation. Example: myreservationID</li>
    *   <li><code>CacheNodeCount</code> - <code>integer</code> - Optional - The number of instances to reserve. Default: <code>1</code></li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -448,7 +448,7 @@ AmazonElastiCache.prototype = {
    *
    * @param {String} cache_cluster_id (Required) The Cache Cluster identifier. This parameter is stored as a lowercase string.
    * @param string|array $cache_node_ids_to_reboot (Required) A list of Cache Cluster Node Ids to reboot. To reboot an entire cache cluster, specify all cache cluster node Ids. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -468,13 +468,13 @@ AmazonElastiCache.prototype = {
    * CacheParameterGroup, specify the CacheParameterGroup name and ResetAllParameters parameters.
    *
    * @param {String} cache_parameter_group_name (Required) The name of the Cache Parameter Group.
-   * @param array $parameter_name_values (Required) An array of parameter names which should be reset. If not resetting the entire CacheParameterGroup, at least one parameter name must be supplied. <ul>
+   * @param parameter_name_values (Required) An array of parameter names which should be reset. If not resetting the entire CacheParameterGroup, at least one parameter name must be supplied. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>ParameterName</code> - <code>string</code> - Optional - Specifies the name of the parameter.</li>
    *     <li><code>ParameterValue</code> - <code>string</code> - Optional - Specifies the value of the parameter.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ResetAllParameters</code> - <code>boolean</code> - Optional - Specifies whether (<em>true</em>) or not (<em>false</em>) to reset all parameters in the Cache Parameter Group to default values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -495,7 +495,7 @@ AmazonElastiCache.prototype = {
    * @param {String} cache_security_group_name (Required) The name of the Cache Security Group to revoke ingress from.
    * @param {String} ec2_security_group_name (Required) The name of the EC2 Security Group to revoke access from.
    * @param {String} ec2_security_group_owner_id (Required) The AWS Account Number of the owner of the security group specified in the <em>EC2SecurityGroupName</em> parameter. The AWS Access Key ID is not an acceptable value.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

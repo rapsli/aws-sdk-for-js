@@ -23,7 +23,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} instance_profile_name (Required) Name of the instance profile to update. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} role_name (Required) Name of the role to add. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -42,7 +42,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} group_name (Required) Name of the group to update. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} user_name (Required) Name of the user to add. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -64,7 +64,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} old_password (Required)  [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
    * @param {String} new_password (Required)  [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -99,7 +99,7 @@ AmazonIAM.prototype = {
    * user and then create new keys.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - The user name that the new key will belong to. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -119,7 +119,7 @@ AmazonIAM.prototype = {
    * Management</em>.
    *
    * @param {String} account_alias (Required) Name of the account alias to create. [Constraints: The value must be between 3 and 63 characters, and must match the following regular expression pattern: <code>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -141,7 +141,7 @@ AmazonIAM.prototype = {
    * Management</em>.
    *
    * @param {String} group_name (Required) Name of the group to create. Do not include the path in this value. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Path</code> - <code>string</code> - Optional - The path to the group. For more information about paths, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <em>Using AWS Identity and Access Management</em>. This parameter is optional. If it is not included, it defaults to a slash (/). [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -164,7 +164,7 @@ AmazonIAM.prototype = {
    * Management</em>.
    *
    * @param {String} instance_profile_name (Required) Name of the instance profile to create. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Path</code> - <code>string</code> - Optional - The path to the instance profile. For more information about paths, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <em>Using AWS Identity and Access Management</em>. This parameter is optional. If it is not included, it defaults to a slash (/). [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -186,7 +186,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} user_name (Required) Name of the user to create a password for. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} password (Required) The new password for the user name. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -210,7 +210,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} role_name (Required) Name of the role to create. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} assume_role_policy_document (Required) The policy govering by who and under what conditions the role can be assumed. [Constraints: The value must be between 1 and 131072 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Path</code> - <code>string</code> - Optional - The path to the role. For more information about paths, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <em>Using AWS Identity and Access Management</em>. This parameter is optional. If it is not included, it defaults to a slash (/). [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -234,7 +234,7 @@ AmazonIAM.prototype = {
    * Management</em>.
    *
    * @param {String} user_name (Required) Name of the user to create. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Path</code> - <code>string</code> - Optional - The path for the user name. For more information about paths, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <em>Using AWS Identity and Access Management</em>. This parameter is optional. If it is not included, it defaults to a slash (/). [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -270,7 +270,7 @@ AmazonIAM.prototype = {
    * </p>
    *
    * @param {String} virtual_mfa_device_name (Required) The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device. [Constraints: The value must be more than 1 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Path</code> - <code>string</code> - Optional - The path for the virtual MFA device. For more information about paths, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <em>Using AWS Identity and Access Management</em>. This parameter is optional. If it is not included, it defaults to a slash (/). [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -290,7 +290,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} user_name (Required) Name of the user whose MFA device you want to deactivate. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} serial_number (Required) The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. [Constraints: The value must be between 9 and 256 characters, and must match the following regular expression pattern: <code>[\w+=/:,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -313,7 +313,7 @@ AmazonIAM.prototype = {
    * associated users.
    *
    * @param {String} access_key_id (Required) The Access Key ID for the Access Key ID and Secret Access Key you want to delete. [Constraints: The value must be between 16 and 32 characters, and must match the following regular expression pattern: <code>[\w]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - Name of the user whose key you want to delete. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -334,7 +334,7 @@ AmazonIAM.prototype = {
    * Management</em>.
    *
    * @param {String} account_alias (Required) Name of the account alias to delete. [Constraints: The value must be between 3 and 63 characters, and must match the following regular expression pattern: <code>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -350,7 +350,7 @@ AmazonIAM.prototype = {
   /**
    * Deletes the password policy for the AWS account.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -367,7 +367,7 @@ AmazonIAM.prototype = {
    * policies.
    *
    * @param {String} group_name (Required) Name of the group to delete. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -385,7 +385,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} group_name (Required) Name of the group the policy is associated with. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document to delete. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -403,7 +403,7 @@ AmazonIAM.prototype = {
    * Deletes the specified instance profile. The instance profile must have an associated role.
    *
    * @param {String} instance_profile_name (Required) Name of the instance profile to delete. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -428,7 +428,7 @@ AmazonIAM.prototype = {
    * </p>
    *
    * @param {String} user_name (Required) Name of the user whose password you want to delete. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -445,7 +445,7 @@ AmazonIAM.prototype = {
    * Deletes the specified role. The role must not have any attached policies.
    *
    * @param {String} role_name (Required) Name of the role to delete. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -463,7 +463,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} role_name (Required) Name of the role the policy is associated with. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document to delete. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -493,7 +493,7 @@ AmazonIAM.prototype = {
    * </p>
    *
    * @param {String} server_certificate_name (Required) The name of the server certificate you want to delete. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -515,7 +515,7 @@ AmazonIAM.prototype = {
    * associated users.
    *
    * @param {String} certificate_id (Required) ID of the signing certificate to delete. [Constraints: The value must be between 24 and 128 characters, and must match the following regular expression pattern: <code>[\w]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - Name of the user the signing certificate belongs to. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -534,7 +534,7 @@ AmazonIAM.prototype = {
    * certificates, or have any attached policies.
    *
    * @param {String} user_name (Required) Name of the user to delete. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -552,7 +552,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} user_name (Required) Name of the user the policy is associated with. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document to delete. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -576,7 +576,7 @@ AmazonIAM.prototype = {
    * </p>
    *
    * @param {String} serial_number (Required) The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN. [Constraints: The value must be between 9 and 256 characters, and must match the following regular expression pattern: <code>[\w+=/:,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -598,7 +598,7 @@ AmazonIAM.prototype = {
    * @param {String} serial_number (Required) The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. [Constraints: The value must be between 9 and 256 characters, and must match the following regular expression pattern: <code>[\w+=/:,.@-]*</code>]
    * @param {String} authentication_code1 (Required) An authentication code emitted by the device. [Constraints: The value must be between 6 and 6 characters, and must match the following regular expression pattern: <code>[\d]*</code>]
    * @param {String} authentication_code2 (Required) A subsequent authentication code emitted by the device. [Constraints: The value must be between 6 and 6 characters, and must match the following regular expression pattern: <code>[\d]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -620,7 +620,7 @@ AmazonIAM.prototype = {
    * "http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
    * an IAM Password Policy</a>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -640,7 +640,7 @@ AmazonIAM.prototype = {
    * target="_blank">Limitations on IAM Entities</a> in <em>Using AWS Identity and Access
    * Management</em>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -657,7 +657,7 @@ AmazonIAM.prototype = {
    * <code>MaxItems</code> and <code>Marker</code> parameters.
    *
    * @param {String} group_name (Required) Name of the group. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of user names you want in the response. If there are additional user names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -679,7 +679,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} group_name (Required) Name of the group the policy is associated with. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document to get. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -698,7 +698,7 @@ AmazonIAM.prototype = {
    * path, GUID, ARN, and role.
    *
    * @param {String} instance_profile_name (Required) Name of the instance profile to get information about. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -715,7 +715,7 @@ AmazonIAM.prototype = {
    * Retrieves the user name and password create date for the specified user.
    *
    * @param {String} user_name (Required) Name of the user whose login profile you want to retrieve. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -733,7 +733,7 @@ AmazonIAM.prototype = {
    * assume role policy.
    *
    * @param {String} role_name (Required) Name of the role to get information about. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -753,7 +753,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} role_name (Required) Name of the role who the policy is associated with. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document to get. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -771,7 +771,7 @@ AmazonIAM.prototype = {
    * Retrieves information about the specified server certificate.
    *
    * @param {String} server_certificate_name (Required) The name of the server certificate you want to retrieve information about. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -790,7 +790,7 @@ AmazonIAM.prototype = {
    * If you do not specify a user name, IAM determines the user name implicitly based on the AWS
    * Access Key ID signing the request.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - Name of the user to get information about. This parameter is optional. If it is not included, it defaults to the user making the request. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -810,7 +810,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} user_name (Required) Name of the user who the policy is associated with. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document to get. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -841,7 +841,7 @@ AmazonIAM.prototype = {
    * and user creation.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - Name of the user. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this parameter only when paginating results to indicate the maximum number of keys you want in the response. If there are additional keys beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
@@ -866,7 +866,7 @@ AmazonIAM.prototype = {
    * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of account aliases you want in the response. If there are additional account aliases beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -888,7 +888,7 @@ AmazonIAM.prototype = {
    * parameters.
    *
    * @param {String} group_name (Required) The name of the group to list policies for. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of policy names you want in the response. If there are additional policy names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -909,7 +909,7 @@ AmazonIAM.prototype = {
    * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PathPrefix</code> - <code>string</code> - Optional - The path prefix for filtering the results. For example: <code>/division_abc/subdivision_xyz/</code>, which would get all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>. This parameter is optional. If it is not included, it defaults to a slash (/), listing all groups. [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>\u002F[\u0021-\u007F]*</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of groups you want in the response. If there are additional groups beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
@@ -931,7 +931,7 @@ AmazonIAM.prototype = {
    * parameters.
    *
    * @param {String} user_name (Required) The name of the user to list groups for. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of groups you want in the response. If there are additional groups beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -953,7 +953,7 @@ AmazonIAM.prototype = {
    * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PathPrefix</code> - <code>string</code> - Optional - The path prefix for filtering the results. For example: <code>/application_abc/component_xyz/</code>, which would get all instance profiles whose path starts with <code>/application_abc/component_xyz/</code>. This parameter is optional. If it is not included, it defaults to a slash (/), listing all instance profiles. [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>\u002F[\u0021-\u007F]*</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are additional user names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
@@ -976,7 +976,7 @@ AmazonIAM.prototype = {
    * parameters.
    *
    * @param {String} role_name (Required) The name of the role to list instance profiles for. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are additional user names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -999,7 +999,7 @@ AmazonIAM.prototype = {
    * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - Name of the user whose MFA devices you want to list. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of MFA devices you want in the response. If there are additional MFA devices beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
@@ -1022,7 +1022,7 @@ AmazonIAM.prototype = {
    * parameters.
    *
    * @param {String} role_name (Required) The name of the role to list policies for. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are additional user names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -1044,7 +1044,7 @@ AmazonIAM.prototype = {
    * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PathPrefix</code> - <code>string</code> - Optional - The path prefix for filtering the results. For example: <code>/application_abc/component_xyz/</code>, which would get all roles whose path starts with <code>/application_abc/component_xyz/</code>. This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>\u002F[\u0021-\u007F]*</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are additional user names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
@@ -1066,7 +1066,7 @@ AmazonIAM.prototype = {
    * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PathPrefix</code> - <code>string</code> - Optional - The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all server certificates for which the path starts with <code>/company/servercerts</code>. This parameter is optional. If it is not included, it defaults to a slash (/), listing all server certificates. [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>\u002F[\u0021-\u007F]*</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of server certificates you want in the response. If there are additional server certificates beyond the maximum you specify, the <code>IsTruncated</code> response element will be set to <code>true</code>.</li>
@@ -1093,7 +1093,7 @@ AmazonIAM.prototype = {
    * keys under the AWS account, this API can be used to manage root credentials even if the AWS
    * account has no associated users.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - The name of the user. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of certificate IDs you want in the response. If there are additional certificate IDs beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
@@ -1116,7 +1116,7 @@ AmazonIAM.prototype = {
    * parameters.
    *
    * @param {String} user_name (Required) The name of the user to list policies for. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this only when paginating results to indicate the maximum number of policy names you want in the response. If there are additional policy names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -1138,7 +1138,7 @@ AmazonIAM.prototype = {
    * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PathPrefix</code> - <code>string</code> - Optional - The path prefix for filtering the results. For example: <code>/division_abc/subdivision_xyz/</code>, which would get all user names whose path starts with <code>/division_abc/subdivision_xyz/</code>. This parameter is optional. If it is not included, it defaults to a slash (/), listing all user names. [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>\u002F[\u0021-\u007F]*</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are additional user names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
@@ -1161,7 +1161,7 @@ AmazonIAM.prototype = {
    * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AssignmentStatus</code> - <code>string</code> - Optional - The status (unassigned or assigned) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both assigned and unassigned virtual MFA devices. [Allowed values: <code>Assigned</code>, <code>Unassigned</code>, <code>Any</code>]</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received. [Constraints: The value must be between 1 and 320 characters, and must match the following regular expression pattern: <code>[\u0020-\u00FF]*</code>]</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are additional user names beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</li>
@@ -1202,7 +1202,7 @@ AmazonIAM.prototype = {
    * @param {String} group_name (Required) Name of the group to associate the policy with. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_document (Required) The policy document. [Constraints: The value must be between 1 and 131072 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1243,7 +1243,7 @@ AmazonIAM.prototype = {
    * @param {String} role_name (Required) Name of the role to associate the policy with. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_document (Required) The policy document. [Constraints: The value must be between 1 and 131072 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1284,7 +1284,7 @@ AmazonIAM.prototype = {
    * @param {String} user_name (Required) Name of the user to associate the policy with. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_name (Required) Name of the policy document. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_document (Required) The policy document. [Constraints: The value must be between 1 and 131072 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1304,7 +1304,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} instance_profile_name (Required) Name of the instance profile to update. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} role_name (Required) Name of the role to remove. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1323,7 +1323,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} group_name (Required) Name of the group to update. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} user_name (Required) Name of the user to remove. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1344,7 +1344,7 @@ AmazonIAM.prototype = {
    * @param {String} serial_number (Required) Serial number that uniquely identifies the MFA device. [Constraints: The value must be between 9 and 256 characters, and must match the following regular expression pattern: <code>[\w+=/:,.@-]*</code>]
    * @param {String} authentication_code1 (Required) An authentication code emitted by the device. [Constraints: The value must be between 6 and 6 characters, and must match the following regular expression pattern: <code>[\d]*</code>]
    * @param {String} authentication_code2 (Required) A subsequent authentication code emitted by the device. [Constraints: The value must be between 6 and 6 characters, and must match the following regular expression pattern: <code>[\d]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1376,7 +1376,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} access_key_id (Required) The Access Key ID of the Secret Access Key you want to update. [Constraints: The value must be between 16 and 32 characters, and must match the following regular expression pattern: <code>[\w]*</code>]
    * @param {String} status (Required) The status you want to assign to the Secret Access Key. <code>Active</code> means the key can be used for API calls to AWS, while <code>Inactive</code> means the key cannot be used. [Allowed values: <code>Active</code>, <code>Inactive</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - Name of the user whose key you want to update. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -1397,7 +1397,7 @@ AmazonIAM.prototype = {
    * "http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
    * an IAM Password Policy</a>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>MinimumPasswordLength</code> - <code>integer</code> - Optional - </li>
    *   <li><code>RequireSymbols</code> - <code>boolean</code> - Optional - </li>
    *   <li><code>RequireNumbers</code> - <code>boolean</code> - Optional - </li>
@@ -1420,7 +1420,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} role_name (Required) Name of the role to update. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} policy_document (Required) The policy govering by who and under what conditions the role can be assumed. [Constraints: The value must be between 1 and 131072 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1453,7 +1453,7 @@ AmazonIAM.prototype = {
    * </p>
    *
    * @param {String} group_name (Required) Name of the group to update. If you're changing the name of the group, this is the original name. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NewPath</code> - <code>string</code> - Optional - New path for the group. Only include this if changing the group's path. [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>NewGroupName</code> - <code>string</code> - Optional - New name for the group. Only include this if changing the group's name. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -1472,7 +1472,7 @@ AmazonIAM.prototype = {
    * Changes the password for the specified user.
    *
    * @param {String} user_name (Required) Name of the user whose password you want to update. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Password</code> - <code>string</code> - Optional - The new password for the user name. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -1505,7 +1505,7 @@ AmazonIAM.prototype = {
    * </p>
    *
    * @param {String} server_certificate_name (Required) The name of the server certificate that you want to update. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NewPath</code> - <code>string</code> - Optional - The new path for the server certificate. Include this only if you are updating the server certificate's path. [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>NewServerCertificateName</code> - <code>string</code> - Optional - The new name for the server certificate. Include this only if you are updating the server certificate's name. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -1537,7 +1537,7 @@ AmazonIAM.prototype = {
    *
    * @param {String} certificate_id (Required) The ID of the signing certificate you want to update. [Constraints: The value must be between 24 and 128 characters, and must match the following regular expression pattern: <code>[\w]*</code>]
    * @param {String} status (Required) The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used. [Allowed values: <code>Active</code>, <code>Inactive</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - Name of the user the signing certificate belongs to. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -1571,7 +1571,7 @@ AmazonIAM.prototype = {
    * </p>
    *
    * @param {String} user_name (Required) Name of the user to update. If you're changing the name of the user, this is the original user name. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NewPath</code> - <code>string</code> - Optional - New path for the user. Include this parameter only if you're changing the user's path. [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>NewUserName</code> - <code>string</code> - Optional - New name for the user. Include this parameter only if you're changing the user's name. [Constraints: The value must be between 1 and 64 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -1610,7 +1610,7 @@ AmazonIAM.prototype = {
    * @param {String} server_certificate_name (Required) The name for the server certificate. Do not include the path in this value. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]
    * @param {String} certificate_body (Required) The contents of the public key certificate in PEM-encoded format. [Constraints: The value must be between 1 and 16384 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
    * @param {String} private_key (Required) The contents of the private key in PEM-encoded format. [Constraints: The value must be between 1 and 16384 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Path</code> - <code>string</code> - Optional - The path for the server certificate. For more information about paths, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <em>Using AWS Identity and Access Management</em>. This parameter is optional. If it is not included, it defaults to a slash (/). [Constraints: The value must be between 1 and 512 characters, and must match the following regular expression pattern: <code>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</code>]</li>
    *   <li><code>CertificateChain</code> - <code>string</code> - Optional - The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key certificates of the chain. [Constraints: The value must be between 1 and 2097152 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -1650,7 +1650,7 @@ AmazonIAM.prototype = {
    * </p>
    *
    * @param {String} certificate_body (Required) The contents of the signing certificate. [Constraints: The value must be between 1 and 16384 characters, and must match the following regular expression pattern: <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>UserName</code> - <code>string</code> - Optional - Name of the user the signing certificate is for. [Constraints: The value must be between 1 and 128 characters, and must match the following regular expression pattern: <code>[\w+=,.@-]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>

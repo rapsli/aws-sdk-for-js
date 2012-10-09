@@ -27,13 +27,13 @@ AmazonRDS.prototype = {
    * Instance Tags.</a>
    *
    * @param {String} resource_name (Required) The DB Instance the tags will be added to.
-   * @param array $tags (Required) The tags to be assigned to the DB Instance. <ul>
+   * @param tags (Required) The tags to be assigned to the DB Instance. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Key</code> - <code>string</code> - Optional - A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and cannot be prefixed with "aws:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</li>
    *     <li><code>Value</code> - <code>string</code> - Optional - A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and cannot be prefixed with "aws:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -64,7 +64,7 @@ AmazonRDS.prototype = {
    * "http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>.
    *
    * @param {String} db_security_group_name (Required) The name of the DB Security Group to add authorization to.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CIDRIP</code> - <code>string</code> - Optional - The IP range to authorize.</li>
    *   <li><code>EC2SecurityGroupName</code> - <code>string</code> - Optional - Name of the EC2 Security Group to authorize. For VPC DB Security Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</li>
    *   <li><code>EC2SecurityGroupId</code> - <code>string</code> - Optional - Id of the EC2 Security Group to authorize. For VPC DB Security Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</li>
@@ -86,7 +86,7 @@ AmazonRDS.prototype = {
    *
    * @param {String} source_db_snapshot_identifier (Required) The identifier for the source DB snapshot. Constraints:<ul><li>Must be the identifier for a valid system snapshot in the "available" state.</li></ul>Example: <code>rds:mydb-2012-04-02-00-01</code>
    * @param {String} target_db_snapshot_identifier (Required) The identifier for the copied snapshot. Constraints:<ul><li>Cannot be null, empty, or blank</li><li>Must contain from 1 to 255 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>Example: <code>my-db-snapshot</code>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -109,7 +109,7 @@ AmazonRDS.prototype = {
    * @param {String} engine (Required) The name of the database engine to be used for this instance. Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code>
    * @param {String} master_username (Required) The name of master user for the client DB Instance. <strong>MySQL</strong> Constraints:<ul><li>Must be 1 to 16 alphanumeric characters.</li><li>First character must be a letter.</li><li>Cannot be a reserved word for the chosen database engine.</li></ul>Type: String <strong>Oracle</strong> Constraints:<ul><li>Must be 1 to 30 alphanumeric characters.</li><li>First character must be a letter.</li><li>Cannot be a reserved word for the chosen database engine.</li></ul> <strong>SQL Server</strong> Constraints:<ul><li>Must be 1 to 128 alphanumeric characters.</li><li>First character must be a letter.</li><li>Cannot be a reserved word for the chosen database engine.</li></ul>
    * @param {String} master_user_password (Required) The password for the master database user. <strong>MySQL</strong> Constraints: Must contain from 8 to 41 alphanumeric characters. Type: String <strong>Oracle</strong> Constraints: Must contain from 8 to 30 alphanumeric characters. <strong>SQL Server</strong> Constraints: Must contain from 8 to 128 alphanumeric characters.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBName</code> - <code>string</code> - Optional - The meaning of this parameter differs according to the database engine you use. <strong>MySQL</strong> The name of the database to create when the DB Instance is created. If this parameter is not specified, no database is created in the DB Instance. Constraints:<ul><li>Must contain 1 to 64 alphanumeric characters</li><li>Cannot be a word reserved by the specified database engine</li></ul>Type: String <strong>Oracle</strong> The Oracle System ID (SID) of the created DB Instance. Default: <code>ORCL</code> Constraints:<ul><li>Cannot be longer than 8 characters</li></ul> <strong>SQL Server</strong> Not applicable. Must be null.</li>
    *   <li><code>DBSecurityGroups</code> - <code>string|array</code> - Optional - A list of DB Security Groups to associate with this DB Instance. Default: The default DB Security Group for the database engine. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>AvailabilityZone</code> - <code>string</code> - Optional - The EC2 Availability Zone that the database instance will be created in. Default: A random, system-chosen Availability Zone in the endpoint's region. Example: <code>us-east-1d</code> Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same region as the current endpoint.</li>
@@ -154,7 +154,7 @@ AmazonRDS.prototype = {
    *
    * @param {String} db_instance_identifier (Required) The DB Instance identifier of the Read Replica. This is the unique key that identifies a DB Instance. This parameter is stored as a lowercase string.
    * @param {String} source_db_instance_identifier (Required) The identifier of the DB Instance that will act as the source for the Read Replica. Each DB Instance can have up to five Read Replicas. Constraints: Must be the identifier of an existing DB Instance that is not already a Read Replica DB Instance.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBInstanceClass</code> - <code>string</code> - Optional - The compute and memory capacity of the Read Replica. Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> Default: Inherits from the source DB Instance.</li>
    *   <li><code>AvailabilityZone</code> - <code>string</code> - Optional - The Amazon EC2 Availability Zone that the Read Replica will be created in. Default: A random, system-chosen Availability Zone in the endpoint's region. Example: <code>us-east-1d</code></li>
    *   <li><code>Port</code> - <code>integer</code> - Optional - The port number that the DB Instance uses for connections. Default: Inherits from the source DB Instance Valid Values: <code>1150-65535</code></li>
@@ -187,7 +187,7 @@ AmazonRDS.prototype = {
    * @param {String} db_parameter_group_name (Required) The name of the DB Parameter Group. Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul> <p class="note">This value is stored as a lower-case string.</p>
    * @param {String} db_parameter_group_family (Required) The DB Parameter Group Family name. A DB Parameter Group can be associated with one and only one DB Parameter Group Family, and can be applied only to a DB Instance running a database engine and engine version compatible with that DB Parameter Group Family.
    * @param {String} description (Required) The description for the DB Parameter Group.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -207,7 +207,7 @@ AmazonRDS.prototype = {
    *
    * @param {String} db_security_group_name (Required) The name for the DB Security Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be "Default". Example: <code>mysecuritygroup</code>
    * @param {String} db_security_group_description (Required) The description for the DB Security Group.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>EC2VpcId</code> - <code>string</code> - Optional - The Id of VPC. Indicates which VPC this DB Security Group should belong to. Must be specified to create a DB Security Group for a VPC; may not be specified otherwise.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -227,7 +227,7 @@ AmazonRDS.prototype = {
    *
    * @param {String} db_snapshot_identifier (Required) The identifier for the DB Snapshot. Constraints:<ul><li>Cannot be null, empty, or blank</li><li>Must contain from 1 to 255 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>Example: <code>my-snapshot-id</code>
    * @param {String} db_instance_identifier (Required) The DB Instance identifier. This is the unique key that identifies a DB Instance. This parameter isn't case sensitive. Constraints:<ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -248,7 +248,7 @@ AmazonRDS.prototype = {
    * @param {String} db_subnet_group_name (Required) The name for the DB Subnet Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be "Default". Example: <code>mySubnetgroup</code>
    * @param {String} db_subnet_group_description (Required) The description for the DB Subnet Group.
    * @param string|array $subnet_ids (Required) The EC2 Subnet IDs for the DB Subnet Group. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -270,7 +270,7 @@ AmazonRDS.prototype = {
    * @param {String} engine_name (Required) Specifies the name of the engine that this option group should be associated with.
    * @param {String} major_engine_version (Required) Specifies the major version of the engine that this option group should be associated with.
    * @param {String} option_group_description (Required) The description of the option group.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -294,7 +294,7 @@ AmazonRDS.prototype = {
    * reverted once submitted.
    *
    * @param {String} db_instance_identifier (Required) The DB Instance identifier for the DB Instance to be deleted. This parameter isn't case sensitive. Constraints:<ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>SkipFinalSnapshot</code> - <code>boolean</code> - Optional - Determines whether a final DB Snapshot is created before the DB Instance is deleted. If <code>true</code> is specified, no DBSnapshot is created. If false is specified, a DB Snapshot is created before the DB Instance is deleted. <p class="note">The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <code>false</code>.</p> Default: <code>false</code></li>
    *   <li><code>FinalDBSnapshotIdentifier</code> - <code>string</code> - Optional - The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>. <p class="note">Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p> Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul></li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -318,7 +318,7 @@ AmazonRDS.prototype = {
    * </p>
    *
    * @param {String} db_parameter_group_name (Required) The name of the DB Parameter Group. Constraints:<ul><li>Must be the name of an existing DB Parameter Group</li><li>You cannot delete a default DB Parameter Group</li><li>Cannot be associated with any DB Instances</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -339,7 +339,7 @@ AmazonRDS.prototype = {
    * </p>
    *
    * @param {String} db_security_group_name (Required) The name of the DB Security Group to delete. <p class="note">You cannot delete the default DB Security Group.</p> Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -360,7 +360,7 @@ AmazonRDS.prototype = {
    * </p>
    *
    * @param {String} db_snapshot_identifier (Required) The DBSnapshot identifier. Constraints: Must be the name of an existing DB Snapshot in the <code>available</code> state.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -381,7 +381,7 @@ AmazonRDS.prototype = {
    * </p>
    *
    * @param {String} db_subnet_group_name (Required) The name of the database subnet group to delete. <p class="note">You cannot delete the default subnet group.</p> Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -398,7 +398,7 @@ AmazonRDS.prototype = {
    * Deletes an existing Option Group.
    *
    * @param {String} option_group_name (Required) The name of the option group to be deleted. <p class="note">You cannot delete default Option Groups.</p>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -414,7 +414,7 @@ AmazonRDS.prototype = {
   /**
    * Returns a list of the available DB engines.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Engine</code> - <code>string</code> - Optional - The database engine to return.</li>
    *   <li><code>EngineVersion</code> - <code>string</code> - Optional - The database engine version to return. Example: <code>5.1.49</code></li>
    *   <li><code>DBParameterGroupFamily</code> - <code>string</code> - Optional - The name of a specific DB Parameter Group family to return details for. Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul></li>
@@ -436,7 +436,7 @@ AmazonRDS.prototype = {
   /**
    * Returns information about provisioned RDS instances. This API supports pagination.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBInstanceIdentifier</code> - <code>string</code> - Optional - The user-supplied instance identifier. If this parameter is specified, information from only the specific DB Instance is returned. This parameter isn't case sensitive. Constraints:<ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul></li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeDBInstances request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</li>
@@ -455,7 +455,7 @@ AmazonRDS.prototype = {
    * Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the
    * list will contain only the description of the specified DBParameterGroup.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBParameterGroupName</code> - <code>string</code> - Optional - The name of a specific DB Parameter Group to return details for. Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul></li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeDBParameterGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</li>
@@ -474,7 +474,7 @@ AmazonRDS.prototype = {
    * Returns the detailed parameter list for a particular DBParameterGroup.
    *
    * @param {String} db_parameter_group_name (Required) The name of a specific DB Parameter Group to return details for. Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Source</code> - <code>string</code> - Optional - The parameter types to return. Default: All parameter types returned Valid Values: <code>user | system | engine-default</code></li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeDBParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</li>
@@ -497,7 +497,7 @@ AmazonRDS.prototype = {
    * For an overview of CIDR ranges, go to the <a href=
    * "http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBSecurityGroupName</code> - <code>string</code> - Optional - The name of the DB Security Group to return details for.</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeDBSecurityGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</li>
@@ -515,7 +515,7 @@ AmazonRDS.prototype = {
   /**
    * Returns information about DBSnapshots. This API supports pagination.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBInstanceIdentifier</code> - <code>string</code> - Optional - A DB Instance Identifier to retrieve the list of DB Snapshots for. Cannot be used in conjunction with DBSnapshotIdentifier. This parameter isn't case sensitive. Constraints:<ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul></li>
    *   <li><code>DBSnapshotIdentifier</code> - <code>string</code> - Optional - A specific DB Snapshot Identifier to describe. Cannot be used in conjunction with DBInstanceIdentifier. This value is stored as a lowercase string. Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li><li>If this is the identifier of an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</li></ul></li>
    *   <li><code>SnapshotType</code> - <code>string</code> - Optional - An optional snapshot type for which snapshots will be returned. If not specified, the returned results will include snapshots of all types.</li>
@@ -539,7 +539,7 @@ AmazonRDS.prototype = {
    * For an overview of CIDR ranges, go to the <a href=
    * "http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBSubnetGroupName</code> - <code>string</code> - Optional - The name of the DB Subnet Group to return details for.</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeDBSubnetGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</li>
@@ -558,7 +558,7 @@ AmazonRDS.prototype = {
    * Returns the default engine and system parameter information for the specified database engine.
    *
    * @param {String} db_parameter_group_family (Required) The name of the DB Parameter Group Family.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional marker provided in the previous DescribeEngineDefaultParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -579,7 +579,7 @@ AmazonRDS.prototype = {
    * database snapshot or DB Parameter Group can be obtained by providing the name as a parameter.
    * By default, the past hour of events are returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>SourceIdentifier</code> - <code>string</code> - Optional - The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response. Constraints:<ul><li>If SourceIdentifier is supplied, SourceType must also be provided.</li><li>If the source type is DBInstance, then a DBInstanceIdentifier must be supplied.</li><li>If the source type is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li><li>If the source type is DBParameterGroup, a DBParameterGroupName must be supplied.</li><li>If the source type is DBSnapshot, a DBSnapshotIdentifier must be supplied.</li><li>Cannot end with a hyphen or contain two consecutive hyphens.</li></ul></li>
    *   <li><code>SourceType</code> - <code>string</code> - Optional - The event source to retrieve events for. If no value is specified, all events are returned. [Allowed values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>, <code>db-snapshot</code>]</li>
    *   <li><code>StartTime</code> - <code>string</code> - Optional - The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> Example: 2009-07-08T18:00Z May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -602,7 +602,7 @@ AmazonRDS.prototype = {
    * Describes all available options.
    *
    * @param {String} engine_name (Required) A required parameter. Options available for the given Engine name will be described.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>MajorEngineVersion</code> - <code>string</code> - Optional - If specified, filters the results to include only options for the specified major engine version.</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - </li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - </li>
@@ -621,7 +621,7 @@ AmazonRDS.prototype = {
   /**
    * Describes the available option groups.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>OptionGroupName</code> - <code>string</code> - Optional - The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion.</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - </li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - </li>
@@ -642,7 +642,7 @@ AmazonRDS.prototype = {
    * Returns a list of orderable DB Instance options for the specified engine.
    *
    * @param {String} engine (Required) The name of the engine to retrieve DB Instance options for.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>EngineVersion</code> - <code>string</code> - Optional - The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</li>
    *   <li><code>DBInstanceClass</code> - <code>string</code> - Optional - The DB Instance class filter value. Specify this parameter to show only the available offerings matching the specified DB Instance class.</li>
    *   <li><code>LicenseModel</code> - <code>string</code> - Optional - The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</li>
@@ -665,7 +665,7 @@ AmazonRDS.prototype = {
    * Returns information about reserved DB Instances for this account, or about a specified reserved
    * DB Instance.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReservedDBInstanceId</code> - <code>string</code> - Optional - The reserved DB Instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</li>
    *   <li><code>ReservedDBInstancesOfferingId</code> - <code>string</code> - Optional - The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</li>
    *   <li><code>DBInstanceClass</code> - <code>string</code> - Optional - The DB Instance class filter value. Specify this parameter to show only those reservations matching the specified DB Instances class.</li>
@@ -689,7 +689,7 @@ AmazonRDS.prototype = {
   /**
    * Lists available reserved DB Instance offerings.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReservedDBInstancesOfferingId</code> - <code>string</code> - Optional - The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier. Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></li>
    *   <li><code>DBInstanceClass</code> - <code>string</code> - Optional - The DB Instance class filter value. Specify this parameter to show only the available offerings matching the specified DB Instance class.</li>
    *   <li><code>Duration</code> - <code>string</code> - Optional - Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration. Valid Values: <code>1 | 3 | 31536000 | 94608000</code></li>
@@ -717,7 +717,7 @@ AmazonRDS.prototype = {
    * Instance Tags.</a>
    *
    * @param {String} resource_name (Required) The DB Instance with tags to be listed.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -735,7 +735,7 @@ AmazonRDS.prototype = {
    * by specifying these parameters and the new values in the request.
    *
    * @param {String} db_instance_identifier (Required) The DB Instance identifier. This value is stored as a lowercase string. For a SQL Server DB Instance, this value cannot be changed. Constraints:<ul><li>Must be the identifier for an existing DB Instance</li><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>Example:<copy>mydbinstance</copy>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AllocatedStorage</code> - <code>integer</code> - Optional - The new storage capacity of the RDS instance. This change does not result in an outage and is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request. <strong>MySQL</strong> Default: Uses existing setting Valid Values: 5-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. Type: Integer <strong>Oracle</strong> Default: Uses existing setting Valid Values: 10-1024 Constraints: Value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value. <strong>SQL Server</strong> Cannot be modified.</li>
    *   <li><code>DBInstanceClass</code> - <code>string</code> - Optional - The new compute and memory capacity of the DB Instance. To determine the instance classes that are available for a particular DB engine, use the <code>DescribeOrderableDBInstanceOptions</code> action. Passing a value for this parameter causes an outage during the change and is applied during the next maintenance window, unless the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request. Default: Uses existing setting Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>  <p class="note">Amazon RDS does not support db.t1.micro instances in a virtual private cloud (VPC).</p></li>
    *   <li><code>DBSecurityGroups</code> - <code>string|array</code> - Optional - A list of DB Security Groups to authorize on this DB Instance. This change is asynchronously applied as soon as possible. Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul> Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -774,7 +774,7 @@ AmazonRDS.prototype = {
    * <code>pending-reboot</code> method can be used only for static parameters.
    *
    * @param {String} db_parameter_group_name (Required) The name of the DB Parameter Group. Constraints:<ul><li>Must be the name of an existing DB Parameter Group</li><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $parameters (Required) An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. Valid Values (for the application method): <code>immediate | pending-reboot</code>  <p class="note">You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when DB Instance reboots.</p> <ul>
+   * @param parameters (Required) An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. Valid Values (for the application method): <code>immediate | pending-reboot</code>  <p class="note">You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when DB Instance reboots.</p> <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>ParameterName</code> - <code>string</code> - Optional - Specifies the name of the parameter.</li>
    *     <li><code>ParameterValue</code> - <code>string</code> - Optional - Specifies the value of the parameter.</li>
@@ -788,7 +788,7 @@ AmazonRDS.prototype = {
    *     <li><code>ApplyMethod</code> - <code>string</code> - Optional - Indicates when to apply parameter updates. [Allowed values: <code>immediate</code>, <code>pending-reboot</code>]</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -808,7 +808,7 @@ AmazonRDS.prototype = {
    *
    * @param {String} db_subnet_group_name (Required) The name for the DB Subnet Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be "Default". Example: <code>mySubnetgroup</code>
    * @param string|array $subnet_ids (Required) The EC2 Subnet IDs for the DB Subnet Group. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBSubnetGroupDescription</code> - <code>string</code> - Optional - The description for the DB Subnet Group.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -827,7 +827,7 @@ AmazonRDS.prototype = {
    * Modifies an existing Option Group.
    *
    * @param {String} option_group_name (Required) The name of the option group to be modified.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>OptionsToInclude</code> - <code>array</code> - Optional - Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing configuration. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>OptionName</code> - <code>string</code> - Required - </li>
@@ -853,7 +853,7 @@ AmazonRDS.prototype = {
    * Purchases a reserved DB Instance offering.
    *
    * @param {String} reserved_db_instances_offering_id (Required) The ID of the Reserved DB Instance offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReservedDBInstanceId</code> - <code>string</code> - Optional - Customer-specified identifier to track this reservation. Example: myreservationID</li>
    *   <li><code>DBInstanceCount</code> - <code>integer</code> - Optional - The number of instances to reserve. Default: <code>1</code></li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -877,7 +877,7 @@ AmazonRDS.prototype = {
    * event is created when the reboot is completed.
    *
    * @param {String} db_instance_identifier (Required) The DB Instance identifier. This parameter is stored as a lowercase string. Constraints:<ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ForceFailover</code> - <code>boolean</code> - Optional - When <code>true</code>, the reboot will be conducted through a MultiAZ failover. Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -900,7 +900,7 @@ AmazonRDS.prototype = {
    *
    * @param {String} resource_name (Required) The DB Instance the tags will be removed from.
    * @param string|array $tag_keys (Required) The tag key (name) of the tag to be removed. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -923,7 +923,7 @@ AmazonRDS.prototype = {
    * RebootDBInstance request.
    *
    * @param {String} db_parameter_group_name (Required) The name of the DB Parameter Group. Constraints:<ul><li>Must be 1 to 255 alphanumeric characters</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ResetAllParameters</code> - <code>boolean</code> - Optional - Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB Parameter Group to default values. Default: <code>true</code></li>
    *   <li><code>Parameters</code> - <code>array</code> - Optional - An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. <strong>MySQL</strong> Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB Instance reboots. <strong>Oracle</strong> Valid Values (for Apply method): <code>pending-reboot</code> <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -958,7 +958,7 @@ AmazonRDS.prototype = {
    *
    * @param {String} db_instance_identifier (Required) The identifier for the DB Snapshot to restore from. Constraints:<ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
    * @param {String} db_snapshot_identifier (Required) Name of the DB Instance to create from the DB Snapshot. This parameter isn't case sensitive. Constraints:<ul><li>Must contain from 1 to 255 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>Example: <code>my-snapshot-id</code>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DBInstanceClass</code> - <code>string</code> - Optional - The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code></li>
    *   <li><code>Port</code> - <code>integer</code> - Optional - The port number on which the database accepts connections. Default: The same port as the original DB Instance Constraints: Value must be <code>1150-65535</code></li>
    *   <li><code>AvailabilityZone</code> - <code>string</code> - Optional - The EC2 Availability Zone that the database instance will be created in. Default: A random, system-chosen Availability Zone. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>. Example: <code>us-east-1a</code></li>
@@ -990,7 +990,7 @@ AmazonRDS.prototype = {
    *
    * @param {String} source_db_instance_identifier (Required) The identifier of the source DB Instance from which to restore. Constraints:<ul><li>Must be the identifier of an existing database instance</li><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
    * @param {String} target_db_instance_identifier (Required) The name of the new database instance to be created. Constraints:<ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens</li><li>First character must be a letter</li><li>Cannot end with a hyphen or contain two consecutive hyphens</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>RestoreTime</code> - <code>string</code> - Optional - The date and time to restore from. Valid Values: Value must be a UTC time Constraints:<ul><li>Must be before the latest restorable time for the DB Instance</li><li>Cannot be specified if UseLatestRestorableTime parameter is true</li></ul>Example: <code>2009-09-07T23:45:00Z</code> May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>UseLatestRestorableTime</code> - <code>boolean</code> - Optional - Specifies whether (<code>true</code>) or not (<code>false</code>) the DB Instance is restored from the latest backup time. Default: <code>false</code> Constraints: Cannot be specified if RestoreTime parameter is provided.</li>
    *   <li><code>DBInstanceClass</code> - <code>string</code> - Optional - The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code> Default: The same DBInstanceClass as the original DB Instance.</li>
@@ -1022,7 +1022,7 @@ AmazonRDS.prototype = {
    * VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
    *
    * @param {String} db_security_group_name (Required) The name of the DB Security Group to revoke ingress from.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CIDRIP</code> - <code>string</code> - Optional - The IP range to revoke access from. Must be a valid CIDR range. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>, <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided.</li>
    *   <li><code>EC2SecurityGroupName</code> - <code>string</code> - Optional - The name of the EC2 Security Group to revoke access from. For VPC DB Security Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</li>
    *   <li><code>EC2SecurityGroupId</code> - <code>string</code> - Optional - The id of the EC2 Security Group to revoke access from. For VPC DB Security Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</li>

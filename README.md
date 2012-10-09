@@ -7,7 +7,7 @@ Unfficial  AWS SDK for JavaScript.
 
 ###残りタスク ###
 * テスト(必須)
-* ライセンス確認 (必須) Apahce Licenseで公開したい。 実装し直す部分があるかも(jquery.ajax,xml2json,**sha256**,hmacsha1)
+* ライセンス確認 (必須) Apahce Licenseで公開したい。 実装し直す部分があるかも
 * AuthV[2|3|4][Query|Json]の実装
 * Requestクラス実装
 * ドキュメント
@@ -15,7 +15,15 @@ Unfficial  AWS SDK for JavaScript.
 
 
 ##memo##
-sha256.js => GPL
-jquery.xml2json.js => MIT
-jquery.js => MIT
-hmacsha1.js => BSD
+* hmacsha1.js => BSD? new BSD??
+* sha256.js => GPL
+* jQuery.xml2json.js => MIT
+* jquery.js => MIT
+
+
+##ライセンスに引っかかりそうな所 ##
+* jQuery.ajax (MIT)
+* jQuery.extend (MIT)
+* jQuery.xml2json(plugin) (MIT)
+* **sha256** (GPL)
+* hmacsha1.js (BSD)

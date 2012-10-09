@@ -29,7 +29,7 @@ AmazonStorageGateway.prototype = {
    * You must power on the gateway VM before you can activate your gateway.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ActivationKey</code> - <code>string</code> - Required - Your gateway activation key. You can obtain the activation key by sending a GET request to the gateway IP. The redirect URL returned in the response provides you the activation key for your gateway. Length: Minimum length of 1. Maximum length of 50.</li>
    *   <li><code>GatewayName</code> - <code>string</code> - Required - A unique identifier for your gateway. This name becomes part of the gateway Amazon Resources Name (ARN) which is what you use as an input to other operations. Length: Minimum length of 2. Maximum length of 255. [Constraints: The value must be between 2 and 255 characters, and must match the following regular expression pattern: <code>^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$</code>]</li>
    *   <li><code>GatewayTimezone</code> - <code>string</code> - Required - One of the <code>GatewayTimezone</code> values that indicates the time zone you want to set for the gateway. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance window. [Allowed values: <code>GMT-12:00</code>, <code>GMT-11:00</code>, <code>GMT-10:00</code>, <code>GMT-9:00</code>, <code>GMT-8:00</code>, <code>GMT-7:00</code>, <code>GMT-6:00</code>, <code>GMT-5:00</code>, <code>GMT-4:00</code>, <code>GMT-3:30</code>, <code>GMT-3:00</code>, <code>GMT-2:00</code>, <code>GMT-1:00</code>, <code>GMT</code>, <code>GMT+1:00</code>, <code>GMT+2:00</code>, <code>GMT+3:00</code>, <code>GMT+3:30</code>, <code>GMT+4:00</code>, <code>GMT+4:30</code>, <code>GMT+5:00</code>, <code>GMT+5:30</code>, <code>GMT+5:45</code>, <code>GMT+6:00</code>, <code>GMT+7:00</code>, <code>GMT+8:00</code>, <code>GMT+9:00</code>, <code>GMT+9:30</code>, <code>GMT+10:00</code>, <code>GMT+11:00</code>, <code>GMT+12:00</code>]</li>
@@ -51,7 +51,7 @@ AmazonStorageGateway.prototype = {
    * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add
    * working storage, and one or more disk IDs that you want to configure as working storage.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>DiskIds</code> - <code>string|array</code> - Required - An array of strings that identify disks that are to be configured as working storage. Each string have a minimum length of 1 and maximum length of 300. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -90,7 +90,7 @@ AmazonStorageGateway.prototype = {
    * DescribeSnapshots</a> in the <em>Amazon Elastic Compute Cloud API Reference</em>.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VolumeARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</li>
    *   <li><code>SnapshotDescription</code> - <code>string</code> - Required - Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel in the <code>Description</code> field, and in the AWS Storage Gateway snapshot Details pane, <code>Description</code> field. Length: Minimum length of 1. Maximum length of 255.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -115,7 +115,7 @@ AmazonStorageGateway.prototype = {
    * such as the volume ARN, size and the iSCSI target ARN that initiators can use to connect to the
    * volume target.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>DiskId</code> - <code>string</code> - Required - The unique identifier for the gateway local disk that is configured as a stored volume. Use <code>ListLocalDisks</code> to list disk IDs for a gateway.</li>
    *   <li><code>SnapshotId</code> - <code>string</code> - Optional - The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list snapshots for your account use <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <em>Amazon Elastic Compute Cloud API Reference</em>. Length: 13 <em>Valid Values</em>: Must be a valid snapshot ID, "snap-" followed by eight hexadecimal characters. [Constraints: The value must match the following regular expression pattern: <code>\Asnap-[0-9a-fA-F]{8}\z</code>]</li>
@@ -139,7 +139,7 @@ AmazonStorageGateway.prototype = {
    * limits, the other limit remains unchanged. To specify which gateway to work with, use the
    * Amazon Resource Name (ARN) of the gateway in your request.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>BandwidthType</code> - <code>string</code> - Required - One of the <code>BandwidthType</code> values that indicates the gateway bandwidth rate limit to delete. <em>Valid Values</em>: <code>Upload</code>, <code>Download</code>, <code>All</code> [Allowed values: <code>UPLOAD</code>, <code>DOWNLOAD</code>, <code>ALL</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -157,7 +157,7 @@ AmazonStorageGateway.prototype = {
    * This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
    * specified iSCSI target and initiator pair.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TargetARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</li>
    *   <li><code>InitiatorName</code> - <code>string</code> - Required - The iSCSI initiator that connects to the target. Length: 1 to 255 characters. <em>Valid Values</em>: lowercase letters, numbers, periods (.), and hyphens (-). [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[0-9a-z:.-]+</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -180,7 +180,7 @@ AmazonStorageGateway.prototype = {
    * volumes are not deleted upon deleting the gateway, however, pending snapshots will not
    * complete. After you delete a gateway, your next step is to remove it from your environment.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -208,7 +208,7 @@ AmazonStorageGateway.prototype = {
    * In the request, you must provide the Amazon Resource Name (ARN) of the storage volume you want
    * to delete.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VolumeARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -230,7 +230,7 @@ AmazonStorageGateway.prototype = {
    * response body. To specify which gateway to describe, use the Amazon Resource Name (ARN) of the
    * gateway in your request.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -247,7 +247,7 @@ AmazonStorageGateway.prototype = {
    * This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP)
    * credentials information for a specified iSCSI target, one for each target-initiator pair.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TargetARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -265,7 +265,7 @@ AmazonStorageGateway.prototype = {
    * configured time zone, and the state (whether the gateway is running or not). To specify which
    * gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -282,7 +282,7 @@ AmazonStorageGateway.prototype = {
    * This operation returns your gateway's weekly maintenance start time including the day and time
    * of the week. Note that values are in terms of the gateway's time zone.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -300,7 +300,7 @@ AmazonStorageGateway.prototype = {
    * schedule information includes intervals at which snapshots are automatically initiated on the
    * volume.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VolumeARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -318,7 +318,7 @@ AmazonStorageGateway.prototype = {
    * gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway
    * returns volume information sorted by volume ARNs.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VolumeARNs</code> - <code>string|array</code> - Required - An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -336,7 +336,7 @@ AmazonStorageGateway.prototype = {
    * includes disk IDs that are configured as working storage, and it includes the amount of working
    * storage allocated and used.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -360,7 +360,7 @@ AmazonStorageGateway.prototype = {
    * truncated list of your gateways-the response contains a marker that you can specify in your
    * next request to fetch the next page of gateways.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An opaque string that indicates the position at which to begin the returned list of gateways. <em>Valid Values</em>: A marker obtained from the response of a previous List Gateways request.</li>
    *   <li><code>Limit</code> - <code>integer</code> - Optional - Specifies that the list of gateways returned be limited to the specified number of items. Valid Values: a number from 1 to 100.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -381,7 +381,7 @@ AmazonStorageGateway.prototype = {
    * The request returns all disks, specifying which are configured as working storage, stored
    * volume or not configured at all.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -405,7 +405,7 @@ AmazonStorageGateway.prototype = {
    * truncated, the response includes a Marker field. You can use this Marker value in your
    * subsequent request to retrieve the next set of volumes.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</li>
    *   <li><code>Limit</code> - <code>integer</code> - Optional - Specifies that the list of volumes returned be limited to the specified number of items. Constraint: Minimum value of 1. Maximum value of 100.</li>
@@ -443,7 +443,7 @@ AmazonStorageGateway.prototype = {
    * <code>ActivateGateway</code>.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -471,7 +471,7 @@ AmazonStorageGateway.prototype = {
    * To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway in your
    * request.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -496,7 +496,7 @@ AmazonStorageGateway.prototype = {
    * To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your
    * request.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>AverageUploadRateLimitInBitsPerSec</code> - <code>long</code> - Optional - The average upload bandwidth rate limit in bits per second. Constraint: Minimum value of 51200.</li>
    *   <li><code>AverageDownloadRateLimitInBitsPerSec</code> - <code>long</code> - Optional - The average download bandwidth rate limit in bits per second. Constraint: Minimum value of 102400.</li>
@@ -516,7 +516,7 @@ AmazonStorageGateway.prototype = {
    * specified iSCSI target. By default, a gateway does not have CHAP enabled; however, for added
    * security, you might use it.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TargetARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</li>
    *   <li><code>SecretToAuthenticateInitiator</code> - <code>string</code> - Required - The secret key that the initiator (e.g. Windows client) must provide to participate in mutual CHAP with the target. Length: Minimum length of 12. Maximum length of 16.</li>
    *   <li><code>InitiatorName</code> - <code>string</code> - Required - The iSCSI initiator that connects to the target. Length: Minimum length of 1. Maximum length of 255. <em>Valid Values</em>: The initiator name can contain lowercase letters, numbers, periods (.), and hyphens (-). [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[0-9a-z:.-]+</code>]</li>
@@ -537,7 +537,7 @@ AmazonStorageGateway.prototype = {
    * To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your
    * request.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>GatewayName</code> - <code>string</code> - Optional - A unique identifier for your gateway. This name becomes part of the gateway Amazon Resources Name (ARN) which is what you use as an input to other operations. Length: Minimum length of 2. Maximum length of 255. [Constraints: The value must be between 2 and 255 characters, and must match the following regular expression pattern: <code>^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$</code>]</li>
    *   <li><code>GatewayTimezone</code> - <code>string</code> - Optional - One of the <code>GatewayTimezone</code> values that represents the time zone for your gateway. The time zone is used, for example, when a time stamp is given to a snapshot. [Allowed values: <code>GMT-12:00</code>, <code>GMT-11:00</code>, <code>GMT-10:00</code>, <code>GMT-9:00</code>, <code>GMT-8:00</code>, <code>GMT-7:00</code>, <code>GMT-6:00</code>, <code>GMT-5:00</code>, <code>GMT-4:00</code>, <code>GMT-3:30</code>, <code>GMT-3:00</code>, <code>GMT-2:00</code>, <code>GMT-1:00</code>, <code>GMT</code>, <code>GMT+1:00</code>, <code>GMT+2:00</code>, <code>GMT+3:00</code>, <code>GMT+3:30</code>, <code>GMT+4:00</code>, <code>GMT+4:30</code>, <code>GMT+5:00</code>, <code>GMT+5:30</code>, <code>GMT+5:45</code>, <code>GMT+6:00</code>, <code>GMT+7:00</code>, <code>GMT+8:00</code>, <code>GMT+9:00</code>, <code>GMT+9:30</code>, <code>GMT+10:00</code>, <code>GMT+11:00</code>, <code>GMT+12:00</code>]</li>
@@ -568,7 +568,7 @@ AmazonStorageGateway.prototype = {
    * <code>STATE_RUNNING</code> state.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -585,7 +585,7 @@ AmazonStorageGateway.prototype = {
    * This operation updates a gateway's weekly maintenance start time information, including day and
    * time of the week. The maintenance time is the time in your gateway's time zone.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and region.</li>
    *   <li><code>HourOfDay</code> - <code>integer</code> - Required - The maintenance start time hour of day. Length: 2 <em>Valid Values</em>: An integer between 0 and 23 representing the hour of day.</li>
    *   <li><code>MinuteOfHour</code> - <code>integer</code> - Required - The maintenance start time minute of hour.. Length: 2 <em>Valid Values</em>: An integer between 0 and 59 representing the minute of hour.</li>
@@ -611,7 +611,7 @@ AmazonStorageGateway.prototype = {
    * and the schedule information, including when you want the snapshot to begin on a day and the
    * frequency (in hours) of snapshots.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VolumeARN</code> - <code>string</code> - Required - The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</li>
    *   <li><code>StartAt</code> - <code>integer</code> - Required - The hour of the day at which the snapshot schedule begins. Length: 2 <em>Valid Values</em>: An integer between 0 and 23, representing the hour of day.</li>
    *   <li><code>RecurrenceInHours</code> - <code>integer</code> - Required - Frequency of snapshots. Specify the number of hours between snapshots. <em>Valid Values</em>: <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>12</code>, <code>24</code>.</li>

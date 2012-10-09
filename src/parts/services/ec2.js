@@ -24,7 +24,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} license_id (Required) Specifies the ID for the specific license to activate against.
    * @param {Number} capacity (Required) Specifies the additional number of licenses to activate.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -41,7 +41,7 @@ AmazonEC2.prototype = {
   /**
    * The AllocateAddress operation acquires an elastic IP address for use with your account.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Domain</code> - <code>string</code> - Optional - Set to <code>vpc</code> to allocate the address to your VPC. By default, will allocate to EC2. [Allowed values: <code>vpc</code>, <code>standard</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -58,7 +58,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} network_interface_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PrivateIpAddress</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>SecondaryPrivateIpAddressCount</code> - <code>integer</code> - Optional - </li>
    *   <li><code>AllowReassignment</code> - <code>boolean</code> - Optional - </li>
@@ -83,7 +83,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} instance_id (Required) The instance to associate with the IP address.
    * @param {String} public_ip (Required) IP address that you are assigning to the instance.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AllocationId</code> - <code>string</code> - Optional - The allocation ID that AWS returned when you allocated the elastic IP address for use with Amazon VPC.</li>
    *   <li><code>NetworkInterfaceId</code> - <code>string</code> - Optional - </li>
    *   <li><code>PrivateIpAddress</code> - <code>string</code> - Optional - </li>
@@ -112,7 +112,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} dhcp_options_id (Required) The ID of the DHCP options to associate with the VPC. Specify "default" to associate the default DHCP options with the VPC.
    * @param {String} vpc_id (Required) The ID of the VPC to associate the DHCP options with.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -139,7 +139,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} subnet_id (Required) The ID of the subnet.
    * @param {String} route_table_id (Required) The ID of the route table.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -160,7 +160,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} internet_gateway_id (Required) The ID of the Internet gateway to attach.
    * @param {String} vpc_id (Required) The ID of the VPC.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -180,7 +180,7 @@ AmazonEC2.prototype = {
    * @param {String} network_interface_id (Required) 
    * @param {String} instance_id (Required) 
    * @param {Number} device_index (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -201,7 +201,7 @@ AmazonEC2.prototype = {
    * @param {String} volume_id (Required) The ID of the Amazon EBS volume. The volume and instance must be within the same Availability Zone and the instance must be running.
    * @param {String} instance_id (Required) The ID of the instance to which the volume attaches. The volume and instance must be within the same Availability Zone and the instance must be running.
    * @param {String} device (Required) Specifies how the device is exposed to the instance (e.g., <code>/dev/sdh</code>).
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -223,7 +223,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} vpn_gateway_id (Required) The ID of the VPN gateway to attach to the VPC.
    * @param {String} vpc_id (Required) The ID of the VPC to attach to the VPN gateway.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -258,7 +258,7 @@ AmazonEC2.prototype = {
    * group (covering both ingress and egress).
    *
    * @param {String} group_id (Required) ID of the VPC security group to modify.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>IpPermissions</code> - <code>array</code> - Optional - List of IP permissions to authorize on the specified security group. Specifying permissions through IP permissions is the preferred way of authorizing permissions since it offers more flexibility and control. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>IpProtocol</code> - <code>string</code> - Optional - The IP protocol of this permission. Valid protocol values: <code>tcp</code>, <code>udp</code>, <code>icmp</code></li>
@@ -297,7 +297,7 @@ AmazonEC2.prototype = {
    * Permission changes are propagated to instances within the security group as quickly as
    * possible. However, depending on the number of instances, a small delay might occur.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GroupName</code> - <code>string</code> - Optional - Name of the standard (EC2) security group to modify. The group must belong to your account. Can be used instead of GroupID for standard (EC2) security groups.</li>
    *   <li><code>GroupId</code> - <code>string</code> - Optional - ID of the standard (EC2) or VPC security group to modify. The group must belong to your account. Required for VPC security groups; can be used instead of GroupName for standard (EC2) security groups.</li>
    *   <li><code>IpPermissions</code> - <code>array</code> - Optional - List of IP permissions to authorize on the specified security group. Specifying permissions through IP permissions is the preferred way of authorizing permissions since it offers more flexibility and control. <ul>
@@ -332,13 +332,13 @@ AmazonEC2.prototype = {
    * bundled, the image must be registered in the normal way using the RegisterImage API.
    *
    * @param {String} instance_id (Required) The ID of the instance to bundle.
-   * @param array $policy (Required) The details of S3 storage for bundling a Windows instance. Takes an associative array of parameters that can have the following keys: <ul>
+   * @param policy (Required) The details of S3 storage for bundling a Windows instance. Takes an associative array of parameters that can have the following keys: <ul>
    *   <li><code>Bucket</code> - <code>string</code> - Optional - The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</li>
    *   <li><code>Prefix</code> - <code>string</code> - Optional - The prefix to use when storing the AMI in S3.</li>
    *   <li><code>AWSAccessKeyId</code> - <code>string</code> - Optional - The Access Key ID of the owner of the Amazon S3 bucket. Use the <CFPolicy::get_key()> method of a <CFPolicy> instance.</li>
    *   <li><code>UploadPolicy</code> - <code>string</code> - Optional - A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on the user's behalf. Use the <CFPolicy::get_policy()> method of a <CFPolicy> instance.</li>
    *   <li><code>UploadPolicySignature</code> - <code>string</code> - Optional - The signature of the Base64 encoded JSON document. Use the <CFPolicy::get_policy_signature()> method of a <CFPolicy> instance.</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *  <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This is useful for manually-managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -359,7 +359,7 @@ AmazonEC2.prototype = {
    * the caller to clean up these parts from S3.
    *
    * @param {String} bundle_id (Required) The ID of the bundle task to cancel.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -376,7 +376,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} conversion_task_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReasonMessage</code> - <code>string</code> - Optional - </li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -394,7 +394,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} export_task_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -421,7 +421,7 @@ AmazonEC2.prototype = {
    * User Guide</a>.
    *
    * @param string|array $spot_instance_request_id (Required) Specifies the ID of the Spot Instance request. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -445,7 +445,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} product_code (Required) The product code to confirm.
    * @param {String} instance_id (Required) The ID of the instance to confirm.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -479,7 +479,7 @@ AmazonEC2.prototype = {
    * @param {String} type (Required) The type of VPN connection this customer gateway supports.
    * @param {String} ip_address (Required) The Internet-routable IP address for the customer gateway's outside interface. The address must be static
    * @param {Number} bgp_asn (Required) The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -501,13 +501,13 @@ AmazonEC2.prototype = {
    * the options, go to <a href=
    * "http://www.ietf.org/rfc/rfc2132.txt">http://www.ietf.org/rfc/rfc2132.txt</a>
    *
-   * @param array $dhcp_configuration (Required) A set of one or more DHCP configurations. <ul>
+   * @param dhcp_configuration (Required) A set of one or more DHCP configurations. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Key</code> - <code>string</code> - Optional - Contains the name of a DHCP option.</li>
    *     <li><code>Value</code> - <code>string|array</code> - Optional - Contains a set of values for a DHCP option. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -527,7 +527,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} instance_id (Required) The ID of the instance from which to create the new image.
    * @param {String} name (Required) The name for the new AMI being created.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Description</code> - <code>string</code> - Optional - The description for the new AMI being created.</li>
    *   <li><code>NoReboot</code> - <code>boolean</code> - Optional - By default this property is set to <code>false</code>, which means Amazon EC2 attempts to cleanly shut down the instance before image creation and reboots the instance afterwards. When set to true, Amazon EC2 will not shut down the instance before creating the image. When this option is used, file system integrity on the created image cannot be guaranteed.</li>
    *   <li><code>BlockDeviceMapping</code> - <code>array</code> - Optional - The BlockDeviceMappingItemType data type. <ul>
@@ -563,7 +563,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} instance_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Description</code> - <code>string</code> - Optional - </li>
    *   <li><code>TargetEnvironment</code> - <code>string</code> - Optional -  [Allowed values: <code>citrix</code>, <code>vmware</code>]</li>
    *   <li><code>ExportToS3</code> - <code>array</code> - Optional -  <ul>
@@ -591,7 +591,7 @@ AmazonEC2.prototype = {
    * then attach it to a VPC using <code>AttachInternetGateway</code>. For more information about
    * your VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -609,7 +609,7 @@ AmazonEC2.prototype = {
    * RunInstances.
    *
    * @param {String} key_name (Required) The unique name for the new key pair.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -628,7 +628,7 @@ AmazonEC2.prototype = {
    * to Network ACLs in the Amazon Virtual Private Cloud User Guide.
    *
    * @param {String} vpc_id (Required) The ID of the VPC where the network ACL will be created.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -663,7 +663,7 @@ AmazonEC2.prototype = {
    * @param {String} rule_action (Required) Whether to allow or deny traffic that matches the rule. [Allowed values: <code>allow</code>, <code>deny</code>]
    * @param boolean $egress (Required) Whether this rule applies to egress traffic from the subnet (<code>true</code>) or ingress traffic to the subnet (<code>false</code>).
    * @param {String} cidr_block (Required) The CIDR range to allow or deny, in CIDR notation (e.g., <code>172.16.0.0/24</code>).
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Icmp</code> - <code>array</code> - Optional - ICMP values. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>Type</code> - <code>integer</code> - Optional - For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a wildcard meaning all types. Required if specifying <code>icmp</code> for the protocol.</li>
@@ -697,7 +697,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} subnet_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Description</code> - <code>string</code> - Optional - </li>
    *   <li><code>PrivateIpAddress</code> - <code>string</code> - Optional - </li>
    *   <li><code>SecurityGroupId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -726,7 +726,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} group_name (Required) The name of the <code>PlacementGroup</code>.
    * @param {String} strategy (Required) The <code>PlacementGroup</code> strategy. [Allowed values: <code>cluster</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -762,7 +762,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} route_table_id (Required) The ID of the route table where the route will be added.
    * @param {String} destination_cidr_block (Required) The CIDR address block used for the destination match. For example: <code>0.0.0.0/0</code>. Routing decisions are based on the most specific match.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayId</code> - <code>string</code> - Optional - The ID of a VPN or Internet gateway attached to your VPC. You must provide either <code>GatewayId</code> or <code>InstanceId</code>, but not both.</li>
    *   <li><code>InstanceId</code> - <code>string</code> - Optional - The ID of a NAT instance in your VPC. You must provide either <code>GatewayId</code> or <code>InstanceId</code>, but not both.</li>
    *   <li><code>NetworkInterfaceId</code> - <code>string</code> - Optional - </li>
@@ -786,7 +786,7 @@ AmazonEC2.prototype = {
    * Tables</a> in the Amazon Virtual Private Cloud User Guide.
    *
    * @param {String} vpc_id (Required) The ID of the VPC where the route table will be created.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -811,7 +811,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} group_name (Required) Name of the security group.
    * @param {String} group_description (Required) Description of the group. This is informational only.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VpcId</code> - <code>string</code> - Optional - ID of the VPC.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -839,7 +839,7 @@ AmazonEC2.prototype = {
    * </p>
    *
    * @param {String} volume_id (Required) The ID of the volume from which to create the snapshot.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Description</code> - <code>string</code> - Optional - The description for the new snapshot.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -864,7 +864,7 @@ AmazonEC2.prototype = {
    * User Guide</a>.
    *
    * @param {String} bucket (Required) The Amazon S3 bucket in which to store the Spot Instance datafeed.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Prefix</code> - <code>string</code> - Optional - The prefix that is prepended to datafeed files.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -895,7 +895,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} vpc_id (Required) The ID of the VPC to create the subnet in.
    * @param {String} cidr_block (Required) The CIDR block the subnet is to cover.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AvailabilityZone</code> - <code>string</code> - Optional - The Availability Zone to create the subnet in.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -915,13 +915,13 @@ AmazonEC2.prototype = {
    * tags. Each tag consists of a key-value pair. Tag keys must be unique per resource.
    *
    * @param string|array $resource_id (Required) One or more IDs of resources to tag. This could be the ID of an AMI, an instance, an EBS volume, or snapshot, etc. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $tag (Required) The tags to add or overwrite for the specified resources. Each tag item consists of a key-value pair. <ul>
+   * @param tag (Required) The tags to add or overwrite for the specified resources. Each tag item consists of a key-value pair. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Key</code> - <code>string</code> - Optional - The tag's key.</li>
    *     <li><code>Value</code> - <code>string</code> - Optional - The tag's value.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -939,7 +939,7 @@ AmazonEC2.prototype = {
    * Initializes an empty volume of a given size.
    *
    * @param {String} availability_zone (Required) The Availability Zone in which to create the new volume.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Size</code> - <code>integer</code> - Optional - The size of the volume, in gigabytes. Required if you are not creating a volume from a snapshot.</li>
    *   <li><code>SnapshotId</code> - <code>string</code> - Optional - The ID of the snapshot from which to create the new volume.</li>
    *   <li><code>VolumeType</code> - <code>string</code> - Optional -  [Allowed values: <code>standard</code>, <code>io1</code>]</li>
@@ -966,7 +966,7 @@ AmazonEC2.prototype = {
    * host name, no domain name, no DNS server, no NTP server, and no NetBIOS server or node type).
    *
    * @param {String} cidr_block (Required) A valid CIDR block.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InstanceTenancy</code> - <code>string</code> - Optional - The allowed tenancy of instances launched into the VPC. A value of default means instances can be launched with any tenancy; a value of dedicated means instances must be launched with tenancy as dedicated.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -1002,7 +1002,7 @@ AmazonEC2.prototype = {
    * @param {String} type (Required) The type of VPN connection.
    * @param {String} customer_gateway_id (Required) The ID of the customer gateway.
    * @param {String} vpn_gateway_id (Required) The ID of the VPN gateway.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1022,7 +1022,7 @@ AmazonEC2.prototype = {
    * can create a VPN gateway before creating the VPC itself.
    *
    * @param {String} type (Required) The type of VPN connection this VPN gateway supports.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AvailabilityZone</code> - <code>string</code> - Optional - The Availability Zone in which to create the VPN gateway.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -1042,7 +1042,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} license_id (Required) Specifies the ID for the specific license to deactivate against.
    * @param {Number} capacity (Required) Specifies the amount of capacity to deactivate against the license.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1065,7 +1065,7 @@ AmazonEC2.prototype = {
    * inactive for an extended period of time.
    *
    * @param {String} customer_gateway_id (Required) The ID of the customer gateway to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1084,7 +1084,7 @@ AmazonEC2.prototype = {
    * by associating either a new set of options or the default options with the VPC.
    *
    * @param {String} dhcp_options_id (Required) The ID of the DHCP options set to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1103,7 +1103,7 @@ AmazonEC2.prototype = {
    * User Guide.
    *
    * @param {String} internet_gateway_id (Required) The ID of the Internet gateway to be deleted.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1120,7 +1120,7 @@ AmazonEC2.prototype = {
    * The DeleteKeyPair operation deletes a key pair.
    *
    * @param {String} key_name (Required) The name of the Amazon EC2 key pair to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1139,7 +1139,7 @@ AmazonEC2.prototype = {
    * ACLs in the Amazon Virtual Private Cloud User Guide.
    *
    * @param {String} network_acl_id (Required) The ID of the network ACL to be deleted.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1159,7 +1159,7 @@ AmazonEC2.prototype = {
    * @param {String} network_acl_id (Required) ID of the network ACL.
    * @param {Number} rule_number (Required) Rule number for the entry to delete.
    * @param boolean $egress (Required) Whether the rule to delete is an egress rule (<code>true</code>) or ingress rule (<code>false</code>).
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1178,7 +1178,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} network_interface_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1196,7 +1196,7 @@ AmazonEC2.prototype = {
    * in the placement group before deletion.
    *
    * @param {String} group_name (Required) The name of the <code>PlacementGroup</code> to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1217,7 +1217,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} route_table_id (Required) The ID of the route table where the route will be deleted.
    * @param {String} destination_cidr_block (Required) The CIDR range for the route you want to delete. The value you specify must exactly match the CIDR for the route you want to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1238,7 +1238,7 @@ AmazonEC2.prototype = {
    * Tables</a> in the Amazon Virtual Private Cloud User Guide.
    *
    * @param {String} route_table_id (Required) The ID of the route table to be deleted.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1261,7 +1261,7 @@ AmazonEC2.prototype = {
    * is returned. For example, if security group B has a rule that allows access from security group
    * A, security group A cannot be deleted until the allow rule is removed.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GroupName</code> - <code>string</code> - Optional - The name of the Amazon EC2 security group to delete.</li>
    *   <li><code>GroupId</code> - <code>string</code> - Optional - The ID of the Amazon EC2 security group to delete.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -1279,7 +1279,7 @@ AmazonEC2.prototype = {
    * Deletes the snapshot identified by <code>snapshotId</code>.
    *
    * @param {String} snapshot_id (Required) The ID of the snapshot to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1301,7 +1301,7 @@ AmazonEC2.prototype = {
    * "http://docs.amazonwebservices.com/AWSEC2/2009-11-30/UserGuide/">Amazon Elastic Compute Cloud
    * User Guide</a>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1318,7 +1318,7 @@ AmazonEC2.prototype = {
    * deleting it, otherwise Amazon VPC returns an error.
    *
    * @param {String} subnet_id (Required) The ID of the subnet you want to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1335,7 +1335,7 @@ AmazonEC2.prototype = {
    * Deletes tags from the specified Amazon EC2 resources.
    *
    * @param string|array $resource_id (Required) A list of one or more resource IDs. This could be the ID of an AMI, an instance, an EBS volume, or snapshot, etc. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Tag</code> - <code>array</code> - Optional - The tags to delete from the specified resources. Each tag item consists of a key-value pair. If a tag is specified without a value, the tag and all of its values are deleted. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>Key</code> - <code>string</code> - Optional - The tag's key.</li>
@@ -1359,7 +1359,7 @@ AmazonEC2.prototype = {
    * with the same name.
    *
    * @param {String} volume_id (Required) The ID of the EBS volume to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1378,7 +1378,7 @@ AmazonEC2.prototype = {
    * groups (except the default), delete all the route tables (except the default), etc.
    *
    * @param {String} vpc_id (Required) The ID of the VPC you want to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1403,7 +1403,7 @@ AmazonEC2.prototype = {
    * gateway from the VPC and delete the VPC before deleting the VPN connection.
    *
    * @param {String} vpn_connection_id (Required) The ID of the VPN connection to delete
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1424,7 +1424,7 @@ AmazonEC2.prototype = {
    * center.
    *
    * @param {String} vpn_gateway_id (Required) The ID of the VPN gateway to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1442,7 +1442,7 @@ AmazonEC2.prototype = {
    * no longer be launched.
    *
    * @param {String} image_id (Required) The ID of the AMI to deregister.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1458,7 +1458,7 @@ AmazonEC2.prototype = {
   /**
    * The DescribeAddresses operation lists elastic IP addresses assigned to your account.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PublicIp</code> - <code>string|array</code> - Optional - The optional list of Elastic IP addresses to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Addresses. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1486,7 +1486,7 @@ AmazonEC2.prototype = {
    * <code>us-east-1a</code> for account A is not necessarily the same as <code>us-east-1a</code>
    * for account B. Zone assignments are mapped independently for each account.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ZoneName</code> - <code>string|array</code> - Optional - A list of the availability zone names to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for AvailabilityZones. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1510,7 +1510,7 @@ AmazonEC2.prototype = {
    * failed tasks are removed from the list a short time after completion. If no bundle ids are
    * given, all bundle tasks are returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>BundleId</code> - <code>string|array</code> - Optional - The list of bundle task IDs to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for BundleTasks. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1532,7 +1532,7 @@ AmazonEC2.prototype = {
   /**
    * 
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A filter used to limit results when describing tags. Multiple values can be specified per filter. A tag must match at least one of the specified values for it to be returned from an operation. Wildcards can be included in filter values; <code>*</code> specifies that zero or more characters must match, and <code>?</code> specifies that exactly one character must match. Use a backslash to escape special characters. For example, a filter value of <code>\*amazon\?\\</code> specifies the literal string <code>*amazon?\</code>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>Name</code> - <code>string</code> - Optional - Specifies the name of the filter.</li>
@@ -1561,7 +1561,7 @@ AmazonEC2.prototype = {
    * only if the gateway matches all your filters. If there's no match, no special message is
    * returned; the response is simply empty. The following table shows the available filters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CustomerGatewayId</code> - <code>string|array</code> - Optional - A set of one or more customer gateway IDs. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Customer Gateways. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1590,7 +1590,7 @@ AmazonEC2.prototype = {
    *   <li>The options</li>
    * </ul>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DhcpOptionsId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for DhcpOptions. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1612,7 +1612,7 @@ AmazonEC2.prototype = {
   /**
    * 
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ExportTaskId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -1631,7 +1631,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} image_id (Required) The ID of the AMI whose attribute is to be described.
    * @param {String} attribute (Required) The name of the attribute to describe. Available attribute names: <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>, <code>launchPermisson</code>, <code>blockDeviceMapping</code>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1684,7 +1684,7 @@ AmazonEC2.prototype = {
    * deregistration.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ImageId</code> - <code>string|array</code> - Optional - An optional list of the AMI IDs to describe. If not specified, all AMIs will be described. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Owner</code> - <code>string|array</code> - Optional - The optional list of owners for the described AMIs. The IDs amazon, self, and explicit can be used to include AMIs owned by Amazon, AMIs owned by the user, and AMIs for which the user has explicit launch permissions, respectively. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>ExecutableBy</code> - <code>string|array</code> - Optional - The optional list of users with explicit launch permissions for the described AMIs. The user ID can be a user's account ID, 'self' to return AMIs for which the sender of the request has explicit launch permissions, or 'all' to return AMIs with public launch permissions. Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -1711,7 +1711,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} instance_id (Required) The ID of the instance whose instance attribute is being described.
    * @param {String} attribute (Required) The name of the attribute to describe. Available attribute names: <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, <code>instanceInitiatedShutdownBehavior</code>, <code>rootDeviceName</code>, <code>blockDeviceMapping</code> [Allowed values: <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, <code>instanceInitiatedShutdownBehavior</code>, <code>rootDeviceName</code>, <code>blockDeviceMapping</code>, <code>productCodes</code>, <code>sourceDestCheck</code>, <code>groupSet</code>, <code>ebsOptimized</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1775,7 +1775,7 @@ AmazonEC2.prototype = {
    *   16.</li>
    * </ul>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InstanceId</code> - <code>string|array</code> - Optional - The list of instance IDs. If not specified, all instances are described. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - The list of filters to limit returned results. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1808,7 +1808,7 @@ AmazonEC2.prototype = {
    * Recently terminated instances might appear in the returned results. This interval is usually
    * less than one hour.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InstanceId</code> - <code>string|array</code> - Optional - An optional list of the instances to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Instances. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/index.html?ApiReference-query-DescribeInstances.html">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1843,7 +1843,7 @@ AmazonEC2.prototype = {
    * backslash before the character. For example, a value of <code>\*amazon\?\\</code> searches for
    * the literal string <code>*amazon?\</code>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InternetGatewayId</code> - <code>string|array</code> - Optional - One or more Internet gateway IDs. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Internet Gateways. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1867,7 +1867,7 @@ AmazonEC2.prototype = {
    * specify key pairs, information about those key pairs is returned. Otherwise, information for
    * all registered key pairs is returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>KeyName</code> - <code>string|array</code> - Optional - The optional list of key pair names to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for KeyPairs. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1890,7 +1890,7 @@ AmazonEC2.prototype = {
    * Provides details of a user's registered licenses. Zero or more IDs may be specified on the
    * call. When one or more license IDs are specified, only data for the specified IDs are returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>LicenseId</code> - <code>string|array</code> - Optional - Specifies the license registration for which details are to be returned. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Licenses. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1925,7 +1925,7 @@ AmazonEC2.prototype = {
    * backslash before the character. For example, a value of <code>\*amazon\?\\</code> searches for
    * the literal string <code>*amazon?\</code>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NetworkAclId</code> - <code>string|array</code> - Optional - One or more network ACL IDs. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Network ACLs. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1948,7 +1948,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} network_interface_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Description</code> - <code>string</code> - Optional - </li>
    *   <li><code>SourceDestCheck</code> - <code>string</code> - Optional - </li>
    *   <li><code>GroupSet</code> - <code>string</code> - Optional - </li>
@@ -1968,7 +1968,7 @@ AmazonEC2.prototype = {
   /**
    * 
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NetworkInterfaceId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A filter used to limit results when describing tags. Multiple values can be specified per filter. A tag must match at least one of the specified values for it to be returned from an operation. Wildcards can be included in filter values; <code>*</code> specifies that zero or more characters must match, and <code>?</code> specifies that exactly one character must match. Use a backslash to escape special characters. For example, a filter value of <code>\*amazon\?\\</code> specifies the literal string <code>*amazon?\</code>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -1991,7 +1991,7 @@ AmazonEC2.prototype = {
    * Returns information about one or more <code>PlacementGroup</code> instances in a user's
    * account.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GroupName</code> - <code>string|array</code> - Optional - The name of the <code>PlacementGroup</code>. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Placement Groups. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2014,7 +2014,7 @@ AmazonEC2.prototype = {
    * The DescribeRegions operation describes regions zones that are currently available to the
    * account.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>RegionName</code> - <code>string|array</code> - Optional - The optional list of regions to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Regions. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2037,7 +2037,7 @@ AmazonEC2.prototype = {
    * The DescribeReservedInstances operation describes Reserved Instances that were purchased for
    * use with your account.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReservedInstancesId</code> - <code>string|array</code> - Optional - The optional list of Reserved Instance IDs to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for ReservedInstances. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2063,7 +2063,7 @@ AmazonEC2.prototype = {
    * Amazon EC2 instances for a period of time (without getting insufficient capacity errors) and
    * pay a lower usage rate for the actual time used.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ReservedInstancesOfferingId</code> - <code>string|array</code> - Optional - An optional list of the unique IDs of the Reserved Instance offerings to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>InstanceType</code> - <code>string</code> - Optional - The instance type on which the Reserved Instance can be used. [Allowed values: <code>t1.micro</code>, <code>m1.small</code>, <code>m1.medium</code>, <code>m1.large</code>, <code>m1.xlarge</code>, <code>m2.xlarge</code>, <code>m2.2xlarge</code>, <code>m2.4xlarge</code>, <code>c1.medium</code>, <code>c1.xlarge</code>, <code>hi1.4xlarge</code>, <code>cc1.4xlarge</code>, <code>cc2.8xlarge</code>, <code>cg1.4xlarge</code>]</li>
    *   <li><code>AvailabilityZone</code> - <code>string</code> - Optional - The Availability Zone in which the Reserved Instance can be used.</li>
@@ -2104,7 +2104,7 @@ AmazonEC2.prototype = {
    * backslash before the character. For example, a value of <code>\*amazon\?\\</code> searches for
    * the literal string <code>*amazon?\</code>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>RouteTableId</code> - <code>string|array</code> - Optional - One or more route table IDs. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Route Tables. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2130,7 +2130,7 @@ AmazonEC2.prototype = {
    * Otherwise, information for all security group is returned. If you specify a group that does not
    * exist, a fault is returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GroupName</code> - <code>string|array</code> - Optional - The optional list of Amazon EC2 security groups to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>GroupId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for SecurityGroups. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
@@ -2156,7 +2156,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} snapshot_id (Required) The ID of the EBS snapshot whose attribute is being described.
    * @param {String} attribute (Required) The name of the EBS attribute to describe. Available attribute names: createVolumePermission [Allowed values: <code>productCodes</code>, <code>createVolumePermission</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -2176,7 +2176,7 @@ AmazonEC2.prototype = {
    * and private snapshots owned by another AWS account but for which you've been given explicit
    * create volume permissions.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>SnapshotId</code> - <code>string|array</code> - Optional - The optional list of EBS snapshot IDs to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Owner</code> - <code>string|array</code> - Optional - The optional list of EBS snapshot owners. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>RestorableBy</code> - <code>string|array</code> - Optional - The optional list of users who have permission to create volumes from the described EBS snapshots. Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -2206,7 +2206,7 @@ AmazonEC2.prototype = {
    * "http://docs.amazonwebservices.com/AWSEC2/2009-11-30/UserGuide/">Amazon Elastic Compute Cloud
    * User Guide</a>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -2245,7 +2245,7 @@ AmazonEC2.prototype = {
    * backslash before the character. For example, a value of <code>\*amazon\?\\</code> searches for
    * the literal string <code>*amazon?\</code>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>SpotInstanceRequestId</code> - <code>string|array</code> - Optional - The ID of the request. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for SpotInstances. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2277,7 +2277,7 @@ AmazonEC2.prototype = {
    * "http://docs.amazonwebservices.com/AWSEC2/2009-11-30/UserGuide/">Amazon Elastic Compute Cloud
    * User Guide</a>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>StartTime</code> - <code>string</code> - Optional - The start date and time of the Spot Instance price history data. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>EndTime</code> - <code>string</code> - Optional - The end date and time of the Spot Instance price history data. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>InstanceType</code> - <code>string|array</code> - Optional - Specifies the instance type to return. Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -2314,7 +2314,7 @@ AmazonEC2.prototype = {
    * filters. If there's no match, no special message is returned; the response is simply empty. The
    * following table shows the available filters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>SubnetId</code> - <code>string|array</code> - Optional - A set of one or more subnet IDs. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Subnets. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2336,7 +2336,7 @@ AmazonEC2.prototype = {
   /**
    * Describes the tags for the specified resources.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for tags. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>Name</code> - <code>string</code> - Optional - Specifies the name of the filter.</li>
@@ -2358,7 +2358,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} volume_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Attribute</code> - <code>string</code> - Optional -  [Allowed values: <code>autoEnableIO</code>, <code>productCodes</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -2375,7 +2375,7 @@ AmazonEC2.prototype = {
   /**
    * Describes the status of a volume.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VolumeId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A filter used to limit results when describing tags. Multiple values can be specified per filter. A tag must match at least one of the specified values for it to be returned from an operation. Wildcards can be included in filter values; <code>*</code> specifies that zero or more characters must match, and <code>?</code> specifies that exactly one character must match. Use a backslash to escape special characters. For example, a filter value of <code>\*amazon\?\\</code> specifies the literal string <code>*amazon?\</code>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2400,7 +2400,7 @@ AmazonEC2.prototype = {
    * Describes the status of the indicated volume or, in lieu of any specified, all volumes
    * belonging to the caller. Volumes that have been deleted are not described.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VolumeId</code> - <code>string|array</code> - Optional - The optional list of EBS volumes to describe. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for Volumes. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2431,7 +2431,7 @@ AmazonEC2.prototype = {
    * If there's no match, no special message is returned; the response is simply empty. The
    * following table shows the available filters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VpcId</code> - <code>string|array</code> - Optional - The ID of a VPC you want information about. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for VPCs. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2465,7 +2465,7 @@ AmazonEC2.prototype = {
    * if the VPN connection matches all your filters. If there's no match, no special message is
    * returned; the response is simply empty. The following table shows the available filters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VpnConnectionId</code> - <code>string|array</code> - Optional - A VPN connection ID. More than one may be specified per request. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for VPN Connections. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2496,7 +2496,7 @@ AmazonEC2.prototype = {
    * your filters. If there's no match, no special message is returned; the response is simply
    * empty. The following table shows the available filters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>VpnGatewayId</code> - <code>string|array</code> - Optional - A list of filters used to match properties for VPN Gateways. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Filter</code> - <code>array</code> - Optional - A list of filters used to match properties for VPN Gateways. For a complete reference to the available filter keys for this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2525,7 +2525,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} internet_gateway_id (Required) The ID of the Internet gateway to detach.
    * @param {String} vpc_id (Required) The ID of the VPC.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -2543,7 +2543,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} attachment_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Force</code> - <code>boolean</code> - Optional - </li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -2561,7 +2561,7 @@ AmazonEC2.prototype = {
    * Detach a previously attached volume from a running instance.
    *
    * @param {String} volume_id (Required) The ID of the volume to detach.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InstanceId</code> - <code>string</code> - Optional - The ID of the instance from which to detach the the specified volume.</li>
    *   <li><code>Device</code> - <code>string</code> - Optional - The device name to which the volume is attached on the specified instance.</li>
    *   <li><code>Force</code> - <code>boolean</code> - Optional - Forces detachment if the previous detachment attempt did not occur cleanly (logging into an instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a volume from a failed instance. The instance will not have an opportunity to flush file system caches nor file system meta data. If you use this option, you must perform file system check and repair procedures.</li>
@@ -2587,7 +2587,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} vpn_gateway_id (Required) The ID of the VPN gateway to detach from the VPC.
    * @param {String} vpc_id (Required) The ID of the VPC to detach the VPN gateway from.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -2607,7 +2607,7 @@ AmazonEC2.prototype = {
    * once, Amazon EC2 does not return an error.
    *
    * @param {String} public_ip (Required) The elastic IP address that you are disassociating from the instance.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AssociationId</code> - <code>string</code> - Optional - Association ID corresponding to the VPC elastic IP address you want to disassociate.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -2631,7 +2631,7 @@ AmazonEC2.prototype = {
    * Tables</a> in the Amazon Virtual Private Cloud User Guide.
    *
    * @param {String} association_id (Required) The association ID representing the current association between the route table and subnet.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -2648,7 +2648,7 @@ AmazonEC2.prototype = {
    * Enable IO on the volume after an event has occured.
    *
    * @param {String} volume_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -2669,7 +2669,7 @@ AmazonEC2.prototype = {
    * one hour after the most recent post.
    *
    * @param {String} instance_id (Required) The ID of the instance for which you want console output.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *  <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This is useful for manually-managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response. The value of <code>output</code> is automatically Base64-decoded.
@@ -2690,7 +2690,7 @@ AmazonEC2.prototype = {
    * key pair that you provided.
    *
    * @param {String} instance_id (Required) The ID of the instance for which you want the Windows administrator password.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DecryptPasswordWithKey</code> - <code>string</code> - Optional - Enables the decryption of the Administrator password for the given Microsoft Windows instance. Specifies the RSA private key that is associated with the keypair ID which was used to launch the Microsoft Windows instance.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *  <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This is useful for manually-managed batch requests.</li></ul>
@@ -2708,7 +2708,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} platform (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Description</code> - <code>string</code> - Optional - </li>
    *   <li><code>LaunchSpecification</code> - <code>array</code> - Optional -  <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2794,7 +2794,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} key_name (Required) The unique name for the key pair.
    * @param {String} public_key_material (Required) The public key portion of the key pair being imported.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *  <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This is useful for manually-managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -2811,7 +2811,7 @@ AmazonEC2.prototype = {
   /**
    * 
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AvailabilityZone</code> - <code>string</code> - Optional - </li>
    *   <li><code>Image</code> - <code>array</code> - Optional -  <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -2841,7 +2841,7 @@ AmazonEC2.prototype = {
    * The ModifyImageAttribute operation modifies an attribute of an AMI.
    *
    * @param {String} image_id (Required) The ID of the AMI whose attribute you want to modify.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Attribute</code> - <code>string</code> - Optional - The name of the AMI attribute you want to modify. Available attributes: <code>launchPermission</code>, <code>productCodes</code></li>
    *   <li><code>OperationType</code> - <code>string</code> - Optional - The type of operation being requested. Available operation types: <code>add</code>, <code>remove</code></li>
    *   <li><code>UserId</code> - <code>string|array</code> - Optional - The AWS user ID being added to or removed from the list of users with launch permissions for this AMI. Only valid when the launchPermission attribute is being modified. Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -2881,7 +2881,7 @@ AmazonEC2.prototype = {
    * Modifies an attribute of an instance.
    *
    * @param {String} instance_id (Required) The ID of the instance whose attribute is being modified.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Attribute</code> - <code>string</code> - Optional - The name of the attribute being modified. Available attribute names: <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, <code>instanceInitiatedShutdownBehavior</code>, <code>rootDevice</code>, <code>blockDeviceMapping</code> [Allowed values: <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, <code>instanceInitiatedShutdownBehavior</code>, <code>rootDeviceName</code>, <code>blockDeviceMapping</code>, <code>productCodes</code>, <code>sourceDestCheck</code>, <code>groupSet</code>, <code>ebsOptimized</code>]</li>
    *   <li><code>Value</code> - <code>string</code> - Optional - The new value of the instance attribute being modified. Only valid when <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code> or <code>instanceInitiateShutdownBehavior</code> is specified as the attribute being modified.</li>
    *   <li><code>BlockDeviceMapping</code> - <code>array</code> - Optional - The new block device mappings for the instance whose attributes are being modified. Only valid when blockDeviceMapping is specified as the attribute being modified. <ul>
@@ -2922,7 +2922,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} network_interface_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Description.Value</code> - <code>string</code> - Optional - String value</li>
    *   <li><code>SourceDestCheck.Value</code> - <code>boolean</code> - Optional - Boolean value</li>
    *   <li><code>SecurityGroupId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -2948,7 +2948,7 @@ AmazonEC2.prototype = {
    * Adds or remove permission settings for the specified snapshot.
    *
    * @param {String} snapshot_id (Required) The ID of the EBS snapshot whose attributes are being modified.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Attribute</code> - <code>string</code> - Optional - The name of the attribute being modified. Available attribute names: <code>createVolumePermission</code> [Allowed values: <code>productCodes</code>, <code>createVolumePermission</code>]</li>
    *   <li><code>OperationType</code> - <code>string</code> - Optional - The operation to perform on the attribute. Available operation names: <code>add</code>, <code>remove</code></li>
    *   <li><code>UserId</code> - <code>string|array</code> - Optional - The AWS user IDs to add to or remove from the list of users that have permission to create EBS volumes from the specified snapshot. Currently supports "all". <p class="note">Only valid when the <code>createVolumePermission</code> attribute is being modified.</p> Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -2985,7 +2985,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} volume_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AutoEnableIO.Value</code> - <code>boolean</code> - Optional - </li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -3003,7 +3003,7 @@ AmazonEC2.prototype = {
    * Enables monitoring for a running instance.
    *
    * @param string|array $instance_id (Required) The list of Amazon EC2 instances on which to enable monitoring. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3024,7 +3024,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} reserved_instances_offering_id (Required) The unique ID of the Reserved Instances offering being purchased.
    * @param {Number} instance_count (Required) The number of Reserved Instances to purchase.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3045,7 +3045,7 @@ AmazonEC2.prototype = {
    * instances are ignored.
    *
    * @param string|array $instance_id (Required) The list of instances to terminate. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3070,7 +3070,7 @@ AmazonEC2.prototype = {
    * image in Amazon S3 invalidates this registration. If you make changes to an image, deregister
    * the previous image and register the new image. For more information, see DeregisterImage.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ImageLocation</code> - <code>string</code> - Optional - The full path to your AMI manifest in Amazon S3 storage.</li>
    *   <li><code>Name</code> - <code>string</code> - Optional - The name to give the new Amazon Machine Image. Constraints: 3-128 alphanumeric characters, parenthesis (<code>()</code>), commas (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>), or underscores(<code>_</code>)</li>
    *   <li><code>Description</code> - <code>string</code> - Optional - The description describing the new AMI.</li>
@@ -3120,7 +3120,7 @@ AmazonEC2.prototype = {
    * If you run this operation on an elastic IP address that is already released, the address might
    * be assigned to another account which will cause Amazon EC2 to return an error.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PublicIp</code> - <code>string</code> - Optional - The elastic IP address that you are releasing from your account.</li>
    *   <li><code>AllocationId</code> - <code>string</code> - Optional - The allocation ID that AWS provided when you allocated the address for use with Amazon VPC.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -3141,7 +3141,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} association_id (Required) The ID representing the current association between the original network ACL and the subnet.
    * @param {String} network_acl_id (Required) The ID of the new ACL to associate with the subnet.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3165,7 +3165,7 @@ AmazonEC2.prototype = {
    * @param {String} rule_action (Required) Whether to allow or deny traffic that matches the rule. [Allowed values: <code>allow</code>, <code>deny</code>]
    * @param boolean $egress (Required) Whether this rule applies to egress traffic from the subnet (<code>true</code>) or ingress traffic (<code>false</code>).
    * @param {String} cidr_block (Required) The CIDR range to allow or deny, in CIDR notation (e.g., <code>172.16.0.0/24</code>).
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Icmp</code> - <code>array</code> - Optional - ICMP values. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>Type</code> - <code>integer</code> - Optional - For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a wildcard meaning all types. Required if specifying <code>icmp</code> for the protocol.</li>
@@ -3203,7 +3203,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} route_table_id (Required) The ID of the route table where the route will be replaced.
    * @param {String} destination_cidr_block (Required) The CIDR address block used for the destination match. For example: <code>0.0.0.0/0</code>. The value you provide must match the CIDR of an existing route in the table.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GatewayId</code> - <code>string</code> - Optional - The ID of a VPN or Internet gateway attached to your VPC.</li>
    *   <li><code>InstanceId</code> - <code>string</code> - Optional - The ID of a NAT instance in your VPC.</li>
    *   <li><code>NetworkInterfaceId</code> - <code>string</code> - Optional - </li>
@@ -3233,7 +3233,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} association_id (Required) The ID representing the current association between the original route table and the subnet.
    * @param {String} route_table_id (Required) The ID of the new route table to associate with the subnet.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3250,7 +3250,7 @@ AmazonEC2.prototype = {
   /**
    * 
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InstanceId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Status</code> - <code>string</code> - Optional - </li>
    *   <li><code>StartTime</code> - <code>string</code> - Optional -  May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -3282,7 +3282,7 @@ AmazonEC2.prototype = {
    * User Guide.</a>
    *
    * @param {String} spot_price (Required) Specifies the maximum hourly price for any Spot Instance launched to fulfill the request.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InstanceCount</code> - <code>integer</code> - Optional - Specifies the maximum number of Spot Instances to launch.</li>
    *   <li><code>Type</code> - <code>string</code> - Optional - Specifies the Spot Instance type. [Allowed values: <code>one-time</code>, <code>persistent</code>]</li>
    *   <li><code>ValidFrom</code> - <code>string</code> - Optional - Defines the start date of the request. If this is a one-time request, the request becomes active at this date and time and remains active until all instances launch, the request expires, or the request is canceled. If the request is persistent, the request becomes active at this date and time and remains active until it expires or is canceled. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -3377,7 +3377,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} image_id (Required) The ID of the AMI whose attribute is being reset.
    * @param {String} attribute (Required) The name of the attribute being reset. Available attribute names: <code>launchPermission</code>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3396,7 +3396,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} instance_id (Required) The ID of the Amazon EC2 instance whose attribute is being reset.
    * @param {String} attribute (Required) The name of the attribute being reset. Available attribute names: <code>kernel</code>, <code>ramdisk</code> [Allowed values: <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, <code>instanceInitiatedShutdownBehavior</code>, <code>rootDeviceName</code>, <code>blockDeviceMapping</code>, <code>productCodes</code>, <code>sourceDestCheck</code>, <code>groupSet</code>, <code>ebsOptimized</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3414,7 +3414,7 @@ AmazonEC2.prototype = {
    * 
    *
    * @param {String} network_interface_id (Required) 
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>SourceDestCheck</code> - <code>string</code> - Optional - </li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -3433,7 +3433,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} snapshot_id (Required) The ID of the snapshot whose attribute is being reset.
    * @param {String} attribute (Required) The name of the attribute being reset. Available attribute names: <code>createVolumePermission</code> [Allowed values: <code>productCodes</code>, <code>createVolumePermission</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3464,7 +3464,7 @@ AmazonEC2.prototype = {
    * However, a small delay might occur.
    *
    * @param {String} group_id (Required) ID of the VPC security group to modify.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>IpPermissions</code> - <code>array</code> - Optional - List of IP permissions to authorize on the specified security group. Specifying permissions through IP permissions is the preferred way of authorizing permissions since it offers more flexibility and control. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>IpProtocol</code> - <code>string</code> - Optional - The IP protocol of this permission. Valid protocol values: <code>tcp</code>, <code>udp</code>, <code>icmp</code></li>
@@ -3504,7 +3504,7 @@ AmazonEC2.prototype = {
    * Permission changes are quickly propagated to instances within the security group. However,
    * depending on the number of instances in the group, a small delay might occur.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>GroupName</code> - <code>string</code> - Optional - Name of the standard (EC2) security group to modify. The group must belong to your account. Can be used instead of GroupID for standard (EC2) security groups.</li>
    *   <li><code>GroupId</code> - <code>string</code> - Optional - ID of the standard (EC2) or VPC security group to modify. The group must belong to your account. Required for VPC security groups; can be used instead of GroupName for standard (EC2) security groups.</li>
    *   <li><code>IpPermissions</code> - <code>array</code> - Optional - List of IP permissions to revoke on the specified security group. For an IP permission to be removed, it must exactly match one of the IP permissions you specify in this list. Specifying permissions through IP permissions is the preferred way of revoking permissions since it offers more flexibility and control. <ul>
@@ -3579,7 +3579,7 @@ AmazonEC2.prototype = {
    * @param {String} image_id (Required) Unique ID of a machine image, returned by a call to DescribeImages.
    * @param {Number} min_count (Required) Minimum number of instances to launch. If the value is more than Amazon EC2 can launch, no instances are launched at all.
    * @param {Number} max_count (Required) Maximum number of instances to launch. If the value is more than Amazon EC2 can launch, the largest possible number above minCount will be launched instead. Between 1 and the maximum number allowed for your account (default: 20).
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>KeyName</code> - <code>string</code> - Optional - The name of the key pair.</li>
    *   <li><code>SecurityGroup</code> - <code>string|array</code> - Optional - The names of the security groups into which the instances will be launched. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>SecurityGroupId</code> - <code>string|array</code> - Optional -  Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -3673,7 +3673,7 @@ AmazonEC2.prototype = {
    * an error.
    *
    * @param string|array $instance_id (Required) The list of Amazon EC2 instances to start. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AdditionalInfo</code> - <code>string</code> - Optional - </li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -3702,7 +3702,7 @@ AmazonEC2.prototype = {
    * an error.
    *
    * @param string|array $instance_id (Required) The list of Amazon EC2 instances to stop. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Force</code> - <code>boolean</code> - Optional - Forces the instance to stop. The instance will not have an opportunity to flush file system caches nor file system meta data. If you use this option, you must perform file system check and repair procedures. This option is not recommended for Windows instances.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -3723,7 +3723,7 @@ AmazonEC2.prototype = {
    * Terminated instances will remain visible after termination (approximately one hour).
    *
    * @param string|array $instance_id (Required) The list of instances to terminate. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3741,7 +3741,7 @@ AmazonEC2.prototype = {
    *
    * @param {String} network_interface_id (Required) 
    * @param string|array $private_ip_address (Required)  Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -3759,7 +3759,7 @@ AmazonEC2.prototype = {
    * Disables monitoring for a running instance.
    *
    * @param string|array $instance_id (Required) The list of Amazon EC2 instances on which to disable monitoring. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

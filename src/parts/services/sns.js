@@ -26,7 +26,7 @@ AmazonSNS.prototype = {
    * @param {String} label (Required) A unique identifier for the new policy statement.
    * @param string|array $aws_account_id (Required) The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service. Pass a string for a single value, or an indexed array for multiple values.
    * @param string|array $action_name (Required) The action you want to allow for the specified principal(s). Valid values: any Amazon SNS action name. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -50,7 +50,7 @@ AmazonSNS.prototype = {
    *
    * @param {String} topic_arn (Required) The ARN of the topic for which you wish to confirm a subscription.
    * @param {String} token (Required) Short-lived token sent to an endpoint during the Subscribe action.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AuthenticateOnUnsubscribe</code> - <code>string</code> - Optional - Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action will require AWS authentication.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -71,7 +71,7 @@ AmazonSNS.prototype = {
    * with the specified name, that topic's ARN will be returned without creating a new topic.
    *
    * @param {String} name (Required) The name of the topic you want to create. Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, and hyphens, and must be between 1 and 256 characters long.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -90,7 +90,7 @@ AmazonSNS.prototype = {
    * action is idempotent, so deleting a topic that does not exist will not result in an error.
    *
    * @param {String} topic_arn (Required) The ARN of the topic you want to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -107,7 +107,7 @@ AmazonSNS.prototype = {
    * The GetSubscriptionAttribtues action returns all of the properties of a subscription.
    *
    * @param {String} subscription_arn (Required) The ARN of the subscription whose properties you want to get.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -125,7 +125,7 @@ AmazonSNS.prototype = {
    * Topic properties returned might differ based on the authorization of the user.
    *
    * @param {String} topic_arn (Required) The ARN of the topic whose properties you want to get.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -144,7 +144,7 @@ AmazonSNS.prototype = {
    * also returned. Use the NextToken parameter in a new ListSubscriptions call to get further
    * results.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - Token returned by the previous ListSubscriptions request.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -164,7 +164,7 @@ AmazonSNS.prototype = {
    * call to get further results.
    *
    * @param {String} topic_arn (Required) The ARN of the topic for which you wish to find subscriptions.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - Token returned by the previous ListSubscriptionsByTopic request.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -183,7 +183,7 @@ AmazonSNS.prototype = {
    * list of topics, up to 100. If there are more topics, a NextToken is also returned. Use the
    * NextToken parameter in a new ListTopics call to get further results.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - Token returned by the previous ListTopics request.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -204,7 +204,7 @@ AmazonSNS.prototype = {
    *
    * @param {String} topic_arn (Required) The topic you want to publish to.
    * @param {String} message (Required) The message you want to send to the topic. Constraints: Messages must be UTF-8 encoded strings at most 8 KB in size (8192 bytes, not 8192 characters).
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Subject</code> - <code>string</code> - Optional - Optional parameter to be used as the "Subject" line of when the message is delivered to e-mail endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</li>
    *   <li><code>MessageStructure</code> - <code>string</code> - Optional - Optional parameter. It will have one valid value: "json". If this option, Message is present and set to "json", the value of Message must: be a syntactically valid JSON object. It must contain at least a top level JSON key of "default" with a value that is a string. For any other top level key that matches one of our transport protocols (e.g. "http"), then the corresponding value (if it is a string) will be used for the message published for that protocol Constraints: Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. The values will be parsed (unescaped) before they are used in outgoing messages. Typically, outbound notifications are JSON encoded (meaning, the characters will be reescaped for sending). JSON strings are UTF-8. Values have a minimum length of 0 (the empty string, "", is allowed). Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). Non-string values will cause the key to be ignored. Keys that do not correspond to supported transport protocols will be ignored. Duplicate keys are not allowed. Failure to parse or validate any key or value in the message will cause the Publish call to return an error (no partial delivery).</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -225,7 +225,7 @@ AmazonSNS.prototype = {
    *
    * @param {String} topic_arn (Required) The ARN of the topic whose access control policy you wish to modify.
    * @param {String} label (Required) The unique label of the statement you want to remove.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -246,7 +246,7 @@ AmazonSNS.prototype = {
    * @param {String} subscription_arn (Required) The ARN of the subscription to modify.
    * @param {String} attribute_name (Required) The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: DeliveryPolicy
    * @param {String} attribute_value (Required) The new value for the attribute.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -268,7 +268,7 @@ AmazonSNS.prototype = {
    * @param {String} topic_arn (Required) The ARN of the topic to modify.
    * @param {String} attribute_name (Required) The name of the attribute you want to set. Only a subset of the topic's attributes are mutable. Valid values: Policy | DisplayName
    * @param {String} attribute_value (Required) The new value for the attribute.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -292,7 +292,7 @@ AmazonSNS.prototype = {
    * @param {String} topic_arn (Required) The ARN of topic you want to subscribe to.
    * @param {String} protocol (Required) The protocol you want to use. Supported protocols include:<ul><li>http -- delivery of JSON-encoded message via HTTP POST</li><li>https -- delivery of JSON-encoded message via HTTPS POST</li><li>email -- delivery of message via SMTP</li><li>email-json -- delivery of JSON-encoded message via SMTP</li><li>sms -- delivery of message via SMS</li><li>sqs -- delivery of JSON-encoded message to an Amazon SQS queue</li></ul>
    * @param {String} endpoint (Required) The endpoint that you want to receive notifications. Endpoints vary by protocol:<ul><li>For the http protocol, the endpoint is an URL beginning with "http://"</li><li>For the https protocol, the endpoint is a URL beginning with "https://"</li><li>For the email protocol, the endpoint is an e-mail address</li><li>For the email-json protocol, the endpoint is an e-mail address</li><li>For the sms protocol, the endpoint is a phone number of an SMS-enabled device</li><li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS queue</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -316,7 +316,7 @@ AmazonSNS.prototype = {
    * request was unintended.
    *
    * @param {String} subscription_arn (Required) The ARN of the subscription to be deleted.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

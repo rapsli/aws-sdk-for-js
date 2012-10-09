@@ -27,7 +27,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain containing the workflow executions to count.</li>
    *   <li><code>startTimeFilter</code> - <code>array</code> - Optional - If specified, only workflow executions that meet the start time criteria of the filter are counted. <p class="note"> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> <ul>
    *     <li><code>oldestDate</code> - <code>string</code> - Required - Specifies the oldest start or close date and time to return. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -70,7 +70,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain containing the workflow executions to count.</li>
    *   <li><code>startTimeFilter</code> - <code>array</code> - Required - Specifies the start time criteria that workflow executions must meet in order to be counted. <ul>
    *     <li><code>oldestDate</code> - <code>string</code> - Required - Specifies the oldest start or close date and time to return. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -102,7 +102,7 @@ AmazonSWF.prototype = {
    * is an approximation and is not guaranteed to be exact. If you specify a task list that no
    * activity task was ever scheduled in then 0 will be returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain that contains the task list.</li>
    *   <li><code>taskList</code> - <code>array</code> - Required - The name of the task list. <ul>
    *     <li><code>name</code> - <code>string</code> - Required - The name of the task list.</li>
@@ -123,7 +123,7 @@ AmazonSWF.prototype = {
    * is an approximation and is not guaranteed to be exact. If you specify a task list that no
    * decision task was ever scheduled in then 0 will be returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain that contains the task list.</li>
    *   <li><code>taskList</code> - <code>array</code> - Required - The name of the task list. <ul>
    *     <li><code>name</code> - <code>string</code> - Required - The name of the task list.</li>
@@ -149,7 +149,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which the activity type is registered.</li>
    *   <li><code>activityType</code> - <code>array</code> - Required - The activity type to deprecate. <ul>
    *     <li><code>name</code> - <code>string</code> - Required - The name of this activity. <p class="note">The combination of activity type name and version must be unique within a domain.</p></li>
@@ -177,7 +177,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>name</code> - <code>string</code> - Required - The name of the domain to deprecate.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -201,7 +201,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which the workflow type is registered.</li>
    *   <li><code>workflowType</code> - <code>array</code> - Required - The workflow type to deprecate. <ul>
    *     <li><code>name</code> - <code>string</code> - Required - The name of the workflow type. This field is required. <p class="note">The combination of workflow type name and version must be unique with in a domain.</p></li>
@@ -222,7 +222,7 @@ AmazonSWF.prototype = {
    * Returns information about the specified activity type. This includes configuration settings
    * provided at registration time as well as other general information about the type.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which the activity type is registered.</li>
    *   <li><code>activityType</code> - <code>array</code> - Required - The activity type to describe. <ul>
    *     <li><code>name</code> - <code>string</code> - Required - The name of this activity. <p class="note">The combination of activity type name and version must be unique within a domain.</p></li>
@@ -242,7 +242,7 @@ AmazonSWF.prototype = {
   /**
    * Returns information about the specified domain including description and status.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>name</code> - <code>string</code> - Required - The name of the domain to describe.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -264,7 +264,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain containing the workflow execution.</li>
    *   <li><code>execution</code> - <code>array</code> - Required - The workflow execution to describe. <ul>
    *     <li><code>workflowId</code> - <code>string</code> - Required - The user defined identifier associated with the workflow execution.</li>
@@ -286,7 +286,7 @@ AmazonSWF.prototype = {
    * settings specified when the type was registered and other information such as creation date,
    * current status, etc.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which this workflow type is registered.</li>
    *   <li><code>workflowType</code> - <code>array</code> - Required - The workflow type to describe. <ul>
    *     <li><code>name</code> - <code>string</code> - Required - The name of the workflow type. This field is required. <p class="note">The combination of workflow type name and version must be unique with in a domain.</p></li>
@@ -313,7 +313,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain containing the workflow execution.</li>
    *   <li><code>execution</code> - <code>array</code> - Required - Specifies the workflow execution for which to return the history. <ul>
    *     <li><code>workflowId</code> - <code>string</code> - Required - The user defined identifier associated with the workflow execution.</li>
@@ -340,7 +340,7 @@ AmazonSWF.prototype = {
    * subsequent pages, make the call again using the <code>nextPageToken</code> returned by the
    * initial call.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which the activity types have been registered.</li>
    *   <li><code>name</code> - <code>string</code> - Optional - If specified, only lists the activity types that have this name.</li>
    *   <li><code>registrationStatus</code> - <code>string</code> - Required - Specifies the registration status of the activity types to list. [Allowed values: <code>REGISTERED</code>, <code>DEPRECATED</code>]</li>
@@ -368,7 +368,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain that contains the workflow executions to list.</li>
    *   <li><code>startTimeFilter</code> - <code>array</code> - Optional - If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times. <p class="note"> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> <ul>
    *     <li><code>oldestDate</code> - <code>string</code> - Required - Specifies the oldest start or close date and time to return. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -415,7 +415,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>nextPageToken</code> - <code>string</code> - Optional - If on a previous call to this method a <code>NextPageToken</code> was returned, the result has more than one page. To get the next page of results, repeat the call with the returned token and all other arguments unchanged.</li>
    *   <li><code>registrationStatus</code> - <code>string</code> - Required - Specifies the registration status of the domains to list. [Allowed values: <code>REGISTERED</code>, <code>DEPRECATED</code>]</li>
    *   <li><code>maximumPageSize</code> - <code>integer</code> - Optional - The maximum number of results returned in each page. The default is 100, but the caller can override this value to a page size <em>smaller</em> than the default. You cannot specify a page size greater than 100. Note that the number of domains may be less than the maxiumum page size, in which case, a smaller page size is returned.</li>
@@ -441,7 +441,7 @@ AmazonSWF.prototype = {
    * reflect recent updates and changes.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain that contains the workflow executions to list.</li>
    *   <li><code>startTimeFilter</code> - <code>array</code> - Required - Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. <ul>
    *     <li><code>oldestDate</code> - <code>string</code> - Required - Specifies the oldest start or close date and time to return. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -475,7 +475,7 @@ AmazonSWF.prototype = {
    * Returns information about workflow types in the specified domain. The results may be split into
    * multiple pages that can be retrieved by making the call repeatedly.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which the workflow types have been registered.</li>
    *   <li><code>name</code> - <code>string</code> - Optional - If specified, lists the workflow type with this name.</li>
    *   <li><code>registrationStatus</code> - <code>string</code> - Required - Specifies the registration status of the workflow types to list. [Allowed values: <code>REGISTERED</code>, <code>DEPRECATED</code>]</li>
@@ -507,7 +507,7 @@ AmazonSWF.prototype = {
    * than the maximum time service may hold the poll request).
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain that contains the task lists being polled.</li>
    *   <li><code>taskList</code> - <code>array</code> - Required - Specifies the task list to poll for activity tasks. The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string "arn". <ul>
    *     <li><code>name</code> - <code>string</code> - Required - The name of the task list.</li>
@@ -550,7 +550,7 @@ AmazonSWF.prototype = {
    * call <code>PollForDecisionTask</code> again.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain containing the task lists to poll.</li>
    *   <li><code>taskList</code> - <code>array</code> - Required - Specifies the task list to poll for decision tasks. The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string "arn". <ul>
    *     <li><code>name</code> - <code>string</code> - Required - The name of the task list.</li>
@@ -603,7 +603,7 @@ AmazonSWF.prototype = {
    * <code>RespondActivityTaskCanceled</code>. Otherwise, it should ignore the cancellation request.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>taskToken</code> - <code>string</code> - Required - The <code>taskToken</code> of the <code>ActivityTask</code>. <p class="important">The <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p></li>
    *   <li><code>details</code> - <code>string</code> - Optional - If specified, contains details about the progress of the task.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -627,7 +627,7 @@ AmazonSWF.prototype = {
    * registered as a new version.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which this activity is to be registered.</li>
    *   <li><code>name</code> - <code>string</code> - Required - The name of the activity type within the domain. The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string "arn".</li>
    *   <li><code>version</code> - <code>string</code> - Required - The version of the activity type. <p class="note">The activity type consists of the name and version, the combination of which must be unique within the domain.</p> The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string "arn".</li>
@@ -653,7 +653,7 @@ AmazonSWF.prototype = {
   /**
    * Registers a new domain.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>name</code> - <code>string</code> - Required - Name of the domain to register. The name must be unique. The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string "arn".</li>
    *   <li><code>description</code> - <code>string</code> - Optional - Textual description of the domain.</li>
    *   <li><code>workflowExecutionRetentionPeriodInDays</code> - <code>string</code> - Required - Specifies the duration-- <strong><em>in days</em></strong> --for which the record (including the history) of workflow executions in this domain should be kept by the service. After the retention period, the workflow execution will not be available in the results of visibility calls. If a duration of <code>NONE</code> is specified, the records for workflow executions in this domain are not retained at all.</li>
@@ -677,7 +677,7 @@ AmazonSWF.prototype = {
    * registered as a new version.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which to register the workflow type.</li>
    *   <li><code>name</code> - <code>string</code> - Required - The name of the workflow type. The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string "arn".</li>
    *   <li><code>version</code> - <code>string</code> - Required - The version of the workflow type. <p class="note">The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p> The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string "arn".</li>
@@ -715,7 +715,7 @@ AmazonSWF.prototype = {
    * used instead of <code>TerminateWorkflowExecution</code> when possible.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain containing the workflow execution to cancel.</li>
    *   <li><code>workflowId</code> - <code>string</code> - Required - The workflowId of the workflow execution to cancel.</li>
    *   <li><code>runId</code> - <code>string</code> - Optional - The runId of the workflow execution to cancel.</li>
@@ -744,7 +744,7 @@ AmazonSWF.prototype = {
    * can be safely undone or abandoned.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>taskToken</code> - <code>string</code> - Required - The <code>taskToken</code> of the <code>ActivityTask</code>. <p class="important">The <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p></li>
    *   <li><code>details</code> - <code>string</code> - Optional - Optional information about the cancellation.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -772,7 +772,7 @@ AmazonSWF.prototype = {
    * should cancel the task, clean up and then call <code>RespondActivityTaskCanceled</code>.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>taskToken</code> - <code>string</code> - Required - The <code>taskToken</code> of the <code>ActivityTask</code>. <p class="important">The <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p></li>
    *   <li><code>result</code> - <code>string</code> - Optional - The result of the activity task. It is a free form string that is implementation specific.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -793,7 +793,7 @@ AmazonSWF.prototype = {
    * The <code>reason</code> and <code>details</code> appear in the <code>ActivityTaskFailed</code>
    * event added to the workflow history.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>taskToken</code> - <code>string</code> - Required - The <code>taskToken</code> of the <code>ActivityTask</code>. <p class="important">The <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p></li>
    *   <li><code>reason</code> - <code>string</code> - Optional - Description of the error that may assist in diagnostics.</li>
    *   <li><code>details</code> - <code>string</code> - Optional - Optional detailed information about the failure.</li>
@@ -817,7 +817,7 @@ AmazonSWF.prototype = {
    * <code>executionContext</code> specified is attached to the event in the workflow execution
    * history.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>taskToken</code> - <code>string</code> - Required - The <code>taskToken</code> from the <code>DecisionTask</code>. <p class="important">The <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p></li>
    *   <li><code>decisions</code> - <code>array</code> - Optional - The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -931,7 +931,7 @@ AmazonSWF.prototype = {
    * <code>UnknownResource</code>.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain containing the workflow execution to signal.</li>
    *   <li><code>workflowId</code> - <code>string</code> - Required - The workflowId of the workflow execution to signal.</li>
    *   <li><code>runId</code> - <code>string</code> - Optional - The runId of the workflow execution to signal.</li>
@@ -954,7 +954,7 @@ AmazonSWF.prototype = {
    *  
    * This action returns the newly started workflow execution.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The name of the domain in which the workflow execution is created.</li>
    *   <li><code>workflowId</code> - <code>string</code> - Required - The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <em>restart</em> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time. The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the literal string "arn".</li>
    *   <li><code>workflowType</code> - <code>array</code> - Required - The type of the workflow to start. <ul>
@@ -999,7 +999,7 @@ AmazonSWF.prototype = {
    * allows the workflow to gracefully close while <code>TerminateWorkflowExecution</code> does not.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>domain</code> - <code>string</code> - Required - The domain of the workflow execution to terminate.</li>
    *   <li><code>workflowId</code> - <code>string</code> - Required - The workflowId of the workflow execution to terminate.</li>
    *   <li><code>runId</code> - <code>string</code> - Optional - The runId of the workflow execution to terminate.</li>

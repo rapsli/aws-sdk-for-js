@@ -33,7 +33,7 @@ AmazonDynamoDB.prototype = {
    * can get the next page of results. If necessary, your application needs its own logic to
    * assemble the pages of results into one set.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>RequestItems</code> - <code>array</code> - Required - A map of the table name and corresponding items to get by primary key. While requesting items, each table name can be invoked only once per operation. <ul>
    *     <li><code>[custom-key]</code> - <code>array</code> - Optional - This key is variable (e.g., user-specified). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>] <ul>
    *       <li><code>Keys</code> - <code>array</code> - Required - The primary key that uniquely identifies each item in a table. A primary key can be a one attribute (hash) primary key or a two attribute (hash-and-range) primary key. <ul>
@@ -77,7 +77,7 @@ AmazonDynamoDB.prototype = {
    * There are no transaction guarantees provided by this API. It does not allow conditional puts
    * nor does it support return values.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>RequestItems</code> - <code>array</code> - Required - A map of table name to list-of-write-requests. Used as input to the <code>BatchWriteItem</code> API call <ul>
    *     <li><code>[custom-key]</code> - <code>array</code> - Optional - This key is variable (e.g., user-specified). <ul>
    *       <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -146,7 +146,7 @@ AmazonDynamoDB.prototype = {
    * the table is in the <code>ACTIVE</code> state. Once the table is in the <code>ACTIVE</code>
    * state, you can perform data plane operations.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table you want to create. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>KeySchema</code> - <code>array</code> - Required - The KeySchema identifies the primary key as a one attribute primary key (hash) or a composite two attribute (hash-and-range) primary key. Single attribute primary keys have one index value: a <code>HashKeyElement</code>. A composite hash-and-range primary key contains two attribute values: a <code>HashKeyElement</code> and a <code>RangeKeyElement</code>. <ul>
    *     <li><code>HashKeyElement</code> - <code>array</code> - Required - A hash key element is treated as the primary key, and can be a string or a number. Single attribute primary keys have one index value. The value can be <code>String</code>, <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>. <ul>
@@ -179,7 +179,7 @@ AmazonDynamoDB.prototype = {
    * You can perform a conditional delete operation that deletes the item if it exists, or if it has
    * an expected attribute value.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table in which you want to delete an item. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>Key</code> - <code>array</code> - Required - The primary key that uniquely identifies each item in a table. A primary key can be a one attribute (hash) primary key or a two attribute (hash-and-range) primary key. <ul>
    *     <li><code>HashKeyElement</code> - <code>array</code> - Required - A hash key element is treated as the primary key, and can be a string or a number. Single attribute primary keys have one index value. The value can be <code>String</code>, <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>. <ul>
@@ -232,7 +232,7 @@ AmazonDynamoDB.prototype = {
    * <code>ResourceInUseException</code>. If the specified table does not exist, Amazon DynamoDB
    * returns a <code>ResourceNotFoundException</code>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table you want to delete. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -251,7 +251,7 @@ AmazonDynamoDB.prototype = {
    *  
    * If the table does not exist, Amazon DynamoDB returns a <code>ResourceNotFoundException</code>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table you want to describe. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -272,7 +272,7 @@ AmazonDynamoDB.prototype = {
    * <code>ConsistentRead</code>. Although this operation might take longer than a standard read, it
    * always returns the last updated value.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table in which you want to get an item. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>Key</code> - <code>array</code> - Required - The primary key that uniquely identifies each item in a table. A primary key can be a one attribute (hash) primary key or a two attribute (hash-and-range) primary key. <ul>
    *     <li><code>HashKeyElement</code> - <code>array</code> - Required - A hash key element is treated as the primary key, and can be a string or a number. Single attribute primary keys have one index value. The value can be <code>String</code>, <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>. <ul>
@@ -309,7 +309,7 @@ AmazonDynamoDB.prototype = {
    * Retrieves a paginated list of table names created by the AWS Account of the caller in the AWS
    * Region (e.g. <code>us-east-1</code>).
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ExclusiveStartTableName</code> - <code>string</code> - Optional - The name of the table that starts the list. If you already ran a <code>ListTables</code> operation and received a <code>LastEvaluatedTableName</code> value in the response, use that value here to continue the list. [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>Limit</code> - <code>integer</code> - Optional - A number of maximum table names to return.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -331,7 +331,7 @@ AmazonDynamoDB.prototype = {
    * one with the specified primary key doesn't exist), or replace an existing item if it has
    * certain attribute values.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table in which you want to put an item. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>Item</code> - <code>array</code> - Required - A map of the attributes for the item, and must include the primary key values that define the item. Other attribute name-value pairs can be provided for the item. <ul>
    *     <li><code>[custom-key]</code> - <code>array</code> - Optional - AttributeValue can be <code>String</code>, <code>Number</code>, <code>Binary</code>, <code>StringSet</code>, <code>NumberSet</code>, <code>BinarySet</code>. <ul>
@@ -376,7 +376,7 @@ AmazonDynamoDB.prototype = {
    * the composite key. Use the <code>ScanIndexForward</code> parameter to get results in forward or
    * reverse order by range key.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table in which you want to query. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>AttributesToGet</code> - <code>string|array</code> - Optional - List of <code>Attribute</code> names. If attribute names are not specified then all attributes will be returned. If some attributes are not found, they will not appear in the result. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Limit</code> - <code>integer</code> - Optional - The maximum number of items to return. If Amazon DynamoDB hits this limit while querying the table, it stops the query and returns the matching values up to the limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the query. Also, if the result set size exceeds 1MB before Amazon DynamoDB hits this limit, it stops the query and returns the matching values, and a <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the query.</li>
@@ -438,7 +438,7 @@ AmazonDynamoDB.prototype = {
    *  
    * Provide a <code>ScanFilter</code> to get more specific results.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table in which you want to scan. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>AttributesToGet</code> - <code>string|array</code> - Optional - List of <code>Attribute</code> names. If attribute names are not specified then all attributes will be returned. If some attributes are not found, they will not appear in the result. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Limit</code> - <code>integer</code> - Optional - The maximum number of items to return. If Amazon DynamoDB hits this limit while scanning the table, it stops the scan and returns the matching values up to the limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the scan. Also, if the scanned data set size exceeds 1 MB before Amazon DynamoDB hits this limit, it stops the scan and returns the matching values up to the limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the scan.</li>
@@ -493,7 +493,7 @@ AmazonDynamoDB.prototype = {
    * You can perform a conditional update (insert a new attribute name-value pair if it doesn't
    * exist, or replace an existing name-value pair if it has certain expected attribute values).
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table in which you want to update an item. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>Key</code> - <code>array</code> - Required - The primary key that uniquely identifies each item in a table. A primary key can be a one attribute (hash) primary key or a two attribute (hash-and-range) primary key. <ul>
    *     <li><code>HashKeyElement</code> - <code>array</code> - Required - A hash key element is treated as the primary key, and can be a string or a number. Single attribute primary keys have one index value. The value can be <code>String</code>, <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>. <ul>
@@ -557,7 +557,7 @@ AmazonDynamoDB.prototype = {
    * Setting the throughput for a table helps you manage performance and is part of the Provisioned
    * Throughput feature of Amazon DynamoDB.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TableName</code> - <code>string</code> - Required - The name of the table you want to update. Allowed characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen) and <code>.</code> (period). [Constraints: The value must be between 3 and 255 characters, and must match the following regular expression pattern: <code>[a-zA-Z0-9_.-]+</code>]</li>
    *   <li><code>ProvisionedThroughput</code> - <code>array</code> - Required - Provisioned throughput reserves the required read and write resources for your table in terms of <code>ReadCapacityUnits</code> and <code>WriteCapacityUnits</code>. Values for provisioned throughput depend upon your expected read/write rates, item size, and consistency. Provide the expected number of read and write operations, assuming an item size of 1k and strictly consistent reads. For 2k item size, double the value. For 3k, triple the value, etc. Eventually-consistent reads consume half the resources of strictly consistent reads. <ul>
    *     <li><code>ReadCapacityUnits</code> - <code>long</code> - Required - <code>ReadCapacityUnits</code> are in terms of strictly consistent reads, assuming items of 1k. 2k items require twice the <code>ReadCapacityUnits</code>. Eventually-consistent reads only require half the <code>ReadCapacityUnits</code> of stirctly consistent reads.</li>

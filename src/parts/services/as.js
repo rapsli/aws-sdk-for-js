@@ -32,7 +32,7 @@ AmazonAS.prototype = {
    * @param {Number} min_size (Required) The minimum size of the Auto Scaling group.
    * @param {Number} max_size (Required) The maximum size of the Auto Scaling group.
    * @param string|array $availability_zones (Required) A list of availability zones for the Auto Scaling group. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DesiredCapacity</code> - <code>integer</code> - Optional - The number of Amazon EC2 instances that should be running in the group.</li>
    *   <li><code>DefaultCooldown</code> - <code>integer</code> - Optional - The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.</li>
    *   <li><code>LoadBalancerNames</code> - <code>string|array</code> - Optional - A list of LoadBalancers to use. Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -83,7 +83,7 @@ AmazonAS.prototype = {
    * @param {String} launch_configuration_name (Required) The name of the launch configuration to create. [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {String} image_id (Required) Unique ID of the <em>Amazon Machine Image</em> (AMI) which was assigned during registration. For more information about Amazon EC2 images, please see <a href="http://aws.amazon.com/ec2/">Amazon EC2 product documentation</a> [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {String} instance_type (Required) The instance type of the EC2 instance. For more information about Amazon EC2 instance types, please see <a href="http://aws.amazon.com/ec2/">Amazon EC2 product documentation</a> [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>KeyName</code> - <code>string</code> - Optional - The name of the EC2 key pair. [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>SecurityGroups</code> - <code>string|array</code> - Optional - The names of the security groups with which to associate Amazon EC2 or Amazon VPC instances. Specify Amazon EC2 security groups using security group names, such as <code>websrv</code>. Specify Amazon VPC security groups using security group IDs, such as <code>sg-12345678</code>. For more information about Amazon EC2 security groups, go to <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">Using Security Groups</a> in the Amazon EC2 product documentation. For more information about Amazon VPC security groups, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security Groups</a> in the Amazon VPC product documentation. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>UserData</code> - <code>string</code> - Optional - The user data available to the launched Amazon EC2 instances. For more information about Amazon EC2 user data, please see <a href="http://aws.amazon.com/ec2/">Amazon EC2 product documentation</a>. [Constraints: The value must be between 0 and 21847 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -125,7 +125,7 @@ AmazonAS.prototype = {
   /**
    * 
    *
-   * @param array $tags (Required)  <ul>
+   * @param tags (Required)  <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>ResourceId</code> - <code>string</code> - Optional -  [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *     <li><code>ResourceType</code> - <code>string</code> - Optional -  [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -134,7 +134,7 @@ AmazonAS.prototype = {
    *     <li><code>PropagateAtLaunch</code> - <code>boolean</code> - Optional - </li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -158,7 +158,7 @@ AmazonAS.prototype = {
    * </p>
    *
    * @param {String} auto_scaling_group_name (Required) The name of the Auto Scaling group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ForceDelete</code> - <code>boolean</code> - Optional - Starting with API version 2011-01-01, specifies that the Auto Scaling group will be deleted along with all instances associated with the group, without waiting for all instances to be terminated.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -179,7 +179,7 @@ AmazonAS.prototype = {
    * call completes, the launch configuration is no longer available for use.
    *
    * @param {String} launch_configuration_name (Required) The name of the launch configuration. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -197,7 +197,7 @@ AmazonAS.prototype = {
    *
    * @param {String} auto_scaling_group_name (Required) The name of the Auto Scaling group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {String} topic_arn (Required) The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -215,7 +215,7 @@ AmazonAS.prototype = {
    * Deletes a policy created by <code>PutScalingPolicy</code>
    *
    * @param {String} policy_name (Required) The name or PolicyARN of the policy you want to delete [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AutoScalingGroupName</code> - <code>string</code> - Optional - The name of the Auto Scaling group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -234,7 +234,7 @@ AmazonAS.prototype = {
    * <code>PutScheduledUpdateGroupAction</code>.
    *
    * @param {String} scheduled_action_name (Required) The name of the action you want to delete. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AutoScalingGroupName</code> - <code>string</code> - Optional - The name of the Auto Scaling group [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -251,7 +251,7 @@ AmazonAS.prototype = {
   /**
    * 
    *
-   * @param array $tags (Required)  <ul>
+   * @param tags (Required)  <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>ResourceId</code> - <code>string</code> - Optional -  [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *     <li><code>ResourceType</code> - <code>string</code> - Optional -  [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -260,7 +260,7 @@ AmazonAS.prototype = {
    *     <li><code>PropagateAtLaunch</code> - <code>boolean</code> - Optional - </li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -276,7 +276,7 @@ AmazonAS.prototype = {
   /**
    * Returns policy adjustment types for use in the <code>PutScalingPolicy</code> action.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -297,7 +297,7 @@ AmazonAS.prototype = {
    * get the next page, call this action again with the returned token as the <code>NextToken</code>
    * parameter.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AutoScalingGroupNames</code> - <code>string|array</code> - Optional - A list of Auto Scaling group names. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - A string that marks the start of the next batch of returned results. [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of records to return.</li>
@@ -321,7 +321,7 @@ AmazonAS.prototype = {
    * get the next page, call this action again with the returned token as the <code>NextToken</code>
    * parameter.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InstanceIds</code> - <code>string|array</code> - Optional - The list of Auto Scaling instances to describe. If this list is omitted, all auto scaling instances are described. The list of requested instances cannot contain more than 50 items. If unknown instances are requested, they are ignored with no error. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of Auto Scaling instances to be described with each call.</li>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - The token returned by a previous call to indicate that there is more data available. [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -339,7 +339,7 @@ AmazonAS.prototype = {
   /**
    * Returns a list of all notification types that are supported by Auto Scaling.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -356,7 +356,7 @@ AmazonAS.prototype = {
    *  
    * If no names are specified, then the full details of all launch configurations are returned.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>LaunchConfigurationNames</code> - <code>string|array</code> - Optional - A list of launch configuration names. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - A string that marks the start of the next batch of returned results. [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of launch configurations. The default is 100.</li>
@@ -374,7 +374,7 @@ AmazonAS.prototype = {
   /**
    * Returns a list of metrics and a corresponding list of granularities for each metric.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -390,7 +390,7 @@ AmazonAS.prototype = {
    * Returns a list of notification actions associated with Auto Scaling groups for specified
    * events.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AutoScalingGroupNames</code> - <code>string|array</code> - Optional - The name of the Auto Scaling group. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - A string that is used to mark the start of the next batch of returned results for pagination. [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - Maximum number of records to be returned.</li>
@@ -410,7 +410,7 @@ AmazonAS.prototype = {
    * includes a token, there are more records available. To get the additional records, repeat the
    * request with the response token as the <code>NextToken</code> parameter.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AutoScalingGroupName</code> - <code>string</code> - Optional - The name of the Auto Scaling group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>PolicyNames</code> - <code>string|array</code> - Optional - A list of policy names or policy ARNs to be described. If this list is omitted, all policy names are described. If an auto scaling group name is provided, the results are limited to that group.The list of requested policy names cannot contain more than 50 items. If unknown policy names are requested, they are ignored with no error. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - A string that is used to mark the start of the next batch of returned results for pagination. [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -437,7 +437,7 @@ AmazonAS.prototype = {
    * available. To get the additional records, repeat the request with the response token as the
    * <code>NextToken</code> parameter.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ActivityIds</code> - <code>string|array</code> - Optional - A list containing the activity IDs of the desired scaling activities. If this list is omitted, all activities are described. If an AutoScalingGroupName is provided, the results are limited to that group. The list of requested activities cannot contain more than 50 items. If unknown activities are requested, they are ignored with no error. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>AutoScalingGroupName</code> - <code>string</code> - Optional - The name of the <code>AutoScalingGroup</code>. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>MaxRecords</code> - <code>integer</code> - Optional - The maximum number of scaling activities to return.</li>
@@ -457,7 +457,7 @@ AmazonAS.prototype = {
    * Returns scaling process types for use in the <code>ResumeProcesses</code> and
    * <code>SuspendProcesses</code> actions.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -474,7 +474,7 @@ AmazonAS.prototype = {
    * a list of action already executed, see the activity record returned in
    * <code>DescribeScalingActivities</code>.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AutoScalingGroupName</code> - <code>string</code> - Optional - The name of the Auto Scaling group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>ScheduledActionNames</code> - <code>string|array</code> - Optional - A list of scheduled actions to be described. If this list is omitted, all scheduled actions are described. The list of requested scheduled actions cannot contain more than 50 items. If an auto scaling group name is provided, the results are limited to that group. If unknown scheduled actions are requested, they are ignored with no error. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>StartTime</code> - <code>string</code> - Optional - The earliest scheduled start time to return. If scheduled action names are provided, this field will be ignored. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -495,7 +495,7 @@ AmazonAS.prototype = {
   /**
    * 
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Filters</code> - <code>array</code> - Optional -  <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>Name</code> - <code>string</code> - Optional -  [Constraints: The value must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -520,7 +520,7 @@ AmazonAS.prototype = {
    * AutoScalingGroupName. You can specify the list of affected metrics with the Metrics parameter.
    *
    * @param {String} auto_scaling_group_name (Required) The name or ARN of the Auto Scaling Group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Metrics</code> - <code>string|array</code> - Optional - The list of metrics to disable. If no metrics are specified, all metrics are disabled. The following metrics are supported:<ul><li>GroupMinSize</li><li>GroupMaxSize</li><li>GroupDesiredCapacity</li><li>GroupInServiceInstances</li><li>GroupPendingInstances</li><li>GroupTerminatingInstances</li><li>GroupTotalInstances</li></ul> Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -543,7 +543,7 @@ AmazonAS.prototype = {
    *
    * @param {String} auto_scaling_group_name (Required) The name or ARN of the Auto Scaling Group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {String} granularity (Required) The granularity to associate with the metrics to collect. Currently, the only legal granularity is "1Minute". [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Metrics</code> - <code>string|array</code> - Optional - The list of metrics to collect. If no metrics are specified, all metrics are enabled. The following metrics are supported:<ul><li>GroupMinSize</li><li>GroupMaxSize</li><li>GroupDesiredCapacity</li><li>GroupInServiceInstances</li><li>GroupPendingInstances</li><li>GroupTerminatingInstances</li><li>GroupTotalInstances</li></ul> Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -562,7 +562,7 @@ AmazonAS.prototype = {
    * Runs the policy you create for your Auto Scaling group in <code>PutScalingPolicy</code>.
    *
    * @param {String} policy_name (Required) The name or PolicyARN of the policy you want to run. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AutoScalingGroupName</code> - <code>string</code> - Optional - The name or ARN of the Auto Scaling Group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>HonorCooldown</code> - <code>boolean</code> - Optional - Set to True if you want Auto Scaling to reject this request when the Auto Scaling group is in cooldown.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -587,7 +587,7 @@ AmazonAS.prototype = {
    * @param {String} auto_scaling_group_name (Required) The name of the Auto Scaling Group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {String} topic_arn (Required) The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param string|array $notification_types (Required) The type of events that will trigger the notification. For more information, go to <code>DescribeAutoScalingNotificationTypes</code>. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -611,7 +611,7 @@ AmazonAS.prototype = {
    * @param {String} policy_name (Required) The name of the policy you want to create or update. [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {Number} scaling_adjustment (Required) The number of instances by which to scale. <code>AdjustmentType</code> determines the interpretation of this number (e.g., as an absolute number or as a percentage of the existing Auto Scaling group size). A positive increment adds to the current capacity and a negative value removes from the current capacity.
    * @param {String} adjustment_type (Required) Specifies whether the <code>ScalingAdjustment</code> is an absolute number or a percentage of the current capacity. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Cooldown</code> - <code>integer</code> - Optional - The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.</li>
    *   <li><code>MinAdjustmentStep</code> - <code>integer</code> - Optional - </li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -635,7 +635,7 @@ AmazonAS.prototype = {
    *
    * @param {String} auto_scaling_group_name (Required) The name or ARN of the Auto Scaling Group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {String} scheduled_action_name (Required) The name of this scaling action. [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Time</code> - <code>string</code> - Optional - <code>Time</code> is deprecated. The time for this action to start. <code>Time</code> is an alias for <code>StartTime</code> and can be specified instead of <code>StartTime</code>, or vice versa. If both <code>Time</code> and <code>StartTime</code> are specified, their values should be identical. Otherwise, <code>PutScheduledUpdateGroupAction</code> will return an error. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>StartTime</code> - <code>string</code> - Optional - The time for this action to start, as in <code>--start-time 2010-06-01T00:00:00Z</code>. When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action will start and stop. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>EndTime</code> - <code>string</code> - Optional - The time for this action to end. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -661,7 +661,7 @@ AmazonAS.prototype = {
    * <code>SuspendProcesses</code> and <code>ProcessType</code>.
    *
    * @param {String} auto_scaling_group_name (Required) The name or Amazon Resource Name (ARN) of the Auto Scaling group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ScalingProcesses</code> - <code>string|array</code> - Optional - The processes that you want to suspend or resume, which can include one or more of the following:<ul><li>Launch</li><li>Terminate</li><li>HealthCheck</li><li>ReplaceUnhealthy</li><li>AZRebalance</li><li>AlarmNotifications</li><li>ScheduledActions</li><li>AddToLoadBalancer</li></ul>To suspend all process types, omit this parameter. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -701,7 +701,7 @@ AmazonAS.prototype = {
    *
    * @param {String} auto_scaling_group_name (Required) The name of the AutoScalingGroup. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {Number} desired_capacity (Required) The new capacity setting for the AutoScalingGroup.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>HonorCooldown</code> - <code>boolean</code> - Optional - By default, <code>SetDesiredCapacity</code> overrides any cooldown period. Set to True if you want Auto Scaling to reject this request when the Auto Scaling group is in cooldown.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -721,7 +721,7 @@ AmazonAS.prototype = {
    *
    * @param {String} instance_id (Required) The identifier of the EC2 instance. [Constraints: The value must be between 1 and 16 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param {String} health_status (Required) The health status of the instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy. Auto Scaling should terminate and replace it. [Constraints: The value must be between 1 and 32 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ShouldRespectGracePeriod</code> - <code>boolean</code> - Optional - If True, this call should respect the grace period associated with the group.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -749,7 +749,7 @@ AmazonAS.prototype = {
    * To resume processes that have been suspended, use <code>ResumeProcesses</code>.
    *
    * @param {String} auto_scaling_group_name (Required) The name or Amazon Resource Name (ARN) of the Auto Scaling group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ScalingProcesses</code> - <code>string|array</code> - Optional - The processes that you want to suspend or resume, which can include one or more of the following:<ul><li>Launch</li><li>Terminate</li><li>HealthCheck</li><li>ReplaceUnhealthy</li><li>AZRebalance</li><li>AlarmNotifications</li><li>ScheduledActions</li><li>AddToLoadBalancer</li></ul>To suspend all process types, omit this parameter. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -773,7 +773,7 @@ AmazonAS.prototype = {
    *
    * @param {String} instance_id (Required) The ID of the EC2 instance to be terminated. [Constraints: The value must be between 1 and 16 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
    * @param boolean $should_decrement_desired_capacity (Required) Specifies whether (<em>true</em>) or not (<em>false</em>) terminating this instance should also decrement the size of the <code>AutoScalingGroup</code>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -809,7 +809,7 @@ AmazonAS.prototype = {
    * </p>
    *
    * @param {String} auto_scaling_group_name (Required) The name of the Auto Scaling group. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>LaunchConfigurationName</code> - <code>string</code> - Optional - The name of the launch configuration. [Constraints: The value must be between 1 and 1600 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>MinSize</code> - <code>integer</code> - Optional - The minimum size of the Auto Scaling group.</li>
    *   <li><code>MaxSize</code> - <code>integer</code> - Optional - The maximum size of the Auto Scaling group.</li>

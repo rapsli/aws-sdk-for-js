@@ -24,7 +24,7 @@ AmazonELB.prototype = {
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
    * @param string|array $security_groups (Required) A list of security group IDs to associate with your LoadBalancer in VPC. The security group IDs must be provided as the ID and not the security group name (For example, sg-1234). Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -45,7 +45,7 @@ AmazonELB.prototype = {
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
    * @param string|array $subnets (Required) A list of subnet IDs to add for the LoadBalancer. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -63,7 +63,7 @@ AmazonELB.prototype = {
    * Enables the client to define an application healthcheck for the instances.
    *
    * @param {String} load_balancer_name (Required) The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
-   * @param array $health_check (Required) A structure containing the configuration information for the new healthcheck. <ul>
+   * @param health_check (Required) A structure containing the configuration information for the new healthcheck. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Target</code> - <code>string</code> - Required - Specifies the instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535. <p class="note">TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case a healthcheck simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy. SSL is also specified as SSL: port pair, for example, SSL:5000. For HTTP or HTTPS protocol, the situation is different. You have to include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy. The total length of the HTTP ping target needs to be 1024 16-bit Unicode characters or less.</p></li>
    *     <li><code>Interval</code> - <code>integer</code> - Required - Specifies the approximate interval, in seconds, between health checks of an individual instance.</li>
@@ -72,7 +72,7 @@ AmazonELB.prototype = {
    *     <li><code>HealthyThreshold</code> - <code>integer</code> - Required - Specifies the number of consecutive health probe successes required before moving the instance to the <em>Healthy</em> state.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -108,7 +108,7 @@ AmazonELB.prototype = {
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
    * @param {String} policy_name (Required) The name of the policy being created. The name must be unique within the set of policies for this LoadBalancer.
    * @param {String} cookie_name (Required) Name of the application cookie used for stickiness.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -140,7 +140,7 @@ AmazonELB.prototype = {
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
    * @param {String} policy_name (Required) The name of the policy being created. The name must be unique within the set of policies for this LoadBalancer.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CookieExpirationPeriod</code> - <code>long</code> - Optional - The time period in seconds after which the cookie should be considered stale. Not specifying this parameter indicates that the sticky session will last for the duration of the browser session.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -182,7 +182,7 @@ AmazonELB.prototype = {
    * </ul>
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within your set of LoadBalancers.
-   * @param array $listeners (Required) A list of the following tuples: LoadBalancerPort, InstancePort, and Protocol. <ul>
+   * @param listeners (Required) A list of the following tuples: LoadBalancerPort, InstancePort, and Protocol. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Protocol</code> - <code>string</code> - Required - Specifies the LoadBalancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life of the LoadBalancer.</li>
    *     <li><code>LoadBalancerPort</code> - <code>integer</code> - Required - Specifies the external LoadBalancer port number. This property cannot be modified for the life of the LoadBalancer.</li>
@@ -191,7 +191,7 @@ AmazonELB.prototype = {
    *     <li><code>SSLCertificateId</code> - <code>string</code> - Optional - The ARN string of the server certificate. To get the ARN of the server certificate, call the AWS Identity and Access Management <a href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate</a> API.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AvailabilityZones</code> - <code>string|array</code> - Optional - A list of Availability Zones. At least one Availability Zone must be specified. Specified Availability Zones must be in the same EC2 Region as the LoadBalancer. Traffic will be equally distributed across all zones. This list can be modified after the creation of the LoadBalancer. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Subnets</code> - <code>string|array</code> - Optional - A list of subnet IDs in your VPC to attach to your LoadBalancer. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>SecurityGroups</code> - <code>string|array</code> - Optional - The security groups assigned to your LoadBalancer within your VPC. Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -215,7 +215,7 @@ AmazonELB.prototype = {
    * listener must match the properties of the existing listener.
    *
    * @param {String} load_balancer_name (Required) The name of the new LoadBalancer. The name must be unique within your AWS account.
-   * @param array $listeners (Required) A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>, <code>Protocol</code>, and <code>SSLCertificateId</code> items. <ul>
+   * @param listeners (Required) A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>, <code>Protocol</code>, and <code>SSLCertificateId</code> items. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Protocol</code> - <code>string</code> - Required - Specifies the LoadBalancer transport protocol to use for routing - HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life of the LoadBalancer.</li>
    *     <li><code>LoadBalancerPort</code> - <code>integer</code> - Required - Specifies the external LoadBalancer port number. This property cannot be modified for the life of the LoadBalancer.</li>
@@ -224,7 +224,7 @@ AmazonELB.prototype = {
    *     <li><code>SSLCertificateId</code> - <code>string</code> - Optional - The ARN string of the server certificate. To get the ARN of the server certificate, call the AWS Identity and Access Management <a href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate</a> API.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -246,7 +246,7 @@ AmazonELB.prototype = {
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer for which the policy is being created. This name must be unique within the client AWS account.
    * @param {String} policy_name (Required) The name of the LoadBalancer policy being created. The name must be unique within the set of policies for this LoadBalancer.
    * @param {String} policy_type_name (Required) The name of the base policy type being used to create this policy. To get the list of policy types, use the <code>DescribeLoadBalancerPolicyTypes</code> action.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PolicyAttributes</code> - <code>array</code> - Optional - A list of attributes associated with the policy being created. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>AttributeName</code> - <code>string</code> - Optional - The name of the attribute associated with the policy.</li>
@@ -285,7 +285,7 @@ AmazonELB.prototype = {
    * </p>
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -303,7 +303,7 @@ AmazonELB.prototype = {
    *
    * @param {String} load_balancer_name (Required) The mnemonic name associated with the LoadBalancer.
    * @param {Number} load_balancer_ports (Required) The client port number(s) of the LoadBalancerListener(s) to be removed.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -323,7 +323,7 @@ AmazonELB.prototype = {
    *
    * @param {String} load_balancer_name (Required) The mnemonic name associated with the LoadBalancer. The name must be unique within your AWS account.
    * @param {String} policy_name (Required) The mnemonic name for the policy being deleted.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -345,12 +345,12 @@ AmazonELB.prototype = {
    * the LoadBalancer must be provided.
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
-   * @param array $instances (Required) A list of EC2 instance IDs consisting of all instances to be deregistered. <ul>
+   * @param instances (Required) A list of EC2 instance IDs consisting of all instances to be deregistered. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>InstanceId</code> - <code>string</code> - Optional - Provides an EC2 instance ID.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -375,7 +375,7 @@ AmazonELB.prototype = {
    * </p>
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Instances</code> - <code>array</code> - Optional - A list of instance IDs whose states are being queried. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>InstanceId</code> - <code>string</code> - Optional - Provides an EC2 instance ID.</li>
@@ -400,7 +400,7 @@ AmazonELB.prototype = {
    * returns descriptions of the specified sample policies, or descriptions of all the sample
    * policies. The names of the sample policies have the <code>ELBSample-</code> prefix.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>LoadBalancerName</code> - <code>string</code> - Optional - The mnemonic name associated with the LoadBalancer. If no name is specified, the operation returns the attributes of either all the sample policies pre-defined by Elastic Load Balancing or the specified sample polices.</li>
    *   <li><code>PolicyNames</code> - <code>string|array</code> - Optional - The names of LoadBalancer policies you've created or Elastic Load Balancing sample policy names. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -420,7 +420,7 @@ AmazonELB.prototype = {
    * <code>CreateLoadBalancerPolicy</code> action to instantiate specific policy configurations that
    * will be applied to an Elastic LoadBalancer.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>PolicyTypeNames</code> - <code>string|array</code> - Optional - Specifies the name of the policy types. If no names are specified, returns the description of all the policy types defined by Elastic Load Balancing service. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -444,7 +444,7 @@ AmazonELB.prototype = {
    * create the LoadBalancer.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>LoadBalancerNames</code> - <code>string|array</code> - Optional - A list of names associated with the LoadBalancers at creation time. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - An optional parameter reserved for future use.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -468,7 +468,7 @@ AmazonELB.prototype = {
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer to be detached. The name must be unique within the client AWS account.
    * @param string|array $subnets (Required) A list of subnet IDs to remove from the set of configured subnets for the LoadBalancer. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -502,7 +502,7 @@ AmazonELB.prototype = {
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
    * @param string|array $availability_zones (Required) A list of Availability Zones to be removed from the LoadBalancer. <p class="note">There must be at least one Availability Zone registered with a LoadBalancer at all times. The client cannot remove all the Availability Zones from a LoadBalancer. Specified Availability Zones must be in the same Region.</p> Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -530,7 +530,7 @@ AmazonELB.prototype = {
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
    * @param string|array $availability_zones (Required) A list of new Availability Zones for the LoadBalancer. Each Availability Zone must be in the same Region as the LoadBalancer. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -563,12 +563,12 @@ AmazonELB.prototype = {
    * </p>
    *
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
-   * @param array $instances (Required) A list of instance IDs that should be registered with the LoadBalancer. <p class="note">When the instance is stopped and then restarted, the IP addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing traffic to your instances. We recommend that you de-register your Amazon EC2 instances from your load balancer after you stop your instance, and then register the load balancer with your instance after you've restarted. To de-register your instances from load balancer, use <code>DeregisterInstancesFromLoadBalancer</code> action.</p> <ul>
+   * @param instances (Required) A list of instance IDs that should be registered with the LoadBalancer. <p class="note">When the instance is stopped and then restarted, the IP addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing traffic to your instances. We recommend that you de-register your Amazon EC2 instances from your load balancer after you stop your instance, and then register the load balancer with your instance after you've restarted. To de-register your instances from load balancer, use <code>DeregisterInstancesFromLoadBalancer</code> action.</p> <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>InstanceId</code> - <code>string</code> - Optional - Provides an EC2 instance ID.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -589,7 +589,7 @@ AmazonELB.prototype = {
    * @param {String} load_balancer_name (Required) The name of the the LoadBalancer.
    * @param {Number} load_balancer_port (Required) The port that uses the specified SSL certificate.
    * @param {String} ssl_certificate_id (Required) The ID of the SSL certificate chain to use. For more information on SSL certificates, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">Managing Server Certificates</a> in the AWS Identity and Access Management documentation.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -614,7 +614,7 @@ AmazonELB.prototype = {
    * @param {String} load_balancer_name (Required) The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
    * @param {Number} instance_port (Required) The port number associated with the back-end server.
    * @param string|array $policy_names (Required) List of policy names to be set. If the list is empty, then all current polices are removed from the back-end server. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -636,7 +636,7 @@ AmazonELB.prototype = {
    * @param {String} load_balancer_name (Required) The name associated with the LoadBalancer. The name must be unique within the client AWS account.
    * @param {Number} load_balancer_port (Required) The external port of the LoadBalancer with which this policy applies to.
    * @param string|array $policy_names (Required) List of policies to be associated with the listener. Currently this list can have at most one policy. If the list is empty, the current policy is removed from the listener. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

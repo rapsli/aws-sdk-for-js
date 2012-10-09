@@ -22,7 +22,7 @@ AmazonCloudWatch.prototype = {
    * Deletes all specified alarms. In the event of an error, no alarms are deleted.
    *
    * @param string|array $alarm_names (Required) A list of alarms to be deleted. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -44,7 +44,7 @@ AmazonCloudWatch.prototype = {
    * alarm.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AlarmName</code> - <code>string</code> - Optional - The name of the alarm.</li>
    *   <li><code>HistoryItemType</code> - <code>string</code> - Optional - The type of alarm histories to retrieve. [Allowed values: <code>ConfigurationUpdate</code>, <code>StateUpdate</code>, <code>Action</code>]</li>
    *   <li><code>StartDate</code> - <code>string</code> - Optional - The starting date to retrieve alarm history. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
@@ -67,7 +67,7 @@ AmazonCloudWatch.prototype = {
    * returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
    * or a prefix for any action.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AlarmNames</code> - <code>string|array</code> - Optional - A list of alarm names to retrieve information for. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>AlarmNamePrefix</code> - <code>string</code> - Optional - The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified.</li>
    *   <li><code>StateValue</code> - <code>string</code> - Optional - The state value to be used in matching alarms. [Allowed values: <code>OK</code>, <code>ALARM</code>, <code>INSUFFICIENT_DATA</code>]</li>
@@ -91,7 +91,7 @@ AmazonCloudWatch.prototype = {
    *
    * @param {String} metric_name (Required) The name of the metric.
    * @param {String} namespace (Required) The namespace of the metric. [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[^:].*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Statistic</code> - <code>string</code> - Optional - The statistic for the metric. [Allowed values: <code>SampleCount</code>, <code>Average</code>, <code>Sum</code>, <code>Minimum</code>, <code>Maximum</code>]</li>
    *   <li><code>Dimensions</code> - <code>array</code> - Optional - The list of dimensions associated with the metric. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
@@ -119,7 +119,7 @@ AmazonCloudWatch.prototype = {
    * state may change, but none of the alarm's actions will execute.
    *
    * @param string|array $alarm_names (Required) The names of the alarms to disable actions for. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -136,7 +136,7 @@ AmazonCloudWatch.prototype = {
    * Enables actions for the specified alarms.
    *
    * @param string|array $alarm_names (Required) The names of the alarms to enable actions for. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -185,7 +185,7 @@ AmazonCloudWatch.prototype = {
    * @param {Number} period (Required) The granularity, in seconds, of the returned datapoints. <code>Period</code> must be at least 60 seconds and must be a multiple of 60. The default value is 60.
    * @param string|array $statistics (Required) The metric statistics to return. Pass a string for a single value, or an indexed array for multiple values.
    * @param {String} unit (Required) The unit for the metric. [Allowed values: <code>Seconds</code>, <code>Microseconds</code>, <code>Milliseconds</code>, <code>Bytes</code>, <code>Kilobytes</code>, <code>Megabytes</code>, <code>Gigabytes</code>, <code>Terabytes</code>, <code>Bits</code>, <code>Kilobits</code>, <code>Megabits</code>, <code>Gigabits</code>, <code>Terabits</code>, <code>Percent</code>, <code>Count</code>, <code>Bytes/Second</code>, <code>Kilobytes/Second</code>, <code>Megabytes/Second</code>, <code>Gigabytes/Second</code>, <code>Terabytes/Second</code>, <code>Bits/Second</code>, <code>Kilobits/Second</code>, <code>Megabits/Second</code>, <code>Gigabits/Second</code>, <code>Terabits/Second</code>, <code>Count/Second</code>, <code>None</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Dimensions</code> - <code>array</code> - Optional - A list of dimensions describing qualities of the metric. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>Name</code> - <code>string</code> - Required - The name of the dimension.</li>
@@ -224,7 +224,7 @@ AmazonCloudWatch.prototype = {
    * metric, however, are available sooner using <code>GetMetricStatistics</code>.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Namespace</code> - <code>string</code> - Optional - The namespace to filter against. [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[^:].*</code>]</li>
    *   <li><code>MetricName</code> - <code>string</code> - Optional - The name of the metric to filter against.</li>
    *   <li><code>Dimensions</code> - <code>array</code> - Optional - A list of dimensions to filter against. <ul>
@@ -266,7 +266,7 @@ AmazonCloudWatch.prototype = {
    * @param {Number} evaluation_periods (Required) The number of periods over which data is compared to the specified threshold.
    * @param double $threshold (Required) The value against which the specified statistic is compared.
    * @param {String} comparison_operator (Required) The arithmetic operation to use when comparing the specified <code>Statistic</code> and <code>Threshold</code>. The specified <code>Statistic</code> value is used as the first operand. [Allowed values: <code>GreaterThanOrEqualToThreshold</code>, <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code>, <code>LessThanOrEqualToThreshold</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AlarmDescription</code> - <code>string</code> - Optional - The description for the alarm.</li>
    *   <li><code>ActionsEnabled</code> - <code>boolean</code> - Optional - Indicates whether or not actions should be executed during any changes to the alarm's state.</li>
    *   <li><code>OKActions</code> - <code>string|array</code> - Optional - The list of actions to execute when this alarm transitions into an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Number (ARN). Currently the only action supported is publishing to an Amazon SNS topic or an Amazon Auto Scaling policy. Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -318,7 +318,7 @@ AmazonCloudWatch.prototype = {
    * </p>
    *
    * @param {String} namespace (Required) The namespace for the metric data. <p class="note">You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are reserved for other Amazon Web Services products that send metrics to Amazon CloudWatch.</p> [Constraints: The value must be between 1 and 255 characters, and must match the following regular expression pattern: <code>[^:].*</code>]
-   * @param array $metric_data (Required) A list of data describing the metric. <ul>
+   * @param metric_data (Required) A list of data describing the metric. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>MetricName</code> - <code>string</code> - Required - The name of the metric.</li>
    *     <li><code>Dimensions</code> - <code>array</code> - Optional - A list of dimensions associated with the metric. <ul>
@@ -340,7 +340,7 @@ AmazonCloudWatch.prototype = {
    *     <li><code>Unit</code> - <code>string</code> - Optional - The unit of the metric. [Allowed values: <code>Seconds</code>, <code>Microseconds</code>, <code>Milliseconds</code>, <code>Bytes</code>, <code>Kilobytes</code>, <code>Megabytes</code>, <code>Gigabytes</code>, <code>Terabytes</code>, <code>Bits</code>, <code>Kilobits</code>, <code>Megabits</code>, <code>Gigabits</code>, <code>Terabits</code>, <code>Percent</code>, <code>Count</code>, <code>Bytes/Second</code>, <code>Kilobytes/Second</code>, <code>Megabytes/Second</code>, <code>Gigabytes/Second</code>, <code>Terabytes/Second</code>, <code>Bits/Second</code>, <code>Kilobits/Second</code>, <code>Megabits/Second</code>, <code>Gigabits/Second</code>, <code>Terabits/Second</code>, <code>Count/Second</code>, <code>None</code>]</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -363,7 +363,7 @@ AmazonCloudWatch.prototype = {
    * @param {String} alarm_name (Required) The descriptive name for the alarm. This name must be unique within the user's AWS account. The maximum length is 255 characters.
    * @param {String} state_value (Required) The value of the state. [Allowed values: <code>OK</code>, <code>ALARM</code>, <code>INSUFFICIENT_DATA</code>]
    * @param {String} state_reason (Required) The reason that this alarm is set to this specific state (in human-readable text format)
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>StateReasonData</code> - <code>string</code> - Optional - The reason that this alarm is set to this specific state (in machine-readable JSON format)</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>

@@ -27,7 +27,7 @@ AmazonCloudFormation.prototype = {
    * </p>
    *
    * @param {String} stack_name (Required) The name associated with the stack. The name must be unique within your AWS account. <p class="note">Must contain only alphanumeric characters (case sensitive) and start with an alpha character. Maximum length of the name is 255 characters.</p>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TemplateBody</code> - <code>string</code> - Optional - Structure containing the template body. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</li>
    *   <li><code>TemplateURL</code> - <code>string</code> - Optional - Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>. Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</li>
    *   <li><code>Parameters</code> - <code>array</code> - Optional - A list of <code>Parameter</code> structures that specify input parameters for the stack. <ul>
@@ -65,7 +65,7 @@ AmazonCloudFormation.prototype = {
    * successfully.
    *
    * @param {String} stack_name (Required) The name or the unique identifier associated with the stack.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -90,7 +90,7 @@ AmazonCloudFormation.prototype = {
    * Events are returned, even if the stack never existed or has been successfully deleted.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>StackName</code> - <code>string</code> - Optional - The name or the unique identifier associated with the stack. Default: There is no default value.</li>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - String that identifies the start of the next list of events, if there is one. Default: There is no default value.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -112,7 +112,7 @@ AmazonCloudFormation.prototype = {
    *
    * @param {String} stack_name (Required) The name or the unique identifier associated with the stack. Default: There is no default value.
    * @param {String} logical_resource_id (Required) The logical name of the resource as specified in the template. Default: There is no default value.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -153,7 +153,7 @@ AmazonCloudFormation.prototype = {
    * <code>PhysicalResourceId</code> in the same request.
    * </p>
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>StackName</code> - <code>string</code> - Optional - The name or the unique identifier associated with the stack. Default: There is no default value.</li>
    *   <li><code>LogicalResourceId</code> - <code>string</code> - Optional - The logical name of the resource as specified in the template. Default: There is no default value.</li>
    *   <li><code>PhysicalResourceId</code> - <code>string</code> - Optional - The name or unique identifier that corresponds to a physical instance ID of a resource supported by AWS CloudFormation. For example, for an Amazon Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack the instance belongs to and what other resources are part of the stack. Default: There is no default value.</li>
@@ -172,7 +172,7 @@ AmazonCloudFormation.prototype = {
    * Returns the description for the specified stack; if no stack name was specified, then it
    * returns the description for all the stacks created.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>StackName</code> - <code>string</code> - Optional - The name or the unique identifier associated with the stack. Default: There is no default value.</li>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - </li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -190,7 +190,7 @@ AmazonCloudFormation.prototype = {
    * Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly
    * Calculator URL with a query string that describes the resources required to run the template.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TemplateBody</code> - <code>string</code> - Optional - Structure containing the template body. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</li>
    *   <li><code>TemplateURL</code> - <code>string</code> - Optional - Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>. Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</li>
    *   <li><code>Parameters</code> - <code>array</code> - Optional - A list of <code>Parameter</code> structures that specify input parameters. <ul>
@@ -222,7 +222,7 @@ AmazonCloudFormation.prototype = {
    * </p>
    *
    * @param {String} stack_name (Required) The name or the unique identifier associated with the stack.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -242,7 +242,7 @@ AmazonCloudFormation.prototype = {
    * stack has been deleted.
    *
    * @param {String} stack_name (Required) The name or the unique identifier associated with the stack. Default: There is no default value.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - String that identifies the start of the next list of stack resource summaries, if there is one. Default: There is no default value.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -262,7 +262,7 @@ AmazonCloudFormation.prototype = {
    * after the stack is deleted. If no StackStatusFilter is specified, summary information for all
    * stacks is returned (including existing stacks and stacks that have been deleted).
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - String that identifies the start of the next list of stacks, if there is one. Default: There is no default value.</li>
    *   <li><code>StackStatusFilter</code> - <code>string|array</code> - Optional - Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -293,7 +293,7 @@ AmazonCloudFormation.prototype = {
    * Updating a Stack</a>.
    *
    * @param {String} stack_name (Required) The name or stack ID of the stack to update. <p class="note">Must contain only alphanumeric characters (case sensitive) and start with an alpha character. Maximum length of the name is 255 characters.</p>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TemplateBody</code> - <code>string</code> - Optional - Structure containing the template body. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</li>
    *   <li><code>TemplateURL</code> - <code>string</code> - Optional - Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>. Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</li>
    *   <li><code>Parameters</code> - <code>array</code> - Optional - A list of <code>Parameter</code> structures that specify input parameters for the stack. <ul>
@@ -318,7 +318,7 @@ AmazonCloudFormation.prototype = {
   /**
    * Validates a specified template.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>TemplateBody</code> - <code>string</code> - Optional - String containing the template body. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</li>
    *   <li><code>TemplateURL</code> - <code>string</code> - Optional - Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>. Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>

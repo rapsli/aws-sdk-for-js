@@ -39,7 +39,7 @@ AmazonSQS.prototype = {
    * @param {String} label (Required) The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>). Constraints: Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
    * @param string|array $aws_account_id (Required) The AWS account number of the <a href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a> who will be given permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. Pass a string for a single value, or an indexed array for multiple values.
    * @param string|array $action_name (Required) The action the client wants to allow for the specified principal. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -86,7 +86,7 @@ AmazonSQS.prototype = {
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
    * @param {String} receipt_handle (Required) The receipt handle associated with the message whose visibility timeout should be changed.
    * @param {Number} visibility_timeout (Required) The new value (in seconds) for the message's visibility timeout.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -107,14 +107,14 @@ AmazonSQS.prototype = {
    * message is reported individually in the response.
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
-   * @param array $change_message_visibility_batch_request_entry (Required) A list of receipt handles of the messages for which the visibility timeout must be changed. <ul>
+   * @param change_message_visibility_batch_request_entry (Required) A list of receipt handles of the messages for which the visibility timeout must be changed. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Id</code> - <code>string</code> - Required - An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code> s of a batch request need to be unique within the request.</li>
    *     <li><code>ReceiptHandle</code> - <code>string</code> - Required - A receipt handle.</li>
    *     <li><code>VisibilityTimeout</code> - <code>integer</code> - Optional - The new value (in seconds) for the message's visibility timeout.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -142,7 +142,7 @@ AmazonSQS.prototype = {
    * is returned. Otherwise, a <code>QueueNameExists</code> error is returned.
    *
    * @param {String} queue_name (Required) The name for the queue to be created.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Attribute</code> - <code>array</code> - Optional - A map of attributes with their corresponding values. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>Name</code> - <code>string</code> - Optional - The name of a queue attribute. [Allowed values: <code>Policy</code>, <code>VisibilityTimeout</code>, <code>MaximumMessageSize</code>, <code>MessageRetentionPeriod</code>, <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, <code>QueueArn</code>, <code>ApproximateNumberOfMessagesDelayed</code>, <code>DelaySeconds</code>]</li>
@@ -168,7 +168,7 @@ AmazonSQS.prototype = {
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
    * @param {String} receipt_handle (Required) The receipt handle associated with the message to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -188,13 +188,13 @@ AmazonSQS.prototype = {
    * reported individually in the response.
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
-   * @param array $delete_message_batch_request_entry (Required) A list of receipt handles for the messages to be deleted. <ul>
+   * @param delete_message_batch_request_entry (Required) A list of receipt handles for the messages to be deleted. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Id</code> - <code>string</code> - Required - An identifier for this particular receipt handle. This is used to communicate the result. Note that the <code>Id</code> s of a batch request need to be unique within the request.</li>
    *     <li><code>ReceiptHandle</code> - <code>string</code> - Required - A receipt handle.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -216,7 +216,7 @@ AmazonSQS.prototype = {
    * seconds.
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -259,7 +259,7 @@ AmazonSQS.prototype = {
    * </ul>
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AttributeName</code> - <code>string|array</code> - Optional - A list of attributes to retrieve information for. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -277,7 +277,7 @@ AmazonSQS.prototype = {
    * The <code>GetQueueUrl</code> action returns the URL of an existing queue.
    *
    * @param {String} queue_name (Required) The name of the queue whose URL must be fetched.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>QueueOwnerAWSAccountId</code> - <code>string</code> - Optional - The AWS account number of the queue's owner.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -294,7 +294,7 @@ AmazonSQS.prototype = {
   /**
    * Returns a list of your queues.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>QueueNamePrefix</code> - <code>string</code> - Optional - A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -316,7 +316,7 @@ AmazonSQS.prototype = {
    * request, the overall visibility timeout for the queue is used for the returned messages.
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>AttributeName</code> - <code>string|array</code> - Optional - A list of attributes to retrieve information for. Pass a string for a single value, or an indexed array for multiple values.</li>
    *   <li><code>MaxNumberOfMessages</code> - <code>integer</code> - Optional - The maximum number of messages to return. Amazon SQS never returns more messages than this value but may return fewer. All of the messages are not necessarily returned.</li>
    *   <li><code>VisibilityTimeout</code> - <code>integer</code> - Optional - The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</li>
@@ -339,7 +339,7 @@ AmazonSQS.prototype = {
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
    * @param {String} label (Required) The identification of the permission to remove. This is the label added with the <code>AddPermission</code> operation.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -358,7 +358,7 @@ AmazonSQS.prototype = {
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
    * @param {String} message_body (Required) The message to send.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>DelaySeconds</code> - <code>integer</code> - Optional - The number of seconds the message has to be delayed.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -379,14 +379,14 @@ AmazonSQS.prototype = {
    * response.
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
-   * @param array $send_message_batch_request_entry (Required) A list of <code>SendMessageBatchRequestEntry</code> s. <ul>
+   * @param send_message_batch_request_entry (Required) A list of <code>SendMessageBatchRequestEntry</code> s. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Id</code> - <code>string</code> - Required - An identifier for the message in this batch. This is used to communicate the result. Note that the the <code>Id</code> s of a batch request need to be unique within the request.</li>
    *     <li><code>MessageBody</code> - <code>string</code> - Required - Body of the message.</li>
    *     <li><code>DelaySeconds</code> - <code>integer</code> - Optional - The number of seconds for which the message has to be delayed.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -405,13 +405,13 @@ AmazonSQS.prototype = {
    * MessageRetentionPeriod, MaximumMessageSize, VisibilityTimeout and Policy.
    *
    * @param {String} queue_url (Required) The URL of the SQS queue to take action on.
-   * @param array $attribute (Required) A map of attributes to set. <ul>
+   * @param attribute (Required) A map of attributes to set. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Name</code> - <code>string</code> - Optional - The name of a queue attribute. [Allowed values: <code>Policy</code>, <code>VisibilityTimeout</code>, <code>MaximumMessageSize</code>, <code>MessageRetentionPeriod</code>, <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, <code>QueueArn</code>, <code>ApproximateNumberOfMessagesDelayed</code>, <code>DelaySeconds</code>]</li>
    *     <li><code>Value</code> - <code>string</code> - Optional - The value of a queue attribute.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

@@ -23,7 +23,7 @@ AmazonImportExport.prototype = {
    * if the job has already started or is complete.
    *
    * @param {String} job_id (Required) A unique identifier which refers to a particular job.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -45,7 +45,7 @@ AmazonImportExport.prototype = {
    * @param {String} job_type (Required) Specifies whether the job to initiate is an import or export job. [Allowed values: <code>Import</code>, <code>Export</code>]
    * @param {String} manifest (Required) The UTF-8 encoded text of the manifest file.
    * @param boolean $validate_only (Required) Validate the manifest and parameter values in the request but do not actually create a job.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ManifestAddendum</code> - <code>string</code> - Optional - For internal use only.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -67,7 +67,7 @@ AmazonImportExport.prototype = {
    * only return information about jobs you own.
    *
    * @param {String} job_id (Required) A unique identifier which refers to a particular job.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -86,7 +86,7 @@ AmazonImportExport.prototype = {
    * created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2
    * followed by Test1.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>MaxJobs</code> - <code>integer</code> - Optional - Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded, the response contains<IsTruncated>true</IsTruncated>. To return the additional jobs, see Marker.</li>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Specifies the JOBID to start after when listing the jobs created with your account. AWS Import/Export lists your jobs in reverse chronological order. See MaxJobs.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -110,7 +110,7 @@ AmazonImportExport.prototype = {
    * @param {String} manifest (Required) The UTF-8 encoded text of the manifest file.
    * @param {String} job_type (Required) Specifies whether the job to initiate is an import or export job. [Allowed values: <code>Import</code>, <code>Export</code>]
    * @param boolean $validate_only (Required) Validate the manifest and parameter values in the request but do not actually create a job.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

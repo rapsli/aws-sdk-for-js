@@ -67,7 +67,7 @@ Signer.prototype = {
   }
 };
 
-var Request:function(){
+var Request = function(){
   this.initialize();
 };
 

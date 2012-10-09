@@ -40,12 +40,12 @@ AmazonSDB.prototype = {
    * </ul>
    *
    * @param {String} domain_name (Required) The name of the domain in which the attributes are being deleted.
-   * @param array $item_keypairs (Required) Associative array of parameters which are treated as item-key-value and item-key-multivalue pairs (i.e. a key can have one or more values; think tags). <ul>
+   * @param item_keypairs (Required) Associative array of parameters which are treated as item-key-value and item-key-multivalue pairs (i.e. a key can have one or more values; think tags). <ul>
    *   <li><code>[item]</code> - <code>array</code> - Set the custom item name as the key for this value.<ul>
    *     <li><code>[key]</code> - <code>array</code> - Set the custom key name as the key for this value. For the value, pass a string for a single value, or an indexed array for multiple values.</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Item</code> - <code>array</code> - Optional - A list of items on which to perform the operation. <ul>
    *     <li><code>x</code> - <code>array</code> - This represents a simple array index. <ul>
    *       <li><code>ItemName</code> - <code>string</code> - Optional - This is the parameter format supported by the web service API. This is the item name to use.</li>
@@ -100,12 +100,12 @@ AmazonSDB.prototype = {
    * </ul>
    *
    * @param {String} domain_name (Required) The name of the domain in which the attributes are being deleted.
-   * @param array $item_keypairs (Required) Associative array of parameters which are treated as item-key-value and item-key-multivalue pairs (i.e. a key can have one or more values; think tags). <ul>
+   * @param item_keypairs (Required) Associative array of parameters which are treated as item-key-value and item-key-multivalue pairs (i.e. a key can have one or more values; think tags). <ul>
    *   <li><code>[item]</code> - <code>array</code> - Set the custom item name as the key for this value.<ul>
    *     <li><code>[key]</code> - <code>array</code> - Set the custom key name as the key for this value. For the value, pass a string for a single value, or an indexed array for multiple values.</li></ul>
    *   </li></ul>
    * @param boolean|array $replace (Optional) Whether to replace a key-value pair if a matching key already exists. Supports either a boolean (which affects ALL key-value pairs) or an indexed array of key names (which affects only the keys specified). Defaults to boolean <code>false</code>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Item</code> - <code>array</code> - Optional - A list of items on which to perform the operation. <ul>
    *     <li><code>x</code> - <code>array</code> - This represents a simple array index. <ul>
    *       <li><code>ItemName</code> - <code>string</code> - Optional - This is the parameter format supported by the web service API. This is the item name to use.</li>
@@ -148,7 +148,7 @@ AmazonSDB.prototype = {
    * "http://aws.amazon.com/contact-us/simpledb-limit-request/">http://aws.amazon.com/contact-us/simpledb-limit-request/</a>.
    *
    * @param {String} domain_name (Required) The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -177,7 +177,7 @@ AmazonSDB.prototype = {
    *
    * @param {String} domain_name (Required) The name of the domain in which the attributes are being deleted.
    * @param {String} item_name (Required) The name of the base item which will contain the series of keypairs.
-   * @param array $attributes (Optional) Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items. Takes an associative array of parameters that can have the following keys: <ul>
+   * @param attributes (Optional) Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items. Takes an associative array of parameters that can have the following keys: <ul>
    *   <li><code>Attribute</code> - <code>array</code> - Optional -  This is the parameter format supported by the web service API. This is the attribute node.<ul>
    *     <li><code>x</code> - <code>array</code> - This represents a simple array index. <ul>
    *       <li><code>Name</code> - <code>string</code> - Required - The name of the attribute. </li>
@@ -186,7 +186,7 @@ AmazonSDB.prototype = {
    *       <li><code>AlternateValueEncoding</code> - <code>string</code> - Optional - This is the parameter format supported by the web service API. This is the alternate value encoding to use.</li>
    *     </ul></li>
    *   </ul></li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Expected</code> - <code>array</code> - Optional - The update condition which, if specified, determines if the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated. <ul>
    *     <li><code>Name</code> - <code>string</code> - Optional - The name of the attribute involved in the condition.</li>
    *     <li><code>Value</code> - <code>string</code> - Optional - The value of an attribute. This value can only be specified when the exists parameter is equal to true.</li>
@@ -217,7 +217,7 @@ AmazonSDB.prototype = {
    * </p>
    *
    * @param {String} domain_name (Required) The name of the domain to delete.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -235,7 +235,7 @@ AmazonSDB.prototype = {
    * items and attributes in the domain, and the size of the attribute names and values.
    *
    * @param {String} domain_name (Required) The name of the domain for which to display the metadata of.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -262,7 +262,7 @@ AmazonSDB.prototype = {
    * @param {String} domain_name (Required) The name of the domain in which to perform the operation.
    * @param {String} item_name (Required) The name of the base item which will contain the series of keypairs.
    * @param string|array $attribute_name (Optional) The names of the attributes. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ConsistentRead</code> - <code>boolean</code> - Optional - True if strong consistency should be enforced when data is read from SimpleDB, meaning that any data previously written to SimpleDB will be returned. Without specifying this parameter, results will be eventually consistent, and you may not see data that was written immediately before your read.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *  <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This is useful for manually-managed batch requests.</li></ul>
@@ -287,7 +287,7 @@ AmazonSDB.prototype = {
    * operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive
    * operation call.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>MaxNumberOfDomains</code> - <code>integer</code> - Optional - The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.</li>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - A string informing Amazon SimpleDB where to start the next list of domain names.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -335,11 +335,11 @@ AmazonSDB.prototype = {
    *
    * @param {String} domain_name (Required) The name of the domain in which the attributes are being deleted.
    * @param {String} item_name (Required) The name of the base item which will contain the series of keypairs.
-   * @param array $keypairs (Required) Associative array of parameters which are treated as key-value and key-multivalue pairs (i.e. a key can have one or more values; think tags). <ul>
+   * @param keypairs (Required) Associative array of parameters which are treated as key-value and key-multivalue pairs (i.e. a key can have one or more values; think tags). <ul>
    *   <li><code>[key]</code> - <code>array</code> - Set the custom key name as the key for this value. For the value, pass a string for a single value, or an indexed array for multiple values.</li>
    * </ul>
    * @param boolean|array $replace (Optional) Whether to replace a key-value pair if a matching key already exists. Supports either a boolean (which affects ALL key-value pairs) or an indexed array of key names (which affects only the keys specified). Defaults to boolean <code>false</code>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Expected</code> - <code>array</code> - Optional - The update condition which, if specified, determines if the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated. <ul>
    *     <li><code>Name</code> - <code>string</code> - Optional - The name of the attribute involved in the condition.</li>
    *     <li><code>Value</code> - <code>string</code> - Optional - The value of an attribute. This value can only be specified when the exists parameter is equal to true.</li>
@@ -375,7 +375,7 @@ AmazonSDB.prototype = {
    * SimpleDB Queries in the Developer Guide.
    *
    * @param {String} select_expression (Required) The expression used to query the domain.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>NextToken</code> - <code>string</code> - Optional - A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code> .</li>
    *   <li><code>ConsistentRead</code> - <code>boolean</code> - Optional - Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code> , any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>

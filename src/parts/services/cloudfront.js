@@ -27,7 +27,7 @@ AmazonCloudFront.prototype = {
    *
    * @param {String} origin (Required) The source to use for the Amazon CloudFront distribution. Use an Amazon S3 bucket name, or a fully-qualified non-S3 domain name prefixed with <code>http://</code> or <code>https://</code>.
    * @param {String} caller_reference (Required) A unique identifier for the request. A timestamp-appended string is recommended.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CNAME</code> - <code>string|array</code> - Optional - A DNS CNAME to use to map to the Amazon CloudFront distribution. If setting more than one, use an indexed array. Supports 1-10 CNAMEs.</li>
    *   <li><code>Comment</code> - <code>string</code> - Optional - A comment to apply to the distribution. Cannot exceed 128 characters.</li>
    *   <li><code>DefaultRootObject</code> - <code>string</code> - Optional - The file to load when someone accesses the root of the Amazon CloudFront domain (e.g., <code>index.html</code>).</li>
@@ -61,7 +61,7 @@ AmazonCloudFront.prototype = {
    * Standard distributions are listed separately from streaming distributions. For streaming distributions,
    * set the <code>Streaming</code> option to true.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this setting when paginating results to indicate where in your list of distributions to begin. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - The maximum number of distributions you want in the response body. Maximum of 100.</li>
    *   <li><code>Streaming</code> - <code>boolean</code> - Optional - Whether or not this should be for a streaming distribution. A value of <code>true</code> will create a streaming distribution. A value of <code>false</code> will create a standard distribution. The default value is <code>false</code>.</li>
@@ -85,7 +85,7 @@ AmazonCloudFront.prototype = {
    * distributions, set the <code>Streaming</code> option to true.
    *
    * @param {String} distribution_id (Required) The distribution ID returned from <create_distribution()> or <list_distributions()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Streaming</code> - <code>boolean</code> - Optional - Whether or not this should be for a streaming distribution. A value of <code>true</code> will create a streaming distribution. A value of <code>false</code> will create a standard distribution. The default value is <code>false</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -111,7 +111,7 @@ AmazonCloudFront.prototype = {
    *
    * @param {String} distribution_id (Required) The distribution ID returned from <create_distribution()> or <list_distributions()>.
    * @param {String} etag (Required) The <code>ETag</code> header value retrieved from <get_distribution_config()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Streaming</code> - <code>boolean</code> - Optional - Whether or not this should be for a streaming distribution. A value of <code>true</code> will create a streaming distribution. A value of <code>false</code> will create a standard distribution. The default value is <code>false</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -135,7 +135,7 @@ AmazonCloudFront.prototype = {
    * distributions, set the <code>Streaming</code> option to true.
    *
    * @param {String} distribution_id (Required) The distribution ID returned from <create_distribution()> or <list_distributions()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Streaming</code> - <code>boolean</code> - Optional - Whether or not this should be for a streaming distribution. A value of <code>true</code> will create a streaming distribution. A value of <code>false</code> will create a standard distribution. The default value is <code>false</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -160,7 +160,7 @@ AmazonCloudFront.prototype = {
    * @param {String} distribution_id (Required) The distribution ID returned from <create_distribution()> or <list_distributions()>.
    * @param {String} xml (Required) The DistributionConfig XML generated by <generate_config_xml()> or <update_config_xml()>.
    * @param {String} etag (Required) The ETag header value retrieved from <get_distribution_config()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Streaming</code> - <code>boolean</code> - Optional - Whether or not this should be for a streaming distribution. A value of <code>true</code> will create a streaming distribution. A value of <code>false</code> will create a standard distribution. The default value is <code>false</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -183,7 +183,7 @@ AmazonCloudFront.prototype = {
    * account. For more information, see the Amazon CloudFront Developer Guide.
    *
    * @param {String} caller_reference (Required) A unique identifier for the request. A timestamp-appended string is recommended.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Comment</code> - <code>string</code> - Optional - A comment about the OAI.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -203,7 +203,7 @@ AmazonCloudFront.prototype = {
    * If needed, paginate the list by specifying values for the <code>MaxItems</code> and <code>Marker</code>
    * parameters.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this when paginating results to indicate where in your list of distributions to begin. The results include distributions in the list that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response (which is also the ID of the last distribution on that page).</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - The maximum number of distributions you want in the response body. Maximum of 100.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -222,7 +222,7 @@ AmazonCloudFront.prototype = {
    * Gets information about an origin access identity (OAI).
    *
    * @param {String} identity_id (Required) The Identity ID for an existing OAI.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -244,7 +244,7 @@ AmazonCloudFront.prototype = {
    *
    * @param {String} identity_id (Required) An Identity ID for an existing OAI.
    * @param {String} etag (Required) The <code>ETag</code> header value retrieved from a call to <get_oai()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -263,7 +263,7 @@ AmazonCloudFront.prototype = {
    * Gets the configuration of the origin access identity (OAI) for the specified identity ID.
    *
    * @param {String} identity_id (Required) An Identity ID for an existing OAI.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -289,7 +289,7 @@ AmazonCloudFront.prototype = {
    * @param {String} identity_id (Required) An Identity ID for an existing OAI.
    * @param {String} xml (Required) The configuration XML generated by <generate_oai_xml()>.
    * @param {String} etag (Required) The ETag header value retrieved from a call to <get_distribution_config()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -311,7 +311,7 @@ AmazonCloudFront.prototype = {
    * @param {String} distribution_id (Required) The distribution ID returned from <create_distribution()> or <list_distributions()>.
    * @param {String} caller_reference (Required) A unique identifier for the request. A timestamp-appended string is recommended.
    * @param string|array $paths (Required) One or more paths to set for invalidation. Pass a string for a single value, or an indexed array for multiple values. values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -332,7 +332,7 @@ AmazonCloudFront.prototype = {
    * list by specifying values for the <code>MaxItems</code> and <code>Marker</code> parameters.
    *
    * @param {String} distribution_id (Required) The distribution ID returned from <create_distribution()> or <list_distributions()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>Marker</code> - <code>string</code> - Optional - Use this when paginating results to indicate where in the list of invalidations to begin. The results include invalidations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> parameter to the value of the <code>NextMarker</code> parameter from the current page's response, which is also the ID of the last invalidation on that page.</li>
    *   <li><code>MaxItems</code> - <code>integer</code> - Optional - The maximum number of invalidations you want in the response body. A maximum value of 100 can be used.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -353,7 +353,7 @@ AmazonCloudFront.prototype = {
    *
    * @param {String} distribution_id (Required) The distribution ID returned from <create_distribution()> or <list_distributions()>.
    * @param {String} invalidation_id (Required) The invalidation ID returned from <create_invalidation()> or <list_invalidations()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

@@ -21,7 +21,7 @@ AmazonEMR.prototype = {
   /**
    * AddInstanceGroups adds an instance group to a running cluster.
    *
-   * @param array $instance_groups (Required) Instance Groups to add. <ul>
+   * @param instance_groups (Required) Instance Groups to add. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Name</code> - <code>string</code> - Optional - Friendly name given to the instance group. [Constraints: The value must be between 0 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *     <li><code>Market</code> - <code>string</code> - Optional - Market type of the Amazon EC2 instances used to create a cluster node. [Allowed values: <code>ON_DEMAND</code>, <code>SPOT</code>]</li>
@@ -32,7 +32,7 @@ AmazonEMR.prototype = {
    *   </ul></li>
    * </ul>
    * @param {String} job_flow_id (Required) Job flow in which to add the instance groups. [Constraints: The value must be between 0 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -72,7 +72,7 @@ AmazonEMR.prototype = {
    * BOOTSTRAPPING, RUNNING, or WAITING.
    *
    * @param {String} job_flow_id (Required) A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code>. [Constraints: The value must be between 0 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $steps (Required) A list of <code>StepConfig</code> to be executed by the job flow. <ul>
+   * @param steps (Required) A list of <code>StepConfig</code> to be executed by the job flow. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>Name</code> - <code>string</code> - Required - The name of the job flow step. [Constraints: The value must be between 0 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *     <li><code>ActionOnFailure</code> - <code>string</code> - Optional - Specifies the action to take if the job flow step fails. [Allowed values: <code>TERMINATE_JOB_FLOW</code>, <code>CANCEL_AND_WAIT</code>, <code>CONTINUE</code>]</li>
@@ -91,7 +91,7 @@ AmazonEMR.prototype = {
    *     </ul></li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -124,7 +124,7 @@ AmazonEMR.prototype = {
    * 
    * Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>CreatedAfter</code> - <code>string</code> - Optional - Return only job flows created after this date and time. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>CreatedBefore</code> - <code>string</code> - Optional - Return only job flows created before this date and time. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>JobFlowIds</code> - <code>string|array</code> - Optional - Return only job flows whose job flow ID is contained in this list. Pass a string for a single value, or an indexed array for multiple values.</li>
@@ -145,7 +145,7 @@ AmazonEMR.prototype = {
    * group. The input parameters include the new target instance count for the group and the
    * instance group ID. The call will either succeed or fail atomically.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>InstanceGroups</code> - <code>array</code> - Optional - Instance groups to change. <ul>
    *     <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *       <li><code>InstanceGroupId</code> - <code>string</code> - Required - Unique ID of the instance group to expand or shrink. [Constraints: The value must be between 0 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -190,7 +190,7 @@ AmazonEMR.prototype = {
    * For long running job flows, we recommend that you periodically store your results.
    *
    * @param {String} name (Required) The name of the job flow. [Constraints: The value must be between 0 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]
-   * @param array $instances (Required) A specification of the number and type of Amazon EC2 instances on which to run the job flow. <ul>
+   * @param instances (Required) A specification of the number and type of Amazon EC2 instances on which to run the job flow. <ul>
    *   <li><code>x</code> - <code>array</code> - Optional - This represents a simple array index. <ul>
    *     <li><code>MasterInstanceType</code> - <code>string</code> - Optional - The EC2 instance type of the master node. [Constraints: The value must be between 1 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *     <li><code>SlaveInstanceType</code> - <code>string</code> - Optional - The EC2 instance type of the slave nodes. [Constraints: The value must be between 1 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -217,7 +217,7 @@ AmazonEMR.prototype = {
    *     <li><code>Ec2SubnetId</code> - <code>string</code> - Optional - To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal Amazon Web Services cloud, outside of an Amazon VPC. Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a Amazon VPC. [Constraints: The value must be between 0 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   </ul></li>
    * </ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>LogUri</code> - <code>string</code> - Optional - Specifies the location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created. [Constraints: The value must be between 0 and 10280 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>AdditionalInfo</code> - <code>string</code> - Optional - A JSON string for selecting additional features. [Constraints: The value must be between 0 and 10280 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
    *   <li><code>AmiVersion</code> - <code>string</code> - Optional - The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. The following values ane valid:<ul><li>"latest" (latest AMI version; currently AMI 2.0, Hadoop 0.20.205)</li><li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li><li>"1.0" (AMI 1.0, Hadoop 0.18)</li></ul>If this value is not specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18). If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you can use the <code>JobFlowInstancesConfig</code> <code>HadoopVersion</code> parameter to modify the version of Hadoop from the defaults shown above. For details about the AMI versions currently supported by Amazon ElasticMapReduce, go to <a href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI Versions Supported in Elastic MapReduce</a> in the <em>Amazon Elastic MapReduce Developer's Guide.</em> [Constraints: The value must be between 0 and 256 characters, and must match the following regular expression pattern: <code>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</code>]</li>
@@ -287,7 +287,7 @@ AmazonEMR.prototype = {
    *
    * @param string|array $job_flow_ids (Required) A list of strings that uniquely identify the job flows to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code>. Pass a string for a single value, or an indexed array for multiple values.
    * @param boolean $termination_protected (Required) A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -308,7 +308,7 @@ AmazonEMR.prototype = {
    * job flow was created.
    *
    * @param string|array $job_flow_ids (Required) A list of job flows to be shutdown. Pass a string for a single value, or an indexed array for multiple values.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

@@ -28,7 +28,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to create.
    * @param {String} region (Required) The preferred geographical location for the bucket. [Allowed values: `AmazonS3::REGION_US_E1 `, `AmazonS3::REGION_US_W1`, `AmazonS3::REGION_EU_W1`, `AmazonS3::REGION_APAC_SE1`, `AmazonS3::REGION_APAC_NE1`]
    * @param {String} acl (Optional) The ACL settings for the specified object. Accepts any of the following constants: [Allowed values: <code>AmazonS3::ACL_PRIVATE</code>, <code>AmazonS3::ACL_PUBLIC</code>, <code>AmazonS3::ACL_OPEN</code>, <code>AmazonS3::ACL_AUTH_READ</code>, <code>AmazonS3::ACL_OWNER_READ</code>, <code>AmazonS3::ACL_OWNER_FULL_CONTROL</code>]. Alternatively, an array of associative arrays. Each associative array contains an <code>id</code> and a <code>permission</code> key. The default value is <code>ACL_PRIVATE</code>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -48,7 +48,7 @@ AmazonS3.prototype = {
    * Gets the region in which the specified Amazon S3 bucket is located.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>preauth</code> - <code>integer|string</code> - Optional - Specifies that a presigned URL for this request should be returned. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -65,7 +65,7 @@ AmazonS3.prototype = {
    * Gets the HTTP headers for the specified Amazon S3 bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>preauth</code> - <code>integer|string</code> - Optional - Specifies that a presigned URL for this request should be returned. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -82,7 +82,7 @@ AmazonS3.prototype = {
   /**
    * Gets a list of all buckets contained in the caller's Amazon S3 account.
    *
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>preauth</code> - <code>integer|string</code> - Optional - Specifies that a presigned URL for this request should be returned. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -99,7 +99,7 @@ AmazonS3.prototype = {
    * Gets the access control list (ACL) settings for the specified Amazon S3 bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>preauth</code> - <code>integer|string</code> - Optional - Specifies that a presigned URL for this request should be returned. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -119,7 +119,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} acl (Optional) The ACL settings for the specified bucket. [Allowed values: <code>AmazonS3::ACL_PRIVATE</code>, <code>AmazonS3::ACL_PUBLIC</code>, <code>AmazonS3::ACL_OPEN</code>, <code>AmazonS3::ACL_AUTH_READ</code>, <code>AmazonS3::ACL_OWNER_READ</code>, <code>AmazonS3::ACL_OWNER_FULL_CONTROL</code>]. Alternatively, an array of associative arrays. Each associative array contains an `id` and a `permission` key. The default value is <ACL_PRIVATE>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -143,7 +143,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>acl</code> - <code>string</code> - Optional - The ACL settings for the specified object. Accepts any of the following constants: [Allowed values: <code>AmazonS3::ACL_PRIVATE</code>, <code>AmazonS3::ACL_PUBLIC</code>, <code>AmazonS3::ACL_OPEN</code>, <code>AmazonS3::ACL_AUTH_READ</code>, <code>AmazonS3::ACL_OWNER_READ</code>, <code>AmazonS3::ACL_OWNER_FULL_CONTROL</code>]. Alternatively, an array of associative arrays. Each associative array contains an <code>id</code> and a <code>permission</code> key. The default value is <code>ACL_PRIVATE</code>.</li>
    *   <li><code>body</code> - <code>string</code> - Required; Conditional - The data to be stored in the object. Either this parameter or <code>fileUpload</code> must be specified.</li>
    *   <li><code>contentType</code> - <code>string</code> - Optional - The type of content that is being sent in the body. If a file is being uploaded via <code>fileUpload</code> as a file system path, it will attempt to determine the correct mime-type based on the file extension. The default value is <code>application/octet-stream</code>.</li>
@@ -176,7 +176,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>etag</code> - <code>string</code> - Optional - The <code>ETag</code> header passed in from a previous request. If specified, request <code>LastModified</code> option must be specified as well. Will trigger a <code>304 Not Modified</code> status code if the file hasn't changed.</li>
    *   <li><code>fileDownload</code> - <code>string|resource</code> - Optional - The file system location to download the file to, or an open file resource. Must be a server-writable location.</li>
    *   <li><code>headers</code> - <code>array</code> - Optional - Standard HTTP headers to send along in the request. Accepts an associative array of key-value pairs.</li>
@@ -206,7 +206,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>versionId</code> - <code>string</code> - Optional - The version of the object to retrieve. Version IDs are returned in the <code>x-amz-version-id</code> header of any previous object-related request.</li>
    *   <li><code>preauth</code> - <code>integer|string</code> - Optional - Specifies that a presigned URL for this request should be returned. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -227,7 +227,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>versionId</code> - <code>string</code> - Optional - The version of the object to delete. Version IDs are returned in the <code>x-amz-version-id</code> header of any previous object-related request.</li>
    *   <li><code>MFASerial</code> - <code>string</code> - Optional - The serial number on the back of the Gemalto device. <code>MFASerial</code> and <code>MFAToken</code> must both be set for MFA to work.</li>
    *   <li><code>MFAToken</code> - <code>string</code> - Optional - The current token displayed on the Gemalto device. <code>MFASerial</code> and <code>MFAToken</code> must both be set for MFA to work.</li>
@@ -252,7 +252,7 @@ AmazonS3.prototype = {
    * when there are two or more objects to delete.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>objects</code> - <code>array</code> - Required - The object references to delete from the bucket. <ul>
    *     <li><code>key</code> - <code>string</code> - Required - The name of the object (e.g., the "key") to delete. This should include the entire file path including all "subdirectories".</li>
    *     <li><code>version_id</code> - <code>string</code> - Optional - If the object is versioned, include the version ID to delete.</li>
@@ -279,7 +279,7 @@ AmazonS3.prototype = {
    * NOTE: <strong>This method is paginated</strong>, and will not return more than <code>max-keys</code> keys. If you want to retrieve a list of all keys, you will need to make multiple calls to this function using the <code>marker</code> option to specify the pagination offset (the key of the last processed key--lexically ordered) and the <code>IsTruncated</code> response key to detect when all results have been processed. See: <a href="http://docs.amazonwebservices.com/AmazonS3/latest/API/index.html?RESTBucketGET.html">the S3 REST documentation for get_bucket</a> for more information.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>delimiter</code> - <code>string</code> - Optional - Keys that contain the same string between the prefix and the first occurrence of the delimiter will be rolled up into a single result element in the CommonPrefixes collection.</li>
    *   <li><code>marker</code> - <code>string</code> - Optional - Restricts the response to contain results that only occur alphabetically after the value of the marker.</li>
    *   <li><code>max-keys</code> - <code>string</code> - Optional - The maximum number of results returned by the method call. The returned list will contain no more results than the specified value, but may return fewer. The default value is 1000.</li>
@@ -300,13 +300,13 @@ AmazonS3.prototype = {
   /**
    * Copies an Amazon S3 object to a new location, whether in the same Amazon S3 region, bucket, or otherwise.
    *
-   * @param array $source (Required) The bucket and file name to copy from. The following keys must be set: <ul>
+   * @param source (Required) The bucket and file name to copy from. The following keys must be set: <ul>
    *   <li><code>bucket</code> - <code>string</code> - Required - Specifies the name of the bucket containing the source object.</li>
    *   <li><code>filename</code> - <code>string</code> - Required - Specifies the file name of the source object to copy.</li></ul>
-   * @param array $dest (Required) The bucket and file name to copy to. The following keys must be set: <ul>
+   * @param dest (Required) The bucket and file name to copy to. The following keys must be set: <ul>
    *   <li><code>bucket</code> - <code>string</code> - Required - Specifies the name of the bucket to copy the object to.</li>
    *   <li><code>filename</code> - <code>string</code> - Required - Specifies the file name to copy the object to.</li></ul>
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>acl</code> - <code>string</code> - Optional - The ACL settings for the specified object. [Allowed values: <code>AmazonS3::ACL_PRIVATE</code>, <code>AmazonS3::ACL_PUBLIC</code>, <code>AmazonS3::ACL_OPEN</code>, <code>AmazonS3::ACL_AUTH_READ</code>, <code>AmazonS3::ACL_OWNER_READ</code>, <code>AmazonS3::ACL_OWNER_FULL_CONTROL</code>]. Alternatively, an array of associative arrays. Each associative array contains an <code>id</code> and a <code>permission</code> key. The default value is <code>ACL_PRIVATE</code>.</li>
    *   <li><code>encryption</code> - <code>string</code> - Optional - The algorithm to use for encrypting the object. [Allowed values: <code>AES256</code>]</li>
    *   <li><code>storage</code> - <code>string</code> - Optional - Whether to use Standard or Reduced Redundancy storage. [Allowed values: <code>AmazonS3::STORAGE_STANDARD</code>, <code>AmazonS3::STORAGE_REDUCED</code>]. The default value is <code>STORAGE_STANDARD</code>.</li>
@@ -338,7 +338,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket that contains the source file.
    * @param {String} filename (Required) The source file name that you want to update.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>acl</code> - <code>string</code> - Optional - The ACL settings for the specified object. [Allowed values: <code>AmazonS3::ACL_PRIVATE</code>, <code>AmazonS3::ACL_PUBLIC</code>, <code>AmazonS3::ACL_OPEN</code>, <code>AmazonS3::ACL_AUTH_READ</code>, <code>AmazonS3::ACL_OWNER_READ</code>, <code>AmazonS3::ACL_OWNER_FULL_CONTROL</code>]. The default value is <ACL_PRIVATE>.</li>
    *   <li><code>headers</code> - <code>array</code> - Optional - Standard HTTP headers to send along in the request. Accepts an associative array of key-value pairs.</li>
    *   <li><code>meta</code> - <code>array</code> - Optional - An associative array of key-value pairs. Any header with the <code>x-amz-meta-</code> prefix is considered user metadata and is stored with the Amazon S3 object. It will be stored with the object and returned when you retrieve the object. The total size of the HTTP request, not including the body, must be less than 4 KB.</li>
@@ -361,7 +361,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>versionId</code> - <code>string</code> - Optional - The version of the object to retrieve. Version IDs are returned in the <code>x-amz-version-id</code> header of any previous object-related request.</li>
    *   <li><code>preauth</code> - <code>integer|string</code> - Optional - Specifies that a presigned URL for this request should be returned. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -384,7 +384,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
    * @param {String} acl (Optional) The ACL settings for the specified object. Accepts any of the following constants: [Allowed values: <code>AmazonS3::ACL_PRIVATE</code>, <code>AmazonS3::ACL_PUBLIC</code>, <code>AmazonS3::ACL_OPEN</code>, <code>AmazonS3::ACL_AUTH_READ</code>, <code>AmazonS3::ACL_OWNER_READ</code>, <code>AmazonS3::ACL_OWNER_FULL_CONTROL</code>]. Alternatively, an array of associative arrays. Each associative array contains an <code>id</code> and a <code>permission</code> key. The default value is <code>ACL_PRIVATE</code>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -404,7 +404,7 @@ AmazonS3.prototype = {
    * Gets the access logs associated with the specified Amazon S3 bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use. Pass a `null` value when using the <set_vhost()> method.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>preauth</code> - <code>integer|string</code> - Optional - Specifies that a presigned URL for this request should be returned. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -425,7 +425,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to enable logging for. Pass a `null` value when using the <set_vhost()> method.
    * @param {String} target_bucket (Required) The name of the bucket to store the logs in.
    * @param {String} target_prefix (Required) The prefix to give to the log file names.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>users</code> - <code>array</code> - Optional - An array of associative arrays specifying any user to give access to. Each associative array contains an <code>id</code> and <code>permission</code> value.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -446,7 +446,7 @@ AmazonS3.prototype = {
    * Disables access logging for the specified Amazon S3 bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use. Pass `null` if using <set_vhost()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -466,7 +466,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
    * @param {String} contentType (Required) The content-type to apply to the object.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -487,7 +487,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
    * @param {String} storage (Required) The storage setting to apply to the object. [Allowed values: <code>AmazonS3::STORAGE_STANDARD</code>, <code>AmazonS3::STORAGE_REDUCED</code>]
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -506,7 +506,7 @@ AmazonS3.prototype = {
    * Enables versioning support for the specified Amazon S3 bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>MFASerial</code> - string (Optional) The serial number on the back of the Gemalto device. <code>MFASerial</code>, <code>MFAToken</code> and <code>MFAStatus</code> must all be set for MFA to work.</li>
    *   <li><code>MFAToken</code> - string (Optional) The current token displayed on the Gemalto device. <code>MFASerial</code>, <code>MFAToken</code> and <code>MFAStatus</code> must all be set for MFA to work.</li>
    *   <li><code>MFAStatus</code> - string (Optional) The MFA Delete status. Can be <code>Enabled</code> or <code>Disabled</code>. <code>MFASerial</code>, <code>MFAToken</code> and <code>MFAStatus</code> must all be set for MFA to work.</li>
@@ -527,7 +527,7 @@ AmazonS3.prototype = {
    * Disables versioning support for the specified Amazon S3 bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>MFASerial</code> - <code>string</code> - Optional - The serial number on the back of the Gemalto device. <code>MFASerial</code>, <code>MFAToken</code> and <code>MFAStatus</code> must all be set for MFA to work.</li>
    *   <li><code>MFAToken</code> - <code>string</code> - Optional - The current token displayed on the Gemalto device. <code>MFASerial</code>, <code>MFAToken</code> and <code>MFAStatus</code> must all be set for MFA to work.</li>
    *   <li><code>MFAStatus</code> - <code>string</code> - Optional - The MFA Delete status. Can be <code>Enabled</code> or <code>Disabled</code>. <code>MFASerial</code>, <code>MFAToken</code> and <code>MFAStatus</code> must all be set for MFA to work.</li>
@@ -548,7 +548,7 @@ AmazonS3.prototype = {
    * Gets an Amazon S3 bucket's versioning status.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>preauth</code> - <code>integer|string</code> - Optional - Specifies that a presigned URL for this request should be returned. May be passed as a number of seconds since UNIX Epoch, or any string compatible with <php:strtotime()>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
@@ -566,7 +566,7 @@ AmazonS3.prototype = {
    * Gets a list of all the versions of Amazon S3 objects in the specified bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>delimiter</code> - <code>string</code> - Optional - Unicode string parameter. Keys that contain the same string between the prefix and the first occurrence of the delimiter will be rolled up into a single result element in the CommonPrefixes collection.</li>
    *   <li><code>key-marker</code> - <code>string</code> - Optional - Restricts the response to contain results that only occur alphabetically after the value of the <code>key-marker</code>.</li>
    *   <li><code>max-keys</code> - <code>string</code> - Optional - Limits the number of results returned in response to your query. Will return no more than this number of results, but possibly less.</li>
@@ -596,7 +596,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param CFPolicy $policy (Required) The JSON policy to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -621,7 +621,7 @@ AmazonS3.prototype = {
    * it, this method will generate a `404 Policy Not Found` error.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -639,7 +639,7 @@ AmazonS3.prototype = {
    * be the bucket owner and have `DeletePolicy` permissions for the specified bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response. If you do not have `DeletePolicy` permissions, Amazon S3 returns a `403 Access Denied` error. If you have the correct permissions, but are not the bucket owner, Amazon S3 returns a `405 Method Not Allowed` error. If the bucket doesn't have a policy, Amazon S3 returns a `204 No Content` error.
@@ -675,7 +675,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to create bucket notifications for.
    * @param {String} topic_arn (Required) The SNS topic ARN to send notifications to.
    * @param {String} event (Required) The event type to listen for.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -705,7 +705,7 @@ AmazonS3.prototype = {
    * with the `s3:GetBucketNotification` permission.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -723,7 +723,7 @@ AmazonS3.prototype = {
    * Empties the list of SNS topics to send notifications to.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -742,7 +742,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>acl</code> - <code>string</code> - Optional - The ACL settings for the specified object. Accepts any of the following constants: [Allowed values: <code>AmazonS3::ACL_PRIVATE</code>, <code>AmazonS3::ACL_PUBLIC</code>, <code>AmazonS3::ACL_OPEN</code>, <code>AmazonS3::ACL_AUTH_READ</code>, <code>AmazonS3::ACL_OWNER_READ</code>, <code>AmazonS3::ACL_OWNER_FULL_CONTROL</code>]. Alternatively, an array of associative arrays. Each associative array contains an <code>id</code> and a <code>permission</code> key. The default value is <code>ACL_PRIVATE</code>.</li>
    *   <li><code>contentType</code> - <code>string</code> - Optional - The type of content that is being sent. The default value is <code>application/octet-stream</code>.</li>
    *   <li><code>encryption</code> - <code>string</code> - Optional - The algorithm to use for encrypting the object. [Allowed values: <code>AES256</code>]</li>
@@ -774,7 +774,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
    * @param {String} upload_id (Required) The upload ID identifying the multipart upload whose parts are being listed. The upload ID is retrieved from a call to <initiate_multipart_upload()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>fileUpload</code> - <code>string|resource</code> - Required - The URL/path for the file to upload or an open resource.</li>
    *   <li><code>partNumber</code> - <code>integer</code> - Required - The part number order of the multipart upload.</li>
    *   <li><code>expect</code> - <code>string</code> - Optional - Specifies that the SDK not send the request body until it receives an acknowledgement. If the message is rejected based on the headers, the body of the message is not sent. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.20">RFC 2616, section 14.20</a>. The value can also be passed to the <code>header</code> option as <code>Expect</code>. [Allowed values: <code>100-continue</code>]</li>
@@ -802,7 +802,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
    * @param {String} upload_id (Required) The upload ID identifying the multipart upload whose parts are being listed. The upload ID is retrieved from a call to <initiate_multipart_upload()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>max-parts</code> - <code>integer</code> - Optional - The maximum number of parts to return in the response body.</li>
    *   <li><code>part-number-marker</code> - <code>string</code> - Optional - Restricts the response to contain results that only occur numerically after the value of the <code>part-number-marker</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -825,7 +825,7 @@ AmazonS3.prototype = {
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
    * @param {String} upload_id (Required) The upload ID identifying the multipart upload whose parts are being listed. The upload ID is retrieved from a call to <initiate_multipart_upload()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -848,7 +848,7 @@ AmazonS3.prototype = {
    * @param {String} filename (Required) The file name for the object.
    * @param {String} upload_id (Required) The upload ID identifying the multipart upload whose parts are being listed. The upload ID is retrieved from a call to <initiate_multipart_upload()>.
    * @param string|array|SimpleXMLElement|CFResponse $parts (Required) The completion XML document. This document can be provided in multiple ways; as a string of XML, as a <php:SimpleXMLElement> object representing the XML document, as an indexed array of associative arrays where the keys are <code>PartNumber</code> and <code>ETag</code>, or as a <CFResponse> object returned by <list_parts()>.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -868,7 +868,7 @@ AmazonS3.prototype = {
    * Lists the in-progress multipart uploads.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>delimiter</code> - <code>string</code> - Optional - Keys that contain the same string between the prefix and the first occurrence of the delimiter will be rolled up into a single result element in the CommonPrefixes collection.</li>
    *   <li><code>key-marker</code> - <code>string</code> - Optional - Restricts the response to contain results that only occur alphabetically after the value of the <code>key-marker</code>. If used in conjunction with <code>upload-id-marker</code>, the results will be filtered to include keys whose upload ID is alphabetically after the value of <code>upload-id-marker</code>.</li>
    *   <li><code>upload-id-marker</code> - <code>string</code> - Optional - Restricts the response to contain results that only occur alphabetically after the value of the <code>upload-id-marker</code>. Must be used in conjunction with <code>key-marker</code>.</li>
@@ -899,15 +899,15 @@ AmazonS3.prototype = {
    * responses are typically returned immediately, even if the operation itself has not yet been completed on
    * the server-side.
    *
-   * @param array $source (Required) The bucket and file name to copy from. The following keys must be set: <ul>
+   * @param source (Required) The bucket and file name to copy from. The following keys must be set: <ul>
    *   <li><code>bucket</code> - <code>string</code> - Required - Specifies the name of the bucket containing the source object.</li>
    *   <li><code>filename</code> - <code>string</code> - Required - Specifies the file name of the source object to copy.</li></ul>
-   * @param array $dest (Required) The bucket and file name to copy to. The following keys must be set: <ul>
+   * @param dest (Required) The bucket and file name to copy to. The following keys must be set: <ul>
    *   <li><code>bucket</code> - <code>string</code> - Required - Specifies the name of the bucket to copy the object to.</li>
    *   <li><code>filename</code> - <code>string</code> - Required - Specifies the file name to copy the object to.</li></ul>
    * @param {String} upload_id (Required) The upload ID identifying the multipart upload whose parts are being listed. The upload ID is retrieved from a call to <initiate_multipart_upload()>.
    * @param {Number} part_number (Required) A part number uniquely identifies a part and defines its position within the destination object. When you complete a multipart upload, a complete object is created by concatenating parts in ascending order based on part number. If you copy a new part using the same part number as a previously copied/uploaded part, the previously written part is overwritten.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>ifMatch</code> - <code>string</code> - Optional - The ETag header from a previous request. Copies the object if its entity tag (ETag) matches the specified tag; otherwise, the request returns a <code>412</code> HTTP status code error (precondition failed). Used in conjunction with <code>ifUnmodifiedSince</code>.</li>
    *   <li><code>ifUnmodifiedSince</code> - <code>string</code> - Optional - The LastModified header from a previous request. Copies the object if it hasn't been modified since the specified time; otherwise, the request returns a <code>412</code> HTTP status code error (precondition failed). Used in conjunction with <code>ifMatch</code>.</li>
    *   <li><code>ifNoneMatch</code> - <code>string</code> - Optional - The ETag header from a previous request. Copies the object if its entity tag (ETag) is different than the specified ETag; otherwise, the request returns a <code>412</code> HTTP status code error (failed condition). Used in conjunction with <code>ifModifiedSince</code>.</li>
@@ -948,7 +948,7 @@ AmazonS3.prototype = {
    *
    * @param {String} bucket (Required) The name of the bucket to use.
    * @param {String} filename (Required) The file name for the object.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>fileUpload</code> - <code>string|resource</code> - Required - The URL/path for the file to upload, or an open resource.</li>
    *   <li><code>acl</code> - <code>string</code> - Optional - The ACL settings for the specified object. [Allowed values: <code>AmazonS3::ACL_PRIVATE</code>, <code>AmazonS3::ACL_PUBLIC</code>, <code>AmazonS3::ACL_OPEN</code>, <code>AmazonS3::ACL_AUTH_READ</code>, <code>AmazonS3::ACL_OWNER_READ</code>, <code>AmazonS3::ACL_OWNER_FULL_CONTROL</code>]. The default value is <code>ACL_PRIVATE</code>.</li>
    *   <li><code>contentType</code> - <code>string</code> - Optional - The type of content that is being sent in the body. The default value is <code>application/octet-stream</code>.</li>
@@ -987,7 +987,7 @@ AmazonS3.prototype = {
    * (e.g., <code>http://example-bucket.s3-website-us-east-1.amazonaws.com</code>)
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>indexDocument</code> - <code>string</code> - Optional - The file path to use as the root document. The default value is <code>index.html</code>.</li>
    *   <li><code>errorDocument</code> - <code>string</code> - Optional - The file path to use as the error document. The default value is <code>error.html</code>.</li>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
@@ -1008,7 +1008,7 @@ AmazonS3.prototype = {
    * never been set, Amazon S3 will return a 404 error.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1025,7 +1025,7 @@ AmazonS3.prototype = {
    * Removes the website configuration for a bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1046,7 +1046,7 @@ AmazonS3.prototype = {
    * This feature is also known as "lifecycle" (e.g., in the AWS Console).
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>rules</code> - <code>string</code> - Required - The object expiration rule-sets to apply to the bucket. <ul>
    *     <li><code>x</code> - <code>array</code> - Required - This represents a simple array index. <ul>
    *       <li><code>id</code> - <code>string</code> - Optional - Unique identifier for the rule. The value cannot be longer than 255 characters.</li>
@@ -1075,7 +1075,7 @@ AmazonS3.prototype = {
    * This feature is also known as "lifecycle" (e.g., in the AWS Console).
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1094,7 +1094,7 @@ AmazonS3.prototype = {
    * This feature is also known as "lifecycle" (e.g., in the AWS Console).
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1115,7 +1115,7 @@ AmazonS3.prototype = {
    * the bucket owner is permitted to perform these actions, and can grant permission to other users.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>tags</code> - <code>array</code> - Required - An associative array of custom key-value pairs. <ul>
    *     <li><code>[custom-key]</code> - <code>string</code> - Optional - A custom key-value pair to tag the bucket with.</li>
    *   </ul></li>
@@ -1135,7 +1135,7 @@ AmazonS3.prototype = {
    * Retrieve all associated tags for the specified bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1152,7 +1152,7 @@ AmazonS3.prototype = {
    * Delete all associated tags from the specified bucket.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1169,7 +1169,7 @@ AmazonS3.prototype = {
    * Create a new CORS configuration.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>cors_rule</code> - <code>array</code> - Required - One or more rule-sets. <ul>
    *     <li><code>x</code> - <code>array</code> - Required - This represents a simple array index. <ul>
    *       <li><code>allowed_header</code> - <code>array</code> - Required - Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request.</li>
@@ -1196,7 +1196,7 @@ AmazonS3.prototype = {
    * Retrieves the CORS configuration.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.
@@ -1213,7 +1213,7 @@ AmazonS3.prototype = {
    * Deletes the CORS configuration.
    *
    * @param {String} bucket (Required) The name of the bucket to use.
-   * @param array $opt (Optional) An associative array of parameters that can have the following keys: <ul>
+   * @param opt (Optional) An associative array of parameters that can have the following keys: <ul>
    *   <li><code>curlopts</code> - <code>array</code> - Optional - A set of values to pass directly into <code>curl_setopt()</code>, where the key is a pre-defined <code>CURLOPT_*</code> constant.</li>
    *   <li><code>returnCurlHandle</code> - <code>boolean</code> - Optional - A private toggle specifying that the cURL handle be returned rather than actually completing the request. This toggle is useful for manually managed batch requests.</li></ul>
    * @return CFResponse A <CFResponse> object containing a parsed HTTP response.

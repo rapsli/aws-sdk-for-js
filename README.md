@@ -4,6 +4,8 @@
 
 Unfficial  AWS SDK for JavaScript. 
 
+## **注：今の段階では動きません。** ##
+
 
 ###残りタスク ###
 * テスト(必須)

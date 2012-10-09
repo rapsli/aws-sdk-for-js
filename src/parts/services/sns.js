@@ -10,7 +10,7 @@ function AmazonSNS(access_key,secret_key){
 AmazonSNS.prototype = {
   service:'sns',
   version:'2010-03-31',
-  auth_class:'AuthV2Query',
+  auth_class: new AuthV2Query(),
   /**
    * @memberOf AmazonSNS
    */

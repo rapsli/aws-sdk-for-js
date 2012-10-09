@@ -10,7 +10,7 @@ function AmazonS3(access_key,secret_key){
 AmazonS3.prototype = {
   service:'s3',
   version:'2006-03-01',
-  auth_class:'',
+  auth_class: new (),
   /**
    * @memberOf AmazonS3
    */

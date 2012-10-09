@@ -10,7 +10,7 @@ function AmazonEMR(access_key,secret_key){
 AmazonEMR.prototype = {
   service:'elasticmapreduce',
   version:'2009-03-31',
-  auth_class:'AuthV2Query',
+  auth_class: new AuthV2Query(),
   /**
    * @memberOf AmazonEMR
    */

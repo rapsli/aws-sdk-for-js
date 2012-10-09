@@ -10,7 +10,7 @@ function AmazonElasticBeanstalk(access_key,secret_key){
 AmazonElasticBeanstalk.prototype = {
   service:'elasticbeanstalk',
   version:'2010-12-01',
-  auth_class:'AuthV2Query',
+  auth_class: new AuthV2Query(),
   /**
    * @memberOf AmazonElasticBeanstalk
    */

@@ -10,7 +10,7 @@ function AmazonSWF(access_key,secret_key){
 AmazonSWF.prototype = {
   service:'swf',
   version:'2012-01-25',
-  auth_class:'AuthV3JSON',
+  auth_class: new AuthV3JSON(),
   /**
    * @memberOf AmazonSWF
    */

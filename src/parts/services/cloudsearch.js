@@ -10,7 +10,7 @@ function AmazonCloudSearch(access_key,secret_key){
 AmazonCloudSearch.prototype = {
   service:'cloudsearch',
   version:'2011-02-01',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonCloudSearch
    */

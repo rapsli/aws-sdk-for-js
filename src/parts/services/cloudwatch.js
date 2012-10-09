@@ -10,7 +10,7 @@ function AmazonCloudWatch(access_key,secret_key){
 AmazonCloudWatch.prototype = {
   service:'monitoring',
   version:'2010-08-01',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonCloudWatch
    */

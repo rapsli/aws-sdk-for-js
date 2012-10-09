@@ -10,7 +10,7 @@ function AmazonCloudFormation(access_key,secret_key){
 AmazonCloudFormation.prototype = {
   service:'cloudformation',
   version:'2010-05-15',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonCloudFormation
    */

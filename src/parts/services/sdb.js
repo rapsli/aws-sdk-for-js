@@ -10,7 +10,7 @@ function AmazonSDB(access_key,secret_key){
 AmazonSDB.prototype = {
   service:'sdb',
   version:'2009-04-15',
-  auth_class:'AuthV2Query',
+  auth_class: new AuthV2Query(),
   /**
    * @memberOf AmazonSDB
    */

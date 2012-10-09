@@ -10,7 +10,7 @@ function AmazonSTS(access_key,secret_key){
 AmazonSTS.prototype = {
   service:'sts',
   version:'2011-06-15',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonSTS
    */

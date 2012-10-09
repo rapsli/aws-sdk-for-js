@@ -10,7 +10,7 @@ function AmazonCloudFront(access_key,secret_key){
 AmazonCloudFront.prototype = {
   service:'cloudfront',
   version:'2012-03-15',
-  auth_class:'AuthV2REST',
+  auth_class: new AuthV2REST(),
   /**
    * @memberOf AmazonCloudFront
    */

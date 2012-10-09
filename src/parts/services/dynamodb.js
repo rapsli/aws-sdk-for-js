@@ -10,7 +10,7 @@ function AmazonDynamoDB(access_key,secret_key){
 AmazonDynamoDB.prototype = {
   service:'dynamodb',
   version:'2011-12-05',
-  auth_class:'AuthV4JSON',
+  auth_class: new AuthV4JSON(),
   /**
    * @memberOf AmazonDynamoDB
    */

@@ -10,7 +10,7 @@ function AmazonStorageGateway(access_key,secret_key){
 AmazonStorageGateway.prototype = {
   service:'storagegateway',
   version:'2012-04-30',
-  auth_class:'AuthV4JSON',
+  auth_class: new AuthV4JSON(),
   /**
    * @memberOf AmazonStorageGateway
    */

@@ -10,7 +10,7 @@ function AmazonImportExport(access_key,secret_key){
 AmazonImportExport.prototype = {
   service:'importexport',
   version:'2010-06-01',
-  auth_class:'AuthV2Query',
+  auth_class: new AuthV2Query(),
   /**
    * @memberOf AmazonImportExport
    */

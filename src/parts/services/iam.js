@@ -10,7 +10,7 @@ function AmazonIAM(access_key,secret_key){
 AmazonIAM.prototype = {
   service:'iam',
   version:'2010-05-08',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonIAM
    */

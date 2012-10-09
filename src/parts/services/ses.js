@@ -10,7 +10,7 @@ function AmazonSES(access_key,secret_key){
 AmazonSES.prototype = {
   service:'email',
   version:'2010-12-01',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonSES
    */

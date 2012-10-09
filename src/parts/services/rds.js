@@ -10,7 +10,7 @@ function AmazonRDS(access_key,secret_key){
 AmazonRDS.prototype = {
   service:'rds',
   version:'2012-07-31',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonRDS
    */

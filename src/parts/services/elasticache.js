@@ -10,7 +10,7 @@ function AmazonElastiCache(access_key,secret_key){
 AmazonElastiCache.prototype = {
   service:'elasticache',
   version:'2012-03-09',
-  auth_class:'AuthV2Query',
+  auth_class: new AuthV2Query(),
   /**
    * @memberOf AmazonElastiCache
    */

@@ -10,7 +10,7 @@ function AmazonAS(access_key,secret_key){
 AmazonAS.prototype = {
   service:'autoscaling',
   version:'2011-01-01',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonAS
    */

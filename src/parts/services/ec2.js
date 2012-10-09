@@ -10,7 +10,7 @@ function AmazonEC2(access_key,secret_key){
 AmazonEC2.prototype = {
   service:'ec2',
   version:'2012-07-20',
-  auth_class:'AuthV2Query',
+  auth_class: new AuthV2Query(),
   /**
    * @memberOf AmazonEC2
    */

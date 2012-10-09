@@ -10,7 +10,7 @@ function AmazonSQS(access_key,secret_key){
 AmazonSQS.prototype = {
   service:'sqs',
   version:'2011-10-01',
-  auth_class:'AuthV2Query',
+  auth_class: new AuthV2Query(),
   /**
    * @memberOf AmazonSQS
    */

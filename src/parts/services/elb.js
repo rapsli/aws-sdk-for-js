@@ -10,7 +10,7 @@ function AmazonELB(access_key,secret_key){
 AmazonELB.prototype = {
   service:'elasticloadbalancing',
   version:'2012-06-01',
-  auth_class:'AuthV4Query',
+  auth_class: new AuthV4Query(),
   /**
    * @memberOf AmazonELB
    */

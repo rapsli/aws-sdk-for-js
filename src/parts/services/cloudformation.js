@@ -53,11 +53,11 @@ AmazonCloudFormation.prototype = {
    */
   create_stack: function(stack_name,opt){
     var payload = {};
-    param.stack_name = stack_name;
+    payload.stack_name = stack_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateStack", payload );
-    return resposne;
+    var response = this.request("CreateStack", payload );
+    return response;
   }, 
   /**
    * Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted
@@ -72,11 +72,11 @@ AmazonCloudFormation.prototype = {
    */
   delete_stack: function(stack_name,opt){
     var payload = {};
-    param.stack_name = stack_name;
+    payload.stack_name = stack_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteStack", payload );
-    return resposne;
+    var response = this.request("DeleteStack", payload );
+    return response;
   }, 
   /**
    * Returns all the stack related events for the AWS account. If <code>StackName</code> is
@@ -101,8 +101,8 @@ AmazonCloudFormation.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeStackEvents", payload );
-    return resposne;
+    var response = this.request("DescribeStackEvents", payload );
+    return response;
   }, 
   /**
    * Returns a description of the specified resource in the specified stack.
@@ -119,12 +119,12 @@ AmazonCloudFormation.prototype = {
    */
   describe_stack_resource: function(stack_name,logical_resource_id,opt){
     var payload = {};
-    param.stack_name = stack_name;
-    param.logical_resource_id = logical_resource_id;
+    payload.stack_name = stack_name;
+    payload.logical_resource_id = logical_resource_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeStackResource", payload );
-    return resposne;
+    var response = this.request("DescribeStackResource", payload );
+    return response;
   }, 
   /**
    * Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code> is
@@ -165,8 +165,8 @@ AmazonCloudFormation.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeStackResources", payload );
-    return resposne;
+    var response = this.request("DescribeStackResources", payload );
+    return response;
   }, 
   /**
    * Returns the description for the specified stack; if no stack name was specified, then it
@@ -183,8 +183,8 @@ AmazonCloudFormation.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeStacks", payload );
-    return resposne;
+    var response = this.request("DescribeStacks", payload );
+    return response;
   }, 
   /**
    * Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly
@@ -207,8 +207,8 @@ AmazonCloudFormation.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"EstimateTemplateCost", payload );
-    return resposne;
+    var response = this.request("EstimateTemplateCost", payload );
+    return response;
   }, 
   /**
    * Returns the template body for a specified stack name. You can get the template for running or
@@ -229,11 +229,11 @@ AmazonCloudFormation.prototype = {
    */
   get_template: function(stack_name,opt){
     var payload = {};
-    param.stack_name = stack_name;
+    payload.stack_name = stack_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetTemplate", payload );
-    return resposne;
+    var response = this.request("GetTemplate", payload );
+    return response;
   }, 
   /**
    * Returns descriptions of all resources of the specified stack.
@@ -250,11 +250,11 @@ AmazonCloudFormation.prototype = {
    */
   list_stack_resources: function(stack_name,opt){
     var payload = {};
-    param.stack_name = stack_name;
+    payload.stack_name = stack_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListStackResources", payload );
-    return resposne;
+    var response = this.request("ListStackResources", payload );
+    return response;
   }, 
   /**
    * Returns the summary information for stacks whose status matches the specified
@@ -273,8 +273,8 @@ AmazonCloudFormation.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListStacks", payload );
-    return resposne;
+    var response = this.request("ListStacks", payload );
+    return response;
   }, 
   /**
    * Updates a stack as specified in the template. After the call completes successfully, the stack
@@ -309,11 +309,11 @@ AmazonCloudFormation.prototype = {
    */
   update_stack: function(stack_name,opt){
     var payload = {};
-    param.stack_name = stack_name;
+    payload.stack_name = stack_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateStack", payload );
-    return resposne;
+    var response = this.request("UpdateStack", payload );
+    return response;
   }, 
   /**
    * Validates a specified template.
@@ -329,7 +329,7 @@ AmazonCloudFormation.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ValidateTemplate", payload );
-    return resposne;
+    var response = this.request("ValidateTemplate", payload );
+    return response;
   }
 }

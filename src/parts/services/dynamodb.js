@@ -67,8 +67,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"BatchGetItem", payload );
-    return resposne;
+    var response = this.request("BatchGetItem", payload );
+    return response;
   }, 
   /**
    * Allows to execute a batch of Put and/or Delete Requests for many tables in a single call. A
@@ -132,8 +132,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"BatchWriteItem", payload );
-    return resposne;
+    var response = this.request("BatchWriteItem", payload );
+    return response;
   }, 
   /**
    * Adds a new table to your account.
@@ -170,8 +170,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateTable", payload );
-    return resposne;
+    var response = this.request("CreateTable", payload );
+    return response;
   }, 
   /**
    * Deletes a single item in a table by primary key.
@@ -221,8 +221,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteItem", payload );
-    return resposne;
+    var response = this.request("DeleteItem", payload );
+    return response;
   }, 
   /**
    * Deletes a table and all of its items.
@@ -242,8 +242,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteTable", payload );
-    return resposne;
+    var response = this.request("DeleteTable", payload );
+    return response;
   }, 
   /**
    * Retrieves information about the table, including the current status of the table, the primary
@@ -261,8 +261,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeTable", payload );
-    return resposne;
+    var response = this.request("DescribeTable", payload );
+    return response;
   }, 
   /**
    * Retrieves a set of Attributes for an item that matches the primary key.
@@ -302,8 +302,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetItem", payload );
-    return resposne;
+    var response = this.request("GetItem", payload );
+    return response;
   }, 
   /**
    * Retrieves a paginated list of table names created by the AWS Account of the caller in the AWS
@@ -320,8 +320,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListTables", payload );
-    return resposne;
+    var response = this.request("ListTables", payload );
+    return response;
   }, 
   /**
    * Creates a new item, or replaces an old item with a new item (including all the attributes).
@@ -365,8 +365,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutItem", payload );
-    return resposne;
+    var response = this.request("PutItem", payload );
+    return response;
   }, 
   /**
    * Gets the values of one or more items and its attributes by primary key (composite primary key,
@@ -430,8 +430,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"Query", payload );
-    return resposne;
+    var response = this.request("Query", payload );
+    return response;
   }, 
   /**
    * Retrieves one or more items and its attributes by performing a full scan of a table.
@@ -484,8 +484,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"Scan", payload );
-    return resposne;
+    var response = this.request("Scan", payload );
+    return response;
   }, 
   /**
    * Edits an existing item's attributes.
@@ -548,8 +548,8 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateItem", payload );
-    return resposne;
+    var response = this.request("UpdateItem", payload );
+    return response;
   }, 
   /**
    * Updates the provisioned throughput for the given table.
@@ -571,7 +571,7 @@ AmazonDynamoDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateTable", payload );
-    return resposne;
+    var response = this.request("UpdateTable", payload );
+    return response;
   }
 }

@@ -30,11 +30,11 @@ AmazonImportExport.prototype = {
    */
   cancel_job: function(job_id,opt){
     var payload = {};
-    param.job_id = job_id;
+    payload.job_id = job_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CancelJob", payload );
-    return resposne;
+    var response = this.request("CancelJob", payload );
+    return response;
   }, 
   /**
    * This operation initiates the process of scheduling an upload or download of your data. You
@@ -53,13 +53,13 @@ AmazonImportExport.prototype = {
    */
   create_job: function(job_type,manifest,validate_only,opt){
     var payload = {};
-    param.job_type = job_type;
-    param.manifest = manifest;
-    param.validate_only = validate_only;
+    payload.job_type = job_type;
+    payload.manifest = manifest;
+    payload.validate_only = validate_only;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateJob", payload );
-    return resposne;
+    var response = this.request("CreateJob", payload );
+    return response;
   }, 
   /**
    * This operation returns information about a job, including where the job is in the processing
@@ -74,11 +74,11 @@ AmazonImportExport.prototype = {
    */
   get_status: function(job_id,opt){
     var payload = {};
-    param.job_id = job_id;
+    payload.job_id = job_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetStatus", payload );
-    return resposne;
+    var response = this.request("GetStatus", payload );
+    return response;
   }, 
   /**
    * This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs
@@ -97,8 +97,8 @@ AmazonImportExport.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListJobs", payload );
-    return resposne;
+    var response = this.request("ListJobs", payload );
+    return response;
   }, 
   /**
    * You use this operation to change the parameters specified in the original manifest file by
@@ -117,13 +117,13 @@ AmazonImportExport.prototype = {
    */
   update_job: function(job_id,manifest,job_type,validate_only,opt){
     var payload = {};
-    param.job_id = job_id;
-    param.manifest = manifest;
-    param.job_type = job_type;
-    param.validate_only = validate_only;
+    payload.job_id = job_id;
+    payload.manifest = manifest;
+    payload.job_type = job_type;
+    payload.validate_only = validate_only;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateJob", payload );
-    return resposne;
+    var response = this.request("UpdateJob", payload );
+    return response;
   }
 }

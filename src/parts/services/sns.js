@@ -33,14 +33,14 @@ AmazonSNS.prototype = {
    */
   add_permission: function(topic_arn,label,aws_account_id,action_name,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
-    param.label = label;
-    param.aws_account_id = aws_account_id;
-    param.action_name = action_name;
+    payload.topic_arn = topic_arn;
+    payload.label = label;
+    payload.aws_account_id = aws_account_id;
+    payload.action_name = action_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AddPermission", payload );
-    return resposne;
+    var response = this.request("AddPermission", payload );
+    return response;
   }, 
   /**
    * The ConfirmSubscription action verifies an endpoint owner's intent to receive messages by
@@ -58,12 +58,12 @@ AmazonSNS.prototype = {
    */
   confirm_subscription: function(topic_arn,token,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
-    param.token = token;
+    payload.topic_arn = topic_arn;
+    payload.token = token;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ConfirmSubscription", payload );
-    return resposne;
+    var response = this.request("ConfirmSubscription", payload );
+    return response;
   }, 
   /**
    * The CreateTopic action creates a topic to which notifications can be published. Users can
@@ -78,11 +78,11 @@ AmazonSNS.prototype = {
    */
   create_topic: function(name,opt){
     var payload = {};
-    param.name = name;
+    payload.name = name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateTopic", payload );
-    return resposne;
+    var response = this.request("CreateTopic", payload );
+    return response;
   }, 
   /**
    * The DeleteTopic action deletes a topic and all its subscriptions. Deleting a topic might
@@ -97,11 +97,11 @@ AmazonSNS.prototype = {
    */
   delete_topic: function(topic_arn,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
+    payload.topic_arn = topic_arn;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteTopic", payload );
-    return resposne;
+    var response = this.request("DeleteTopic", payload );
+    return response;
   }, 
   /**
    * The GetSubscriptionAttribtues action returns all of the properties of a subscription.
@@ -114,11 +114,11 @@ AmazonSNS.prototype = {
    */
   get_subscription_attributes: function(subscription_arn,opt){
     var payload = {};
-    param.subscription_arn = subscription_arn;
+    payload.subscription_arn = subscription_arn;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetSubscriptionAttributes", payload );
-    return resposne;
+    var response = this.request("GetSubscriptionAttributes", payload );
+    return response;
   }, 
   /**
    * The GetTopicAttribtues action returns all of the properties of a topic customers have created.
@@ -132,11 +132,11 @@ AmazonSNS.prototype = {
    */
   get_topic_attributes: function(topic_arn,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
+    payload.topic_arn = topic_arn;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetTopicAttributes", payload );
-    return resposne;
+    var response = this.request("GetTopicAttributes", payload );
+    return response;
   }, 
   /**
    * The ListSubscriptions action returns a list of the requester's subscriptions. Each call returns
@@ -154,8 +154,8 @@ AmazonSNS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListSubscriptions", payload );
-    return resposne;
+    var response = this.request("ListSubscriptions", payload );
+    return response;
   }, 
   /**
    * The ListSubscriptionsByTopic action returns a list of the subscriptions to a specific topic.
@@ -172,11 +172,11 @@ AmazonSNS.prototype = {
    */
   list_subscriptions_by_topic: function(topic_arn,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
+    payload.topic_arn = topic_arn;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListSubscriptionsByTopic", payload );
-    return resposne;
+    var response = this.request("ListSubscriptionsByTopic", payload );
+    return response;
   }, 
   /**
    * The ListTopics action returns a list of the requester's topics. Each call returns a limited
@@ -193,8 +193,8 @@ AmazonSNS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListTopics", payload );
-    return resposne;
+    var response = this.request("ListTopics", payload );
+    return response;
   }, 
   /**
    * The Publish action sends a message to all of a topic's subscribed endpoints. When a messageId
@@ -213,12 +213,12 @@ AmazonSNS.prototype = {
    */
   publish: function(topic_arn,message,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
-    param.message = message;
+    payload.topic_arn = topic_arn;
+    payload.message = message;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"Publish", payload );
-    return resposne;
+    var response = this.request("Publish", payload );
+    return response;
   }, 
   /**
    * The RemovePermission action removes a statement from a topic's access control policy.
@@ -232,12 +232,12 @@ AmazonSNS.prototype = {
    */
   remove_permission: function(topic_arn,label,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
-    param.label = label;
+    payload.topic_arn = topic_arn;
+    payload.label = label;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RemovePermission", payload );
-    return resposne;
+    var response = this.request("RemovePermission", payload );
+    return response;
   }, 
   /**
    * The SetSubscriptionAttributes action allows a subscription owner to set an attribute of the
@@ -253,13 +253,13 @@ AmazonSNS.prototype = {
    */
   set_subscription_attributes: function(subscription_arn,attribute_name,attribute_value,opt){
     var payload = {};
-    param.subscription_arn = subscription_arn;
-    param.attribute_name = attribute_name;
-    param.attribute_value = attribute_value;
+    payload.subscription_arn = subscription_arn;
+    payload.attribute_name = attribute_name;
+    payload.attribute_value = attribute_value;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetSubscriptionAttributes", payload );
-    return resposne;
+    var response = this.request("SetSubscriptionAttributes", payload );
+    return response;
   }, 
   /**
    * The SetTopicAttributes action allows a topic owner to set an attribute of the topic to a new
@@ -275,13 +275,13 @@ AmazonSNS.prototype = {
    */
   set_topic_attributes: function(topic_arn,attribute_name,attribute_value,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
-    param.attribute_name = attribute_name;
-    param.attribute_value = attribute_value;
+    payload.topic_arn = topic_arn;
+    payload.attribute_name = attribute_name;
+    payload.attribute_value = attribute_value;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetTopicAttributes", payload );
-    return resposne;
+    var response = this.request("SetTopicAttributes", payload );
+    return response;
   }, 
   /**
    * The Subscribe action prepares to subscribe an endpoint by sending the endpoint a confirmation
@@ -299,13 +299,13 @@ AmazonSNS.prototype = {
    */
   subscribe: function(topic_arn,protocol,endpoint,opt){
     var payload = {};
-    param.topic_arn = topic_arn;
-    param.protocol = protocol;
-    param.endpoint = endpoint;
+    payload.topic_arn = topic_arn;
+    payload.protocol = protocol;
+    payload.endpoint = endpoint;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"Subscribe", payload );
-    return resposne;
+    var response = this.request("Subscribe", payload );
+    return response;
   }, 
   /**
    * The Unsubscribe action deletes a subscription. If the subscription requires authentication for
@@ -323,10 +323,10 @@ AmazonSNS.prototype = {
    */
   unsubscribe: function(subscription_arn,opt){
     var payload = {};
-    param.subscription_arn = subscription_arn;
+    payload.subscription_arn = subscription_arn;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"Unsubscribe", payload );
-    return resposne;
+    var response = this.request("Unsubscribe", payload );
+    return response;
   }
 }

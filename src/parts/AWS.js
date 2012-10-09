@@ -14,7 +14,7 @@ AWS.prototype = {
   endpoint : "",
   access_key:'',
   secret_key:'',
-  auth_class:'AuthV4Query',
+  auth_class:'',
   region:undefined,
   init:function(access_key,secret_key,service){
     if(access_key == undefined || secret_key == undefined){
@@ -37,10 +37,39 @@ AWS.prototype = {
     endpoint += "amazonaws.com";
     return endpoint;
   },
-  request:function(operation,payload,datatype){
-    if(datatype == undefined){
-      datatype = 'xml';
+  request:function(operation,payload){
+    var signer = this.get_signer(this.auth_class);
+    signer.key = this.key;
+    signer.secret_key = this.secret_key;
+    signer.auth_token = this.auth_token;
+    signer.api_version = this.api_version;
+    signer.utilities_class = this.utilities_class;
+    signer.request_class = this.request_class;
+    signer.response_class = this.response_class;
+    signer.use_ssl = this.use_ssl;
+    signer.proxy = this.proxy;
+    signer.util = this.util;
+    signer.registered_streaming_read_callback = this.registered_streaming_read_callback;
+    signer.registered_streaming_write_callback = this.registered_streaming_write_callback;
+    
+    var request = signer.authenticate();
+    request.request_class = this.request_class;
+    request.response_class = this.response_class;
+    request.ssl_verification = this.ssl_verification;
+    
+    if (this.use_batch_flow)
+    {
+      var handle = request.prep_request();
+      this.batch_object.add(handle);
+      this.use_batch_flow = false;
+      return handle;
     }
+    
+    request.send_request();
+    var headers = request.get_response_header();
+    headers['x-aws-stringtosign'] = signer.string_to_sign;
+    
+    
     var url = this.auth_class.generateSignedURL(operation, payload, this.access_key, this.secret_key, this.get_endpoint(), this.version);
     //    var url = this.generateSignedURL(operation, payload, this.access_key, this.secret_key, this.get_endpoint(), this.version);
     payload = this.optimize_params(payload);
@@ -152,5 +181,19 @@ AWS.prototype = {
     .replace(/\(/g, '%28')
     .replace(/\)/g, '%29')
     .replace(/\*/g, '%2A');
+  },
+  get_signer:function(name){
+    switch(name){
+      case 'AuthV2Query':
+        return new AuthV2Query();
+      case 'AuthV3Query':
+        return new AuthV3Query();
+      case 'AuthV3Json':
+        return new AuthV3Json();
+      case 'AuthV4Query':
+        return new AuthV4Query();
+      case 'AuthV4Json':
+        return new AuthV4Json();
+    }
   }
 };

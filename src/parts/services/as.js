@@ -55,15 +55,15 @@ AmazonAS.prototype = {
    */
   create_auto_scaling_group: function(auto_scaling_group_name,launch_configuration_name,min_size,max_size,availability_zones,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
-    param.launch_configuration_name = launch_configuration_name;
-    param.min_size = min_size;
-    param.max_size = max_size;
-    param.availability_zones = availability_zones;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
+    payload.launch_configuration_name = launch_configuration_name;
+    payload.min_size = min_size;
+    payload.max_size = max_size;
+    payload.availability_zones = availability_zones;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateAutoScalingGroup", payload );
-    return resposne;
+    var response = this.request("CreateAutoScalingGroup", payload );
+    return response;
   }, 
   /**
    * Creates a new launch configuration. The launch configuration name must be unique within the
@@ -114,13 +114,13 @@ AmazonAS.prototype = {
    */
   create_launch_configuration: function(launch_configuration_name,image_id,instance_type,opt){
     var payload = {};
-    param.launch_configuration_name = launch_configuration_name;
-    param.image_id = image_id;
-    param.instance_type = instance_type;
+    payload.launch_configuration_name = launch_configuration_name;
+    payload.image_id = image_id;
+    payload.instance_type = instance_type;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateLaunchConfiguration", payload );
-    return resposne;
+    var response = this.request("CreateLaunchConfiguration", payload );
+    return response;
   }, 
   /**
    * 
@@ -141,11 +141,11 @@ AmazonAS.prototype = {
    */
   create_or_update_tags: function(tags,opt){
     var payload = {};
-    param.tags = tags;
+    payload.tags = tags;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateOrUpdateTags", payload );
-    return resposne;
+    var response = this.request("CreateOrUpdateTags", payload );
+    return response;
   }, 
   /**
    * Deletes the specified auto scaling group if the group has no instances and no scaling
@@ -166,11 +166,11 @@ AmazonAS.prototype = {
    */
   delete_auto_scaling_group: function(auto_scaling_group_name,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteAutoScalingGroup", payload );
-    return resposne;
+    var response = this.request("DeleteAutoScalingGroup", payload );
+    return response;
   }, 
   /**
    * Deletes the specified <code>LaunchConfiguration</code>.
@@ -186,11 +186,11 @@ AmazonAS.prototype = {
    */
   delete_launch_configuration: function(launch_configuration_name,opt){
     var payload = {};
-    param.launch_configuration_name = launch_configuration_name;
+    payload.launch_configuration_name = launch_configuration_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteLaunchConfiguration", payload );
-    return resposne;
+    var response = this.request("DeleteLaunchConfiguration", payload );
+    return response;
   }, 
   /**
    * Deletes notifications created by <code>PutNotificationConfiguration</code>.
@@ -204,12 +204,12 @@ AmazonAS.prototype = {
    */
   delete_notification_configuration: function(auto_scaling_group_name,topic_arn,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
-    param.topic_arn = topic_arn;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
+    payload.topic_arn = topic_arn;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteNotificationConfiguration", payload );
-    return resposne;
+    var response = this.request("DeleteNotificationConfiguration", payload );
+    return response;
   }, 
   /**
    * Deletes a policy created by <code>PutScalingPolicy</code>
@@ -223,11 +223,11 @@ AmazonAS.prototype = {
    */
   delete_policy: function(policy_name,opt){
     var payload = {};
-    param.policy_name = policy_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeletePolicy", payload );
-    return resposne;
+    var response = this.request("DeletePolicy", payload );
+    return response;
   }, 
   /**
    * Deletes a scheduled action previously created using the
@@ -242,11 +242,11 @@ AmazonAS.prototype = {
    */
   delete_scheduled_action: function(scheduled_action_name,opt){
     var payload = {};
-    param.scheduled_action_name = scheduled_action_name;
+    payload.scheduled_action_name = scheduled_action_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteScheduledAction", payload );
-    return resposne;
+    var response = this.request("DeleteScheduledAction", payload );
+    return response;
   }, 
   /**
    * 
@@ -267,11 +267,11 @@ AmazonAS.prototype = {
    */
   delete_tags: function(tags,opt){
     var payload = {};
-    param.tags = tags;
+    payload.tags = tags;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteTags", payload );
-    return resposne;
+    var response = this.request("DeleteTags", payload );
+    return response;
   }, 
   /**
    * Returns policy adjustment types for use in the <code>PutScalingPolicy</code> action.
@@ -285,8 +285,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAdjustmentTypes", payload );
-    return resposne;
+    var response = this.request("DescribeAdjustmentTypes", payload );
+    return response;
   }, 
   /**
    * Returns a full description of each Auto Scaling group in the given list. This includes all
@@ -309,8 +309,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAutoScalingGroups", payload );
-    return resposne;
+    var response = this.request("DescribeAutoScalingGroups", payload );
+    return response;
   }, 
   /**
    * Returns a description of each Auto Scaling instance in the <code>InstanceIds</code> list. If a
@@ -333,8 +333,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAutoScalingInstances", payload );
-    return resposne;
+    var response = this.request("DescribeAutoScalingInstances", payload );
+    return response;
   }, 
   /**
    * Returns a list of all notification types that are supported by Auto Scaling.
@@ -348,8 +348,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAutoScalingNotificationTypes", payload );
-    return resposne;
+    var response = this.request("DescribeAutoScalingNotificationTypes", payload );
+    return response;
   }, 
   /**
    * Returns a full description of the launch configurations given the specified names.
@@ -368,8 +368,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeLaunchConfigurations", payload );
-    return resposne;
+    var response = this.request("DescribeLaunchConfigurations", payload );
+    return response;
   }, 
   /**
    * Returns a list of metrics and a corresponding list of granularities for each metric.
@@ -383,8 +383,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeMetricCollectionTypes", payload );
-    return resposne;
+    var response = this.request("DescribeMetricCollectionTypes", payload );
+    return response;
   }, 
   /**
    * Returns a list of notification actions associated with Auto Scaling groups for specified
@@ -402,8 +402,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeNotificationConfigurations", payload );
-    return resposne;
+    var response = this.request("DescribeNotificationConfigurations", payload );
+    return response;
   }, 
   /**
    * Returns descriptions of what each policy does. This action supports pagination. If the response
@@ -423,8 +423,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribePolicies", payload );
-    return resposne;
+    var response = this.request("DescribePolicies", payload );
+    return response;
   }, 
   /**
    * Returns the scaling activities for the specified Auto Scaling group.
@@ -450,8 +450,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeScalingActivities", payload );
-    return resposne;
+    var response = this.request("DescribeScalingActivities", payload );
+    return response;
   }, 
   /**
    * Returns scaling process types for use in the <code>ResumeProcesses</code> and
@@ -466,8 +466,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeScalingProcessTypes", payload );
-    return resposne;
+    var response = this.request("DescribeScalingProcessTypes", payload );
+    return response;
   }, 
   /**
    * Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see
@@ -489,8 +489,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeScheduledActions", payload );
-    return resposne;
+    var response = this.request("DescribeScheduledActions", payload );
+    return response;
   }, 
   /**
    * 
@@ -512,8 +512,8 @@ AmazonAS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeTags", payload );
-    return resposne;
+    var response = this.request("DescribeTags", payload );
+    return response;
   }, 
   /**
    * Disables monitoring of group metrics for the Auto Scaling group specified in
@@ -528,11 +528,11 @@ AmazonAS.prototype = {
    */
   disable_metrics_collection: function(auto_scaling_group_name,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DisableMetricsCollection", payload );
-    return resposne;
+    var response = this.request("DisableMetricsCollection", payload );
+    return response;
   }, 
   /**
    * Enables monitoring of group metrics for the Auto Scaling group specified in
@@ -551,12 +551,12 @@ AmazonAS.prototype = {
    */
   enable_metrics_collection: function(auto_scaling_group_name,granularity,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
-    param.granularity = granularity;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
+    payload.granularity = granularity;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"EnableMetricsCollection", payload );
-    return resposne;
+    var response = this.request("EnableMetricsCollection", payload );
+    return response;
   }, 
   /**
    * Runs the policy you create for your Auto Scaling group in <code>PutScalingPolicy</code>.
@@ -571,11 +571,11 @@ AmazonAS.prototype = {
    */
   execute_policy: function(policy_name,opt){
     var payload = {};
-    param.policy_name = policy_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ExecutePolicy", payload );
-    return resposne;
+    var response = this.request("ExecutePolicy", payload );
+    return response;
   }, 
   /**
    * Configures an Auto Scaling group to send notifications when specified events take place.
@@ -594,13 +594,13 @@ AmazonAS.prototype = {
    */
   put_notification_configuration: function(auto_scaling_group_name,topic_arn,notification_types,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
-    param.topic_arn = topic_arn;
-    param.notification_types = notification_types;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
+    payload.topic_arn = topic_arn;
+    payload.notification_types = notification_types;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutNotificationConfiguration", payload );
-    return resposne;
+    var response = this.request("PutNotificationConfiguration", payload );
+    return response;
   }, 
   /**
    * Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the
@@ -620,14 +620,14 @@ AmazonAS.prototype = {
    */
   put_scaling_policy: function(auto_scaling_group_name,policy_name,scaling_adjustment,adjustment_type,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
-    param.policy_name = policy_name;
-    param.scaling_adjustment = scaling_adjustment;
-    param.adjustment_type = adjustment_type;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
+    payload.policy_name = policy_name;
+    payload.scaling_adjustment = scaling_adjustment;
+    payload.adjustment_type = adjustment_type;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutScalingPolicy", payload );
-    return resposne;
+    var response = this.request("PutScalingPolicy", payload );
+    return response;
   }, 
   /**
    * Creates a scheduled scaling action for a Auto Scaling group. If you leave a parameter
@@ -649,12 +649,12 @@ AmazonAS.prototype = {
    */
   put_scheduled_update_group_action: function(auto_scaling_group_name,scheduled_action_name,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
-    param.scheduled_action_name = scheduled_action_name;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
+    payload.scheduled_action_name = scheduled_action_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutScheduledUpdateGroupAction", payload );
-    return resposne;
+    var response = this.request("PutScheduledUpdateGroupAction", payload );
+    return response;
   }, 
   /**
    * Resumes Auto Scaling processes for an Auto Scaling group. For more information, see
@@ -669,11 +669,11 @@ AmazonAS.prototype = {
    */
   resume_processes: function(auto_scaling_group_name,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ResumeProcesses", payload );
-    return resposne;
+    var response = this.request("ResumeProcesses", payload );
+    return response;
   }, 
   /**
    * Adjusts the desired size of the <code>AutoScalingGroup</code> by initiating scaling activities.
@@ -709,12 +709,12 @@ AmazonAS.prototype = {
    */
   set_desired_capacity: function(auto_scaling_group_name,desired_capacity,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
-    param.desired_capacity = desired_capacity;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
+    payload.desired_capacity = desired_capacity;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetDesiredCapacity", payload );
-    return resposne;
+    var response = this.request("SetDesiredCapacity", payload );
+    return response;
   }, 
   /**
    * Sets the health status of an instance.
@@ -729,12 +729,12 @@ AmazonAS.prototype = {
    */
   set_instance_health: function(instance_id,health_status,opt){
     var payload = {};
-    param.instance_id = instance_id;
-    param.health_status = health_status;
+    payload.instance_id = instance_id;
+    payload.health_status = health_status;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetInstanceHealth", payload );
-    return resposne;
+    var response = this.request("SetInstanceHealth", payload );
+    return response;
   }, 
   /**
    * Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types,
@@ -757,11 +757,11 @@ AmazonAS.prototype = {
    */
   suspend_processes: function(auto_scaling_group_name,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SuspendProcesses", payload );
-    return resposne;
+    var response = this.request("SuspendProcesses", payload );
+    return response;
   }, 
   /**
    * Terminates the specified instance. Optionally, the desired group size can be adjusted.
@@ -780,12 +780,12 @@ AmazonAS.prototype = {
    */
   terminate_instance_in_auto_scaling_group: function(instance_id,should_decrement_desired_capacity,opt){
     var payload = {};
-    param.instance_id = instance_id;
-    param.should_decrement_desired_capacity = should_decrement_desired_capacity;
+    payload.instance_id = instance_id;
+    payload.should_decrement_desired_capacity = should_decrement_desired_capacity;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"TerminateInstanceInAutoScalingGroup", payload );
-    return resposne;
+    var response = this.request("TerminateInstanceInAutoScalingGroup", payload );
+    return response;
   }, 
   /**
    * Updates the configuration for the specified <code>AutoScalingGroup</code>.
@@ -826,10 +826,10 @@ AmazonAS.prototype = {
    */
   update_auto_scaling_group: function(auto_scaling_group_name,opt){
     var payload = {};
-    param.auto_scaling_group_name = auto_scaling_group_name;
+    payload.auto_scaling_group_name = auto_scaling_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateAutoScalingGroup", payload );
-    return resposne;
+    var response = this.request("UpdateAutoScalingGroup", payload );
+    return response;
   }
 }

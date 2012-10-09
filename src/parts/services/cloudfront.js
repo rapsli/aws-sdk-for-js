@@ -47,12 +47,12 @@ AmazonCloudFront.prototype = {
    */
   create_distribution: function(origin,caller_reference,opt){
     var payload = {};
-    param.origin = origin;
-    param.caller_reference = caller_reference;
+    payload.origin = origin;
+    payload.caller_reference = caller_reference;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDistribution", payload );
-    return resposne;
+    var response = this.request("CreateDistribution", payload );
+    return response;
   }, 
   /**
    * Gets a list of distributions. By default, the list is returned as one result. If needed, paginate the
@@ -75,8 +75,8 @@ AmazonCloudFront.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListDistributions", payload );
-    return resposne;
+    var response = this.request("ListDistributions", payload );
+    return response;
   }, 
   /**
    * Gets distribution information for the specified distribution ID.
@@ -95,11 +95,11 @@ AmazonCloudFront.prototype = {
    */
   get_distribution_info: function(distribution_id,opt){
     var payload = {};
-    param.distribution_id = distribution_id;
+    payload.distribution_id = distribution_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetDistributionInfo", payload );
-    return resposne;
+    var response = this.request("GetDistributionInfo", payload );
+    return response;
   }, 
   /**
    * Deletes a disabled distribution. If distribution hasn't been disabled, Amazon CloudFront returns a
@@ -121,12 +121,12 @@ AmazonCloudFront.prototype = {
    */
   delete_distribution: function(distribution_id,etag,opt){
     var payload = {};
-    param.distribution_id = distribution_id;
-    param.etag = etag;
+    payload.distribution_id = distribution_id;
+    payload.etag = etag;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDistribution", payload );
-    return resposne;
+    var response = this.request("DeleteDistribution", payload );
+    return response;
   }, 
   /**
    * Gets the current distribution configuration for the specified distribution ID.
@@ -145,11 +145,11 @@ AmazonCloudFront.prototype = {
    */
   get_distribution_config: function(distribution_id,opt){
     var payload = {};
-    param.distribution_id = distribution_id;
+    payload.distribution_id = distribution_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetDistributionConfig", payload );
-    return resposne;
+    var response = this.request("GetDistributionConfig", payload );
+    return response;
   }, 
   /**
    * Sets a new distribution configuration for the specified distribution ID.
@@ -170,13 +170,13 @@ AmazonCloudFront.prototype = {
    */
   set_distribution_config: function(distribution_id,xml,etag,opt){
     var payload = {};
-    param.distribution_id = distribution_id;
-    param.xml = xml;
-    param.etag = etag;
+    payload.distribution_id = distribution_id;
+    payload.xml = xml;
+    payload.etag = etag;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetDistributionConfig", payload );
-    return resposne;
+    var response = this.request("SetDistributionConfig", payload );
+    return response;
   }, 
   /**
    * Creates a new Amazon CloudFront origin access identity (OAI). You can create up to 100 OAIs per AWS
@@ -192,11 +192,11 @@ AmazonCloudFront.prototype = {
    */
   create_oai: function(caller_reference,opt){
     var payload = {};
-    param.caller_reference = caller_reference;
+    payload.caller_reference = caller_reference;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateOai", payload );
-    return resposne;
+    var response = this.request("CreateOai", payload );
+    return response;
   }, 
   /**
    * Gets a list of origin access identity (OAI) summaries. By default, the list is returned as one result.
@@ -215,8 +215,8 @@ AmazonCloudFront.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListOais", payload );
-    return resposne;
+    var response = this.request("ListOais", payload );
+    return response;
   }, 
   /**
    * Gets information about an origin access identity (OAI).
@@ -230,11 +230,11 @@ AmazonCloudFront.prototype = {
    */
   get_oai: function(identity_id,opt){
     var payload = {};
-    param.identity_id = identity_id;
+    payload.identity_id = identity_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetOai", payload );
-    return resposne;
+    var response = this.request("GetOai", payload );
+    return response;
   }, 
   /**
    * Deletes an Amazon CloudFront origin access identity (OAI). To delete an OAI, the identity must first
@@ -252,12 +252,12 @@ AmazonCloudFront.prototype = {
    */
   delete_oai: function(identity_id,etag,opt){
     var payload = {};
-    param.identity_id = identity_id;
-    param.etag = etag;
+    payload.identity_id = identity_id;
+    payload.etag = etag;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteOai", payload );
-    return resposne;
+    var response = this.request("DeleteOai", payload );
+    return response;
   }, 
   /**
    * Gets the configuration of the origin access identity (OAI) for the specified identity ID.
@@ -271,11 +271,11 @@ AmazonCloudFront.prototype = {
    */
   get_oai_config: function(identity_id,opt){
     var payload = {};
-    param.identity_id = identity_id;
+    payload.identity_id = identity_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetOaiConfig", payload );
-    return resposne;
+    var response = this.request("GetOaiConfig", payload );
+    return response;
   }, 
   /**
    * Sets the configuration for an Amazon CloudFront origin access identity (OAI). Use this when updating
@@ -297,13 +297,13 @@ AmazonCloudFront.prototype = {
    */
   set_oai_config: function(identity_id,xml,etag,opt){
     var payload = {};
-    param.identity_id = identity_id;
-    param.xml = xml;
-    param.etag = etag;
+    payload.identity_id = identity_id;
+    payload.xml = xml;
+    payload.etag = etag;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetOaiConfig", payload );
-    return resposne;
+    var response = this.request("SetOaiConfig", payload );
+    return response;
   }, 
   /**
    * Creates a new invalidation request.
@@ -319,13 +319,13 @@ AmazonCloudFront.prototype = {
    */
   create_invalidation: function(distribution_id,caller_reference,paths,opt){
     var payload = {};
-    param.distribution_id = distribution_id;
-    param.caller_reference = caller_reference;
-    param.paths = paths;
+    payload.distribution_id = distribution_id;
+    payload.caller_reference = caller_reference;
+    payload.paths = paths;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateInvalidation", payload );
-    return resposne;
+    var response = this.request("CreateInvalidation", payload );
+    return response;
   }, 
   /**
    * Gets a list of invalidations. By default, the list is returned as one result. If needed, paginate the
@@ -342,11 +342,11 @@ AmazonCloudFront.prototype = {
    */
   list_invalidations: function(distribution_id,opt){
     var payload = {};
-    param.distribution_id = distribution_id;
+    payload.distribution_id = distribution_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListInvalidations", payload );
-    return resposne;
+    var response = this.request("ListInvalidations", payload );
+    return response;
   }, 
   /**
    * Gets information about an invalidation.
@@ -361,11 +361,11 @@ AmazonCloudFront.prototype = {
    */
   get_invalidation: function(distribution_id,invalidation_id,opt){
     var payload = {};
-    param.distribution_id = distribution_id;
-    param.invalidation_id = invalidation_id;
+    payload.distribution_id = distribution_id;
+    payload.invalidation_id = invalidation_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetInvalidation", payload );
-    return resposne;
+    var response = this.request("GetInvalidation", payload );
+    return response;
   }
 }

@@ -42,6 +42,35 @@ Signer.prototype = {
     this.secret_key = secret_key;
   },
   authenticate:function(){
-  
+    
+  },
+  get_date_RFC2616:function(timestamp){
+    //D, d M Y H:i:s \G\M\T
+    if(timestamp == undefined){
+      timestamp = this.time();
+    }
+    var d = new Date(timestamp);
+    return '$D'+', '+'$d' + ' '+d.getUTCDate()+ ' ' + '$M' + d.getUTCFullYear() + ' '
+    d.getUTCHours() + ':' + d.getUTCMinutes() + ':' + d.getUTCSeconds() + " GMT";
+  },
+  get_date_ISO8601:function(timestamp){
+    // Y-m-d\TH:i:s\Z
+    if(timestamp == undefined){
+      timestamp = this.time();
+    }
+    var d = new Date(timestamp);
+    return d.getUTCFullYear() + '-' + (d.getUTCMonth() + 1) + '-' + d.getUTCDate() + 'T'
+    d.getUTCHours() + ':' + d.getUTCMinutes() + ':' + d.getUTCSeconds();
+  },
+  time:function(){
+    return  Math.round(new Date().getTime() / 1000);;
   }
-}
+};
+
+var Request:function(){
+  this.initialize();
+};
+
+Request.protytpe = {
+  
+};

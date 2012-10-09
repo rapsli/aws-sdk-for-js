@@ -30,12 +30,12 @@ AmazonIAM.prototype = {
    */
   add_role_to_instance_profile: function(instance_profile_name,role_name,opt){
     var payload = {};
-    param.instance_profile_name = instance_profile_name;
-    param.role_name = role_name;
+    payload.instance_profile_name = instance_profile_name;
+    payload.role_name = role_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AddRoleToInstanceProfile", payload );
-    return resposne;
+    var response = this.request("AddRoleToInstanceProfile", payload );
+    return response;
   }, 
   /**
    * Adds the specified user to the specified group.
@@ -49,12 +49,12 @@ AmazonIAM.prototype = {
    */
   add_user_to_group: function(group_name,user_name,opt){
     var payload = {};
-    param.group_name = group_name;
-    param.user_name = user_name;
+    payload.group_name = group_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AddUserToGroup", payload );
-    return resposne;
+    var response = this.request("AddUserToGroup", payload );
+    return response;
   }, 
   /**
    * Changes the password of the IAM user calling <code>ChangePassword</code>. The root account
@@ -71,12 +71,12 @@ AmazonIAM.prototype = {
    */
   change_password: function(old_password,new_password,opt){
     var payload = {};
-    param.old_password = old_password;
-    param.new_password = new_password;
+    payload.old_password = old_password;
+    payload.new_password = new_password;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ChangePassword", payload );
-    return resposne;
+    var response = this.request("ChangePassword", payload );
+    return response;
   }, 
   /**
    * Creates a new AWS Secret Access Key and corresponding AWS Access Key ID for the specified user.
@@ -109,8 +109,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateAccessKey", payload );
-    return resposne;
+    var response = this.request("CreateAccessKey", payload );
+    return response;
   }, 
   /**
    * This action creates an alias for your AWS account. For information about using an AWS account
@@ -126,11 +126,11 @@ AmazonIAM.prototype = {
    */
   create_account_alias: function(account_alias,opt){
     var payload = {};
-    param.account_alias = account_alias;
+    payload.account_alias = account_alias;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateAccountAlias", payload );
-    return resposne;
+    var response = this.request("CreateAccountAlias", payload );
+    return response;
   }, 
   /**
    * Creates a new group.
@@ -149,11 +149,11 @@ AmazonIAM.prototype = {
    */
   create_group: function(group_name,opt){
     var payload = {};
-    param.group_name = group_name;
+    payload.group_name = group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateGroup", payload );
-    return resposne;
+    var response = this.request("CreateGroup", payload );
+    return response;
   }, 
   /**
    * Creates a new instance profile.
@@ -172,11 +172,11 @@ AmazonIAM.prototype = {
    */
   create_instance_profile: function(instance_profile_name,opt){
     var payload = {};
-    param.instance_profile_name = instance_profile_name;
+    payload.instance_profile_name = instance_profile_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateInstanceProfile", payload );
-    return resposne;
+    var response = this.request("CreateInstanceProfile", payload );
+    return response;
   }, 
   /**
    * Creates a password for the specified user, giving the user the ability to access AWS services
@@ -193,12 +193,12 @@ AmazonIAM.prototype = {
    */
   create_login_profile: function(user_name,password,opt){
     var payload = {};
-    param.user_name = user_name;
-    param.password = password;
+    payload.user_name = user_name;
+    payload.password = password;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateLoginProfile", payload );
-    return resposne;
+    var response = this.request("CreateLoginProfile", payload );
+    return response;
   }, 
   /**
    * Creates a new role for your AWS account.
@@ -218,12 +218,12 @@ AmazonIAM.prototype = {
    */
   create_role: function(role_name,assume_role_policy_document,opt){
     var payload = {};
-    param.role_name = role_name;
-    param.assume_role_policy_document = assume_role_policy_document;
+    payload.role_name = role_name;
+    payload.assume_role_policy_document = assume_role_policy_document;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateRole", payload );
-    return resposne;
+    var response = this.request("CreateRole", payload );
+    return response;
   }, 
   /**
    * Creates a new user for your AWS account.
@@ -242,11 +242,11 @@ AmazonIAM.prototype = {
    */
   create_user: function(user_name,opt){
     var payload = {};
-    param.user_name = user_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateUser", payload );
-    return resposne;
+    var response = this.request("CreateUser", payload );
+    return response;
   }, 
   /**
    * Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use
@@ -278,11 +278,11 @@ AmazonIAM.prototype = {
    */
   create_virtual_mfa_device: function(virtual_mfa_device_name,opt){
     var payload = {};
-    param.virtual_mfa_device_name = virtual_mfa_device_name;
+    payload.virtual_mfa_device_name = virtual_mfa_device_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateVirtualMfaDevice", payload );
-    return resposne;
+    var response = this.request("CreateVirtualMfaDevice", payload );
+    return response;
   }, 
   /**
    * Deactivates the specified MFA device and removes it from association with the user name for
@@ -297,12 +297,12 @@ AmazonIAM.prototype = {
    */
   deactivate_mfa_device: function(user_name,serial_number,opt){
     var payload = {};
-    param.user_name = user_name;
-    param.serial_number = serial_number;
+    payload.user_name = user_name;
+    payload.serial_number = serial_number;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeactivateMfaDevice", payload );
-    return resposne;
+    var response = this.request("DeactivateMfaDevice", payload );
+    return response;
   }, 
   /**
    * Deletes the access key associated with the specified user.
@@ -321,11 +321,11 @@ AmazonIAM.prototype = {
    */
   delete_access_key: function(access_key_id,opt){
     var payload = {};
-    param.access_key_id = access_key_id;
+    payload.access_key_id = access_key_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteAccessKey", payload );
-    return resposne;
+    var response = this.request("DeleteAccessKey", payload );
+    return response;
   }, 
   /**
    * Deletes the specified AWS account alias. For information about using an AWS account alias, see
@@ -341,11 +341,11 @@ AmazonIAM.prototype = {
    */
   delete_account_alias: function(account_alias,opt){
     var payload = {};
-    param.account_alias = account_alias;
+    payload.account_alias = account_alias;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteAccountAlias", payload );
-    return resposne;
+    var response = this.request("DeleteAccountAlias", payload );
+    return response;
   }, 
   /**
    * Deletes the password policy for the AWS account.
@@ -359,8 +359,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteAccountPasswordPolicy", payload );
-    return resposne;
+    var response = this.request("DeleteAccountPasswordPolicy", payload );
+    return response;
   }, 
   /**
    * Deletes the specified group. The group must not contain any users or have any attached
@@ -374,11 +374,11 @@ AmazonIAM.prototype = {
    */
   delete_group: function(group_name,opt){
     var payload = {};
-    param.group_name = group_name;
+    payload.group_name = group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteGroup", payload );
-    return resposne;
+    var response = this.request("DeleteGroup", payload );
+    return response;
   }, 
   /**
    * Deletes the specified policy that is associated with the specified group.
@@ -392,12 +392,12 @@ AmazonIAM.prototype = {
    */
   delete_group_policy: function(group_name,policy_name,opt){
     var payload = {};
-    param.group_name = group_name;
-    param.policy_name = policy_name;
+    payload.group_name = group_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteGroupPolicy", payload );
-    return resposne;
+    var response = this.request("DeleteGroupPolicy", payload );
+    return response;
   }, 
   /**
    * Deletes the specified instance profile. The instance profile must have an associated role.
@@ -410,11 +410,11 @@ AmazonIAM.prototype = {
    */
   delete_instance_profile: function(instance_profile_name,opt){
     var payload = {};
-    param.instance_profile_name = instance_profile_name;
+    payload.instance_profile_name = instance_profile_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteInstanceProfile", payload );
-    return resposne;
+    var response = this.request("DeleteInstanceProfile", payload );
+    return response;
   }, 
   /**
    * Deletes the password for the specified user, which terminates the user's ability to access AWS
@@ -435,11 +435,11 @@ AmazonIAM.prototype = {
    */
   delete_login_profile: function(user_name,opt){
     var payload = {};
-    param.user_name = user_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteLoginProfile", payload );
-    return resposne;
+    var response = this.request("DeleteLoginProfile", payload );
+    return response;
   }, 
   /**
    * Deletes the specified role. The role must not have any attached policies.
@@ -452,11 +452,11 @@ AmazonIAM.prototype = {
    */
   delete_role: function(role_name,opt){
     var payload = {};
-    param.role_name = role_name;
+    payload.role_name = role_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteRole", payload );
-    return resposne;
+    var response = this.request("DeleteRole", payload );
+    return response;
   }, 
   /**
    * Deletes the specified policy associated with the specified role.
@@ -470,12 +470,12 @@ AmazonIAM.prototype = {
    */
   delete_role_policy: function(role_name,policy_name,opt){
     var payload = {};
-    param.role_name = role_name;
-    param.policy_name = policy_name;
+    payload.role_name = role_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteRolePolicy", payload );
-    return resposne;
+    var response = this.request("DeleteRolePolicy", payload );
+    return response;
   }, 
   /**
    * Deletes the specified server certificate.
@@ -500,11 +500,11 @@ AmazonIAM.prototype = {
    */
   delete_server_certificate: function(server_certificate_name,opt){
     var payload = {};
-    param.server_certificate_name = server_certificate_name;
+    payload.server_certificate_name = server_certificate_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteServerCertificate", payload );
-    return resposne;
+    var response = this.request("DeleteServerCertificate", payload );
+    return response;
   }, 
   /**
    * Deletes the specified signing certificate associated with the specified user.
@@ -523,11 +523,11 @@ AmazonIAM.prototype = {
    */
   delete_signing_certificate: function(certificate_id,opt){
     var payload = {};
-    param.certificate_id = certificate_id;
+    payload.certificate_id = certificate_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteSigningCertificate", payload );
-    return resposne;
+    var response = this.request("DeleteSigningCertificate", payload );
+    return response;
   }, 
   /**
    * Deletes the specified user. The user must not belong to any groups, have any keys or signing
@@ -541,11 +541,11 @@ AmazonIAM.prototype = {
    */
   delete_user: function(user_name,opt){
     var payload = {};
-    param.user_name = user_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteUser", payload );
-    return resposne;
+    var response = this.request("DeleteUser", payload );
+    return response;
   }, 
   /**
    * Deletes the specified policy associated with the specified user.
@@ -559,12 +559,12 @@ AmazonIAM.prototype = {
    */
   delete_user_policy: function(user_name,policy_name,opt){
     var payload = {};
-    param.user_name = user_name;
-    param.policy_name = policy_name;
+    payload.user_name = user_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteUserPolicy", payload );
-    return resposne;
+    var response = this.request("DeleteUserPolicy", payload );
+    return response;
   }, 
   /**
    * Deletes a virtual MFA device.
@@ -583,11 +583,11 @@ AmazonIAM.prototype = {
    */
   delete_virtual_mfa_device: function(serial_number,opt){
     var payload = {};
-    param.serial_number = serial_number;
+    payload.serial_number = serial_number;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteVirtualMfaDevice", payload );
-    return resposne;
+    var response = this.request("DeleteVirtualMfaDevice", payload );
+    return response;
   }, 
   /**
    * Enables the specified MFA device and associates it with the specified user name. When enabled,
@@ -605,14 +605,14 @@ AmazonIAM.prototype = {
    */
   enable_mfa_device: function(user_name,serial_number,authentication_code1,authentication_code2,opt){
     var payload = {};
-    param.user_name = user_name;
-    param.serial_number = serial_number;
-    param.authentication_code1 = authentication_code1;
-    param.authentication_code2 = authentication_code2;
+    payload.user_name = user_name;
+    payload.serial_number = serial_number;
+    payload.authentication_code1 = authentication_code1;
+    payload.authentication_code2 = authentication_code2;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"EnableMfaDevice", payload );
-    return resposne;
+    var response = this.request("EnableMfaDevice", payload );
+    return response;
   }, 
   /**
    * Retrieves the password policy for the AWS account. For more information about using a password
@@ -629,8 +629,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetAccountPasswordPolicy", payload );
-    return resposne;
+    var response = this.request("GetAccountPasswordPolicy", payload );
+    return response;
   }, 
   /**
    * Retrieves account level information about account entity usage and IAM quotas.
@@ -649,8 +649,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetAccountSummary", payload );
-    return resposne;
+    var response = this.request("GetAccountSummary", payload );
+    return response;
   }, 
   /**
    * Returns a list of users that are in the specified group. You can paginate the results using the
@@ -666,11 +666,11 @@ AmazonIAM.prototype = {
    */
   get_group: function(group_name,opt){
     var payload = {};
-    param.group_name = group_name;
+    payload.group_name = group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetGroup", payload );
-    return resposne;
+    var response = this.request("GetGroup", payload );
+    return response;
   }, 
   /**
    * Retrieves the specified policy document for the specified group. The returned policy is
@@ -686,12 +686,12 @@ AmazonIAM.prototype = {
    */
   get_group_policy: function(group_name,policy_name,opt){
     var payload = {};
-    param.group_name = group_name;
-    param.policy_name = policy_name;
+    payload.group_name = group_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetGroupPolicy", payload );
-    return resposne;
+    var response = this.request("GetGroupPolicy", payload );
+    return response;
   }, 
   /**
    * Retrieves information about the specified instance profile, including the instance profile's
@@ -705,11 +705,11 @@ AmazonIAM.prototype = {
    */
   get_instance_profile: function(instance_profile_name,opt){
     var payload = {};
-    param.instance_profile_name = instance_profile_name;
+    payload.instance_profile_name = instance_profile_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetInstanceProfile", payload );
-    return resposne;
+    var response = this.request("GetInstanceProfile", payload );
+    return response;
   }, 
   /**
    * Retrieves the user name and password create date for the specified user.
@@ -722,11 +722,11 @@ AmazonIAM.prototype = {
    */
   get_login_profile: function(user_name,opt){
     var payload = {};
-    param.user_name = user_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetLoginProfile", payload );
-    return resposne;
+    var response = this.request("GetLoginProfile", payload );
+    return response;
   }, 
   /**
    * Retrieves information about the specified role, including the role's path, GUID, ARN, and the
@@ -740,11 +740,11 @@ AmazonIAM.prototype = {
    */
   get_role: function(role_name,opt){
     var payload = {};
-    param.role_name = role_name;
+    payload.role_name = role_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetRole", payload );
-    return resposne;
+    var response = this.request("GetRole", payload );
+    return response;
   }, 
   /**
    * Retrieves the specified policy document for the specified role. The returned policy is
@@ -760,12 +760,12 @@ AmazonIAM.prototype = {
    */
   get_role_policy: function(role_name,policy_name,opt){
     var payload = {};
-    param.role_name = role_name;
-    param.policy_name = policy_name;
+    payload.role_name = role_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetRolePolicy", payload );
-    return resposne;
+    var response = this.request("GetRolePolicy", payload );
+    return response;
   }, 
   /**
    * Retrieves information about the specified server certificate.
@@ -778,11 +778,11 @@ AmazonIAM.prototype = {
    */
   get_server_certificate: function(server_certificate_name,opt){
     var payload = {};
-    param.server_certificate_name = server_certificate_name;
+    payload.server_certificate_name = server_certificate_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetServerCertificate", payload );
-    return resposne;
+    var response = this.request("GetServerCertificate", payload );
+    return response;
   }, 
   /**
    * Retrieves information about the specified user, including the user's path, GUID, and ARN.
@@ -800,8 +800,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetUser", payload );
-    return resposne;
+    var response = this.request("GetUser", payload );
+    return response;
   }, 
   /**
    * Retrieves the specified policy document for the specified user. The returned policy is
@@ -817,12 +817,12 @@ AmazonIAM.prototype = {
    */
   get_user_policy: function(user_name,policy_name,opt){
     var payload = {};
-    param.user_name = user_name;
-    param.policy_name = policy_name;
+    payload.user_name = user_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetUserPolicy", payload );
-    return resposne;
+    var response = this.request("GetUserPolicy", payload );
+    return response;
   }, 
   /**
    * Returns information about the Access Key IDs associated with the specified user. If there are
@@ -853,8 +853,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListAccessKeys", payload );
-    return resposne;
+    var response = this.request("ListAccessKeys", payload );
+    return response;
   }, 
   /**
    * Lists the account aliases associated with the account. For information about using an AWS
@@ -877,8 +877,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListAccountAliases", payload );
-    return resposne;
+    var response = this.request("ListAccountAliases", payload );
+    return response;
   }, 
   /**
    * Lists the names of the policies associated with the specified group. If there are none, the
@@ -897,11 +897,11 @@ AmazonIAM.prototype = {
    */
   list_group_policies: function(group_name,opt){
     var payload = {};
-    param.group_name = group_name;
+    payload.group_name = group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListGroupPolicies", payload );
-    return resposne;
+    var response = this.request("ListGroupPolicies", payload );
+    return response;
   }, 
   /**
    * Lists the groups that have the specified path prefix.
@@ -921,8 +921,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListGroups", payload );
-    return resposne;
+    var response = this.request("ListGroups", payload );
+    return response;
   }, 
   /**
    * Lists the groups the specified user belongs to.
@@ -940,11 +940,11 @@ AmazonIAM.prototype = {
    */
   list_groups_for_user: function(user_name,opt){
     var payload = {};
-    param.user_name = user_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListGroupsForUser", payload );
-    return resposne;
+    var response = this.request("ListGroupsForUser", payload );
+    return response;
   }, 
   /**
    * Lists the instance profiles that have the specified path prefix. If there are none, the action
@@ -965,8 +965,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListInstanceProfiles", payload );
-    return resposne;
+    var response = this.request("ListInstanceProfiles", payload );
+    return response;
   }, 
   /**
    * Lists the instance profiles that have the specified associated role. If there are none, the
@@ -985,11 +985,11 @@ AmazonIAM.prototype = {
    */
   list_instance_profiles_for_role: function(role_name,opt){
     var payload = {};
-    param.role_name = role_name;
+    payload.role_name = role_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListInstanceProfilesForRole", payload );
-    return resposne;
+    var response = this.request("ListInstanceProfilesForRole", payload );
+    return response;
   }, 
   /**
    * Lists the MFA devices. If the request includes the user name, then this action lists all the
@@ -1011,8 +1011,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListMfaDevices", payload );
-    return resposne;
+    var response = this.request("ListMfaDevices", payload );
+    return response;
   }, 
   /**
    * Lists the names of the policies associated with the specified role. If there are none, the
@@ -1031,11 +1031,11 @@ AmazonIAM.prototype = {
    */
   list_role_policies: function(role_name,opt){
     var payload = {};
-    param.role_name = role_name;
+    payload.role_name = role_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListRolePolicies", payload );
-    return resposne;
+    var response = this.request("ListRolePolicies", payload );
+    return response;
   }, 
   /**
    * Lists the roles have the specified path prefix. If there are none, the action returns an empty
@@ -1056,8 +1056,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListRoles", payload );
-    return resposne;
+    var response = this.request("ListRoles", payload );
+    return response;
   }, 
   /**
    * Lists the server certificates that have the specified path prefix. If none exist, the action
@@ -1078,8 +1078,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListServerCertificates", payload );
-    return resposne;
+    var response = this.request("ListServerCertificates", payload );
+    return response;
   }, 
   /**
    * Returns information about the signing certificates associated with the specified user. If there
@@ -1105,8 +1105,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListSigningCertificates", payload );
-    return resposne;
+    var response = this.request("ListSigningCertificates", payload );
+    return response;
   }, 
   /**
    * Lists the names of the policies associated with the specified user. If there are none, the
@@ -1125,11 +1125,11 @@ AmazonIAM.prototype = {
    */
   list_user_policies: function(user_name,opt){
     var payload = {};
-    param.user_name = user_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListUserPolicies", payload );
-    return resposne;
+    var response = this.request("ListUserPolicies", payload );
+    return response;
   }, 
   /**
    * Lists the users that have the specified path prefix. If there are none, the action returns an
@@ -1150,8 +1150,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListUsers", payload );
-    return resposne;
+    var response = this.request("ListUsers", payload );
+    return response;
   }, 
   /**
    * Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify
@@ -1173,8 +1173,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListVirtualMfaDevices", payload );
-    return resposne;
+    var response = this.request("ListVirtualMfaDevices", payload );
+    return response;
   }, 
   /**
    * Adds (or updates) a policy document associated with the specified group. For information about
@@ -1209,13 +1209,13 @@ AmazonIAM.prototype = {
    */
   put_group_policy: function(group_name,policy_name,policy_document,opt){
     var payload = {};
-    param.group_name = group_name;
-    param.policy_name = policy_name;
-    param.policy_document = policy_document;
+    payload.group_name = group_name;
+    payload.policy_name = policy_name;
+    payload.policy_document = policy_document;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutGroupPolicy", payload );
-    return resposne;
+    var response = this.request("PutGroupPolicy", payload );
+    return response;
   }, 
   /**
    * Adds (or updates) a policy document associated with the specified role. For information about
@@ -1250,13 +1250,13 @@ AmazonIAM.prototype = {
    */
   put_role_policy: function(role_name,policy_name,policy_document,opt){
     var payload = {};
-    param.role_name = role_name;
-    param.policy_name = policy_name;
-    param.policy_document = policy_document;
+    payload.role_name = role_name;
+    payload.policy_name = policy_name;
+    payload.policy_document = policy_document;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutRolePolicy", payload );
-    return resposne;
+    var response = this.request("PutRolePolicy", payload );
+    return response;
   }, 
   /**
    * Adds (or updates) a policy document associated with the specified user. For information about
@@ -1291,13 +1291,13 @@ AmazonIAM.prototype = {
    */
   put_user_policy: function(user_name,policy_name,policy_document,opt){
     var payload = {};
-    param.user_name = user_name;
-    param.policy_name = policy_name;
-    param.policy_document = policy_document;
+    payload.user_name = user_name;
+    payload.policy_name = policy_name;
+    payload.policy_document = policy_document;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutUserPolicy", payload );
-    return resposne;
+    var response = this.request("PutUserPolicy", payload );
+    return response;
   }, 
   /**
    * Removes the specified role from the specified instance profile.
@@ -1311,12 +1311,12 @@ AmazonIAM.prototype = {
    */
   remove_role_from_instance_profile: function(instance_profile_name,role_name,opt){
     var payload = {};
-    param.instance_profile_name = instance_profile_name;
-    param.role_name = role_name;
+    payload.instance_profile_name = instance_profile_name;
+    payload.role_name = role_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RemoveRoleFromInstanceProfile", payload );
-    return resposne;
+    var response = this.request("RemoveRoleFromInstanceProfile", payload );
+    return response;
   }, 
   /**
    * Removes the specified user from the specified group.
@@ -1330,12 +1330,12 @@ AmazonIAM.prototype = {
    */
   remove_user_from_group: function(group_name,user_name,opt){
     var payload = {};
-    param.group_name = group_name;
-    param.user_name = user_name;
+    payload.group_name = group_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RemoveUserFromGroup", payload );
-    return resposne;
+    var response = this.request("RemoveUserFromGroup", payload );
+    return response;
   }, 
   /**
    * Synchronizes the specified MFA device with AWS servers.
@@ -1351,14 +1351,14 @@ AmazonIAM.prototype = {
    */
   resync_mfa_device: function(user_name,serial_number,authentication_code1,authentication_code2,opt){
     var payload = {};
-    param.user_name = user_name;
-    param.serial_number = serial_number;
-    param.authentication_code1 = authentication_code1;
-    param.authentication_code2 = authentication_code2;
+    payload.user_name = user_name;
+    payload.serial_number = serial_number;
+    payload.authentication_code1 = authentication_code1;
+    payload.authentication_code2 = authentication_code2;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ResyncMfaDevice", payload );
-    return resposne;
+    var response = this.request("ResyncMfaDevice", payload );
+    return response;
   }, 
   /**
    * Changes the status of the specified access key from Active to Inactive, or vice versa. This
@@ -1384,12 +1384,12 @@ AmazonIAM.prototype = {
    */
   update_access_key: function(access_key_id,status,opt){
     var payload = {};
-    param.access_key_id = access_key_id;
-    param.status = status;
+    payload.access_key_id = access_key_id;
+    payload.status = status;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateAccessKey", payload );
-    return resposne;
+    var response = this.request("UpdateAccessKey", payload );
+    return response;
   }, 
   /**
    * Updates the password policy settings for the account. For more information about using a
@@ -1412,8 +1412,8 @@ AmazonIAM.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateAccountPasswordPolicy", payload );
-    return resposne;
+    var response = this.request("UpdateAccountPasswordPolicy", payload );
+    return response;
   }, 
   /**
    * Updates the policy governing how the given role can be assumed.
@@ -1427,12 +1427,12 @@ AmazonIAM.prototype = {
    */
   update_assume_role_policy: function(role_name,policy_document,opt){
     var payload = {};
-    param.role_name = role_name;
-    param.policy_document = policy_document;
+    payload.role_name = role_name;
+    payload.policy_document = policy_document;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateAssumeRolePolicy", payload );
-    return resposne;
+    var response = this.request("UpdateAssumeRolePolicy", payload );
+    return response;
   }, 
   /**
    * Updates the name and/or the path of the specified group.
@@ -1462,11 +1462,11 @@ AmazonIAM.prototype = {
    */
   update_group: function(group_name,opt){
     var payload = {};
-    param.group_name = group_name;
+    payload.group_name = group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateGroup", payload );
-    return resposne;
+    var response = this.request("UpdateGroup", payload );
+    return response;
   }, 
   /**
    * Changes the password for the specified user.
@@ -1480,11 +1480,11 @@ AmazonIAM.prototype = {
    */
   update_login_profile: function(user_name,opt){
     var payload = {};
-    param.user_name = user_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateLoginProfile", payload );
-    return resposne;
+    var response = this.request("UpdateLoginProfile", payload );
+    return response;
   }, 
   /**
    * Updates the name and/or the path of the specified server certificate.
@@ -1514,11 +1514,11 @@ AmazonIAM.prototype = {
    */
   update_server_certificate: function(server_certificate_name,opt){
     var payload = {};
-    param.server_certificate_name = server_certificate_name;
+    payload.server_certificate_name = server_certificate_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateServerCertificate", payload );
-    return resposne;
+    var response = this.request("UpdateServerCertificate", payload );
+    return response;
   }, 
   /**
    * Changes the status of the specified signing certificate from active to disabled, or vice versa.
@@ -1545,12 +1545,12 @@ AmazonIAM.prototype = {
    */
   update_signing_certificate: function(certificate_id,status,opt){
     var payload = {};
-    param.certificate_id = certificate_id;
-    param.status = status;
+    payload.certificate_id = certificate_id;
+    payload.status = status;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateSigningCertificate", payload );
-    return resposne;
+    var response = this.request("UpdateSigningCertificate", payload );
+    return response;
   }, 
   /**
    * Updates the name and/or the path of the specified user.
@@ -1580,11 +1580,11 @@ AmazonIAM.prototype = {
    */
   update_user: function(user_name,opt){
     var payload = {};
-    param.user_name = user_name;
+    payload.user_name = user_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateUser", payload );
-    return resposne;
+    var response = this.request("UpdateUser", payload );
+    return response;
   }, 
   /**
    * Uploads a server certificate entity for the AWS account. The server certificate entity includes
@@ -1619,13 +1619,13 @@ AmazonIAM.prototype = {
    */
   upload_server_certificate: function(server_certificate_name,certificate_body,private_key,opt){
     var payload = {};
-    param.server_certificate_name = server_certificate_name;
-    param.certificate_body = certificate_body;
-    param.private_key = private_key;
+    payload.server_certificate_name = server_certificate_name;
+    payload.certificate_body = certificate_body;
+    payload.private_key = private_key;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UploadServerCertificate", payload );
-    return resposne;
+    var response = this.request("UploadServerCertificate", payload );
+    return response;
   }, 
   /**
    * Uploads an X.509 signing certificate and associates it with the specified user. Some AWS
@@ -1658,10 +1658,10 @@ AmazonIAM.prototype = {
    */
   upload_signing_certificate: function(certificate_body,opt){
     var payload = {};
-    param.certificate_body = certificate_body;
+    payload.certificate_body = certificate_body;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UploadSigningCertificate", payload );
-    return resposne;
+    var response = this.request("UploadSigningCertificate", payload );
+    return response;
   }
 }

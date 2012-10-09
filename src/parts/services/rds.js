@@ -40,12 +40,12 @@ AmazonRDS.prototype = {
    */
   add_tags_to_resource: function(resource_name,tags,opt){
     var payload = {};
-    param.resource_name = resource_name;
-    param.tags = tags;
+    payload.resource_name = resource_name;
+    payload.tags = tags;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AddTagsToResource", payload );
-    return resposne;
+    var response = this.request("AddTagsToResource", payload );
+    return response;
   }, 
   /**
    * Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC
@@ -75,11 +75,11 @@ AmazonRDS.prototype = {
    */
   authorize_db_security_group_ingress: function(db_security_group_name,opt){
     var payload = {};
-    param.db_security_group_name = db_security_group_name;
+    payload.db_security_group_name = db_security_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AuthorizeDbSecurityGroupIngress", payload );
-    return resposne;
+    var response = this.request("AuthorizeDbSecurityGroupIngress", payload );
+    return response;
   }, 
   /**
    * Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state.
@@ -93,12 +93,12 @@ AmazonRDS.prototype = {
    */
   copy_db_snapshot: function(source_db_snapshot_identifier,target_db_snapshot_identifier,opt){
     var payload = {};
-    param.source_db_snapshot_identifier = source_db_snapshot_identifier;
-    param.target_db_snapshot_identifier = target_db_snapshot_identifier;
+    payload.source_db_snapshot_identifier = source_db_snapshot_identifier;
+    payload.target_db_snapshot_identifier = target_db_snapshot_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CopyDbSnapshot", payload );
-    return resposne;
+    var response = this.request("CopyDbSnapshot", payload );
+    return response;
   }, 
   /**
    * Creates a new DB instance.
@@ -131,16 +131,16 @@ AmazonRDS.prototype = {
    */
   create_db_instance: function(db_instance_identifier,allocated_storage,db_instance_class,engine,master_username,master_user_password,opt){
     var payload = {};
-    param.db_instance_identifier = db_instance_identifier;
-    param.allocated_storage = allocated_storage;
-    param.db_instance_class = db_instance_class;
-    param.engine = engine;
-    param.master_username = master_username;
-    param.master_user_password = master_user_password;
+    payload.db_instance_identifier = db_instance_identifier;
+    payload.allocated_storage = allocated_storage;
+    payload.db_instance_class = db_instance_class;
+    payload.engine = engine;
+    payload.master_username = master_username;
+    payload.master_user_password = master_user_password;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDbInstance", payload );
-    return resposne;
+    var response = this.request("CreateDbInstance", payload );
+    return response;
   }, 
   /**
    * Creates a DB Instance that acts as a Read Replica of a source DB Instance.
@@ -166,12 +166,12 @@ AmazonRDS.prototype = {
    */
   create_db_instance_read_replica: function(db_instance_identifier,source_db_instance_identifier,opt){
     var payload = {};
-    param.db_instance_identifier = db_instance_identifier;
-    param.source_db_instance_identifier = source_db_instance_identifier;
+    payload.db_instance_identifier = db_instance_identifier;
+    payload.source_db_instance_identifier = source_db_instance_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDbInstanceReadReplica", payload );
-    return resposne;
+    var response = this.request("CreateDbInstanceReadReplica", payload );
+    return response;
   }, 
   /**
    * Creates a new DB Parameter Group.
@@ -194,13 +194,13 @@ AmazonRDS.prototype = {
    */
   create_db_parameter_group: function(db_parameter_group_name,db_parameter_group_family,description,opt){
     var payload = {};
-    param.db_parameter_group_name = db_parameter_group_name;
-    param.db_parameter_group_family = db_parameter_group_family;
-    param.description = description;
+    payload.db_parameter_group_name = db_parameter_group_name;
+    payload.db_parameter_group_family = db_parameter_group_family;
+    payload.description = description;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDbParameterGroup", payload );
-    return resposne;
+    var response = this.request("CreateDbParameterGroup", payload );
+    return response;
   }, 
   /**
    * Creates a new DB Security Group. DB Security Groups control access to a DB Instance.
@@ -215,12 +215,12 @@ AmazonRDS.prototype = {
    */
   create_db_security_group: function(db_security_group_name,db_security_group_description,opt){
     var payload = {};
-    param.db_security_group_name = db_security_group_name;
-    param.db_security_group_description = db_security_group_description;
+    payload.db_security_group_name = db_security_group_name;
+    payload.db_security_group_description = db_security_group_description;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDbSecurityGroup", payload );
-    return resposne;
+    var response = this.request("CreateDbSecurityGroup", payload );
+    return response;
   }, 
   /**
    * Creates a DBSnapshot. The source DBInstance must be in "available" state.
@@ -234,12 +234,12 @@ AmazonRDS.prototype = {
    */
   create_db_snapshot: function(db_snapshot_identifier,db_instance_identifier,opt){
     var payload = {};
-    param.db_snapshot_identifier = db_snapshot_identifier;
-    param.db_instance_identifier = db_instance_identifier;
+    payload.db_snapshot_identifier = db_snapshot_identifier;
+    payload.db_instance_identifier = db_instance_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDbSnapshot", payload );
-    return resposne;
+    var response = this.request("CreateDbSnapshot", payload );
+    return response;
   }, 
   /**
    * Creates a new DB subnet group. DB subnet groups must contain at least one subnet in each AZ in
@@ -255,13 +255,13 @@ AmazonRDS.prototype = {
    */
   create_db_subnet_group: function(db_subnet_group_name,db_subnet_group_description,subnet_ids,opt){
     var payload = {};
-    param.db_subnet_group_name = db_subnet_group_name;
-    param.db_subnet_group_description = db_subnet_group_description;
-    param.subnet_ids = subnet_ids;
+    payload.db_subnet_group_name = db_subnet_group_name;
+    payload.db_subnet_group_description = db_subnet_group_description;
+    payload.subnet_ids = subnet_ids;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDbSubnetGroup", payload );
-    return resposne;
+    var response = this.request("CreateDbSubnetGroup", payload );
+    return response;
   }, 
   /**
    * Creates a new Option Group.
@@ -277,14 +277,14 @@ AmazonRDS.prototype = {
    */
   create_option_group: function(option_group_name,engine_name,major_engine_version,option_group_description,opt){
     var payload = {};
-    param.option_group_name = option_group_name;
-    param.engine_name = engine_name;
-    param.major_engine_version = major_engine_version;
-    param.option_group_description = option_group_description;
+    payload.option_group_name = option_group_name;
+    payload.engine_name = engine_name;
+    payload.major_engine_version = major_engine_version;
+    payload.option_group_description = option_group_description;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateOptionGroup", payload );
-    return resposne;
+    var response = this.request("CreateOptionGroup", payload );
+    return response;
   }, 
   /**
    * The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response
@@ -303,11 +303,11 @@ AmazonRDS.prototype = {
    */
   delete_db_instance: function(db_instance_identifier,opt){
     var payload = {};
-    param.db_instance_identifier = db_instance_identifier;
+    payload.db_instance_identifier = db_instance_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDbInstance", payload );
-    return resposne;
+    var response = this.request("DeleteDbInstance", payload );
+    return response;
   }, 
   /**
    * Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS
@@ -325,11 +325,11 @@ AmazonRDS.prototype = {
    */
   delete_db_parameter_group: function(db_parameter_group_name,opt){
     var payload = {};
-    param.db_parameter_group_name = db_parameter_group_name;
+    payload.db_parameter_group_name = db_parameter_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDbParameterGroup", payload );
-    return resposne;
+    var response = this.request("DeleteDbParameterGroup", payload );
+    return response;
   }, 
   /**
    * Deletes a DB Security Group.
@@ -346,11 +346,11 @@ AmazonRDS.prototype = {
    */
   delete_db_security_group: function(db_security_group_name,opt){
     var payload = {};
-    param.db_security_group_name = db_security_group_name;
+    payload.db_security_group_name = db_security_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDbSecurityGroup", payload );
-    return resposne;
+    var response = this.request("DeleteDbSecurityGroup", payload );
+    return response;
   }, 
   /**
    * Deletes a DBSnapshot.
@@ -367,11 +367,11 @@ AmazonRDS.prototype = {
    */
   delete_db_snapshot: function(db_snapshot_identifier,opt){
     var payload = {};
-    param.db_snapshot_identifier = db_snapshot_identifier;
+    payload.db_snapshot_identifier = db_snapshot_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDbSnapshot", payload );
-    return resposne;
+    var response = this.request("DeleteDbSnapshot", payload );
+    return response;
   }, 
   /**
    * Deletes a DB subnet group.
@@ -388,11 +388,11 @@ AmazonRDS.prototype = {
    */
   delete_db_subnet_group: function(db_subnet_group_name,opt){
     var payload = {};
-    param.db_subnet_group_name = db_subnet_group_name;
+    payload.db_subnet_group_name = db_subnet_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDbSubnetGroup", payload );
-    return resposne;
+    var response = this.request("DeleteDbSubnetGroup", payload );
+    return response;
   }, 
   /**
    * Deletes an existing Option Group.
@@ -405,11 +405,11 @@ AmazonRDS.prototype = {
    */
   delete_option_group: function(option_group_name,opt){
     var payload = {};
-    param.option_group_name = option_group_name;
+    payload.option_group_name = option_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteOptionGroup", payload );
-    return resposne;
+    var response = this.request("DeleteOptionGroup", payload );
+    return response;
   }, 
   /**
    * Returns a list of the available DB engines.
@@ -430,8 +430,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDbEngineVersions", payload );
-    return resposne;
+    var response = this.request("DescribeDbEngineVersions", payload );
+    return response;
   }, 
   /**
    * Returns information about provisioned RDS instances. This API supports pagination.
@@ -448,8 +448,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDbInstances", payload );
-    return resposne;
+    var response = this.request("DescribeDbInstances", payload );
+    return response;
   }, 
   /**
    * Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the
@@ -467,8 +467,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDbParameterGroups", payload );
-    return resposne;
+    var response = this.request("DescribeDbParameterGroups", payload );
+    return response;
   }, 
   /**
    * Returns the detailed parameter list for a particular DBParameterGroup.
@@ -484,11 +484,11 @@ AmazonRDS.prototype = {
    */
   describe_db_parameters: function(db_parameter_group_name,opt){
     var payload = {};
-    param.db_parameter_group_name = db_parameter_group_name;
+    payload.db_parameter_group_name = db_parameter_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDbParameters", payload );
-    return resposne;
+    var response = this.request("DescribeDbParameters", payload );
+    return response;
   }, 
   /**
    * Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list
@@ -509,8 +509,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDbSecurityGroups", payload );
-    return resposne;
+    var response = this.request("DescribeDbSecurityGroups", payload );
+    return response;
   }, 
   /**
    * Returns information about DBSnapshots. This API supports pagination.
@@ -529,8 +529,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDbSnapshots", payload );
-    return resposne;
+    var response = this.request("DescribeDbSnapshots", payload );
+    return response;
   }, 
   /**
    * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list
@@ -551,8 +551,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDbSubnetGroups", payload );
-    return resposne;
+    var response = this.request("DescribeDbSubnetGroups", payload );
+    return response;
   }, 
   /**
    * Returns the default engine and system parameter information for the specified database engine.
@@ -567,11 +567,11 @@ AmazonRDS.prototype = {
    */
   describe_engine_default_parameters: function(db_parameter_group_family,opt){
     var payload = {};
-    param.db_parameter_group_family = db_parameter_group_family;
+    payload.db_parameter_group_family = db_parameter_group_family;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeEngineDefaultParameters", payload );
-    return resposne;
+    var response = this.request("DescribeEngineDefaultParameters", payload );
+    return response;
   }, 
   /**
    * Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter
@@ -595,8 +595,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeEvents", payload );
-    return resposne;
+    var response = this.request("DescribeEvents", payload );
+    return response;
   }, 
   /**
    * Describes all available options.
@@ -612,11 +612,11 @@ AmazonRDS.prototype = {
    */
   describe_option_group_options: function(engine_name,opt){
     var payload = {};
-    param.engine_name = engine_name;
+    payload.engine_name = engine_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeOptionGroupOptions", payload );
-    return resposne;
+    var response = this.request("DescribeOptionGroupOptions", payload );
+    return response;
   }, 
   /**
    * Describes the available option groups.
@@ -635,8 +635,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeOptionGroups", payload );
-    return resposne;
+    var response = this.request("DescribeOptionGroups", payload );
+    return response;
   }, 
   /**
    * Returns a list of orderable DB Instance options for the specified engine.
@@ -655,11 +655,11 @@ AmazonRDS.prototype = {
    */
   describe_orderable_db_instance_options: function(engine,opt){
     var payload = {};
-    param.engine = engine;
+    payload.engine = engine;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeOrderableDbInstanceOptions", payload );
-    return resposne;
+    var response = this.request("DescribeOrderableDbInstanceOptions", payload );
+    return response;
   }, 
   /**
    * Returns information about reserved DB Instances for this account, or about a specified reserved
@@ -683,8 +683,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeReservedDbInstances", payload );
-    return resposne;
+    var response = this.request("DescribeReservedDbInstances", payload );
+    return response;
   }, 
   /**
    * Lists available reserved DB Instance offerings.
@@ -706,8 +706,8 @@ AmazonRDS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeReservedDbInstancesOfferings", payload );
-    return resposne;
+    var response = this.request("DescribeReservedDbInstancesOfferings", payload );
+    return response;
   }, 
   /**
    * Lists all tags on a DB Instance.
@@ -724,11 +724,11 @@ AmazonRDS.prototype = {
    */
   list_tags_for_resource: function(resource_name,opt){
     var payload = {};
-    param.resource_name = resource_name;
+    payload.resource_name = resource_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListTagsForResource", payload );
-    return resposne;
+    var response = this.request("ListTagsForResource", payload );
+    return response;
   }, 
   /**
    * Modify settings for a DB Instance. You can change one or more database configuration parameters
@@ -756,11 +756,11 @@ AmazonRDS.prototype = {
    */
   modify_db_instance: function(db_instance_identifier,opt){
     var payload = {};
-    param.db_instance_identifier = db_instance_identifier;
+    payload.db_instance_identifier = db_instance_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyDbInstance", payload );
-    return resposne;
+    var response = this.request("ModifyDbInstance", payload );
+    return response;
   }, 
   /**
    * Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list
@@ -795,12 +795,12 @@ AmazonRDS.prototype = {
    */
   modify_db_parameter_group: function(db_parameter_group_name,parameters,opt){
     var payload = {};
-    param.db_parameter_group_name = db_parameter_group_name;
-    param.parameters = parameters;
+    payload.db_parameter_group_name = db_parameter_group_name;
+    payload.parameters = parameters;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyDbParameterGroup", payload );
-    return resposne;
+    var response = this.request("ModifyDbParameterGroup", payload );
+    return response;
   }, 
   /**
    * Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in each
@@ -816,12 +816,12 @@ AmazonRDS.prototype = {
    */
   modify_db_subnet_group: function(db_subnet_group_name,subnet_ids,opt){
     var payload = {};
-    param.db_subnet_group_name = db_subnet_group_name;
-    param.subnet_ids = subnet_ids;
+    payload.db_subnet_group_name = db_subnet_group_name;
+    payload.subnet_ids = subnet_ids;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyDbSubnetGroup", payload );
-    return resposne;
+    var response = this.request("ModifyDbSubnetGroup", payload );
+    return response;
   }, 
   /**
    * Modifies an existing Option Group.
@@ -843,11 +843,11 @@ AmazonRDS.prototype = {
    */
   modify_option_group: function(option_group_name,opt){
     var payload = {};
-    param.option_group_name = option_group_name;
+    payload.option_group_name = option_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyOptionGroup", payload );
-    return resposne;
+    var response = this.request("ModifyOptionGroup", payload );
+    return response;
   }, 
   /**
    * Purchases a reserved DB Instance offering.
@@ -862,11 +862,11 @@ AmazonRDS.prototype = {
    */
   purchase_reserved_db_instances_offering: function(reserved_db_instances_offering_id,opt){
     var payload = {};
-    param.reserved_db_instances_offering_id = reserved_db_instances_offering_id;
+    payload.reserved_db_instances_offering_id = reserved_db_instances_offering_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PurchaseReservedDbInstancesOffering", payload );
-    return resposne;
+    var response = this.request("PurchaseReservedDbInstancesOffering", payload );
+    return response;
   }, 
   /**
    * Reboots a previously provisioned RDS instance. This API results in the application of modified
@@ -885,11 +885,11 @@ AmazonRDS.prototype = {
    */
   reboot_db_instance: function(db_instance_identifier,opt){
     var payload = {};
-    param.db_instance_identifier = db_instance_identifier;
+    payload.db_instance_identifier = db_instance_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RebootDbInstance", payload );
-    return resposne;
+    var response = this.request("RebootDbInstance", payload );
+    return response;
   }, 
   /**
    * Removes metadata tags from a DB Instance.
@@ -907,12 +907,12 @@ AmazonRDS.prototype = {
    */
   remove_tags_from_resource: function(resource_name,tag_keys,opt){
     var payload = {};
-    param.resource_name = resource_name;
-    param.tag_keys = tag_keys;
+    payload.resource_name = resource_name;
+    payload.tag_keys = tag_keys;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RemoveTagsFromResource", payload );
-    return resposne;
+    var response = this.request("RemoveTagsFromResource", payload );
+    return response;
   }, 
   /**
    * Modifies the parameters of a DBParameterGroup to the engine/system default value. To reset
@@ -945,11 +945,11 @@ AmazonRDS.prototype = {
    */
   reset_db_parameter_group: function(db_parameter_group_name,opt){
     var payload = {};
-    param.db_parameter_group_name = db_parameter_group_name;
+    payload.db_parameter_group_name = db_parameter_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ResetDbParameterGroup", payload );
-    return resposne;
+    var response = this.request("ResetDbParameterGroup", payload );
+    return response;
   }, 
   /**
    * Creates a new DB Instance from a DB snapshot. The target database is created from the source
@@ -975,12 +975,12 @@ AmazonRDS.prototype = {
    */
   restore_db_instance_from_db_snapshot: function(db_instance_identifier,db_snapshot_identifier,opt){
     var payload = {};
-    param.db_instance_identifier = db_instance_identifier;
-    param.db_snapshot_identifier = db_snapshot_identifier;
+    payload.db_instance_identifier = db_instance_identifier;
+    payload.db_snapshot_identifier = db_snapshot_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RestoreDbInstanceFromDbSnapshot", payload );
-    return resposne;
+    var response = this.request("RestoreDbInstanceFromDbSnapshot", payload );
+    return response;
   }, 
   /**
    * Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time
@@ -1009,12 +1009,12 @@ AmazonRDS.prototype = {
    */
   restore_db_instance_to_point_in_time: function(source_db_instance_identifier,target_db_instance_identifier,opt){
     var payload = {};
-    param.source_db_instance_identifier = source_db_instance_identifier;
-    param.target_db_instance_identifier = target_db_instance_identifier;
+    payload.source_db_instance_identifier = source_db_instance_identifier;
+    payload.target_db_instance_identifier = target_db_instance_identifier;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RestoreDbInstanceToPointInTime", payload );
-    return resposne;
+    var response = this.request("RestoreDbInstanceToPointInTime", payload );
+    return response;
   }, 
   /**
    * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC
@@ -1033,10 +1033,10 @@ AmazonRDS.prototype = {
    */
   revoke_db_security_group_ingress: function(db_security_group_name,opt){
     var payload = {};
-    param.db_security_group_name = db_security_group_name;
+    payload.db_security_group_name = db_security_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RevokeDbSecurityGroupIngress", payload );
-    return resposne;
+    var response = this.request("RevokeDbSecurityGroupIngress", payload );
+    return response;
   }
 }

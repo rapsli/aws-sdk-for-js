@@ -42,8 +42,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ActivateGateway", payload );
-    return resposne;
+    var response = this.request("ActivateGateway", payload );
+    return response;
   }, 
   /**
    * This operation configures one or more gateway local disks as working storage.
@@ -62,8 +62,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AddWorkingStorage", payload );
-    return resposne;
+    var response = this.request("AddWorkingStorage", payload );
+    return response;
   }, 
   /**
    * This operation initiates a snapshot of a volume.
@@ -101,8 +101,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateSnapshot", payload );
-    return resposne;
+    var response = this.request("CreateSnapshot", payload );
+    return response;
   }, 
   /**
    * This operation creates a volume on a specified gateway. The size of the volume is inferred from
@@ -130,8 +130,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateStoredIscsiVolume", payload );
-    return resposne;
+    var response = this.request("CreateStoredIscsiVolume", payload );
+    return response;
   }, 
   /**
    * This operation deletes the bandwidth rate limits of a gateway. You can delete either the upload
@@ -150,8 +150,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteBandwidthRateLimit", payload );
-    return resposne;
+    var response = this.request("DeleteBandwidthRateLimit", payload );
+    return response;
   }, 
   /**
    * This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
@@ -168,8 +168,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteChapCredentials", payload );
-    return resposne;
+    var response = this.request("DeleteChapCredentials", payload );
+    return response;
   }, 
   /**
    * This operation deletes a gateway. To specify which gateway to delete, use the Amazon Resource
@@ -190,8 +190,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteGateway", payload );
-    return resposne;
+    var response = this.request("DeleteGateway", payload );
+    return response;
   }, 
   /**
    * This operation delete the specified gateway volume that you previously created using the
@@ -218,8 +218,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteVolume", payload );
-    return resposne;
+    var response = this.request("DeleteVolume", payload );
+    return response;
   }, 
   /**
    * This operation returns the bandwidth rate limits of a gateway. By default, these limits are not
@@ -240,8 +240,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeBandwidthRateLimit", payload );
-    return resposne;
+    var response = this.request("DescribeBandwidthRateLimit", payload );
+    return response;
   }, 
   /**
    * This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP)
@@ -257,8 +257,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeChapCredentials", payload );
-    return resposne;
+    var response = this.request("DescribeChapCredentials", payload );
+    return response;
   }, 
   /**
    * This operation returns metadata about a gateway such as its name, network interfaces,
@@ -275,8 +275,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeGatewayInformation", payload );
-    return resposne;
+    var response = this.request("DescribeGatewayInformation", payload );
+    return response;
   }, 
   /**
    * This operation returns your gateway's weekly maintenance start time including the day and time
@@ -292,8 +292,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeMaintenanceStartTime", payload );
-    return resposne;
+    var response = this.request("DescribeMaintenanceStartTime", payload );
+    return response;
   }, 
   /**
    * This operation describes the snapshot schedule for the specified gateway volume. The snapshot
@@ -310,8 +310,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSnapshotSchedule", payload );
-    return resposne;
+    var response = this.request("DescribeSnapshotSchedule", payload );
+    return response;
   }, 
   /**
    * This operation returns description of the gateway volumes specified in the request. The list of
@@ -328,8 +328,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeStoredIscsiVolumes", payload );
-    return resposne;
+    var response = this.request("DescribeStoredIscsiVolumes", payload );
+    return response;
   }, 
   /**
    * This operation returns information about the working storage of a gateway. The response
@@ -346,8 +346,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeWorkingStorage", payload );
-    return resposne;
+    var response = this.request("DescribeWorkingStorage", payload );
+    return response;
   }, 
   /**
    * This operation lists gateways owned by an AWS account in a region specified in the request. The
@@ -371,8 +371,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListGateways", payload );
-    return resposne;
+    var response = this.request("ListGateways", payload );
+    return response;
   }, 
   /**
    * This operation returns a list of the local disks of a gateway. To specify which gateway to
@@ -391,8 +391,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListLocalDisks", payload );
-    return resposne;
+    var response = this.request("ListLocalDisks", payload );
+    return response;
   }, 
   /**
    * This operation lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN.
@@ -417,8 +417,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListVolumes", payload );
-    return resposne;
+    var response = this.request("ListVolumes", payload );
+    return response;
   }, 
   /**
    * This operation shuts down a gateway. To specify which gateway to shut down, use the Amazon
@@ -453,8 +453,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ShutdownGateway", payload );
-    return resposne;
+    var response = this.request("ShutdownGateway", payload );
+    return response;
   }, 
   /**
    * This operation starts a gateway that you previously shut down (see
@@ -481,8 +481,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"StartGateway", payload );
-    return resposne;
+    var response = this.request("StartGateway", payload );
+    return response;
   }, 
   /**
    * This operation updates the bandwidth rate limits of a gateway. You can update both the upload
@@ -508,8 +508,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateBandwidthRateLimit", payload );
-    return resposne;
+    var response = this.request("UpdateBandwidthRateLimit", payload );
+    return response;
   }, 
   /**
    * This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a
@@ -529,8 +529,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateChapCredentials", payload );
-    return resposne;
+    var response = this.request("UpdateChapCredentials", payload );
+    return response;
   }, 
   /**
    * This operation updates a gateway's metadata, which includes the gateway's name and time zone.
@@ -549,8 +549,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateGatewayInformation", payload );
-    return resposne;
+    var response = this.request("UpdateGatewayInformation", payload );
+    return response;
   }, 
   /**
    * This operation updates the gateway virtual machine (VM) software. The request immediately
@@ -578,8 +578,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateGatewaySoftwareNow", payload );
-    return resposne;
+    var response = this.request("UpdateGatewaySoftwareNow", payload );
+    return response;
   }, 
   /**
    * This operation updates a gateway's weekly maintenance start time information, including day and
@@ -598,8 +598,8 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateMaintenanceStartTime", payload );
-    return resposne;
+    var response = this.request("UpdateMaintenanceStartTime", payload );
+    return response;
   }, 
   /**
    * This operation updates a snapshot schedule configured for a gateway volume.
@@ -624,7 +624,7 @@ AmazonStorageGateway.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateSnapshotSchedule", payload );
-    return resposne;
+    var response = this.request("UpdateSnapshotSchedule", payload );
+    return response;
   }
 }

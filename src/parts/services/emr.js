@@ -39,12 +39,12 @@ AmazonEMR.prototype = {
    */
   add_instance_groups: function(instance_groups,job_flow_id,opt){
     var payload = {};
-    param.instance_groups = instance_groups;
-    param.job_flow_id = job_flow_id;
+    payload.instance_groups = instance_groups;
+    payload.job_flow_id = job_flow_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AddInstanceGroups", payload );
-    return resposne;
+    var response = this.request("AddInstanceGroups", payload );
+    return response;
   }, 
   /**
    * AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in
@@ -98,12 +98,12 @@ AmazonEMR.prototype = {
    */
   add_job_flow_steps: function(job_flow_id,steps,opt){
     var payload = {};
-    param.job_flow_id = job_flow_id;
-    param.steps = steps;
+    payload.job_flow_id = job_flow_id;
+    payload.steps = steps;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AddJobFlowSteps", payload );
-    return resposne;
+    var response = this.request("AddJobFlowSteps", payload );
+    return response;
   }, 
   /**
    * DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The
@@ -137,8 +137,8 @@ AmazonEMR.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeJobFlows", payload );
-    return resposne;
+    var response = this.request("DescribeJobFlows", payload );
+    return response;
   }, 
   /**
    * ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance
@@ -160,8 +160,8 @@ AmazonEMR.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyInstanceGroups", payload );
-    return resposne;
+    var response = this.request("ModifyInstanceGroups", payload );
+    return response;
   }, 
   /**
    * RunJobFlow creates and starts running a new job flow. The job flow will run the steps
@@ -258,12 +258,12 @@ AmazonEMR.prototype = {
    */
   run_job_flow: function(name,instances,opt){
     var payload = {};
-    param.name = name;
-    param.instances = instances;
+    payload.name = name;
+    payload.instances = instances;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RunJobFlow", payload );
-    return resposne;
+    var response = this.request("RunJobFlow", payload );
+    return response;
   }, 
   /**
    * SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be
@@ -294,12 +294,12 @@ AmazonEMR.prototype = {
    */
   set_termination_protection: function(job_flow_ids,termination_protected,opt){
     var payload = {};
-    param.job_flow_ids = job_flow_ids;
-    param.termination_protected = termination_protected;
+    payload.job_flow_ids = job_flow_ids;
+    payload.termination_protected = termination_protected;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetTerminationProtection", payload );
-    return resposne;
+    var response = this.request("SetTerminationProtection", payload );
+    return response;
   }, 
   /**
    * TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not
@@ -315,10 +315,10 @@ AmazonEMR.prototype = {
    */
   terminate_job_flows: function(job_flow_ids,opt){
     var payload = {};
-    param.job_flow_ids = job_flow_ids;
+    payload.job_flow_ids = job_flow_ids;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"TerminateJobFlows", payload );
-    return resposne;
+    var response = this.request("TerminateJobFlows", payload );
+    return response;
   }
 }

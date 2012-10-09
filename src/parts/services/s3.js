@@ -36,13 +36,13 @@ AmazonS3.prototype = {
    */
   create_bucket: function(bucket,region,acl,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.region = region;
-    param.acl = acl;
+    payload.bucket = bucket;
+    payload.region = region;
+    payload.acl = acl;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateBucket", payload );
-    return resposne;
+    var response = this.request("CreateBucket", payload );
+    return response;
   }, 
   /**
    * Gets the region in which the specified Amazon S3 bucket is located.
@@ -55,11 +55,11 @@ AmazonS3.prototype = {
    */
   get_bucket_region: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetBucketRegion", payload );
-    return resposne;
+    var response = this.request("GetBucketRegion", payload );
+    return response;
   }, 
   /**
    * Gets the HTTP headers for the specified Amazon S3 bucket.
@@ -73,11 +73,11 @@ AmazonS3.prototype = {
    */
   get_bucket_headers: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetBucketHeaders", payload );
-    return resposne;
+    var response = this.request("GetBucketHeaders", payload );
+    return response;
   }, 
   /**
    * Gets a list of all buckets contained in the caller's Amazon S3 account.
@@ -92,8 +92,8 @@ AmazonS3.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListBuckets", payload );
-    return resposne;
+    var response = this.request("ListBuckets", payload );
+    return response;
   }, 
   /**
    * Gets the access control list (ACL) settings for the specified Amazon S3 bucket.
@@ -108,11 +108,11 @@ AmazonS3.prototype = {
    */
   get_bucket_acl: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetBucketAcl", payload );
-    return resposne;
+    var response = this.request("GetBucketAcl", payload );
+    return response;
   }, 
   /**
    * Sets the access control list (ACL) settings for the specified Amazon S3 bucket.
@@ -127,12 +127,12 @@ AmazonS3.prototype = {
    */
   set_bucket_acl: function(bucket,acl,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.acl = acl;
+    payload.bucket = bucket;
+    payload.acl = acl;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetBucketAcl", payload );
-    return resposne;
+    var response = this.request("SetBucketAcl", payload );
+    return response;
   }, 
   /**
    * Creates an Amazon S3 object. After an Amazon S3 bucket is created, objects can be stored in it.
@@ -161,12 +161,12 @@ AmazonS3.prototype = {
    */
   create_object: function(bucket,filename,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
+    payload.bucket = bucket;
+    payload.filename = filename;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateObject", payload );
-    return resposne;
+    var response = this.request("CreateObject", payload );
+    return response;
   }, 
   /**
    * Gets the contents of an Amazon S3 object in the specified bucket.
@@ -191,12 +191,12 @@ AmazonS3.prototype = {
    */
   get_object: function(bucket,filename,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
+    payload.bucket = bucket;
+    payload.filename = filename;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetObject", payload );
-    return resposne;
+    var response = this.request("GetObject", payload );
+    return response;
   }, 
   /**
    * Gets the HTTP headers for the specified Amazon S3 object.
@@ -215,12 +215,12 @@ AmazonS3.prototype = {
    */
   get_object_headers: function(bucket,filename,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
+    payload.bucket = bucket;
+    payload.filename = filename;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetObjectHeaders", payload );
-    return resposne;
+    var response = this.request("GetObjectHeaders", payload );
+    return response;
   }, 
   /**
    * Deletes an Amazon S3 object from the specified bucket.
@@ -238,12 +238,12 @@ AmazonS3.prototype = {
    */
   delete_object: function(bucket,filename,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
+    payload.bucket = bucket;
+    payload.filename = filename;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteObject", payload );
-    return resposne;
+    var response = this.request("DeleteObject", payload );
+    return response;
   }, 
   /**
    * Deletes one or more specified Amazon S3 objects from the specified bucket.
@@ -267,11 +267,11 @@ AmazonS3.prototype = {
    */
   delete_objects: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteObjects", payload );
-    return resposne;
+    var response = this.request("DeleteObjects", payload );
+    return response;
   }, 
   /**
    * Gets a list of all Amazon S3 objects in the specified bucket.
@@ -291,11 +291,11 @@ AmazonS3.prototype = {
    */
   list_objects: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListObjects", payload );
-    return resposne;
+    var response = this.request("ListObjects", payload );
+    return response;
   }, 
   /**
    * Copies an Amazon S3 object to a new location, whether in the same Amazon S3 region, bucket, or otherwise.
@@ -325,12 +325,12 @@ AmazonS3.prototype = {
    */
   copy_object: function(source,dest,opt){
     var payload = {};
-    param.source = source;
-    param.dest = dest;
+    payload.source = source;
+    payload.dest = dest;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CopyObject", payload );
-    return resposne;
+    var response = this.request("CopyObject", payload );
+    return response;
   }, 
   /**
    * Updates an Amazon S3 object with new headers or other metadata. To replace the content of the
@@ -349,12 +349,12 @@ AmazonS3.prototype = {
    */
   update_object: function(bucket,filename,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
+    payload.bucket = bucket;
+    payload.filename = filename;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateObject", payload );
-    return resposne;
+    var response = this.request("UpdateObject", payload );
+    return response;
   }, 
   /**
    * Gets the access control list (ACL) settings for the specified Amazon S3 object.
@@ -371,12 +371,12 @@ AmazonS3.prototype = {
    */
   get_object_acl: function(bucket,filename,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
+    payload.bucket = bucket;
+    payload.filename = filename;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetObjectAcl", payload );
-    return resposne;
+    var response = this.request("GetObjectAcl", payload );
+    return response;
   }, 
   /**
    * Sets the access control list (ACL) settings for the specified Amazon S3 object.
@@ -392,13 +392,13 @@ AmazonS3.prototype = {
    */
   set_object_acl: function(bucket,filename,acl,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
-    param.acl = acl;
+    payload.bucket = bucket;
+    payload.filename = filename;
+    payload.acl = acl;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetObjectAcl", payload );
-    return resposne;
+    var response = this.request("SetObjectAcl", payload );
+    return response;
   }, 
   /**
    * Gets the access logs associated with the specified Amazon S3 bucket.
@@ -413,11 +413,11 @@ AmazonS3.prototype = {
    */
   get_logs: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetLogs", payload );
-    return resposne;
+    var response = this.request("GetLogs", payload );
+    return response;
   }, 
   /**
    * Enables access logging for the specified Amazon S3 bucket.
@@ -434,13 +434,13 @@ AmazonS3.prototype = {
    */
   enable_logging: function(bucket,target_bucket,target_prefix,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.target_bucket = target_bucket;
-    param.target_prefix = target_prefix;
+    payload.bucket = bucket;
+    payload.target_bucket = target_bucket;
+    payload.target_prefix = target_prefix;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"EnableLogging", payload );
-    return resposne;
+    var response = this.request("EnableLogging", payload );
+    return response;
   }, 
   /**
    * Disables access logging for the specified Amazon S3 bucket.
@@ -454,11 +454,11 @@ AmazonS3.prototype = {
    */
   disable_logging: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DisableLogging", payload );
-    return resposne;
+    var response = this.request("DisableLogging", payload );
+    return response;
   }, 
   /**
    * Changes the content type for an existing Amazon S3 object.
@@ -473,13 +473,13 @@ AmazonS3.prototype = {
    */
   change_content_type: function(bucket,filename,contentType,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
-    param.contentType = contentType;
+    payload.bucket = bucket;
+    payload.filename = filename;
+    payload.contentType = contentType;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ChangeContentType", payload );
-    return resposne;
+    var response = this.request("ChangeContentType", payload );
+    return response;
   }, 
   /**
    * Changes the storage redundancy for an existing object.
@@ -494,13 +494,13 @@ AmazonS3.prototype = {
    */
   change_storage_redundancy: function(bucket,filename,storage,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
-    param.storage = storage;
+    payload.bucket = bucket;
+    payload.filename = filename;
+    payload.storage = storage;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ChangeStorageRedundancy", payload );
-    return resposne;
+    var response = this.request("ChangeStorageRedundancy", payload );
+    return response;
   }, 
   /**
    * Enables versioning support for the specified Amazon S3 bucket.
@@ -517,11 +517,11 @@ AmazonS3.prototype = {
    */
   enable_versioning: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"EnableVersioning", payload );
-    return resposne;
+    var response = this.request("EnableVersioning", payload );
+    return response;
   }, 
   /**
    * Disables versioning support for the specified Amazon S3 bucket.
@@ -538,11 +538,11 @@ AmazonS3.prototype = {
    */
   disable_versioning: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DisableVersioning", payload );
-    return resposne;
+    var response = this.request("DisableVersioning", payload );
+    return response;
   }, 
   /**
    * Gets an Amazon S3 bucket's versioning status.
@@ -556,11 +556,11 @@ AmazonS3.prototype = {
    */
   get_versioning_status: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetVersioningStatus", payload );
-    return resposne;
+    var response = this.request("GetVersioningStatus", payload );
+    return response;
   }, 
   /**
    * Gets a list of all the versions of Amazon S3 objects in the specified bucket.
@@ -579,11 +579,11 @@ AmazonS3.prototype = {
    */
   list_bucket_object_versions: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListBucketObjectVersions", payload );
-    return resposne;
+    var response = this.request("ListBucketObjectVersions", payload );
+    return response;
   }, 
   /**
    * Sets the policy sub-resource for the specified Amazon S3 bucket. The specified policy replaces any
@@ -604,12 +604,12 @@ AmazonS3.prototype = {
    */
   set_bucket_policy: function(bucket,policy,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.policy = policy;
+    payload.bucket = bucket;
+    payload.policy = policy;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetBucketPolicy", payload );
-    return resposne;
+    var response = this.request("SetBucketPolicy", payload );
+    return response;
   }, 
   /**
    * Gets the policy of the specified Amazon S3 bucket.
@@ -628,11 +628,11 @@ AmazonS3.prototype = {
    */
   get_bucket_policy: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetBucketPolicy", payload );
-    return resposne;
+    var response = this.request("GetBucketPolicy", payload );
+    return response;
   }, 
   /**
    * Deletes the bucket policy for the specified Amazon S3 bucket. To delete the policy, the caller must
@@ -646,11 +646,11 @@ AmazonS3.prototype = {
    */
   delete_bucket_policy: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteBucketPolicy", payload );
-    return resposne;
+    var response = this.request("DeleteBucketPolicy", payload );
+    return response;
   }, 
   /**
    * Enables notifications of specified events for an Amazon S3 bucket. Currently, the
@@ -683,13 +683,13 @@ AmazonS3.prototype = {
    */
   create_bucket_notification: function(bucket,topic_arn,event,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.topic_arn = topic_arn;
-    param.event = event;
+    payload.bucket = bucket;
+    payload.topic_arn = topic_arn;
+    payload.event = event;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateBucketNotification", payload );
-    return resposne;
+    var response = this.request("CreateBucketNotification", payload );
+    return response;
   }, 
   /**
    * Gets the notification configuration of a bucket. Currently, the `s3:ReducedRedundancyLostObject` event
@@ -713,11 +713,11 @@ AmazonS3.prototype = {
    */
   get_bucket_notifications: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetBucketNotifications", payload );
-    return resposne;
+    var response = this.request("GetBucketNotifications", payload );
+    return response;
   }, 
   /**
    * Empties the list of SNS topics to send notifications to.
@@ -731,11 +731,11 @@ AmazonS3.prototype = {
    */
   delete_bucket_notification: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteBucketNotification", payload );
-    return resposne;
+    var response = this.request("DeleteBucketNotification", payload );
+    return response;
   }, 
   /**
    * Initiates a multipart upload and returns an `UploadId`.
@@ -756,12 +756,12 @@ AmazonS3.prototype = {
    */
   initiate_multipart_upload: function(bucket,filename,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
+    payload.bucket = bucket;
+    payload.filename = filename;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"InitiateMultipartUpload", payload );
-    return resposne;
+    var response = this.request("InitiateMultipartUpload", payload );
+    return response;
   }, 
   /**
    * Uploads a single part of a multipart upload. The part size cannot be smaller than 5 MB
@@ -788,13 +788,13 @@ AmazonS3.prototype = {
    */
   upload_part: function(bucket,filename,upload_id,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
-    param.upload_id = upload_id;
+    payload.bucket = bucket;
+    payload.filename = filename;
+    payload.upload_id = upload_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UploadPart", payload );
-    return resposne;
+    var response = this.request("UploadPart", payload );
+    return response;
   }, 
   /**
    * Lists the completed parts of an in-progress multipart upload.
@@ -811,13 +811,13 @@ AmazonS3.prototype = {
    */
   list_parts: function(bucket,filename,upload_id,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
-    param.upload_id = upload_id;
+    payload.bucket = bucket;
+    payload.filename = filename;
+    payload.upload_id = upload_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListParts", payload );
-    return resposne;
+    var response = this.request("ListParts", payload );
+    return response;
   }, 
   /**
    * Aborts an in-progress multipart upload. This operation cannot be reversed.
@@ -832,13 +832,13 @@ AmazonS3.prototype = {
    */
   abort_multipart_upload: function(bucket,filename,upload_id,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
-    param.upload_id = upload_id;
+    payload.bucket = bucket;
+    payload.filename = filename;
+    payload.upload_id = upload_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AbortMultipartUpload", payload );
-    return resposne;
+    var response = this.request("AbortMultipartUpload", payload );
+    return response;
   }, 
   /**
    * Completes an in-progress multipart upload. A multipart upload is completed by describing the part
@@ -855,14 +855,14 @@ AmazonS3.prototype = {
    */
   complete_multipart_upload: function(bucket,filename,upload_id,parts,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
-    param.upload_id = upload_id;
-    param.parts = parts;
+    payload.bucket = bucket;
+    payload.filename = filename;
+    payload.upload_id = upload_id;
+    payload.parts = parts;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CompleteMultipartUpload", payload );
-    return resposne;
+    var response = this.request("CompleteMultipartUpload", payload );
+    return response;
   }, 
   /**
    * Lists the in-progress multipart uploads.
@@ -878,11 +878,11 @@ AmazonS3.prototype = {
    */
   list_multipart_uploads: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListMultipartUploads", payload );
-    return resposne;
+    var response = this.request("ListMultipartUploads", payload );
+    return response;
   }, 
   /**
    * Since Amazon S3's standard <copy_object()> operation only supports copying objects that are smaller than
@@ -920,14 +920,14 @@ AmazonS3.prototype = {
    */
   copy_part: function(source,dest,upload_id,part_number,opt){
     var payload = {};
-    param.source = source;
-    param.dest = dest;
-    param.upload_id = upload_id;
-    param.part_number = part_number;
+    payload.source = source;
+    payload.dest = dest;
+    payload.upload_id = upload_id;
+    payload.part_number = part_number;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CopyPart", payload );
-    return resposne;
+    var response = this.request("CopyPart", payload );
+    return response;
   }, 
   /**
    * Creates an Amazon S3 object using the multipart upload APIs. It is analogous to <create_object()>.
@@ -967,12 +967,12 @@ AmazonS3.prototype = {
    */
   create_mpu_object: function(bucket,filename,opt){
     var payload = {};
-    param.bucket = bucket;
-    param.filename = filename;
+    payload.bucket = bucket;
+    payload.filename = filename;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateMpuObject", payload );
-    return resposne;
+    var response = this.request("CreateMpuObject", payload );
+    return response;
   }, 
   /**
    * Enables and configures an Amazon S3 website using the corresponding bucket as the content source.
@@ -996,11 +996,11 @@ AmazonS3.prototype = {
    */
   create_website_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateWebsiteConfig", payload );
-    return resposne;
+    var response = this.request("CreateWebsiteConfig", payload );
+    return response;
   }, 
   /**
    * Retrieves the website configuration for a bucket. The contents of this response are identical to the
@@ -1015,11 +1015,11 @@ AmazonS3.prototype = {
    */
   get_website_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetWebsiteConfig", payload );
-    return resposne;
+    var response = this.request("GetWebsiteConfig", payload );
+    return response;
   }, 
   /**
    * Removes the website configuration for a bucket.
@@ -1032,11 +1032,11 @@ AmazonS3.prototype = {
    */
   delete_website_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteWebsiteConfig", payload );
-    return resposne;
+    var response = this.request("DeleteWebsiteConfig", payload );
+    return response;
   }, 
   /**
    * Enables the ability to specify an expiry period for objects when an object should be deleted,
@@ -1063,11 +1063,11 @@ AmazonS3.prototype = {
    */
   create_object_expiration_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateObjectExpirationConfig", payload );
-    return resposne;
+    var response = this.request("CreateObjectExpirationConfig", payload );
+    return response;
   }, 
   /**
    * Retrieves the expiry period (i.e., lifecycle) for objects.
@@ -1082,11 +1082,11 @@ AmazonS3.prototype = {
    */
   get_object_expiration_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetObjectExpirationConfig", payload );
-    return resposne;
+    var response = this.request("GetObjectExpirationConfig", payload );
+    return response;
   }, 
   /**
    * Deletes the expiry period (i.e., lifecycle) for objects.
@@ -1101,11 +1101,11 @@ AmazonS3.prototype = {
    */
   delete_object_expiration_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteObjectExpirationConfig", payload );
-    return resposne;
+    var response = this.request("DeleteObjectExpirationConfig", payload );
+    return response;
   }, 
   /**
    * Apply a set of tags to the specified bucket. Bucket Tags simplify the task of associating Amazon S3
@@ -1125,11 +1125,11 @@ AmazonS3.prototype = {
    */
   create_bucket_tags: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateBucketTags", payload );
-    return resposne;
+    var response = this.request("CreateBucketTags", payload );
+    return response;
   }, 
   /**
    * Retrieve all associated tags for the specified bucket.
@@ -1142,11 +1142,11 @@ AmazonS3.prototype = {
    */
   get_bucket_tags: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetBucketTags", payload );
-    return resposne;
+    var response = this.request("GetBucketTags", payload );
+    return response;
   }, 
   /**
    * Delete all associated tags from the specified bucket.
@@ -1159,11 +1159,11 @@ AmazonS3.prototype = {
    */
   delete_bucket_tags: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteBucketTags", payload );
-    return resposne;
+    var response = this.request("DeleteBucketTags", payload );
+    return response;
   }, 
   /**
    * Create a new CORS configuration.
@@ -1186,11 +1186,11 @@ AmazonS3.prototype = {
    */
   create_cors_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateCorsConfig", payload );
-    return resposne;
+    var response = this.request("CreateCorsConfig", payload );
+    return response;
   }, 
   /**
    * Retrieves the CORS configuration.
@@ -1203,11 +1203,11 @@ AmazonS3.prototype = {
    */
   get_cors_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetCorsConfig", payload );
-    return resposne;
+    var response = this.request("GetCorsConfig", payload );
+    return response;
   }, 
   /**
    * Deletes the CORS configuration.
@@ -1220,10 +1220,10 @@ AmazonS3.prototype = {
    */
   delete_cors_config: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteCorsConfig", payload );
-    return resposne;
+    var response = this.request("DeleteCorsConfig", payload );
+    return response;
   }
 }

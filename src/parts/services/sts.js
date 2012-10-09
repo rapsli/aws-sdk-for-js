@@ -47,11 +47,11 @@ AmazonSTS.prototype = {
    */
   get_federation_token: function(name,opt){
     var payload = {};
-    param.name = name;
+    payload.name = name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetFederationToken", payload );
-    return resposne;
+    var response = this.request("GetFederationToken", payload );
+    return response;
   }, 
   /**
    * The GetSessionToken action returns a set of temporary credentials for an AWS account or IAM
@@ -78,7 +78,7 @@ AmazonSTS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetSessionToken", payload );
-    return resposne;
+    var response = this.request("GetSessionToken", payload );
+    return response;
   }
 }

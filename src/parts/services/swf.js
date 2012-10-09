@@ -58,8 +58,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CountClosedWorkflowExecutions", payload );
-    return resposne;
+    var response = this.request("CountClosedWorkflowExecutions", payload );
+    return response;
   }, 
   /**
    * Returns the number of open workflow executions within the given domain that meet the specified
@@ -94,8 +94,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CountOpenWorkflowExecutions", payload );
-    return resposne;
+    var response = this.request("CountOpenWorkflowExecutions", payload );
+    return response;
   }, 
   /**
    * Returns the estimated number of activity tasks in the specified task list. The count returned
@@ -115,8 +115,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CountPendingActivityTasks", payload );
-    return resposne;
+    var response = this.request("CountPendingActivityTasks", payload );
+    return response;
   }, 
   /**
    * Returns the estimated number of decision tasks in the specified task list. The count returned
@@ -136,8 +136,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CountPendingDecisionTasks", payload );
-    return resposne;
+    var response = this.request("CountPendingDecisionTasks", payload );
+    return response;
   }, 
   /**
    * Deprecates the specified <em>activity type</em>. After an activity type has been deprecated,
@@ -163,8 +163,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeprecateActivityType", payload );
-    return resposne;
+    var response = this.request("DeprecateActivityType", payload );
+    return response;
   }, 
   /**
    * Deprecates the specified domain. After a domain has been deprecated it cannot be used to create
@@ -187,8 +187,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeprecateDomain", payload );
-    return resposne;
+    var response = this.request("DeprecateDomain", payload );
+    return response;
   }, 
   /**
    * Deprecates the specified <em>workflow type</em>. After a workflow type has been deprecated, you
@@ -215,8 +215,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeprecateWorkflowType", payload );
-    return resposne;
+    var response = this.request("DeprecateWorkflowType", payload );
+    return response;
   }, 
   /**
    * Returns information about the specified activity type. This includes configuration settings
@@ -236,8 +236,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeActivityType", payload );
-    return resposne;
+    var response = this.request("DescribeActivityType", payload );
+    return response;
   }, 
   /**
    * Returns information about the specified domain including description and status.
@@ -252,8 +252,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDomain", payload );
-    return resposne;
+    var response = this.request("DescribeDomain", payload );
+    return response;
   }, 
   /**
    * Returns information about the specified workflow execution including its type and some
@@ -278,8 +278,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeWorkflowExecution", payload );
-    return resposne;
+    var response = this.request("DescribeWorkflowExecution", payload );
+    return response;
   }, 
   /**
    * Returns information about the specified <em>workflow type</em>. This includes configuration
@@ -300,8 +300,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeWorkflowType", payload );
-    return resposne;
+    var response = this.request("DescribeWorkflowType", payload );
+    return response;
   }, 
   /**
    * Returns the history of the specified workflow execution. The results may be split into multiple
@@ -330,8 +330,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetWorkflowExecutionHistory", payload );
-    return resposne;
+    var response = this.request("GetWorkflowExecutionHistory", payload );
+    return response;
   }, 
   /**
    * Returns information about all activities registered in the specified domain that match the
@@ -355,8 +355,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListActivityTypes", payload );
-    return resposne;
+    var response = this.request("ListActivityTypes", payload );
+    return response;
   }, 
   /**
    * Returns a list of closed workflow executions in the specified domain that meet the filtering
@@ -402,8 +402,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListClosedWorkflowExecutions", payload );
-    return resposne;
+    var response = this.request("ListClosedWorkflowExecutions", payload );
+    return response;
   }, 
   /**
    * Returns the list of domains registered in the account. The results may be split into multiple
@@ -428,8 +428,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListDomains", payload );
-    return resposne;
+    var response = this.request("ListDomains", payload );
+    return response;
   }, 
   /**
    * Returns a list of open workflow executions in the specified domain that meet the filtering
@@ -468,8 +468,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListOpenWorkflowExecutions", payload );
-    return resposne;
+    var response = this.request("ListOpenWorkflowExecutions", payload );
+    return response;
   }, 
   /**
    * Returns information about workflow types in the specified domain. The results may be split into
@@ -490,8 +490,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListWorkflowTypes", payload );
-    return resposne;
+    var response = this.request("ListWorkflowTypes", payload );
+    return response;
   }, 
   /**
    * Used by workers to get an <code>ActivityTask</code> from the specified activity
@@ -521,8 +521,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PollForActivityTask", payload );
-    return resposne;
+    var response = this.request("PollForActivityTask", payload );
+    return response;
   }, 
   /**
    * Used by deciders to get a <code>DecisionTask</code> from the specified decision
@@ -567,8 +567,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PollForDecisionTask", payload );
-    return resposne;
+    var response = this.request("PollForDecisionTask", payload );
+    return response;
   }, 
   /**
    * Used by activity workers to report to the service that the <code>ActivityTask</code>
@@ -614,8 +614,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RecordActivityTaskHeartbeat", payload );
-    return resposne;
+    var response = this.request("RecordActivityTaskHeartbeat", payload );
+    return response;
   }, 
   /**
    * Registers a new <em>activity type</em> along with its configuration settings in the specified
@@ -647,8 +647,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RegisterActivityType", payload );
-    return resposne;
+    var response = this.request("RegisterActivityType", payload );
+    return response;
   }, 
   /**
    * Registers a new domain.
@@ -665,8 +665,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RegisterDomain", payload );
-    return resposne;
+    var response = this.request("RegisterDomain", payload );
+    return response;
   }, 
   /**
    * Registers a new <em>workflow type</em> and its configuration settings in the specified domain.
@@ -696,8 +696,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RegisterWorkflowType", payload );
-    return resposne;
+    var response = this.request("RegisterWorkflowType", payload );
+    return response;
   }, 
   /**
    * Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running workflow
@@ -727,8 +727,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RequestCancelWorkflowExecution", payload );
-    return resposne;
+    var response = this.request("RequestCancelWorkflowExecution", payload );
+    return response;
   }, 
   /**
    * Used by workers to tell the service that the <code>ActivityTask</code> identified by the
@@ -755,8 +755,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RespondActivityTaskCanceled", payload );
-    return resposne;
+    var response = this.request("RespondActivityTaskCanceled", payload );
+    return response;
   }, 
   /**
    * Used by workers to tell the service that the <code>ActivityTask</code> identified by the
@@ -783,8 +783,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RespondActivityTaskCompleted", payload );
-    return resposne;
+    var response = this.request("RespondActivityTaskCompleted", payload );
+    return response;
   }, 
   /**
    * Used by workers to tell the service that the <code>ActivityTask</code> identified by the
@@ -805,8 +805,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RespondActivityTaskFailed", payload );
-    return resposne;
+    var response = this.request("RespondActivityTaskFailed", payload );
+    return response;
   }, 
   /**
    * Used by deciders to tell the service that the <code>DecisionTask</code> identified by the
@@ -913,8 +913,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RespondDecisionTaskCompleted", payload );
-    return resposne;
+    var response = this.request("RespondDecisionTaskCompleted", payload );
+    return response;
   }, 
   /**
    * Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history and
@@ -945,8 +945,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SignalWorkflowExecution", payload );
-    return resposne;
+    var response = this.request("SignalWorkflowExecution", payload );
+    return response;
   }, 
   /**
    * Starts an execution of the workflow type in the specified domain using the provided
@@ -977,8 +977,8 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"StartWorkflowExecution", payload );
-    return resposne;
+    var response = this.request("StartWorkflowExecution", payload );
+    return response;
   }, 
   /**
    * Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the workflow
@@ -1014,7 +1014,7 @@ AmazonSWF.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"TerminateWorkflowExecution", payload );
-    return resposne;
+    var response = this.request("TerminateWorkflowExecution", payload );
+    return response;
   }
 }

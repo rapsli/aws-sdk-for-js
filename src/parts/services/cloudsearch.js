@@ -29,11 +29,11 @@ AmazonCloudSearch.prototype = {
    */
   create_domain: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDomain", payload );
-    return resposne;
+    var response = this.request("CreateDomain", payload );
+    return response;
   }, 
   /**
    * Configures an <code>IndexField</code> for the search domain. Used to create new fields and
@@ -104,12 +104,12 @@ AmazonCloudSearch.prototype = {
    */
   define_index_field: function(domain_name,index_field,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.index_field = index_field;
+    payload.domain_name = domain_name;
+    payload.index_field = index_field;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DefineIndexField", payload );
-    return resposne;
+    var response = this.request("DefineIndexField", payload );
+    return response;
   }, 
   /**
    * Configures a <code>RankExpression</code> for the search domain. Used to create new rank
@@ -130,12 +130,12 @@ AmazonCloudSearch.prototype = {
    */
   define_rank_expression: function(domain_name,rank_expression,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.rank_expression = rank_expression;
+    payload.domain_name = domain_name;
+    payload.rank_expression = rank_expression;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DefineRankExpression", payload );
-    return resposne;
+    var response = this.request("DefineRankExpression", payload );
+    return response;
   }, 
   /**
    * Permanently deletes a search domain and all of its data.
@@ -148,11 +148,11 @@ AmazonCloudSearch.prototype = {
    */
   delete_domain: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDomain", payload );
-    return resposne;
+    var response = this.request("DeleteDomain", payload );
+    return response;
   }, 
   /**
    * Removes an <code>IndexField</code> from the search domain.
@@ -166,12 +166,12 @@ AmazonCloudSearch.prototype = {
    */
   delete_index_field: function(domain_name,index_field_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.index_field_name = index_field_name;
+    payload.domain_name = domain_name;
+    payload.index_field_name = index_field_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteIndexField", payload );
-    return resposne;
+    var response = this.request("DeleteIndexField", payload );
+    return response;
   }, 
   /**
    * Removes a <code>RankExpression</code> from the search domain.
@@ -185,12 +185,12 @@ AmazonCloudSearch.prototype = {
    */
   delete_rank_expression: function(domain_name,rank_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.rank_name = rank_name;
+    payload.domain_name = domain_name;
+    payload.rank_name = rank_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteRankExpression", payload );
-    return resposne;
+    var response = this.request("DeleteRankExpression", payload );
+    return response;
   }, 
   /**
    * Gets the default search field configured for the search domain.
@@ -203,11 +203,11 @@ AmazonCloudSearch.prototype = {
    */
   describe_default_search_field: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDefaultSearchField", payload );
-    return resposne;
+    var response = this.request("DescribeDefaultSearchField", payload );
+    return response;
   }, 
   /**
    * Gets information about the search domains owned by this account. Can be limited to specific
@@ -223,8 +223,8 @@ AmazonCloudSearch.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDomains", payload );
-    return resposne;
+    var response = this.request("DescribeDomains", payload );
+    return response;
   }, 
   /**
    * Gets information about the index fields configured for the search domain. Can be limited to
@@ -239,11 +239,11 @@ AmazonCloudSearch.prototype = {
    */
   describe_index_fields: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeIndexFields", payload );
-    return resposne;
+    var response = this.request("DescribeIndexFields", payload );
+    return response;
   }, 
   /**
    * Gets the rank expressions configured for the search domain. Can be limited to specific rank
@@ -258,11 +258,11 @@ AmazonCloudSearch.prototype = {
    */
   describe_rank_expressions: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeRankExpressions", payload );
-    return resposne;
+    var response = this.request("DescribeRankExpressions", payload );
+    return response;
   }, 
   /**
    * Gets information about the resource-based policies that control access to the domain's document
@@ -276,11 +276,11 @@ AmazonCloudSearch.prototype = {
    */
   describe_service_access_policies: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeServiceAccessPolicies", payload );
-    return resposne;
+    var response = this.request("DescribeServiceAccessPolicies", payload );
+    return response;
   }, 
   /**
    * Gets the stemming dictionary configured for the search domain.
@@ -293,11 +293,11 @@ AmazonCloudSearch.prototype = {
    */
   describe_stemming_options: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeStemmingOptions", payload );
-    return resposne;
+    var response = this.request("DescribeStemmingOptions", payload );
+    return response;
   }, 
   /**
    * Gets the stopwords configured for the search domain.
@@ -310,11 +310,11 @@ AmazonCloudSearch.prototype = {
    */
   describe_stopword_options: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeStopwordOptions", payload );
-    return resposne;
+    var response = this.request("DescribeStopwordOptions", payload );
+    return response;
   }, 
   /**
    * Gets the synonym dictionary configured for the search domain.
@@ -327,11 +327,11 @@ AmazonCloudSearch.prototype = {
    */
   describe_synonym_options: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSynonymOptions", payload );
-    return resposne;
+    var response = this.request("DescribeSynonymOptions", payload );
+    return response;
   }, 
   /**
    * Tells the search domain to start indexing its documents using the latest text processing
@@ -347,11 +347,11 @@ AmazonCloudSearch.prototype = {
    */
   index_documents: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"IndexDocuments", payload );
-    return resposne;
+    var response = this.request("IndexDocuments", payload );
+    return response;
   }, 
   /**
    * Configures the default search field for the search domain. The default search field is used
@@ -367,12 +367,12 @@ AmazonCloudSearch.prototype = {
    */
   update_default_search_field: function(domain_name,default_search_field,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.default_search_field = default_search_field;
+    payload.domain_name = domain_name;
+    payload.default_search_field = default_search_field;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateDefaultSearchField", payload );
-    return resposne;
+    var response = this.request("UpdateDefaultSearchField", payload );
+    return response;
   }, 
   /**
    * Configures the policies that control access to the domain's document and search services. The
@@ -387,12 +387,12 @@ AmazonCloudSearch.prototype = {
    */
   update_service_access_policies: function(domain_name,access_policies,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.access_policies = access_policies;
+    payload.domain_name = domain_name;
+    payload.access_policies = access_policies;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateServiceAccessPolicies", payload );
-    return resposne;
+    var response = this.request("UpdateServiceAccessPolicies", payload );
+    return response;
   }, 
   /**
    * Configures a stemming dictionary for the search domain. The stemming dictionary is used during
@@ -408,12 +408,12 @@ AmazonCloudSearch.prototype = {
    */
   update_stemming_options: function(domain_name,stems,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.stems = stems;
+    payload.domain_name = domain_name;
+    payload.stems = stems;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateStemmingOptions", payload );
-    return resposne;
+    var response = this.request("UpdateStemmingOptions", payload );
+    return response;
   }, 
   /**
    * Configures stopwords for the search domain. Stopwords are used during indexing and when
@@ -428,12 +428,12 @@ AmazonCloudSearch.prototype = {
    */
   update_stopword_options: function(domain_name,stopwords,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.stopwords = stopwords;
+    payload.domain_name = domain_name;
+    payload.stopwords = stopwords;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateStopwordOptions", payload );
-    return resposne;
+    var response = this.request("UpdateStopwordOptions", payload );
+    return response;
   }, 
   /**
    * Configures a synonym dictionary for the search domain. The synonym dictionary is used during
@@ -449,11 +449,11 @@ AmazonCloudSearch.prototype = {
    */
   update_synonym_options: function(domain_name,synonyms,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.synonyms = synonyms;
+    payload.domain_name = domain_name;
+    payload.synonyms = synonyms;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateSynonymOptions", payload );
-    return resposne;
+    var response = this.request("UpdateSynonymOptions", payload );
+    return response;
   }
 }

@@ -46,14 +46,14 @@ AmazonSQS.prototype = {
    */
   add_permission: function(queue_url,label,aws_account_id,action_name,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.label = label;
-    param.aws_account_id = aws_account_id;
-    param.action_name = action_name;
+    payload.queue_url = queue_url;
+    payload.label = label;
+    payload.aws_account_id = aws_account_id;
+    payload.action_name = action_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AddPermission", payload );
-    return resposne;
+    var response = this.request("AddPermission", payload );
+    return response;
   }, 
   /**
    * The <code>ChangeMessageVisibility</code> action changes the visibility timeout of a specified
@@ -93,13 +93,13 @@ AmazonSQS.prototype = {
    */
   change_message_visibility: function(queue_url,receipt_handle,visibility_timeout,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.receipt_handle = receipt_handle;
-    param.visibility_timeout = visibility_timeout;
+    payload.queue_url = queue_url;
+    payload.receipt_handle = receipt_handle;
+    payload.visibility_timeout = visibility_timeout;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ChangeMessageVisibility", payload );
-    return resposne;
+    var response = this.request("ChangeMessageVisibility", payload );
+    return response;
   }, 
   /**
    * This is a batch version of <code>ChangeMessageVisibility</code>. It takes multiple receipt
@@ -121,12 +121,12 @@ AmazonSQS.prototype = {
    */
   change_message_visibility_batch: function(queue_url,change_message_visibility_batch_request_entry,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.change_message_visibility_batch_request_entry = change_message_visibility_batch_request_entry;
+    payload.queue_url = queue_url;
+    payload.change_message_visibility_batch_request_entry = change_message_visibility_batch_request_entry;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ChangeMessageVisibilityBatch", payload );
-    return resposne;
+    var response = this.request("ChangeMessageVisibilityBatch", payload );
+    return response;
   }, 
   /**
    * The <code>CreateQueue</code> action creates a new queue, or returns the URL of an existing one.
@@ -155,11 +155,11 @@ AmazonSQS.prototype = {
    */
   create_queue: function(queue_name,opt){
     var payload = {};
-    param.queue_name = queue_name;
+    payload.queue_name = queue_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateQueue", payload );
-    return resposne;
+    var response = this.request("CreateQueue", payload );
+    return response;
   }, 
   /**
    * The <code>DeleteMessage</code> action unconditionally removes the specified message from the
@@ -175,12 +175,12 @@ AmazonSQS.prototype = {
    */
   delete_message: function(queue_url,receipt_handle,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.receipt_handle = receipt_handle;
+    payload.queue_url = queue_url;
+    payload.receipt_handle = receipt_handle;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteMessage", payload );
-    return resposne;
+    var response = this.request("DeleteMessage", payload );
+    return response;
   }, 
   /**
    * This is a batch version of <code>DeleteMessage</code>. It takes multiple receipt handles and
@@ -201,12 +201,12 @@ AmazonSQS.prototype = {
    */
   delete_message_batch: function(queue_url,delete_message_batch_request_entry,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.delete_message_batch_request_entry = delete_message_batch_request_entry;
+    payload.queue_url = queue_url;
+    payload.delete_message_batch_request_entry = delete_message_batch_request_entry;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteMessageBatch", payload );
-    return resposne;
+    var response = this.request("DeleteMessageBatch", payload );
+    return response;
   }, 
   /**
    * This action unconditionally deletes the queue specified by the queue URL. Use this operation
@@ -223,11 +223,11 @@ AmazonSQS.prototype = {
    */
   delete_queue: function(queue_url,opt){
     var payload = {};
-    param.queue_url = queue_url;
+    payload.queue_url = queue_url;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteQueue", payload );
-    return resposne;
+    var response = this.request("DeleteQueue", payload );
+    return response;
   }, 
   /**
    * Gets attributes for the specified queue. The following attributes are supported:
@@ -267,11 +267,11 @@ AmazonSQS.prototype = {
    */
   get_queue_attributes: function(queue_url,opt){
     var payload = {};
-    param.queue_url = queue_url;
+    payload.queue_url = queue_url;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetQueueAttributes", payload );
-    return resposne;
+    var response = this.request("GetQueueAttributes", payload );
+    return response;
   }, 
   /**
    * The <code>GetQueueUrl</code> action returns the URL of an existing queue.
@@ -285,11 +285,11 @@ AmazonSQS.prototype = {
    */
   get_queue_url: function(queue_name,opt){
     var payload = {};
-    param.queue_name = queue_name;
+    payload.queue_name = queue_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetQueueUrl", payload );
-    return resposne;
+    var response = this.request("GetQueueUrl", payload );
+    return response;
   }, 
   /**
    * Returns a list of your queues.
@@ -304,8 +304,8 @@ AmazonSQS.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListQueues", payload );
-    return resposne;
+    var response = this.request("ListQueues", payload );
+    return response;
   }, 
   /**
    * Retrieves one or more messages from the specified queue, including the message body and message
@@ -326,11 +326,11 @@ AmazonSQS.prototype = {
    */
   receive_message: function(queue_url,opt){
     var payload = {};
-    param.queue_url = queue_url;
+    payload.queue_url = queue_url;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ReceiveMessage", payload );
-    return resposne;
+    var response = this.request("ReceiveMessage", payload );
+    return response;
   }, 
   /**
    * The <code>RemovePermission</code> action revokes any permissions in the queue policy that
@@ -346,12 +346,12 @@ AmazonSQS.prototype = {
    */
   remove_permission: function(queue_url,label,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.label = label;
+    payload.queue_url = queue_url;
+    payload.label = label;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RemovePermission", payload );
-    return resposne;
+    var response = this.request("RemovePermission", payload );
+    return response;
   }, 
   /**
    * The <code>SendMessage</code> action delivers a message to the specified queue.
@@ -366,12 +366,12 @@ AmazonSQS.prototype = {
    */
   send_message: function(queue_url,message_body,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.message_body = message_body;
+    payload.queue_url = queue_url;
+    payload.message_body = message_body;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SendMessage", payload );
-    return resposne;
+    var response = this.request("SendMessage", payload );
+    return response;
   }, 
   /**
    * This is a batch version of <code>SendMessage</code>. It takes multiple messages and adds each
@@ -393,12 +393,12 @@ AmazonSQS.prototype = {
    */
   send_message_batch: function(queue_url,send_message_batch_request_entry,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.send_message_batch_request_entry = send_message_batch_request_entry;
+    payload.queue_url = queue_url;
+    payload.send_message_batch_request_entry = send_message_batch_request_entry;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SendMessageBatch", payload );
-    return resposne;
+    var response = this.request("SendMessageBatch", payload );
+    return response;
   }, 
   /**
    * Sets an attribute of a queue. The set of attributes that can be set are - DelaySeconds,
@@ -418,11 +418,11 @@ AmazonSQS.prototype = {
    */
   set_queue_attributes: function(queue_url,attribute,opt){
     var payload = {};
-    param.queue_url = queue_url;
-    param.attribute = attribute;
+    payload.queue_url = queue_url;
+    payload.attribute = attribute;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetQueueAttributes", payload );
-    return resposne;
+    var response = this.request("SetQueueAttributes", payload );
+    return response;
   }
 }

@@ -29,11 +29,11 @@ AmazonSES.prototype = {
    */
   delete_identity: function(identity,opt){
     var payload = {};
-    param.identity = identity;
+    payload.identity = identity;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteIdentity", payload );
-    return resposne;
+    var response = this.request("DeleteIdentity", payload );
+    return response;
   }, 
   /**
    * Deletes the specified email address from the list of verified addresses.
@@ -51,11 +51,11 @@ AmazonSES.prototype = {
    */
   delete_verified_email_address: function(email_address,opt){
     var payload = {};
-    param.email_address = email_address;
+    payload.email_address = email_address;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteVerifiedEmailAddress", payload );
-    return resposne;
+    var response = this.request("DeleteVerifiedEmailAddress", payload );
+    return response;
   }, 
   /**
    * Returns the DNS records, or <em>tokens</em>, that must be present in order for Easy DKIM to
@@ -85,11 +85,11 @@ AmazonSES.prototype = {
    */
   get_identity_dkim_attributes: function(identities,opt){
     var payload = {};
-    param.identities = identities;
+    payload.identities = identities;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetIdentityDkimAttributes", payload );
-    return resposne;
+    var response = this.request("GetIdentityDkimAttributes", payload );
+    return response;
   }, 
   /**
    * Given a list of verified identities (email addresses and/or domains), returns a structure
@@ -105,11 +105,11 @@ AmazonSES.prototype = {
    */
   get_identity_notification_attributes: function(identities,opt){
     var payload = {};
-    param.identities = identities;
+    payload.identities = identities;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetIdentityNotificationAttributes", payload );
-    return resposne;
+    var response = this.request("GetIdentityNotificationAttributes", payload );
+    return response;
   }, 
   /**
    * Given a list of identities (email addresses and/or domains), returns the verification status
@@ -123,11 +123,11 @@ AmazonSES.prototype = {
    */
   get_identity_verification_attributes: function(identities,opt){
     var payload = {};
-    param.identities = identities;
+    payload.identities = identities;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetIdentityVerificationAttributes", payload );
-    return resposne;
+    var response = this.request("GetIdentityVerificationAttributes", payload );
+    return response;
   }, 
   /**
    * Returns the user's current sending limits.
@@ -141,8 +141,8 @@ AmazonSES.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetSendQuota", payload );
-    return resposne;
+    var response = this.request("GetSendQuota", payload );
+    return response;
   }, 
   /**
    * Returns the user's sending statistics. The result is a list of data points, representing the
@@ -159,8 +159,8 @@ AmazonSES.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetSendStatistics", payload );
-    return resposne;
+    var response = this.request("GetSendStatistics", payload );
+    return response;
   }, 
   /**
    * Returns a list containing all of the identities (email addresses and domains) for a specific
@@ -178,8 +178,8 @@ AmazonSES.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListIdentities", payload );
-    return resposne;
+    var response = this.request("ListIdentities", payload );
+    return response;
   }, 
   /**
    * Returns a list containing all of the email addresses that have been verified.
@@ -198,8 +198,8 @@ AmazonSES.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListVerifiedEmailAddresses", payload );
-    return resposne;
+    var response = this.request("ListVerifiedEmailAddresses", payload );
+    return response;
   }, 
   /**
    * Composes an email message based on input data, and then immediately queues the message for
@@ -267,13 +267,13 @@ AmazonSES.prototype = {
    */
   send_email: function(source,destination,message,opt){
     var payload = {};
-    param.source = source;
-    param.destination = destination;
-    param.message = message;
+    payload.source = source;
+    payload.destination = destination;
+    payload.message = message;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SendEmail", payload );
-    return resposne;
+    var response = this.request("SendEmail", payload );
+    return response;
   }, 
   /**
    * Sends an email message, with header and content specified by the client. The
@@ -314,11 +314,11 @@ AmazonSES.prototype = {
    */
   send_raw_email: function(raw_message,opt){
     var payload = {};
-    param.raw_message = raw_message;
+    payload.raw_message = raw_message;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SendRawEmail", payload );
-    return resposne;
+    var response = this.request("SendRawEmail", payload );
+    return response;
   }, 
   /**
    * Enables or disables Easy DKIM signing of email sent from an identity:
@@ -347,12 +347,12 @@ AmazonSES.prototype = {
    */
   set_identity_dkim_enabled: function(identity,dkim_enabled,opt){
     var payload = {};
-    param.identity = identity;
-    param.dkim_enabled = dkim_enabled;
+    payload.identity = identity;
+    payload.dkim_enabled = dkim_enabled;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetIdentityDkimEnabled", payload );
-    return resposne;
+    var response = this.request("SetIdentityDkimEnabled", payload );
+    return response;
   }, 
   /**
    * Given an identity (email address or domain), enables or disables whether Amazon SES forwards
@@ -369,12 +369,12 @@ AmazonSES.prototype = {
    */
   set_identity_feedback_forwarding_enabled: function(identity,forwarding_enabled,opt){
     var payload = {};
-    param.identity = identity;
-    param.forwarding_enabled = forwarding_enabled;
+    payload.identity = identity;
+    payload.forwarding_enabled = forwarding_enabled;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetIdentityFeedbackForwardingEnabled", payload );
-    return resposne;
+    var response = this.request("SetIdentityFeedbackForwardingEnabled", payload );
+    return response;
   }, 
   /**
    * Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will
@@ -393,12 +393,12 @@ AmazonSES.prototype = {
    */
   set_identity_notification_topic: function(identity,notification_type,opt){
     var payload = {};
-    param.identity = identity;
-    param.notification_type = notification_type;
+    payload.identity = identity;
+    payload.notification_type = notification_type;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetIdentityNotificationTopic", payload );
-    return resposne;
+    var response = this.request("SetIdentityNotificationTopic", payload );
+    return response;
   }, 
   /**
    * Returns a set of DNS records, or <em>tokens</em>, that must be published in the domain name's
@@ -422,11 +422,11 @@ AmazonSES.prototype = {
    */
   verify_domain_dkim: function(domain,opt){
     var payload = {};
-    param.domain = domain;
+    payload.domain = domain;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"VerifyDomainDkim", payload );
-    return resposne;
+    var response = this.request("VerifyDomainDkim", payload );
+    return response;
   }, 
   /**
    * Verifies a domain.
@@ -439,11 +439,11 @@ AmazonSES.prototype = {
    */
   verify_domain_identity: function(domain,opt){
     var payload = {};
-    param.domain = domain;
+    payload.domain = domain;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"VerifyDomainIdentity", payload );
-    return resposne;
+    var response = this.request("VerifyDomainIdentity", payload );
+    return response;
   }, 
   /**
    * Verifies an email address. This action causes a confirmation email message to be sent to the
@@ -462,11 +462,11 @@ AmazonSES.prototype = {
    */
   verify_email_address: function(email_address,opt){
     var payload = {};
-    param.email_address = email_address;
+    payload.email_address = email_address;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"VerifyEmailAddress", payload );
-    return resposne;
+    var response = this.request("VerifyEmailAddress", payload );
+    return response;
   }, 
   /**
    * Verifies an email address. This action causes a confirmation email message to be sent to the
@@ -480,10 +480,10 @@ AmazonSES.prototype = {
    */
   verify_email_identity: function(email_address,opt){
     var payload = {};
-    param.email_address = email_address;
+    payload.email_address = email_address;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"VerifyEmailIdentity", payload );
-    return resposne;
+    var response = this.request("VerifyEmailIdentity", payload );
+    return response;
   }
 }

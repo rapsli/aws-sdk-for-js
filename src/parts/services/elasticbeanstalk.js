@@ -29,11 +29,11 @@ AmazonElasticBeanstalk.prototype = {
    */
   check_dns_availability: function(cnameprefix,opt){
     var payload = {};
-    param.cnameprefix = cnameprefix;
+    payload.cnameprefix = cnameprefix;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CheckDnsAvailability", payload );
-    return resposne;
+    var response = this.request("CheckDnsAvailability", payload );
+    return response;
   }, 
   /**
    * Creates an application that has one configuration template named <code>default</code> and no
@@ -53,11 +53,11 @@ AmazonElasticBeanstalk.prototype = {
    */
   create_application: function(application_name,opt){
     var payload = {};
-    param.application_name = application_name;
+    payload.application_name = application_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateApplication", payload );
-    return resposne;
+    var response = this.request("CreateApplication", payload );
+    return response;
   }, 
   /**
    * Creates an application version for the specified application.
@@ -85,12 +85,12 @@ AmazonElasticBeanstalk.prototype = {
    */
   create_application_version: function(application_name,version_label,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.version_label = version_label;
+    payload.application_name = application_name;
+    payload.version_label = version_label;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateApplicationVersion", payload );
-    return resposne;
+    var response = this.request("CreateApplicationVersion", payload );
+    return response;
   }, 
   /**
    * Creates a configuration template. Templates are associated with a specific application and are
@@ -129,12 +129,12 @@ AmazonElasticBeanstalk.prototype = {
    */
   create_configuration_template: function(application_name,template_name,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.template_name = template_name;
+    payload.application_name = application_name;
+    payload.template_name = template_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateConfigurationTemplate", payload );
-    return resposne;
+    var response = this.request("CreateConfigurationTemplate", payload );
+    return response;
   }, 
   /**
    * Launches an environment for the specified application using the specified configuration.
@@ -166,12 +166,12 @@ AmazonElasticBeanstalk.prototype = {
    */
   create_environment: function(application_name,environment_name,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.environment_name = environment_name;
+    payload.application_name = application_name;
+    payload.environment_name = environment_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateEnvironment", payload );
-    return resposne;
+    var response = this.request("CreateEnvironment", payload );
+    return response;
   }, 
   /**
    * Creates the Amazon S3 storage location for the account.
@@ -187,8 +187,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateStorageLocation", payload );
-    return resposne;
+    var response = this.request("CreateStorageLocation", payload );
+    return response;
   }, 
   /**
    * Deletes the specified application along with all associated versions and configurations.
@@ -205,11 +205,11 @@ AmazonElasticBeanstalk.prototype = {
    */
   delete_application: function(application_name,opt){
     var payload = {};
-    param.application_name = application_name;
+    payload.application_name = application_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteApplication", payload );
-    return resposne;
+    var response = this.request("DeleteApplication", payload );
+    return response;
   }, 
   /**
    * Deletes the specified version from the specified application.
@@ -228,12 +228,12 @@ AmazonElasticBeanstalk.prototype = {
    */
   delete_application_version: function(application_name,version_label,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.version_label = version_label;
+    payload.application_name = application_name;
+    payload.version_label = version_label;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteApplicationVersion", payload );
-    return resposne;
+    var response = this.request("DeleteApplicationVersion", payload );
+    return response;
   }, 
   /**
    * Deletes the specified configuration template.
@@ -253,12 +253,12 @@ AmazonElasticBeanstalk.prototype = {
    */
   delete_configuration_template: function(application_name,template_name,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.template_name = template_name;
+    payload.application_name = application_name;
+    payload.template_name = template_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteConfigurationTemplate", payload );
-    return resposne;
+    var response = this.request("DeleteConfigurationTemplate", payload );
+    return response;
   }, 
   /**
    * Deletes the draft configuration associated with the running environment.
@@ -278,12 +278,12 @@ AmazonElasticBeanstalk.prototype = {
    */
   delete_environment_configuration: function(application_name,environment_name,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.environment_name = environment_name;
+    payload.application_name = application_name;
+    payload.environment_name = environment_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteEnvironmentConfiguration", payload );
-    return resposne;
+    var response = this.request("DeleteEnvironmentConfiguration", payload );
+    return response;
   }, 
   /**
    * Returns descriptions for existing application versions.
@@ -299,8 +299,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeApplicationVersions", payload );
-    return resposne;
+    var response = this.request("DescribeApplicationVersions", payload );
+    return response;
   }, 
   /**
    * Returns the descriptions of existing applications.
@@ -315,8 +315,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeApplications", payload );
-    return resposne;
+    var response = this.request("DescribeApplications", payload );
+    return response;
   }, 
   /**
    * Describes the configuration options that are used in a particular configuration template or
@@ -343,8 +343,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeConfigurationOptions", payload );
-    return resposne;
+    var response = this.request("DescribeConfigurationOptions", payload );
+    return response;
   }, 
   /**
    * Returns a description of the settings for the specified configuration set, that is, either a
@@ -371,11 +371,11 @@ AmazonElasticBeanstalk.prototype = {
    */
   describe_configuration_settings: function(application_name,opt){
     var payload = {};
-    param.application_name = application_name;
+    payload.application_name = application_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeConfigurationSettings", payload );
-    return resposne;
+    var response = this.request("DescribeConfigurationSettings", payload );
+    return response;
   }, 
   /**
    * Returns AWS resources for this environment.
@@ -391,8 +391,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeEnvironmentResources", payload );
-    return resposne;
+    var response = this.request("DescribeEnvironmentResources", payload );
+    return response;
   }, 
   /**
    * Returns descriptions for existing environments.
@@ -412,8 +412,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeEnvironments", payload );
-    return resposne;
+    var response = this.request("DescribeEnvironments", payload );
+    return response;
   }, 
   /**
    * Returns list of event descriptions matching criteria up to the last 6 weeks.
@@ -442,8 +442,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeEvents", payload );
-    return resposne;
+    var response = this.request("DescribeEvents", payload );
+    return response;
   }, 
   /**
    * Returns a list of the available solution stack names.
@@ -457,8 +457,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListAvailableSolutionStacks", payload );
-    return resposne;
+    var response = this.request("ListAvailableSolutionStacks", payload );
+    return response;
   }, 
   /**
    * Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load
@@ -475,8 +475,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RebuildEnvironment", payload );
-    return resposne;
+    var response = this.request("RebuildEnvironment", payload );
+    return response;
   }, 
   /**
    * Initiates a request to compile the specified type of information of the deployed environment.
@@ -501,11 +501,11 @@ AmazonElasticBeanstalk.prototype = {
    */
   request_environment_info: function(info_type,opt){
     var payload = {};
-    param.info_type = info_type;
+    payload.info_type = info_type;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RequestEnvironmentInfo", payload );
-    return resposne;
+    var response = this.request("RequestEnvironmentInfo", payload );
+    return response;
   }, 
   /**
    * Causes the environment to restart the application container server running on each Amazon EC2
@@ -522,8 +522,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RestartAppServer", payload );
-    return resposne;
+    var response = this.request("RestartAppServer", payload );
+    return response;
   }, 
   /**
    * Retrieves the compiled information from a <code>RequestEnvironmentInfo</code> request.
@@ -544,11 +544,11 @@ AmazonElasticBeanstalk.prototype = {
    */
   retrieve_environment_info: function(info_type,opt){
     var payload = {};
-    param.info_type = info_type;
+    payload.info_type = info_type;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RetrieveEnvironmentInfo", payload );
-    return resposne;
+    var response = this.request("RetrieveEnvironmentInfo", payload );
+    return response;
   }, 
   /**
    * Swaps the CNAMEs of two environments.
@@ -566,8 +566,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SwapEnvironmentCnames", payload );
-    return resposne;
+    var response = this.request("SwapEnvironmentCnames", payload );
+    return response;
   }, 
   /**
    * Terminates the specified environment.
@@ -584,8 +584,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"TerminateEnvironment", payload );
-    return resposne;
+    var response = this.request("TerminateEnvironment", payload );
+    return response;
   }, 
   /**
    * Updates the specified application to have the specified properties.
@@ -604,11 +604,11 @@ AmazonElasticBeanstalk.prototype = {
    */
   update_application: function(application_name,opt){
     var payload = {};
-    param.application_name = application_name;
+    payload.application_name = application_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateApplication", payload );
-    return resposne;
+    var response = this.request("UpdateApplication", payload );
+    return response;
   }, 
   /**
    * Updates the specified application version to have the specified properties.
@@ -628,12 +628,12 @@ AmazonElasticBeanstalk.prototype = {
    */
   update_application_version: function(application_name,version_label,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.version_label = version_label;
+    payload.application_name = application_name;
+    payload.version_label = version_label;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateApplicationVersion", payload );
-    return resposne;
+    var response = this.request("UpdateApplicationVersion", payload );
+    return response;
   }, 
   /**
    * Updates the specified configuration template to have the specified properties or configuration
@@ -672,12 +672,12 @@ AmazonElasticBeanstalk.prototype = {
    */
   update_configuration_template: function(application_name,template_name,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.template_name = template_name;
+    payload.application_name = application_name;
+    payload.template_name = template_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateConfigurationTemplate", payload );
-    return resposne;
+    var response = this.request("UpdateConfigurationTemplate", payload );
+    return response;
   }, 
   /**
    * Updates the environment description, deploys a new application version, updates the
@@ -718,8 +718,8 @@ AmazonElasticBeanstalk.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UpdateEnvironment", payload );
-    return resposne;
+    var response = this.request("UpdateEnvironment", payload );
+    return response;
   }, 
   /**
    * Takes a set of configuration settings and either a configuration template or environment, and
@@ -745,11 +745,11 @@ AmazonElasticBeanstalk.prototype = {
    */
   validate_configuration_settings: function(application_name,option_settings,opt){
     var payload = {};
-    param.application_name = application_name;
-    param.option_settings = option_settings;
+    payload.application_name = application_name;
+    payload.option_settings = option_settings;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ValidateConfigurationSettings", payload );
-    return resposne;
+    var response = this.request("ValidateConfigurationSettings", payload );
+    return response;
   }
 }

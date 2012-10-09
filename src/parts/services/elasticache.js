@@ -38,13 +38,13 @@ AmazonElastiCache.prototype = {
    */
   authorize_cache_security_group_ingress: function(cache_security_group_name,ec2_security_group_name,ec2_security_group_owner_id,opt){
     var payload = {};
-    param.cache_security_group_name = cache_security_group_name;
-    param.ec2_security_group_name = ec2_security_group_name;
-    param.ec2_security_group_owner_id = ec2_security_group_owner_id;
+    payload.cache_security_group_name = cache_security_group_name;
+    payload.ec2_security_group_name = ec2_security_group_name;
+    payload.ec2_security_group_owner_id = ec2_security_group_owner_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AuthorizeCacheSecurityGroupIngress", payload );
-    return resposne;
+    var response = this.request("AuthorizeCacheSecurityGroupIngress", payload );
+    return response;
   }, 
   /**
    * Creates a new Cache Cluster.
@@ -68,15 +68,15 @@ AmazonElastiCache.prototype = {
    */
   create_cache_cluster: function(cache_cluster_id,num_cache_nodes,cache_node_type,engine,cache_security_group_names,opt){
     var payload = {};
-    param.cache_cluster_id = cache_cluster_id;
-    param.num_cache_nodes = num_cache_nodes;
-    param.cache_node_type = cache_node_type;
-    param.engine = engine;
-    param.cache_security_group_names = cache_security_group_names;
+    payload.cache_cluster_id = cache_cluster_id;
+    payload.num_cache_nodes = num_cache_nodes;
+    payload.cache_node_type = cache_node_type;
+    payload.engine = engine;
+    payload.cache_security_group_names = cache_security_group_names;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateCacheCluster", payload );
-    return resposne;
+    var response = this.request("CreateCacheCluster", payload );
+    return response;
   }, 
   /**
    * Creates a new Cache Parameter Group. Cache Parameter groups control the parameters for a Cache
@@ -92,13 +92,13 @@ AmazonElastiCache.prototype = {
    */
   create_cache_parameter_group: function(cache_parameter_group_name,cache_parameter_group_family,description,opt){
     var payload = {};
-    param.cache_parameter_group_name = cache_parameter_group_name;
-    param.cache_parameter_group_family = cache_parameter_group_family;
-    param.description = description;
+    payload.cache_parameter_group_name = cache_parameter_group_name;
+    payload.cache_parameter_group_family = cache_parameter_group_family;
+    payload.description = description;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateCacheParameterGroup", payload );
-    return resposne;
+    var response = this.request("CreateCacheParameterGroup", payload );
+    return response;
   }, 
   /**
    * Creates a new Cache Security Group. Cache Security groups control access to one or more Cache
@@ -113,12 +113,12 @@ AmazonElastiCache.prototype = {
    */
   create_cache_security_group: function(cache_security_group_name,description,opt){
     var payload = {};
-    param.cache_security_group_name = cache_security_group_name;
-    param.description = description;
+    payload.cache_security_group_name = cache_security_group_name;
+    payload.description = description;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateCacheSecurityGroup", payload );
-    return resposne;
+    var response = this.request("CreateCacheSecurityGroup", payload );
+    return response;
   }, 
   /**
    * Deletes a previously provisioned Cache Cluster. A successful response from the web service
@@ -134,11 +134,11 @@ AmazonElastiCache.prototype = {
    */
   delete_cache_cluster: function(cache_cluster_id,opt){
     var payload = {};
-    param.cache_cluster_id = cache_cluster_id;
+    payload.cache_cluster_id = cache_cluster_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteCacheCluster", payload );
-    return resposne;
+    var response = this.request("DeleteCacheCluster", payload );
+    return response;
   }, 
   /**
    * Deletes the specified CacheParameterGroup. The CacheParameterGroup cannot be deleted if it is
@@ -152,11 +152,11 @@ AmazonElastiCache.prototype = {
    */
   delete_cache_parameter_group: function(cache_parameter_group_name,opt){
     var payload = {};
-    param.cache_parameter_group_name = cache_parameter_group_name;
+    payload.cache_parameter_group_name = cache_parameter_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteCacheParameterGroup", payload );
-    return resposne;
+    var response = this.request("DeleteCacheParameterGroup", payload );
+    return response;
   }, 
   /**
    * Deletes a Cache Security Group.
@@ -173,11 +173,11 @@ AmazonElastiCache.prototype = {
    */
   delete_cache_security_group: function(cache_security_group_name,opt){
     var payload = {};
-    param.cache_security_group_name = cache_security_group_name;
+    payload.cache_security_group_name = cache_security_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteCacheSecurityGroup", payload );
-    return resposne;
+    var response = this.request("DeleteCacheSecurityGroup", payload );
+    return response;
   }, 
   /**
    * Returns information about all provisioned Cache Clusters if no Cache Cluster identifier is
@@ -214,8 +214,8 @@ AmazonElastiCache.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeCacheClusters", payload );
-    return resposne;
+    var response = this.request("DescribeCacheClusters", payload );
+    return response;
   }, 
   /**
    * Returns a list of CacheParameterGroup descriptions. If a CacheParameterGroupName is specified,
@@ -233,8 +233,8 @@ AmazonElastiCache.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeCacheParameterGroups", payload );
-    return resposne;
+    var response = this.request("DescribeCacheParameterGroups", payload );
+    return response;
   }, 
   /**
    * Returns the detailed parameter list for a particular CacheParameterGroup.
@@ -250,11 +250,11 @@ AmazonElastiCache.prototype = {
    */
   describe_cache_parameters: function(cache_parameter_group_name,opt){
     var payload = {};
-    param.cache_parameter_group_name = cache_parameter_group_name;
+    payload.cache_parameter_group_name = cache_parameter_group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeCacheParameters", payload );
-    return resposne;
+    var response = this.request("DescribeCacheParameters", payload );
+    return response;
   }, 
   /**
    * Returns a list of CacheSecurityGroup descriptions. If a CacheSecurityGroupName is specified,
@@ -272,8 +272,8 @@ AmazonElastiCache.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeCacheSecurityGroups", payload );
-    return resposne;
+    var response = this.request("DescribeCacheSecurityGroups", payload );
+    return response;
   }, 
   /**
    * Returns the default engine and system parameter information for the specified cache engine.
@@ -288,11 +288,11 @@ AmazonElastiCache.prototype = {
    */
   describe_engine_default_parameters: function(cache_parameter_group_family,opt){
     var payload = {};
-    param.cache_parameter_group_family = cache_parameter_group_family;
+    payload.cache_parameter_group_family = cache_parameter_group_family;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeEngineDefaultParameters", payload );
-    return resposne;
+    var response = this.request("DescribeEngineDefaultParameters", payload );
+    return response;
   }, 
   /**
    * Returns events related to Cache Clusters, Cache Security Groups, and Cache Parameter Groups for
@@ -316,8 +316,8 @@ AmazonElastiCache.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeEvents", payload );
-    return resposne;
+    var response = this.request("DescribeEvents", payload );
+    return response;
   }, 
   /**
    * Returns information about reserved Cache Nodes for this account, or about a specified reserved
@@ -340,8 +340,8 @@ AmazonElastiCache.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeReservedCacheNodes", payload );
-    return resposne;
+    var response = this.request("DescribeReservedCacheNodes", payload );
+    return response;
   }, 
   /**
    * Lists available reserved Cache Node offerings.
@@ -362,8 +362,8 @@ AmazonElastiCache.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeReservedCacheNodesOfferings", payload );
-    return resposne;
+    var response = this.request("DescribeReservedCacheNodesOfferings", payload );
+    return response;
   }, 
   /**
    * Modifies the Cache Cluster settings. You can change one or more Cache Cluster configuration
@@ -387,11 +387,11 @@ AmazonElastiCache.prototype = {
    */
   modify_cache_cluster: function(cache_cluster_id,opt){
     var payload = {};
-    param.cache_cluster_id = cache_cluster_id;
+    payload.cache_cluster_id = cache_cluster_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyCacheCluster", payload );
-    return resposne;
+    var response = this.request("ModifyCacheCluster", payload );
+    return response;
   }, 
   /**
    * Modifies the parameters of a CacheParameterGroup. To modify more than one parameter, submit a
@@ -412,12 +412,12 @@ AmazonElastiCache.prototype = {
    */
   modify_cache_parameter_group: function(cache_parameter_group_name,parameter_name_values,opt){
     var payload = {};
-    param.cache_parameter_group_name = cache_parameter_group_name;
-    param.parameter_name_values = parameter_name_values;
+    payload.cache_parameter_group_name = cache_parameter_group_name;
+    payload.parameter_name_values = parameter_name_values;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyCacheParameterGroup", payload );
-    return resposne;
+    var response = this.request("ModifyCacheParameterGroup", payload );
+    return response;
   }, 
   /**
    * Purchases a reserved Cache Node offering.
@@ -432,11 +432,11 @@ AmazonElastiCache.prototype = {
    */
   purchase_reserved_cache_nodes_offering: function(reserved_cache_nodes_offering_id,opt){
     var payload = {};
-    param.reserved_cache_nodes_offering_id = reserved_cache_nodes_offering_id;
+    payload.reserved_cache_nodes_offering_id = reserved_cache_nodes_offering_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PurchaseReservedCacheNodesOffering", payload );
-    return resposne;
+    var response = this.request("PurchaseReservedCacheNodesOffering", payload );
+    return response;
   }, 
   /**
    * Reboots some (or all) of the cache cluster nodes within a previously provisioned ElastiCache
@@ -455,12 +455,12 @@ AmazonElastiCache.prototype = {
    */
   reboot_cache_cluster: function(cache_cluster_id,cache_node_ids_to_reboot,opt){
     var payload = {};
-    param.cache_cluster_id = cache_cluster_id;
-    param.cache_node_ids_to_reboot = cache_node_ids_to_reboot;
+    payload.cache_cluster_id = cache_cluster_id;
+    payload.cache_node_ids_to_reboot = cache_node_ids_to_reboot;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RebootCacheCluster", payload );
-    return resposne;
+    var response = this.request("RebootCacheCluster", payload );
+    return response;
   }, 
   /**
    * Modifies the parameters of a CacheParameterGroup to the engine or system default value. To
@@ -482,12 +482,12 @@ AmazonElastiCache.prototype = {
    */
   reset_cache_parameter_group: function(cache_parameter_group_name,parameter_name_values,opt){
     var payload = {};
-    param.cache_parameter_group_name = cache_parameter_group_name;
-    param.parameter_name_values = parameter_name_values;
+    payload.cache_parameter_group_name = cache_parameter_group_name;
+    payload.parameter_name_values = parameter_name_values;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ResetCacheParameterGroup", payload );
-    return resposne;
+    var response = this.request("ResetCacheParameterGroup", payload );
+    return response;
   }, 
   /**
    * Revokes ingress from a CacheSecurityGroup for previously authorized EC2 Security Groups.
@@ -502,12 +502,12 @@ AmazonElastiCache.prototype = {
    */
   revoke_cache_security_group_ingress: function(cache_security_group_name,ec2_security_group_name,ec2_security_group_owner_id,opt){
     var payload = {};
-    param.cache_security_group_name = cache_security_group_name;
-    param.ec2_security_group_name = ec2_security_group_name;
-    param.ec2_security_group_owner_id = ec2_security_group_owner_id;
+    payload.cache_security_group_name = cache_security_group_name;
+    payload.ec2_security_group_name = ec2_security_group_name;
+    payload.ec2_security_group_owner_id = ec2_security_group_owner_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RevokeCacheSecurityGroupIngress", payload );
-    return resposne;
+    var response = this.request("RevokeCacheSecurityGroupIngress", payload );
+    return response;
   }
 }

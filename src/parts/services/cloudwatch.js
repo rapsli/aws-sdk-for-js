@@ -29,11 +29,11 @@ AmazonCloudWatch.prototype = {
    */
   delete_alarms: function(alarm_names,opt){
     var payload = {};
-    param.alarm_names = alarm_names;
+    payload.alarm_names = alarm_names;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteAlarms", payload );
-    return resposne;
+    var response = this.request("DeleteAlarms", payload );
+    return response;
   }, 
   /**
    * Retrieves history for the specified alarm. Filter alarms by date range or item type. If an
@@ -59,8 +59,8 @@ AmazonCloudWatch.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAlarmHistory", payload );
-    return resposne;
+    var response = this.request("DescribeAlarmHistory", payload );
+    return response;
   }, 
   /**
    * Retrieves alarms with the specified names. If no name is specified, all alarms for the user are
@@ -82,8 +82,8 @@ AmazonCloudWatch.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAlarms", payload );
-    return resposne;
+    var response = this.request("DescribeAlarms", payload );
+    return response;
   }, 
   /**
    * Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the
@@ -107,12 +107,12 @@ AmazonCloudWatch.prototype = {
    */
   describe_alarms_for_metric: function(metric_name,namespace,opt){
     var payload = {};
-    param.metric_name = metric_name;
-    param.namespace = namespace;
+    payload.metric_name = metric_name;
+    payload.namespace = namespace;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAlarmsForMetric", payload );
-    return resposne;
+    var response = this.request("DescribeAlarmsForMetric", payload );
+    return response;
   }, 
   /**
    * Disables actions for the specified alarms. When an alarm's actions are disabled the alarm's
@@ -126,11 +126,11 @@ AmazonCloudWatch.prototype = {
    */
   disable_alarm_actions: function(alarm_names,opt){
     var payload = {};
-    param.alarm_names = alarm_names;
+    payload.alarm_names = alarm_names;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DisableAlarmActions", payload );
-    return resposne;
+    var response = this.request("DisableAlarmActions", payload );
+    return response;
   }, 
   /**
    * Enables actions for the specified alarms.
@@ -143,11 +143,11 @@ AmazonCloudWatch.prototype = {
    */
   enable_alarm_actions: function(alarm_names,opt){
     var payload = {};
-    param.alarm_names = alarm_names;
+    payload.alarm_names = alarm_names;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"EnableAlarmActions", payload );
-    return resposne;
+    var response = this.request("EnableAlarmActions", payload );
+    return response;
   }, 
   /**
    * Gets statistics for the specified metric.
@@ -198,17 +198,17 @@ AmazonCloudWatch.prototype = {
    */
   get_metric_statistics: function(namespace,metric_name,start_time,end_time,period,statistics,unit,opt){
     var payload = {};
-    param.namespace = namespace;
-    param.metric_name = metric_name;
-    param.start_time = start_time;
-    param.end_time = end_time;
-    param.period = period;
-    param.statistics = statistics;
-    param.unit = unit;
+    payload.namespace = namespace;
+    payload.metric_name = metric_name;
+    payload.start_time = start_time;
+    payload.end_time = end_time;
+    payload.period = period;
+    payload.statistics = statistics;
+    payload.unit = unit;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetMetricStatistics", payload );
-    return resposne;
+    var response = this.request("GetMetricStatistics", payload );
+    return response;
   }, 
   /**
    * Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used
@@ -242,8 +242,8 @@ AmazonCloudWatch.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListMetrics", payload );
-    return resposne;
+    var response = this.request("ListMetrics", payload );
+    return response;
   }, 
   /**
    * Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric.
@@ -285,18 +285,18 @@ AmazonCloudWatch.prototype = {
    */
   put_metric_alarm: function(alarm_name,metric_name,namespace,statistic,period,evaluation_periods,threshold,comparison_operator,opt){
     var payload = {};
-    param.alarm_name = alarm_name;
-    param.metric_name = metric_name;
-    param.namespace = namespace;
-    param.statistic = statistic;
-    param.period = period;
-    param.evaluation_periods = evaluation_periods;
-    param.threshold = threshold;
-    param.comparison_operator = comparison_operator;
+    payload.alarm_name = alarm_name;
+    payload.metric_name = metric_name;
+    payload.namespace = namespace;
+    payload.statistic = statistic;
+    payload.period = period;
+    payload.evaluation_periods = evaluation_periods;
+    payload.threshold = threshold;
+    payload.comparison_operator = comparison_operator;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutMetricAlarm", payload );
-    return resposne;
+    var response = this.request("PutMetricAlarm", payload );
+    return response;
   }, 
   /**
    * Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points
@@ -347,12 +347,12 @@ AmazonCloudWatch.prototype = {
    */
   put_metric_data: function(namespace,metric_data,opt){
     var payload = {};
-    param.namespace = namespace;
-    param.metric_data = metric_data;
+    payload.namespace = namespace;
+    payload.metric_data = metric_data;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutMetricData", payload );
-    return resposne;
+    var response = this.request("PutMetricData", payload );
+    return response;
   }, 
   /**
    * Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from
@@ -371,12 +371,12 @@ AmazonCloudWatch.prototype = {
    */
   set_alarm_state: function(alarm_name,state_value,state_reason,opt){
     var payload = {};
-    param.alarm_name = alarm_name;
-    param.state_value = state_value;
-    param.state_reason = state_reason;
+    payload.alarm_name = alarm_name;
+    payload.state_value = state_value;
+    payload.state_reason = state_reason;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetAlarmState", payload );
-    return resposne;
+    var response = this.request("SetAlarmState", payload );
+    return response;
   }
 }

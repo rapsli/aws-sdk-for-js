@@ -31,12 +31,12 @@ AmazonEC2.prototype = {
    */
   activate_license: function(license_id,capacity,opt){
     var payload = {};
-    param.license_id = license_id;
-    param.capacity = capacity;
+    payload.license_id = license_id;
+    payload.capacity = capacity;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ActivateLicense", payload );
-    return resposne;
+    var response = this.request("ActivateLicense", payload );
+    return response;
   }, 
   /**
    * The AllocateAddress operation acquires an elastic IP address for use with your account.
@@ -51,8 +51,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AllocateAddress", payload );
-    return resposne;
+    var response = this.request("AllocateAddress", payload );
+    return response;
   }, 
   /**
    * 
@@ -68,11 +68,11 @@ AmazonEC2.prototype = {
    */
   assign_private_ip_addresses: function(network_interface_id,opt){
     var payload = {};
-    param.network_interface_id = network_interface_id;
+    payload.network_interface_id = network_interface_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AssignPrivateIpAddresses", payload );
-    return resposne;
+    var response = this.request("AssignPrivateIpAddresses", payload );
+    return response;
   }, 
   /**
    * The AssociateAddress operation associates an elastic IP address with an instance.
@@ -94,12 +94,12 @@ AmazonEC2.prototype = {
    */
   associate_address: function(instance_id,public_ip,opt){
     var payload = {};
-    param.instance_id = instance_id;
-    param.public_ip = public_ip;
+    payload.instance_id = instance_id;
+    payload.public_ip = public_ip;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AssociateAddress", payload );
-    return resposne;
+    var response = this.request("AssociateAddress", payload );
+    return response;
   }, 
   /**
    * Associates a set of DHCP options (that you've previously created) with the specified VPC. Or,
@@ -119,12 +119,12 @@ AmazonEC2.prototype = {
    */
   associate_dhcp_options: function(dhcp_options_id,vpc_id,opt){
     var payload = {};
-    param.dhcp_options_id = dhcp_options_id;
-    param.vpc_id = vpc_id;
+    payload.dhcp_options_id = dhcp_options_id;
+    payload.vpc_id = vpc_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AssociateDhcpOptions", payload );
-    return resposne;
+    var response = this.request("AssociateDhcpOptions", payload );
+    return response;
   }, 
   /**
    * Associates a subnet with a route table. The subnet and route table must be in the same VPC.
@@ -146,12 +146,12 @@ AmazonEC2.prototype = {
    */
   associate_route_table: function(subnet_id,route_table_id,opt){
     var payload = {};
-    param.subnet_id = subnet_id;
-    param.route_table_id = route_table_id;
+    payload.subnet_id = subnet_id;
+    payload.route_table_id = route_table_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AssociateRouteTable", payload );
-    return resposne;
+    var response = this.request("AssociateRouteTable", payload );
+    return response;
   }, 
   /**
    * Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC.
@@ -167,12 +167,12 @@ AmazonEC2.prototype = {
    */
   attach_internet_gateway: function(internet_gateway_id,vpc_id,opt){
     var payload = {};
-    param.internet_gateway_id = internet_gateway_id;
-    param.vpc_id = vpc_id;
+    payload.internet_gateway_id = internet_gateway_id;
+    payload.vpc_id = vpc_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AttachInternetGateway", payload );
-    return resposne;
+    var response = this.request("AttachInternetGateway", payload );
+    return response;
   }, 
   /**
    * 
@@ -187,13 +187,13 @@ AmazonEC2.prototype = {
    */
   attach_network_interface: function(network_interface_id,instance_id,device_index,opt){
     var payload = {};
-    param.network_interface_id = network_interface_id;
-    param.instance_id = instance_id;
-    param.device_index = device_index;
+    payload.network_interface_id = network_interface_id;
+    payload.instance_id = instance_id;
+    payload.device_index = device_index;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AttachNetworkInterface", payload );
-    return resposne;
+    var response = this.request("AttachNetworkInterface", payload );
+    return response;
   }, 
   /**
    * Attach a previously created volume to a running instance.
@@ -208,13 +208,13 @@ AmazonEC2.prototype = {
    */
   attach_volume: function(volume_id,instance_id,device,opt){
     var payload = {};
-    param.volume_id = volume_id;
-    param.instance_id = instance_id;
-    param.device = device;
+    payload.volume_id = volume_id;
+    payload.instance_id = instance_id;
+    payload.device = device;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AttachVolume", payload );
-    return resposne;
+    var response = this.request("AttachVolume", payload );
+    return response;
   }, 
   /**
    * Attaches a VPN gateway to a VPC. This is the last step required to get your VPC fully connected
@@ -230,12 +230,12 @@ AmazonEC2.prototype = {
    */
   attach_vpn_gateway: function(vpn_gateway_id,vpc_id,opt){
     var payload = {};
-    param.vpn_gateway_id = vpn_gateway_id;
-    param.vpc_id = vpc_id;
+    payload.vpn_gateway_id = vpn_gateway_id;
+    payload.vpc_id = vpc_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AttachVpnGateway", payload );
-    return resposne;
+    var response = this.request("AttachVpnGateway", payload );
+    return response;
   }, 
   /**
    * This action applies only to security groups in a VPC; it's not supported for EC2 security
@@ -280,11 +280,11 @@ AmazonEC2.prototype = {
    */
   authorize_security_group_egress: function(group_id,opt){
     var payload = {};
-    param.group_id = group_id;
+    payload.group_id = group_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AuthorizeSecurityGroupEgress", payload );
-    return resposne;
+    var response = this.request("AuthorizeSecurityGroupEgress", payload );
+    return response;
   }, 
   /**
    * The AuthorizeSecurityGroupIngress operation adds permissions to a security group.
@@ -323,8 +323,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AuthorizeSecurityGroupIngress", payload );
-    return resposne;
+    var response = this.request("AuthorizeSecurityGroupIngress", payload );
+    return response;
   }, 
   /**
    * The BundleInstance operation request that an instance is bundled the next time it boots. The
@@ -345,12 +345,12 @@ AmazonEC2.prototype = {
    */
   bundle_instance: function(instance_id,policy,opt){
     var payload = {};
-    param.instance_id = instance_id;
-    param.policy = policy;
+    payload.instance_id = instance_id;
+    payload.policy = policy;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"BundleInstance", payload );
-    return resposne;
+    var response = this.request("BundleInstance", payload );
+    return response;
   }, 
   /**
    * CancelBundleTask operation cancels a pending or in-progress bundling task. This is an
@@ -366,11 +366,11 @@ AmazonEC2.prototype = {
    */
   cancel_bundle_task: function(bundle_id,opt){
     var payload = {};
-    param.bundle_id = bundle_id;
+    payload.bundle_id = bundle_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CancelBundleTask", payload );
-    return resposne;
+    var response = this.request("CancelBundleTask", payload );
+    return response;
   }, 
   /**
    * 
@@ -384,11 +384,11 @@ AmazonEC2.prototype = {
    */
   cancel_conversion_task: function(conversion_task_id,opt){
     var payload = {};
-    param.conversion_task_id = conversion_task_id;
+    payload.conversion_task_id = conversion_task_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CancelConversionTask", payload );
-    return resposne;
+    var response = this.request("CancelConversionTask", payload );
+    return response;
   }, 
   /**
    * 
@@ -401,11 +401,11 @@ AmazonEC2.prototype = {
    */
   cancel_export_task: function(export_task_id,opt){
     var payload = {};
-    param.export_task_id = export_task_id;
+    payload.export_task_id = export_task_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CancelExportTask", payload );
-    return resposne;
+    var response = this.request("CancelExportTask", payload );
+    return response;
   }, 
   /**
    * Cancels one or more Spot Instance requests.
@@ -428,11 +428,11 @@ AmazonEC2.prototype = {
    */
   cancel_spot_instance_requests: function(spot_instance_request_id,opt){
     var payload = {};
-    param.spot_instance_request_id = spot_instance_request_id;
+    payload.spot_instance_request_id = spot_instance_request_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CancelSpotInstanceRequests", payload );
-    return resposne;
+    var response = this.request("CancelSpotInstanceRequests", payload );
+    return response;
   }, 
   /**
    * The ConfirmProductInstance operation returns true if the specified product code is attached to
@@ -452,12 +452,12 @@ AmazonEC2.prototype = {
    */
   confirm_product_instance: function(product_code,instance_id,opt){
     var payload = {};
-    param.product_code = product_code;
-    param.instance_id = instance_id;
+    payload.product_code = product_code;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ConfirmProductInstance", payload );
-    return resposne;
+    var response = this.request("ConfirmProductInstance", payload );
+    return response;
   }, 
   /**
    * Provides information to AWS about your customer gateway device. The customer gateway is the
@@ -486,13 +486,13 @@ AmazonEC2.prototype = {
    */
   create_customer_gateway: function(type,ip_address,bgp_asn,opt){
     var payload = {};
-    param.type = type;
-    param.ip_address = ip_address;
-    param.bgp_asn = bgp_asn;
+    payload.type = type;
+    payload.ip_address = ip_address;
+    payload.bgp_asn = bgp_asn;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateCustomerGateway", payload );
-    return resposne;
+    var response = this.request("CreateCustomerGateway", payload );
+    return response;
   }, 
   /**
    * Creates a set of DHCP options that you can then associate with one or more VPCs, causing all
@@ -514,11 +514,11 @@ AmazonEC2.prototype = {
    */
   create_dhcp_options: function(dhcp_configuration,opt){
     var payload = {};
-    param.dhcp_configuration = dhcp_configuration;
+    payload.dhcp_configuration = dhcp_configuration;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDhcpOptions", payload );
-    return resposne;
+    var response = this.request("CreateDhcpOptions", payload );
+    return response;
   }, 
   /**
    * Creates an Amazon EBS-backed AMI from a "running" or "stopped" instance. AMIs that use an
@@ -552,12 +552,12 @@ AmazonEC2.prototype = {
    */
   create_image: function(instance_id,name,opt){
     var payload = {};
-    param.instance_id = instance_id;
-    param.name = name;
+    payload.instance_id = instance_id;
+    payload.name = name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateImage", payload );
-    return resposne;
+    var response = this.request("CreateImage", payload );
+    return response;
   }, 
   /**
    * 
@@ -580,11 +580,11 @@ AmazonEC2.prototype = {
    */
   create_instance_export_task: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateInstanceExportTask", payload );
-    return resposne;
+    var response = this.request("CreateInstanceExportTask", payload );
+    return response;
   }, 
   /**
    * Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you
@@ -600,8 +600,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateInternetGateway", payload );
-    return resposne;
+    var response = this.request("CreateInternetGateway", payload );
+    return response;
   }, 
   /**
    * The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a unique ID that
@@ -616,11 +616,11 @@ AmazonEC2.prototype = {
    */
   create_key_pair: function(key_name,opt){
     var payload = {};
-    param.key_name = key_name;
+    payload.key_name = key_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateKeyPair", payload );
-    return resposne;
+    var response = this.request("CreateKeyPair", payload );
+    return response;
   }, 
   /**
    * Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top
@@ -635,11 +635,11 @@ AmazonEC2.prototype = {
    */
   create_network_acl: function(vpc_id,opt){
     var payload = {};
-    param.vpc_id = vpc_id;
+    payload.vpc_id = vpc_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateNetworkAcl", payload );
-    return resposne;
+    var response = this.request("CreateNetworkAcl", payload );
+    return response;
   }, 
   /**
    * Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL
@@ -682,16 +682,16 @@ AmazonEC2.prototype = {
    */
   create_network_acl_entry: function(network_acl_id,rule_number,protocol,rule_action,egress,cidr_block,opt){
     var payload = {};
-    param.network_acl_id = network_acl_id;
-    param.rule_number = rule_number;
-    param.protocol = protocol;
-    param.rule_action = rule_action;
-    param.egress = egress;
-    param.cidr_block = cidr_block;
+    payload.network_acl_id = network_acl_id;
+    payload.rule_number = rule_number;
+    payload.protocol = protocol;
+    payload.rule_action = rule_action;
+    payload.egress = egress;
+    payload.cidr_block = cidr_block;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateNetworkAclEntry", payload );
-    return resposne;
+    var response = this.request("CreateNetworkAclEntry", payload );
+    return response;
   }, 
   /**
    * 
@@ -714,11 +714,11 @@ AmazonEC2.prototype = {
    */
   create_network_interface: function(subnet_id,opt){
     var payload = {};
-    param.subnet_id = subnet_id;
+    payload.subnet_id = subnet_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateNetworkInterface", payload );
-    return resposne;
+    var response = this.request("CreateNetworkInterface", payload );
+    return response;
   }, 
   /**
    * Creates a <code>PlacementGroup</code> into which multiple Amazon EC2 instances can be launched.
@@ -733,12 +733,12 @@ AmazonEC2.prototype = {
    */
   create_placement_group: function(group_name,strategy,opt){
     var payload = {};
-    param.group_name = group_name;
-    param.strategy = strategy;
+    payload.group_name = group_name;
+    payload.strategy = strategy;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreatePlacementGroup", payload );
-    return resposne;
+    var response = this.request("CreatePlacementGroup", payload );
+    return response;
   }, 
   /**
    * Creates a new route in a route table within a VPC. The route's target can be either a gateway
@@ -772,12 +772,12 @@ AmazonEC2.prototype = {
    */
   create_route: function(route_table_id,destination_cidr_block,opt){
     var payload = {};
-    param.route_table_id = route_table_id;
-    param.destination_cidr_block = destination_cidr_block;
+    payload.route_table_id = route_table_id;
+    payload.destination_cidr_block = destination_cidr_block;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateRoute", payload );
-    return resposne;
+    var response = this.request("CreateRoute", payload );
+    return response;
   }, 
   /**
    * Creates a new route table within a VPC. After you create a new route table, you can add routes
@@ -793,11 +793,11 @@ AmazonEC2.prototype = {
    */
   create_route_table: function(vpc_id,opt){
     var payload = {};
-    param.vpc_id = vpc_id;
+    payload.vpc_id = vpc_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateRouteTable", payload );
-    return resposne;
+    var response = this.request("CreateRouteTable", payload );
+    return response;
   }, 
   /**
    * The CreateSecurityGroup operation creates a new security group.
@@ -819,12 +819,12 @@ AmazonEC2.prototype = {
    */
   create_security_group: function(group_name,group_description,opt){
     var payload = {};
-    param.group_name = group_name;
-    param.group_description = group_description;
+    payload.group_name = group_name;
+    payload.group_description = group_description;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateSecurityGroup", payload );
-    return resposne;
+    var response = this.request("CreateSecurityGroup", payload );
+    return response;
   }, 
   /**
    * Create a snapshot of the volume identified by volume ID. A volume does not have to be detached
@@ -847,11 +847,11 @@ AmazonEC2.prototype = {
    */
   create_snapshot: function(volume_id,opt){
     var payload = {};
-    param.volume_id = volume_id;
+    payload.volume_id = volume_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateSnapshot", payload );
-    return resposne;
+    var response = this.request("CreateSnapshot", payload );
+    return response;
   }, 
   /**
    * Creates the data feed for Spot Instances, enabling you to view Spot Instance usage logs. You
@@ -872,11 +872,11 @@ AmazonEC2.prototype = {
    */
   create_spot_datafeed_subscription: function(bucket,opt){
     var payload = {};
-    param.bucket = bucket;
+    payload.bucket = bucket;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateSpotDatafeedSubscription", payload );
-    return resposne;
+    var response = this.request("CreateSpotDatafeedSubscription", payload );
+    return response;
   }, 
   /**
    * Creates a subnet in an existing VPC. You can create up to 20 subnets in a VPC. If you add more
@@ -903,12 +903,12 @@ AmazonEC2.prototype = {
    */
   create_subnet: function(vpc_id,cidr_block,opt){
     var payload = {};
-    param.vpc_id = vpc_id;
-    param.cidr_block = cidr_block;
+    payload.vpc_id = vpc_id;
+    payload.cidr_block = cidr_block;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateSubnet", payload );
-    return resposne;
+    var response = this.request("CreateSubnet", payload );
+    return response;
   }, 
   /**
    * Adds or overwrites tags for the specified resources. Each resource can have a maximum of 10
@@ -928,12 +928,12 @@ AmazonEC2.prototype = {
    */
   create_tags: function(resource_id,tag,opt){
     var payload = {};
-    param.resource_id = resource_id;
-    param.tag = tag;
+    payload.resource_id = resource_id;
+    payload.tag = tag;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateTags", payload );
-    return resposne;
+    var response = this.request("CreateTags", payload );
+    return response;
   }, 
   /**
    * Initializes an empty volume of a given size.
@@ -950,11 +950,11 @@ AmazonEC2.prototype = {
    */
   create_volume: function(availability_zone,opt){
     var payload = {};
-    param.availability_zone = availability_zone;
+    payload.availability_zone = availability_zone;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateVolume", payload );
-    return resposne;
+    var response = this.request("CreateVolume", payload );
+    return response;
   }, 
   /**
    * Creates a VPC with the CIDR block you specify. The smallest VPC you can create uses a
@@ -974,11 +974,11 @@ AmazonEC2.prototype = {
    */
   create_vpc: function(cidr_block,opt){
     var payload = {};
-    param.cidr_block = cidr_block;
+    payload.cidr_block = cidr_block;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateVpc", payload );
-    return resposne;
+    var response = this.request("CreateVpc", payload );
+    return response;
   }, 
   /**
    * Creates a new VPN connection between an existing VPN gateway and customer gateway. The only
@@ -1009,13 +1009,13 @@ AmazonEC2.prototype = {
    */
   create_vpn_connection: function(type,customer_gateway_id,vpn_gateway_id,opt){
     var payload = {};
-    param.type = type;
-    param.customer_gateway_id = customer_gateway_id;
-    param.vpn_gateway_id = vpn_gateway_id;
+    payload.type = type;
+    payload.customer_gateway_id = customer_gateway_id;
+    payload.vpn_gateway_id = vpn_gateway_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateVpnConnection", payload );
-    return resposne;
+    var response = this.request("CreateVpnConnection", payload );
+    return response;
   }, 
   /**
    * Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for your VPN connection. You
@@ -1030,11 +1030,11 @@ AmazonEC2.prototype = {
    */
   create_vpn_gateway: function(type,opt){
     var payload = {};
-    param.type = type;
+    payload.type = type;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateVpnGateway", payload );
-    return resposne;
+    var response = this.request("CreateVpnGateway", payload );
+    return response;
   }, 
   /**
    * Deactivates a specific number of licenses. Deactivations can be done against a specific license
@@ -1049,12 +1049,12 @@ AmazonEC2.prototype = {
    */
   deactivate_license: function(license_id,capacity,opt){
     var payload = {};
-    param.license_id = license_id;
-    param.capacity = capacity;
+    payload.license_id = license_id;
+    payload.capacity = capacity;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeactivateLicense", payload );
-    return resposne;
+    var response = this.request("DeactivateLicense", payload );
+    return response;
   }, 
   /**
    * Deletes a customer gateway. You must delete the VPN connection before deleting the customer
@@ -1072,11 +1072,11 @@ AmazonEC2.prototype = {
    */
   delete_customer_gateway: function(customer_gateway_id,opt){
     var payload = {};
-    param.customer_gateway_id = customer_gateway_id;
+    payload.customer_gateway_id = customer_gateway_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteCustomerGateway", payload );
-    return resposne;
+    var response = this.request("DeleteCustomerGateway", payload );
+    return response;
   }, 
   /**
    * Deletes a set of DHCP options that you specify. Amazon VPC returns an error if the set of
@@ -1091,11 +1091,11 @@ AmazonEC2.prototype = {
    */
   delete_dhcp_options: function(dhcp_options_id,opt){
     var payload = {};
-    param.dhcp_options_id = dhcp_options_id;
+    payload.dhcp_options_id = dhcp_options_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDhcpOptions", payload );
-    return resposne;
+    var response = this.request("DeleteDhcpOptions", payload );
+    return response;
   }, 
   /**
    * Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC.
@@ -1110,11 +1110,11 @@ AmazonEC2.prototype = {
    */
   delete_internet_gateway: function(internet_gateway_id,opt){
     var payload = {};
-    param.internet_gateway_id = internet_gateway_id;
+    payload.internet_gateway_id = internet_gateway_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteInternetGateway", payload );
-    return resposne;
+    var response = this.request("DeleteInternetGateway", payload );
+    return response;
   }, 
   /**
    * The DeleteKeyPair operation deletes a key pair.
@@ -1127,11 +1127,11 @@ AmazonEC2.prototype = {
    */
   delete_key_pair: function(key_name,opt){
     var payload = {};
-    param.key_name = key_name;
+    payload.key_name = key_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteKeyPair", payload );
-    return resposne;
+    var response = this.request("DeleteKeyPair", payload );
+    return response;
   }, 
   /**
    * Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it. You
@@ -1146,11 +1146,11 @@ AmazonEC2.prototype = {
    */
   delete_network_acl: function(network_acl_id,opt){
     var payload = {};
-    param.network_acl_id = network_acl_id;
+    payload.network_acl_id = network_acl_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteNetworkAcl", payload );
-    return resposne;
+    var response = this.request("DeleteNetworkAcl", payload );
+    return response;
   }, 
   /**
    * Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about
@@ -1166,13 +1166,13 @@ AmazonEC2.prototype = {
    */
   delete_network_acl_entry: function(network_acl_id,rule_number,egress,opt){
     var payload = {};
-    param.network_acl_id = network_acl_id;
-    param.rule_number = rule_number;
-    param.egress = egress;
+    payload.network_acl_id = network_acl_id;
+    payload.rule_number = rule_number;
+    payload.egress = egress;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteNetworkAclEntry", payload );
-    return resposne;
+    var response = this.request("DeleteNetworkAclEntry", payload );
+    return response;
   }, 
   /**
    * 
@@ -1185,11 +1185,11 @@ AmazonEC2.prototype = {
    */
   delete_network_interface: function(network_interface_id,opt){
     var payload = {};
-    param.network_interface_id = network_interface_id;
+    payload.network_interface_id = network_interface_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteNetworkInterface", payload );
-    return resposne;
+    var response = this.request("DeleteNetworkInterface", payload );
+    return response;
   }, 
   /**
    * Deletes a <code>PlacementGroup</code> from a user's account. Terminate all Amazon EC2 instances
@@ -1203,11 +1203,11 @@ AmazonEC2.prototype = {
    */
   delete_placement_group: function(group_name,opt){
     var payload = {};
-    param.group_name = group_name;
+    payload.group_name = group_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeletePlacementGroup", payload );
-    return resposne;
+    var response = this.request("DeletePlacementGroup", payload );
+    return response;
   }, 
   /**
    * Deletes a route from a route table in a VPC. For more information about route tables, go to
@@ -1224,12 +1224,12 @@ AmazonEC2.prototype = {
    */
   delete_route: function(route_table_id,destination_cidr_block,opt){
     var payload = {};
-    param.route_table_id = route_table_id;
-    param.destination_cidr_block = destination_cidr_block;
+    payload.route_table_id = route_table_id;
+    payload.destination_cidr_block = destination_cidr_block;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteRoute", payload );
-    return resposne;
+    var response = this.request("DeleteRoute", payload );
+    return response;
   }, 
   /**
    * Deletes a route table from a VPC. The route table must not be associated with a subnet. You
@@ -1245,11 +1245,11 @@ AmazonEC2.prototype = {
    */
   delete_route_table: function(route_table_id,opt){
     var payload = {};
-    param.route_table_id = route_table_id;
+    payload.route_table_id = route_table_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteRouteTable", payload );
-    return resposne;
+    var response = this.request("DeleteRouteTable", payload );
+    return response;
   }, 
   /**
    * The DeleteSecurityGroup operation deletes a security group.
@@ -1272,8 +1272,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteSecurityGroup", payload );
-    return resposne;
+    var response = this.request("DeleteSecurityGroup", payload );
+    return response;
   }, 
   /**
    * Deletes the snapshot identified by <code>snapshotId</code>.
@@ -1286,11 +1286,11 @@ AmazonEC2.prototype = {
    */
   delete_snapshot: function(snapshot_id,opt){
     var payload = {};
-    param.snapshot_id = snapshot_id;
+    payload.snapshot_id = snapshot_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteSnapshot", payload );
-    return resposne;
+    var response = this.request("DeleteSnapshot", payload );
+    return response;
   }, 
   /**
    * Deletes the data feed for Spot Instances.
@@ -1310,8 +1310,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteSpotDatafeedSubscription", payload );
-    return resposne;
+    var response = this.request("DeleteSpotDatafeedSubscription", payload );
+    return response;
   }, 
   /**
    * Deletes a subnet from a VPC. You must terminate all running instances in the subnet before
@@ -1325,11 +1325,11 @@ AmazonEC2.prototype = {
    */
   delete_subnet: function(subnet_id,opt){
     var payload = {};
-    param.subnet_id = subnet_id;
+    payload.subnet_id = subnet_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteSubnet", payload );
-    return resposne;
+    var response = this.request("DeleteSubnet", payload );
+    return response;
   }, 
   /**
    * Deletes tags from the specified Amazon EC2 resources.
@@ -1348,11 +1348,11 @@ AmazonEC2.prototype = {
    */
   delete_tags: function(resource_id,opt){
     var payload = {};
-    param.resource_id = resource_id;
+    payload.resource_id = resource_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteTags", payload );
-    return resposne;
+    var response = this.request("DeleteTags", payload );
+    return response;
   }, 
   /**
    * Deletes a previously created volume. Once successfully deleted, a new volume can be created
@@ -1366,11 +1366,11 @@ AmazonEC2.prototype = {
    */
   delete_volume: function(volume_id,opt){
     var payload = {};
-    param.volume_id = volume_id;
+    payload.volume_id = volume_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteVolume", payload );
-    return resposne;
+    var response = this.request("DeleteVolume", payload );
+    return response;
   }, 
   /**
    * Deletes a VPC. You must detach or delete all gateways or other objects that are dependent on
@@ -1385,11 +1385,11 @@ AmazonEC2.prototype = {
    */
   delete_vpc: function(vpc_id,opt){
     var payload = {};
-    param.vpc_id = vpc_id;
+    payload.vpc_id = vpc_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteVpc", payload );
-    return resposne;
+    var response = this.request("DeleteVpc", payload );
+    return response;
   }, 
   /**
    * Deletes a VPN connection. Use this if you want to delete a VPC and all its associated
@@ -1410,11 +1410,11 @@ AmazonEC2.prototype = {
    */
   delete_vpn_connection: function(vpn_connection_id,opt){
     var payload = {};
-    param.vpn_connection_id = vpn_connection_id;
+    payload.vpn_connection_id = vpn_connection_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteVpnConnection", payload );
-    return resposne;
+    var response = this.request("DeleteVpnConnection", payload );
+    return response;
   }, 
   /**
    * Deletes a VPN gateway. Use this when you want to delete a VPC and all its associated components
@@ -1431,11 +1431,11 @@ AmazonEC2.prototype = {
    */
   delete_vpn_gateway: function(vpn_gateway_id,opt){
     var payload = {};
-    param.vpn_gateway_id = vpn_gateway_id;
+    payload.vpn_gateway_id = vpn_gateway_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteVpnGateway", payload );
-    return resposne;
+    var response = this.request("DeleteVpnGateway", payload );
+    return response;
   }, 
   /**
    * The DeregisterImage operation deregisters an AMI. Once deregistered, instances of the AMI can
@@ -1449,11 +1449,11 @@ AmazonEC2.prototype = {
    */
   deregister_image: function(image_id,opt){
     var payload = {};
-    param.image_id = image_id;
+    payload.image_id = image_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeregisterImage", payload );
-    return resposne;
+    var response = this.request("DeregisterImage", payload );
+    return response;
   }, 
   /**
    * The DescribeAddresses operation lists elastic IP addresses assigned to your account.
@@ -1475,8 +1475,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAddresses", payload );
-    return resposne;
+    var response = this.request("DescribeAddresses", payload );
+    return response;
   }, 
   /**
    * The DescribeAvailabilityZones operation describes availability zones that are currently
@@ -1502,8 +1502,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeAvailabilityZones", payload );
-    return resposne;
+    var response = this.request("DescribeAvailabilityZones", payload );
+    return response;
   }, 
   /**
    * The DescribeBundleTasks operation describes in-progress and recent bundle tasks. Complete and
@@ -1526,8 +1526,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeBundleTasks", payload );
-    return resposne;
+    var response = this.request("DescribeBundleTasks", payload );
+    return response;
   }, 
   /**
    * 
@@ -1548,8 +1548,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeConversionTasks", payload );
-    return resposne;
+    var response = this.request("DescribeConversionTasks", payload );
+    return response;
   }, 
   /**
    * Gives you information about your customer gateways. You can filter the results to return
@@ -1577,8 +1577,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeCustomerGateways", payload );
-    return resposne;
+    var response = this.request("DescribeCustomerGateways", payload );
+    return response;
   }, 
   /**
    * Gives you information about one or more sets of DHCP options. You can specify one or more DHCP
@@ -1606,8 +1606,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeDhcpOptions", payload );
-    return resposne;
+    var response = this.request("DescribeDhcpOptions", payload );
+    return response;
   }, 
   /**
    * 
@@ -1622,8 +1622,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeExportTasks", payload );
-    return resposne;
+    var response = this.request("DescribeExportTasks", payload );
+    return response;
   }, 
   /**
    * The DescribeImageAttribute operation returns information about an attribute of an AMI. Only one
@@ -1638,12 +1638,12 @@ AmazonEC2.prototype = {
    */
   describe_image_attribute: function(image_id,attribute,opt){
     var payload = {};
-    param.image_id = image_id;
-    param.attribute = attribute;
+    payload.image_id = image_id;
+    payload.attribute = attribute;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeImageAttribute", payload );
-    return resposne;
+    var response = this.request("DescribeImageAttribute", payload );
+    return response;
   }, 
   /**
    * The DescribeImages operation returns information about AMIs, AKIs, and ARIs available to the
@@ -1702,8 +1702,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeImages", payload );
-    return resposne;
+    var response = this.request("DescribeImages", payload );
+    return response;
   }, 
   /**
    * Returns information about an attribute of an instance. Only one attribute can be specified per
@@ -1718,12 +1718,12 @@ AmazonEC2.prototype = {
    */
   describe_instance_attribute: function(instance_id,attribute,opt){
     var payload = {};
-    param.instance_id = instance_id;
-    param.attribute = attribute;
+    payload.instance_id = instance_id;
+    payload.attribute = attribute;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeInstanceAttribute", payload );
-    return resposne;
+    var response = this.request("DescribeInstanceAttribute", payload );
+    return response;
   }, 
   /**
    * Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status
@@ -1794,8 +1794,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeInstanceStatus", payload );
-    return resposne;
+    var response = this.request("DescribeInstanceStatus", payload );
+    return response;
   }, 
   /**
    * The DescribeInstances operation returns information about instances that you own.
@@ -1824,8 +1824,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeInstances", payload );
-    return resposne;
+    var response = this.request("DescribeInstances", payload );
+    return response;
   }, 
   /**
    * Gives you information about your Internet gateways. You can filter the results to return
@@ -1859,8 +1859,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeInternetGateways", payload );
-    return resposne;
+    var response = this.request("DescribeInternetGateways", payload );
+    return response;
   }, 
   /**
    * The DescribeKeyPairs operation returns information about key pairs available to you. If you
@@ -1883,8 +1883,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeKeyPairs", payload );
-    return resposne;
+    var response = this.request("DescribeKeyPairs", payload );
+    return response;
   }, 
   /**
    * Provides details of a user's registered licenses. Zero or more IDs may be specified on the
@@ -1906,8 +1906,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeLicenses", payload );
-    return resposne;
+    var response = this.request("DescribeLicenses", payload );
+    return response;
   }, 
   /**
    * Gives you information about the network ACLs in your VPC. You can filter the results to return
@@ -1941,8 +1941,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeNetworkAcls", payload );
-    return resposne;
+    var response = this.request("DescribeNetworkAcls", payload );
+    return response;
   }, 
   /**
    * 
@@ -1959,11 +1959,11 @@ AmazonEC2.prototype = {
    */
   describe_network_interface_attribute: function(network_interface_id,opt){
     var payload = {};
-    param.network_interface_id = network_interface_id;
+    payload.network_interface_id = network_interface_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeNetworkInterfaceAttribute", payload );
-    return resposne;
+    var response = this.request("DescribeNetworkInterfaceAttribute", payload );
+    return response;
   }, 
   /**
    * 
@@ -1984,8 +1984,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeNetworkInterfaces", payload );
-    return resposne;
+    var response = this.request("DescribeNetworkInterfaces", payload );
+    return response;
   }, 
   /**
    * Returns information about one or more <code>PlacementGroup</code> instances in a user's
@@ -2007,8 +2007,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribePlacementGroups", payload );
-    return resposne;
+    var response = this.request("DescribePlacementGroups", payload );
+    return response;
   }, 
   /**
    * The DescribeRegions operation describes regions zones that are currently available to the
@@ -2030,8 +2030,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeRegions", payload );
-    return resposne;
+    var response = this.request("DescribeRegions", payload );
+    return response;
   }, 
   /**
    * The DescribeReservedInstances operation describes Reserved Instances that were purchased for
@@ -2054,8 +2054,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeReservedInstances", payload );
-    return resposne;
+    var response = this.request("DescribeReservedInstances", payload );
+    return response;
   }, 
   /**
    * The DescribeReservedInstancesOfferings operation describes Reserved Instance offerings that are
@@ -2084,8 +2084,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeReservedInstancesOfferings", payload );
-    return resposne;
+    var response = this.request("DescribeReservedInstancesOfferings", payload );
+    return response;
   }, 
   /**
    * Gives you information about your route tables. You can filter the results to return information
@@ -2120,8 +2120,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeRouteTables", payload );
-    return resposne;
+    var response = this.request("DescribeRouteTables", payload );
+    return response;
   }, 
   /**
    * The DescribeSecurityGroups operation returns information about security groups that you own.
@@ -2147,8 +2147,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSecurityGroups", payload );
-    return resposne;
+    var response = this.request("DescribeSecurityGroups", payload );
+    return response;
   }, 
   /**
    * Returns information about an attribute of a snapshot. Only one attribute can be specified per
@@ -2163,12 +2163,12 @@ AmazonEC2.prototype = {
    */
   describe_snapshot_attribute: function(snapshot_id,attribute,opt){
     var payload = {};
-    param.snapshot_id = snapshot_id;
-    param.attribute = attribute;
+    payload.snapshot_id = snapshot_id;
+    payload.attribute = attribute;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSnapshotAttribute", payload );
-    return resposne;
+    var response = this.request("DescribeSnapshotAttribute", payload );
+    return response;
   }, 
   /**
    * Returns information about the Amazon EBS snapshots available to you. Snapshots available to you
@@ -2194,8 +2194,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSnapshots", payload );
-    return resposne;
+    var response = this.request("DescribeSnapshots", payload );
+    return response;
   }, 
   /**
    * Describes the data feed for Spot Instances.
@@ -2215,8 +2215,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSpotDatafeedSubscription", payload );
-    return resposne;
+    var response = this.request("DescribeSpotDatafeedSubscription", payload );
+    return response;
   }, 
   /**
    * Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your
@@ -2261,8 +2261,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSpotInstanceRequests", payload );
-    return resposne;
+    var response = this.request("DescribeSpotInstanceRequests", payload );
+    return response;
   }, 
   /**
    * Describes the Spot Price history.
@@ -2299,8 +2299,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSpotPriceHistory", payload );
-    return resposne;
+    var response = this.request("DescribeSpotPriceHistory", payload );
+    return response;
   }, 
   /**
    * Gives you information about your subnets. You can filter the results to return information only
@@ -2330,8 +2330,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeSubnets", payload );
-    return resposne;
+    var response = this.request("DescribeSubnets", payload );
+    return response;
   }, 
   /**
    * Describes the tags for the specified resources.
@@ -2351,8 +2351,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeTags", payload );
-    return resposne;
+    var response = this.request("DescribeTags", payload );
+    return response;
   }, 
   /**
    * 
@@ -2366,11 +2366,11 @@ AmazonEC2.prototype = {
    */
   describe_volume_attribute: function(volume_id,opt){
     var payload = {};
-    param.volume_id = volume_id;
+    payload.volume_id = volume_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeVolumeAttribute", payload );
-    return resposne;
+    var response = this.request("DescribeVolumeAttribute", payload );
+    return response;
   }, 
   /**
    * Describes the status of a volume.
@@ -2393,8 +2393,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeVolumeStatus", payload );
-    return resposne;
+    var response = this.request("DescribeVolumeStatus", payload );
+    return response;
   }, 
   /**
    * Describes the status of the indicated volume or, in lieu of any specified, all volumes
@@ -2416,8 +2416,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeVolumes", payload );
-    return resposne;
+    var response = this.request("DescribeVolumes", payload );
+    return response;
   }, 
   /**
    * Gives you information about your VPCs. You can filter the results to return information only
@@ -2447,8 +2447,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeVpcs", payload );
-    return resposne;
+    var response = this.request("DescribeVpcs", payload );
+    return response;
   }, 
   /**
    * Gives you information about your VPN connections.
@@ -2481,8 +2481,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeVpnConnections", payload );
-    return resposne;
+    var response = this.request("DescribeVpnConnections", payload );
+    return response;
   }, 
   /**
    * Gives you information about your VPN gateways. You can filter the results to return information
@@ -2512,8 +2512,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeVpnGateways", payload );
-    return resposne;
+    var response = this.request("DescribeVpnGateways", payload );
+    return response;
   }, 
   /**
    * Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the
@@ -2532,12 +2532,12 @@ AmazonEC2.prototype = {
    */
   detach_internet_gateway: function(internet_gateway_id,vpc_id,opt){
     var payload = {};
-    param.internet_gateway_id = internet_gateway_id;
-    param.vpc_id = vpc_id;
+    payload.internet_gateway_id = internet_gateway_id;
+    payload.vpc_id = vpc_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DetachInternetGateway", payload );
-    return resposne;
+    var response = this.request("DetachInternetGateway", payload );
+    return response;
   }, 
   /**
    * 
@@ -2551,11 +2551,11 @@ AmazonEC2.prototype = {
    */
   detach_network_interface: function(attachment_id,opt){
     var payload = {};
-    param.attachment_id = attachment_id;
+    payload.attachment_id = attachment_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DetachNetworkInterface", payload );
-    return resposne;
+    var response = this.request("DetachNetworkInterface", payload );
+    return response;
   }, 
   /**
    * Detach a previously attached volume from a running instance.
@@ -2571,11 +2571,11 @@ AmazonEC2.prototype = {
    */
   detach_volume: function(volume_id,opt){
     var payload = {};
-    param.volume_id = volume_id;
+    payload.volume_id = volume_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DetachVolume", payload );
-    return resposne;
+    var response = this.request("DetachVolume", payload );
+    return response;
   }, 
   /**
    * Detaches a VPN gateway from a VPC. You do this if you're planning to turn off the VPC and not
@@ -2594,12 +2594,12 @@ AmazonEC2.prototype = {
    */
   detach_vpn_gateway: function(vpn_gateway_id,vpc_id,opt){
     var payload = {};
-    param.vpn_gateway_id = vpn_gateway_id;
-    param.vpc_id = vpc_id;
+    payload.vpn_gateway_id = vpn_gateway_id;
+    payload.vpc_id = vpc_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DetachVpnGateway", payload );
-    return resposne;
+    var response = this.request("DetachVpnGateway", payload );
+    return response;
   }, 
   /**
    * The DisassociateAddress operation disassociates the specified elastic IP address from the
@@ -2615,11 +2615,11 @@ AmazonEC2.prototype = {
    */
   disassociate_address: function(public_ip,opt){
     var payload = {};
-    param.public_ip = public_ip;
+    payload.public_ip = public_ip;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DisassociateAddress", payload );
-    return resposne;
+    var response = this.request("DisassociateAddress", payload );
+    return response;
   }, 
   /**
    * Disassociates a subnet from a route table.
@@ -2638,11 +2638,11 @@ AmazonEC2.prototype = {
    */
   disassociate_route_table: function(association_id,opt){
     var payload = {};
-    param.association_id = association_id;
+    payload.association_id = association_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DisassociateRouteTable", payload );
-    return resposne;
+    var response = this.request("DisassociateRouteTable", payload );
+    return response;
   }, 
   /**
    * Enable IO on the volume after an event has occured.
@@ -2655,11 +2655,11 @@ AmazonEC2.prototype = {
    */
   enable_volume_io: function(volume_id,opt){
     var payload = {};
-    param.volume_id = volume_id;
+    payload.volume_id = volume_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"EnableVolumeIo", payload );
-    return resposne;
+    var response = this.request("EnableVolumeIo", payload );
+    return response;
   }, 
   /**
    * The GetConsoleOutput operation retrieves console output for the specified instance.
@@ -2676,11 +2676,11 @@ AmazonEC2.prototype = {
    */
   get_console_output: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetConsoleOutput", payload );
-    return resposne;
+    var response = this.request("GetConsoleOutput", payload );
+    return response;
   }, 
   /**
    * Retrieves the encrypted administrator password for the instances running Windows.
@@ -2698,11 +2698,11 @@ AmazonEC2.prototype = {
    */
   get_password_data: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetPasswordData", payload );
-    return resposne;
+    var response = this.request("GetPasswordData", payload );
+    return response;
   }, 
   /**
    * 
@@ -2770,11 +2770,11 @@ AmazonEC2.prototype = {
    */
   import_instance: function(platform,opt){
     var payload = {};
-    param.platform = platform;
+    payload.platform = platform;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ImportInstance", payload );
-    return resposne;
+    var response = this.request("ImportInstance", payload );
+    return response;
   }, 
   /**
    * Imports the public key from an RSA key pair created with a third-party tool. This operation differs
@@ -2801,12 +2801,12 @@ AmazonEC2.prototype = {
    */
   import_key_pair: function(key_name,public_key_material,opt){
     var payload = {};
-    param.key_name = key_name;
-    param.public_key_material = public_key_material;
+    payload.key_name = key_name;
+    payload.public_key_material = public_key_material;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ImportKeyPair", payload );
-    return resposne;
+    var response = this.request("ImportKeyPair", payload );
+    return response;
   }, 
   /**
    * 
@@ -2834,8 +2834,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ImportVolume", payload );
-    return resposne;
+    var response = this.request("ImportVolume", payload );
+    return response;
   }, 
   /**
    * The ModifyImageAttribute operation modifies an attribute of an AMI.
@@ -2871,11 +2871,11 @@ AmazonEC2.prototype = {
    */
   modify_image_attribute: function(image_id,opt){
     var payload = {};
-    param.image_id = image_id;
+    payload.image_id = image_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyImageAttribute", payload );
-    return resposne;
+    var response = this.request("ModifyImageAttribute", payload );
+    return response;
   }, 
   /**
    * Modifies an attribute of an instance.
@@ -2912,11 +2912,11 @@ AmazonEC2.prototype = {
    */
   modify_instance_attribute: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyInstanceAttribute", payload );
-    return resposne;
+    var response = this.request("ModifyInstanceAttribute", payload );
+    return response;
   }, 
   /**
    * 
@@ -2938,11 +2938,11 @@ AmazonEC2.prototype = {
    */
   modify_network_interface_attribute: function(network_interface_id,opt){
     var payload = {};
-    param.network_interface_id = network_interface_id;
+    payload.network_interface_id = network_interface_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyNetworkInterfaceAttribute", payload );
-    return resposne;
+    var response = this.request("ModifyNetworkInterfaceAttribute", payload );
+    return response;
   }, 
   /**
    * Adds or remove permission settings for the specified snapshot.
@@ -2975,11 +2975,11 @@ AmazonEC2.prototype = {
    */
   modify_snapshot_attribute: function(snapshot_id,opt){
     var payload = {};
-    param.snapshot_id = snapshot_id;
+    payload.snapshot_id = snapshot_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifySnapshotAttribute", payload );
-    return resposne;
+    var response = this.request("ModifySnapshotAttribute", payload );
+    return response;
   }, 
   /**
    * 
@@ -2993,11 +2993,11 @@ AmazonEC2.prototype = {
    */
   modify_volume_attribute: function(volume_id,opt){
     var payload = {};
-    param.volume_id = volume_id;
+    payload.volume_id = volume_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ModifyVolumeAttribute", payload );
-    return resposne;
+    var response = this.request("ModifyVolumeAttribute", payload );
+    return response;
   }, 
   /**
    * Enables monitoring for a running instance.
@@ -3010,11 +3010,11 @@ AmazonEC2.prototype = {
    */
   monitor_instances: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"MonitorInstances", payload );
-    return resposne;
+    var response = this.request("MonitorInstances", payload );
+    return response;
   }, 
   /**
    * The PurchaseReservedInstancesOffering operation purchases a Reserved Instance for use with your
@@ -3031,12 +3031,12 @@ AmazonEC2.prototype = {
    */
   purchase_reserved_instances_offering: function(reserved_instances_offering_id,instance_count,opt){
     var payload = {};
-    param.reserved_instances_offering_id = reserved_instances_offering_id;
-    param.instance_count = instance_count;
+    payload.reserved_instances_offering_id = reserved_instances_offering_id;
+    payload.instance_count = instance_count;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PurchaseReservedInstancesOffering", payload );
-    return resposne;
+    var response = this.request("PurchaseReservedInstancesOffering", payload );
+    return response;
   }, 
   /**
    * The RebootInstances operation requests a reboot of one or more instances. This operation is
@@ -3052,11 +3052,11 @@ AmazonEC2.prototype = {
    */
   reboot_instances: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RebootInstances", payload );
-    return resposne;
+    var response = this.request("RebootInstances", payload );
+    return response;
   }, 
   /**
    * The RegisterImage operation registers an AMI with Amazon EC2. Images must be registered before
@@ -3102,8 +3102,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RegisterImage", payload );
-    return resposne;
+    var response = this.request("RegisterImage", payload );
+    return response;
   }, 
   /**
    * The ReleaseAddress operation releases an elastic IP address associated with your account.
@@ -3131,8 +3131,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ReleaseAddress", payload );
-    return resposne;
+    var response = this.request("ReleaseAddress", payload );
+    return response;
   }, 
   /**
    * Changes which network ACL a subnet is associated with. By default when you create a subnet,
@@ -3148,12 +3148,12 @@ AmazonEC2.prototype = {
    */
   replace_network_acl_association: function(association_id,network_acl_id,opt){
     var payload = {};
-    param.association_id = association_id;
-    param.network_acl_id = network_acl_id;
+    payload.association_id = association_id;
+    payload.network_acl_id = network_acl_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ReplaceNetworkAclAssociation", payload );
-    return resposne;
+    var response = this.request("ReplaceNetworkAclAssociation", payload );
+    return response;
   }, 
   /**
    * Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to
@@ -3184,16 +3184,16 @@ AmazonEC2.prototype = {
    */
   replace_network_acl_entry: function(network_acl_id,rule_number,protocol,rule_action,egress,cidr_block,opt){
     var payload = {};
-    param.network_acl_id = network_acl_id;
-    param.rule_number = rule_number;
-    param.protocol = protocol;
-    param.rule_action = rule_action;
-    param.egress = egress;
-    param.cidr_block = cidr_block;
+    payload.network_acl_id = network_acl_id;
+    payload.rule_number = rule_number;
+    payload.protocol = protocol;
+    payload.rule_action = rule_action;
+    payload.egress = egress;
+    payload.cidr_block = cidr_block;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ReplaceNetworkAclEntry", payload );
-    return resposne;
+    var response = this.request("ReplaceNetworkAclEntry", payload );
+    return response;
   }, 
   /**
    * Replaces an existing route within a route table in a VPC. For more information about route
@@ -3213,12 +3213,12 @@ AmazonEC2.prototype = {
    */
   replace_route: function(route_table_id,destination_cidr_block,opt){
     var payload = {};
-    param.route_table_id = route_table_id;
-    param.destination_cidr_block = destination_cidr_block;
+    payload.route_table_id = route_table_id;
+    payload.destination_cidr_block = destination_cidr_block;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ReplaceRoute", payload );
-    return resposne;
+    var response = this.request("ReplaceRoute", payload );
+    return response;
   }, 
   /**
    * Changes the route table associated with a given subnet in a VPC. After you execute this action,
@@ -3240,12 +3240,12 @@ AmazonEC2.prototype = {
    */
   replace_route_table_association: function(association_id,route_table_id,opt){
     var payload = {};
-    param.association_id = association_id;
-    param.route_table_id = route_table_id;
+    payload.association_id = association_id;
+    payload.route_table_id = route_table_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ReplaceRouteTableAssociation", payload );
-    return resposne;
+    var response = this.request("ReplaceRouteTableAssociation", payload );
+    return response;
   }, 
   /**
    * 
@@ -3265,8 +3265,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ReportInstanceStatus", payload );
-    return resposne;
+    var response = this.request("ReportInstanceStatus", payload );
+    return response;
   }, 
   /**
    * Creates a Spot Instance request.
@@ -3362,11 +3362,11 @@ AmazonEC2.prototype = {
    */
   request_spot_instances: function(spot_price,opt){
     var payload = {};
-    param.spot_price = spot_price;
+    payload.spot_price = spot_price;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RequestSpotInstances", payload );
-    return resposne;
+    var response = this.request("RequestSpotInstances", payload );
+    return response;
   }, 
   /**
    * The ResetImageAttribute operation resets an attribute of an AMI to its default value.
@@ -3384,12 +3384,12 @@ AmazonEC2.prototype = {
    */
   reset_image_attribute: function(image_id,attribute,opt){
     var payload = {};
-    param.image_id = image_id;
-    param.attribute = attribute;
+    payload.image_id = image_id;
+    payload.attribute = attribute;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ResetImageAttribute", payload );
-    return resposne;
+    var response = this.request("ResetImageAttribute", payload );
+    return response;
   }, 
   /**
    * Resets an attribute of an instance to its default value.
@@ -3403,12 +3403,12 @@ AmazonEC2.prototype = {
    */
   reset_instance_attribute: function(instance_id,attribute,opt){
     var payload = {};
-    param.instance_id = instance_id;
-    param.attribute = attribute;
+    payload.instance_id = instance_id;
+    payload.attribute = attribute;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ResetInstanceAttribute", payload );
-    return resposne;
+    var response = this.request("ResetInstanceAttribute", payload );
+    return response;
   }, 
   /**
    * 
@@ -3422,11 +3422,11 @@ AmazonEC2.prototype = {
    */
   reset_network_interface_attribute: function(network_interface_id,opt){
     var payload = {};
-    param.network_interface_id = network_interface_id;
+    payload.network_interface_id = network_interface_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ResetNetworkInterfaceAttribute", payload );
-    return resposne;
+    var response = this.request("ResetNetworkInterfaceAttribute", payload );
+    return response;
   }, 
   /**
    * Resets permission settings for the specified snapshot.
@@ -3440,12 +3440,12 @@ AmazonEC2.prototype = {
    */
   reset_snapshot_attribute: function(snapshot_id,attribute,opt){
     var payload = {};
-    param.snapshot_id = snapshot_id;
-    param.attribute = attribute;
+    payload.snapshot_id = snapshot_id;
+    payload.attribute = attribute;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ResetSnapshotAttribute", payload );
-    return resposne;
+    var response = this.request("ResetSnapshotAttribute", payload );
+    return response;
   }, 
   /**
    * This action applies only to security groups in a VPC. It doesn't work with EC2 security groups.
@@ -3486,11 +3486,11 @@ AmazonEC2.prototype = {
    */
   revoke_security_group_egress: function(group_id,opt){
     var payload = {};
-    param.group_id = group_id;
+    payload.group_id = group_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RevokeSecurityGroupEgress", payload );
-    return resposne;
+    var response = this.request("RevokeSecurityGroupEgress", payload );
+    return response;
   }, 
   /**
    * The RevokeSecurityGroupIngress operation revokes permissions from a security group. The
@@ -3530,8 +3530,8 @@ AmazonEC2.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RevokeSecurityGroupIngress", payload );
-    return resposne;
+    var response = this.request("RevokeSecurityGroupIngress", payload );
+    return response;
   }, 
   /**
    * The RunInstances operation launches a specified number of instances.
@@ -3653,13 +3653,13 @@ AmazonEC2.prototype = {
    */
   run_instances: function(image_id,min_count,max_count,opt){
     var payload = {};
-    param.image_id = image_id;
-    param.min_count = min_count;
-    param.max_count = max_count;
+    payload.image_id = image_id;
+    payload.min_count = min_count;
+    payload.max_count = max_count;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RunInstances", payload );
-    return resposne;
+    var response = this.request("RunInstances", payload );
+    return response;
   }, 
   /**
    * Starts an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon
@@ -3681,11 +3681,11 @@ AmazonEC2.prototype = {
    */
   start_instances: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"StartInstances", payload );
-    return resposne;
+    var response = this.request("StartInstances", payload );
+    return response;
   }, 
   /**
    * Stops an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon
@@ -3710,11 +3710,11 @@ AmazonEC2.prototype = {
    */
   stop_instances: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"StopInstances", payload );
-    return resposne;
+    var response = this.request("StopInstances", payload );
+    return response;
   }, 
   /**
    * The TerminateInstances operation shuts down one or more instances. This operation is
@@ -3730,11 +3730,11 @@ AmazonEC2.prototype = {
    */
   terminate_instances: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"TerminateInstances", payload );
-    return resposne;
+    var response = this.request("TerminateInstances", payload );
+    return response;
   }, 
   /**
    * 
@@ -3748,12 +3748,12 @@ AmazonEC2.prototype = {
    */
   unassign_private_ip_addresses: function(network_interface_id,private_ip_address,opt){
     var payload = {};
-    param.network_interface_id = network_interface_id;
-    param.private_ip_address = private_ip_address;
+    payload.network_interface_id = network_interface_id;
+    payload.private_ip_address = private_ip_address;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UnassignPrivateIpAddresses", payload );
-    return resposne;
+    var response = this.request("UnassignPrivateIpAddresses", payload );
+    return response;
   }, 
   /**
    * Disables monitoring for a running instance.
@@ -3766,10 +3766,10 @@ AmazonEC2.prototype = {
    */
   unmonitor_instances: function(instance_id,opt){
     var payload = {};
-    param.instance_id = instance_id;
+    payload.instance_id = instance_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"UnmonitorInstances", payload );
-    return resposne;
+    var response = this.request("UnmonitorInstances", payload );
+    return response;
   }
 }

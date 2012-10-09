@@ -31,12 +31,12 @@ AmazonELB.prototype = {
    */
   apply_security_groups_to_load_balancer: function(load_balancer_name,security_groups,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.security_groups = security_groups;
+    payload.load_balancer_name = load_balancer_name;
+    payload.security_groups = security_groups;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ApplySecurityGroupsToLoadBalancer", payload );
-    return resposne;
+    var response = this.request("ApplySecurityGroupsToLoadBalancer", payload );
+    return response;
   }, 
   /**
    * Adds one or more subnets to the set of configured subnets in the VPC for the LoadBalancer.
@@ -52,12 +52,12 @@ AmazonELB.prototype = {
    */
   attach_load_balancer_to_subnets: function(load_balancer_name,subnets,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.subnets = subnets;
+    payload.load_balancer_name = load_balancer_name;
+    payload.subnets = subnets;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"AttachLoadBalancerToSubnets", payload );
-    return resposne;
+    var response = this.request("AttachLoadBalancerToSubnets", payload );
+    return response;
   }, 
   /**
    * Enables the client to define an application healthcheck for the instances.
@@ -79,12 +79,12 @@ AmazonELB.prototype = {
    */
   configure_health_check: function(load_balancer_name,health_check,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.health_check = health_check;
+    payload.load_balancer_name = load_balancer_name;
+    payload.health_check = health_check;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ConfigureHealthCheck", payload );
-    return resposne;
+    var response = this.request("ConfigureHealthCheck", payload );
+    return response;
   }, 
   /**
    * Generates a stickiness policy with sticky session lifetimes that follow that of an
@@ -115,13 +115,13 @@ AmazonELB.prototype = {
    */
   create_app_cookie_stickiness_policy: function(load_balancer_name,policy_name,cookie_name,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.policy_name = policy_name;
-    param.cookie_name = cookie_name;
+    payload.load_balancer_name = load_balancer_name;
+    payload.policy_name = policy_name;
+    payload.cookie_name = cookie_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateAppCookieStickinessPolicy", payload );
-    return resposne;
+    var response = this.request("CreateAppCookieStickinessPolicy", payload );
+    return response;
   }, 
   /**
    * Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the
@@ -148,12 +148,12 @@ AmazonELB.prototype = {
    */
   create_lb_cookie_stickiness_policy: function(load_balancer_name,policy_name,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.policy_name = policy_name;
+    payload.load_balancer_name = load_balancer_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateLbCookieStickinessPolicy", payload );
-    return resposne;
+    var response = this.request("CreateLbCookieStickinessPolicy", payload );
+    return response;
   }, 
   /**
    * Creates a new LoadBalancer.
@@ -202,12 +202,12 @@ AmazonELB.prototype = {
    */
   create_load_balancer: function(load_balancer_name,listeners,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.listeners = listeners;
+    payload.load_balancer_name = load_balancer_name;
+    payload.listeners = listeners;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateLoadBalancer", payload );
-    return resposne;
+    var response = this.request("CreateLoadBalancer", payload );
+    return response;
   }, 
   /**
    * Creates one or more listeners on a LoadBalancer for the specified port. If a listener with the
@@ -231,12 +231,12 @@ AmazonELB.prototype = {
    */
   create_load_balancer_listeners: function(load_balancer_name,listeners,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.listeners = listeners;
+    payload.load_balancer_name = load_balancer_name;
+    payload.listeners = listeners;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateLoadBalancerListeners", payload );
-    return resposne;
+    var response = this.request("CreateLoadBalancerListeners", payload );
+    return response;
   }, 
   /**
    * Creates a new policy that contains the necessary attributes depending on the policy type.
@@ -259,13 +259,13 @@ AmazonELB.prototype = {
    */
   create_load_balancer_policy: function(load_balancer_name,policy_name,policy_type_name,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.policy_name = policy_name;
-    param.policy_type_name = policy_type_name;
+    payload.load_balancer_name = load_balancer_name;
+    payload.policy_name = policy_name;
+    payload.policy_type_name = policy_type_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateLoadBalancerPolicy", payload );
-    return resposne;
+    var response = this.request("CreateLoadBalancerPolicy", payload );
+    return response;
   }, 
   /**
    * Deletes the specified LoadBalancer.
@@ -292,11 +292,11 @@ AmazonELB.prototype = {
    */
   delete_load_balancer: function(load_balancer_name,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
+    payload.load_balancer_name = load_balancer_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteLoadBalancer", payload );
-    return resposne;
+    var response = this.request("DeleteLoadBalancer", payload );
+    return response;
   }, 
   /**
    * Deletes listeners from the LoadBalancer for the specified port.
@@ -310,12 +310,12 @@ AmazonELB.prototype = {
    */
   delete_load_balancer_listeners: function(load_balancer_name,load_balancer_ports,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.load_balancer_ports = load_balancer_ports;
+    payload.load_balancer_name = load_balancer_name;
+    payload.load_balancer_ports = load_balancer_ports;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteLoadBalancerListeners", payload );
-    return resposne;
+    var response = this.request("DeleteLoadBalancerListeners", payload );
+    return response;
   }, 
   /**
    * Deletes a policy from the LoadBalancer. The specified policy must not be enabled for any
@@ -330,12 +330,12 @@ AmazonELB.prototype = {
    */
   delete_load_balancer_policy: function(load_balancer_name,policy_name,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.policy_name = policy_name;
+    payload.load_balancer_name = load_balancer_name;
+    payload.policy_name = policy_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteLoadBalancerPolicy", payload );
-    return resposne;
+    var response = this.request("DeleteLoadBalancerPolicy", payload );
+    return response;
   }, 
   /**
    * Deregisters instances from the LoadBalancer. Once the instance is deregistered, it will stop
@@ -357,12 +357,12 @@ AmazonELB.prototype = {
    */
   deregister_instances_from_load_balancer: function(load_balancer_name,instances,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.instances = instances;
+    payload.load_balancer_name = load_balancer_name;
+    payload.instances = instances;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeregisterInstancesFromLoadBalancer", payload );
-    return resposne;
+    var response = this.request("DeregisterInstancesFromLoadBalancer", payload );
+    return response;
   }, 
   /**
    * Returns the current state of the instances of the specified LoadBalancer. If no instances are
@@ -387,11 +387,11 @@ AmazonELB.prototype = {
    */
   describe_instance_health: function(load_balancer_name,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
+    payload.load_balancer_name = load_balancer_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeInstanceHealth", payload );
-    return resposne;
+    var response = this.request("DescribeInstanceHealth", payload );
+    return response;
   }, 
   /**
    * Returns detailed descriptions of the policies. If you specify a LoadBalancer name, the
@@ -411,8 +411,8 @@ AmazonELB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeLoadBalancerPolicies", payload );
-    return resposne;
+    var response = this.request("DescribeLoadBalancerPolicies", payload );
+    return response;
   }, 
   /**
    * Returns meta-information on the specified LoadBalancer policies defined by the Elastic Load
@@ -430,8 +430,8 @@ AmazonELB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeLoadBalancerPolicyTypes", payload );
-    return resposne;
+    var response = this.request("DescribeLoadBalancerPolicyTypes", payload );
+    return response;
   }, 
   /**
    * Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers
@@ -455,8 +455,8 @@ AmazonELB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DescribeLoadBalancers", payload );
-    return resposne;
+    var response = this.request("DescribeLoadBalancers", payload );
+    return response;
   }, 
   /**
    * Removes subnets from the set of configured subnets in the VPC for the LoadBalancer.
@@ -475,12 +475,12 @@ AmazonELB.prototype = {
    */
   detach_load_balancer_from_subnets: function(load_balancer_name,subnets,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.subnets = subnets;
+    payload.load_balancer_name = load_balancer_name;
+    payload.subnets = subnets;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DetachLoadBalancerFromSubnets", payload );
-    return resposne;
+    var response = this.request("DetachLoadBalancerFromSubnets", payload );
+    return response;
   }, 
   /**
    * Removes the specified EC2 Availability Zones from the set of configured Availability Zones for
@@ -509,12 +509,12 @@ AmazonELB.prototype = {
    */
   disable_availability_zones_for_load_balancer: function(load_balancer_name,availability_zones,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.availability_zones = availability_zones;
+    payload.load_balancer_name = load_balancer_name;
+    payload.availability_zones = availability_zones;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DisableAvailabilityZonesForLoadBalancer", payload );
-    return resposne;
+    var response = this.request("DisableAvailabilityZonesForLoadBalancer", payload );
+    return response;
   }, 
   /**
    * Adds one or more EC2 Availability Zones to the LoadBalancer.
@@ -537,12 +537,12 @@ AmazonELB.prototype = {
    */
   enable_availability_zones_for_load_balancer: function(load_balancer_name,availability_zones,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.availability_zones = availability_zones;
+    payload.load_balancer_name = load_balancer_name;
+    payload.availability_zones = availability_zones;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"EnableAvailabilityZonesForLoadBalancer", payload );
-    return resposne;
+    var response = this.request("EnableAvailabilityZonesForLoadBalancer", payload );
+    return response;
   }, 
   /**
    * Adds new instances to the LoadBalancer.
@@ -575,12 +575,12 @@ AmazonELB.prototype = {
    */
   register_instances_with_load_balancer: function(load_balancer_name,instances,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.instances = instances;
+    payload.load_balancer_name = load_balancer_name;
+    payload.instances = instances;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"RegisterInstancesWithLoadBalancer", payload );
-    return resposne;
+    var response = this.request("RegisterInstancesWithLoadBalancer", payload );
+    return response;
   }, 
   /**
    * Sets the certificate that terminates the specified listener's SSL connections. The specified
@@ -596,13 +596,13 @@ AmazonELB.prototype = {
    */
   set_load_balancer_listener_ssl_certificate: function(load_balancer_name,load_balancer_port,ssl_certificate_id,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.load_balancer_port = load_balancer_port;
-    param.ssl_certificate_id = ssl_certificate_id;
+    payload.load_balancer_name = load_balancer_name;
+    payload.load_balancer_port = load_balancer_port;
+    payload.ssl_certificate_id = ssl_certificate_id;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetLoadBalancerListenerSslCertificate", payload );
-    return resposne;
+    var response = this.request("SetLoadBalancerListenerSslCertificate", payload );
+    return response;
   }, 
   /**
    * Replaces the current set of policies associated with a port on which the back-end server is
@@ -621,13 +621,13 @@ AmazonELB.prototype = {
    */
   set_load_balancer_policies_for_backend_server: function(load_balancer_name,instance_port,policy_names,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.instance_port = instance_port;
-    param.policy_names = policy_names;
+    payload.load_balancer_name = load_balancer_name;
+    payload.instance_port = instance_port;
+    payload.policy_names = policy_names;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetLoadBalancerPoliciesForBackendServer", payload );
-    return resposne;
+    var response = this.request("SetLoadBalancerPoliciesForBackendServer", payload );
+    return response;
   }, 
   /**
    * Associates, updates, or disables a policy with a listener on the LoadBalancer. You can
@@ -643,12 +643,12 @@ AmazonELB.prototype = {
    */
   set_load_balancer_policies_of_listener: function(load_balancer_name,load_balancer_port,policy_names,opt){
     var payload = {};
-    param.load_balancer_name = load_balancer_name;
-    param.load_balancer_port = load_balancer_port;
-    param.policy_names = policy_names;
+    payload.load_balancer_name = load_balancer_name;
+    payload.load_balancer_port = load_balancer_port;
+    payload.policy_names = policy_names;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"SetLoadBalancerPoliciesOfListener", payload );
-    return resposne;
+    var response = this.request("SetLoadBalancerPoliciesOfListener", payload );
+    return response;
   }
 }

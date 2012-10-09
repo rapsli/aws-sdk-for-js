@@ -65,12 +65,12 @@ AmazonSDB.prototype = {
    */
   batch_delete_attributes: function(domain_name,item_keypairs,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.item_keypairs = item_keypairs;
+    payload.domain_name = domain_name;
+    payload.item_keypairs = item_keypairs;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"BatchDeleteAttributes", payload );
-    return resposne;
+    var response = this.request("BatchDeleteAttributes", payload );
+    return response;
   }, 
   /**
    * The BatchPutAttributes operation creates or replaces attributes within one or more items.
@@ -125,13 +125,13 @@ AmazonSDB.prototype = {
    */
   batch_put_attributes: function(domain_name,item_keypairs,replace,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.item_keypairs = item_keypairs;
-    param.replace = replace;
+    payload.domain_name = domain_name;
+    payload.item_keypairs = item_keypairs;
+    payload.replace = replace;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"BatchPutAttributes", payload );
-    return resposne;
+    var response = this.request("BatchPutAttributes", payload );
+    return response;
   }, 
   /**
    * The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique
@@ -155,11 +155,11 @@ AmazonSDB.prototype = {
    */
   create_domain: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"CreateDomain", payload );
-    return resposne;
+    var response = this.request("CreateDomain", payload );
+    return response;
   }, 
   /**
    * Deletes one or more attributes associated with the item. If all attributes of an item are deleted,
@@ -198,13 +198,13 @@ AmazonSDB.prototype = {
    */
   delete_attributes: function(domain_name,item_name,attributes,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.item_name = item_name;
-    param.attributes = attributes;
+    payload.domain_name = domain_name;
+    payload.item_name = item_name;
+    payload.attributes = attributes;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteAttributes", payload );
-    return resposne;
+    var response = this.request("DeleteAttributes", payload );
+    return response;
   }, 
   /**
    * The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in
@@ -224,11 +224,11 @@ AmazonSDB.prototype = {
    */
   delete_domain: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DeleteDomain", payload );
-    return resposne;
+    var response = this.request("DeleteDomain", payload );
+    return response;
   }, 
   /**
    * Returns information about the domain, including when the domain was created, the number of
@@ -242,11 +242,11 @@ AmazonSDB.prototype = {
    */
   domain_metadata: function(domain_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
+    payload.domain_name = domain_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"DomainMetadata", payload );
-    return resposne;
+    var response = this.request("DomainMetadata", payload );
+    return response;
   }, 
   /**
    * Returns all of the attributes associated with the item. Optionally, the attributes returned can be
@@ -270,13 +270,13 @@ AmazonSDB.prototype = {
    */
   get_attributes: function(domain_name,item_name,attribute_name,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.item_name = item_name;
-    param.attribute_name = attribute_name;
+    payload.domain_name = domain_name;
+    payload.item_name = item_name;
+    payload.attribute_name = attribute_name;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"GetAttributes", payload );
-    return resposne;
+    var response = this.request("GetAttributes", payload );
+    return response;
   }, 
   /**
    * The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It
@@ -298,8 +298,8 @@ AmazonSDB.prototype = {
     var payload = {};
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"ListDomains", payload );
-    return resposne;
+    var response = this.request("ListDomains", payload );
+    return response;
   }, 
   /**
    * The PutAttributes operation creates or replaces attributes in an item.
@@ -351,14 +351,14 @@ AmazonSDB.prototype = {
    */
   put_attributes: function(domain_name,item_name,keypairs,replace,opt){
     var payload = {};
-    param.domain_name = domain_name;
-    param.item_name = item_name;
-    param.keypairs = keypairs;
-    param.replace = replace;
+    payload.domain_name = domain_name;
+    payload.item_name = item_name;
+    payload.keypairs = keypairs;
+    payload.replace = replace;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"PutAttributes", payload );
-    return resposne;
+    var response = this.request("PutAttributes", payload );
+    return response;
   }, 
   /**
    * The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that
@@ -384,10 +384,10 @@ AmazonSDB.prototype = {
    */
   select: function(select_expression,opt){
     var payload = {};
-    param.select_expression = select_expression;
+    payload.select_expression = select_expression;
 
     payload = this.marge_param(payload,opt);
-    var response = this.request({"Select", payload );
-    return resposne;
+    var response = this.request("Select", payload );
+    return response;
   }
 }

@@ -58,24 +58,18 @@ AWS.prototype = {
     });
     return response;
   },
-  optimize_param:function(param,opt,require){
-    var p = {};
-    for(var i in require){
-      if(opt[i] != undefined){
-        p[i] = opt[i];
-      }
-      if(param[i] != undefined){
-        p[i] = param[i];
-      }
+  marge_param:function(param,opt){
+    for(var i in opt){
+      param[i] = opt[i];
     }
-    return p;
+    return param;
   },
   dateTimeFormat : function(date) {
     if(date == null) date = new Date(); // assume now
     date.setTime(date.getTime());
     var yyyymmdd = [date.getUTCFullYear(),
-    this.pad(date.getUTCMonth()+1), // month index starts at 0
-    this.pad(date.getUTCDate())].join('-');
+      this.pad(date.getUTCMonth()+1), // month index starts at 0
+      this.pad(date.getUTCDate())].join('-');
     var hhmmss = [this.pad(date.getUTCHours()), this.pad(date.getUTCMinutes()), this.pad(date.getUTCSeconds())].join(':');
     return yyyymmdd+'T'+hhmmss+'Z';
   },

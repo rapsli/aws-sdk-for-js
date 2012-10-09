@@ -1,11 +1,13 @@
+var REGION = {};
+REGION.US_EAST_1 = "us-east-1";
+REGION.US_WEST_1 = "us-west-1";
+REGION.US_WEST_2 = "us-west-2";
+REGION.EU_WEST_1 = "eu-west-1";
+REGION.AP_SOUTHEAST_1 = "ap-southeast-1";
+REGION.AP_NORTHEAST_1 = "ap-northeast-1";
+REGION.SA_EAST_1 = "sa-east-1";
+
 var AWS = function(){}
-AWS.REGION_US_EAST_1 = "us-east-1";
-AWS.REGION_US_WEST_1 = "us-west-1";
-AWS.REGION_US_WEST_2 = "us-west-2";
-AWS.REGION_EU_WEST_1 = "eu-west-1";
-AWS.REGION_AP_SOUTHEAST_1 = "ap-southeast-1";
-AWS.REGION_AP_NORTHEAST_1 = "ap-northeast-1";
-AWS.REGION_SA_EAST_1 = "sa-east-1";
 
 AWS.prototype = {
   endpoint : "",
@@ -23,6 +25,7 @@ AWS.prototype = {
   },
   set_region:function(region){
     this.region = region;
+    this.endpoint = this.get_endpoint();
   },
   get_endpoint:function(){
     // TODO 
@@ -55,6 +58,18 @@ AWS.prototype = {
     });
     return response;
   },
+  optimize_param:function(param,opt,require){
+    var p = {};
+    for(var i in require){
+      if(opt[i] != undefined){
+        p[i] = opt[i];
+      }
+      if(param[i] != undefined){
+        p[i] = param[i];
+      }
+    }
+    return p;
+  },
   dateTimeFormat : function(date) {
     if(date == null) date = new Date(); // assume now
     date.setTime(date.getTime());
@@ -74,7 +89,6 @@ AWS.prototype = {
   sortLowerCase : function(s1, s2) {
     return (s1 == s2) ? 0 : (s1.toLowerCase() > s2.toLowerCase() ? 1 : -1);
   },
-  
   generateSignedURL: function(actionName, params, accessKeyId, secretKey, endpoint, version) {
     var url = endpoint + "?SignatureVersion=1&Action=" + actionName + "&Version=" + encodeURIComponent(version) + "&";
     for(var i in params){
@@ -107,17 +121,14 @@ AWS.prototype = {
     var gmtTime = new Date(time.getTime() + (time.getTimezoneOffset() * 60000));
     return gmtTime.toISODate() ;
   },
-  
   generateV1Signature: function(url, key) {
     var stringToSign = this.getStringToSign(url);
     var signed =   b64_hmac_sha1(key, stringToSign);
     return signed;
   },
   getStringToSign: function(url) {
-
     var stringToSign = "";
     var query = url.split("?")[1];
-
     var params = query.split("&");
     params.sort(this.ignoreCaseSort);
     for (var i = 0; i < params.length; i++) {

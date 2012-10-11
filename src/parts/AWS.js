@@ -15,6 +15,7 @@ AWS.prototype = {
   access_key:'',
   secret_key:'',
   auth_class:'',
+  operation_prefix:'',
   region:undefined,
   init:function(access_key,secret_key,service){
     if(access_key == undefined || secret_key == undefined){
@@ -37,7 +38,13 @@ AWS.prototype = {
     endpoint += "amazonaws.com";
     return endpoint;
   },
-  request:function(operation,payload){
+  authenticate:function(operation,payload){
+    var reg = new RegExp();
+    if (substr(operation, 0, strlen(this.operation_prefix)) !== this.operation_prefix)
+    {
+      operation = this.operation_prefix . operation;
+    }
+    
     var signer = this.get_signer(this.auth_class);
     signer.key = this.key;
     signer.secret_key = this.secret_key;
@@ -65,28 +72,16 @@ AWS.prototype = {
       return handle;
     }
     
+    
+    
     request.send_request();
     var headers = request.get_response_header();
     headers['x-aws-stringtosign'] = signer.string_to_sign;
     
     
-    var url = this.auth_class.generateSignedURL(operation, payload, this.access_key, this.secret_key, this.get_endpoint(), this.version);
-    //    var url = this.generateSignedURL(operation, payload, this.access_key, this.secret_key, this.get_endpoint(), this.version);
-    payload = this.optimize_params(payload);
-    var response = {};
-    $.ajax({
-      url:url,
-      data:payload,
-      type:method,
-      async:false,
-      dataType:datatype,
-      success:function(xhr){
-        response = $.xml2json(xhr);
-      },
-      error:function(xhr){
-        response = "error";
-      }
-    });
+    
+    
+    var response;
     return response;
   },
   marge_param:function(param,opt){
@@ -195,5 +190,8 @@ AWS.prototype = {
       case 'AuthV4Json':
         return new AuthV4Json();
     }
+  },
+  set_operation_prefix:function(operation_prefix){
+    this.operation_prefix = operation_prefix;
   }
 };

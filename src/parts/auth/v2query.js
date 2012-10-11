@@ -14,6 +14,32 @@ AuthV2Query.prototype = {
       headers['X-Amz-Security-Token'] = this.auth_token;
       query['SecurityToken'] = this.auth_token;
     }
+    if (this.api_version)
+    {
+      query['Version'] = this.api_version;
+    }
+
+    query['Action'] = this.operation;
+    query['AWSAccessKeyId'] = this.key;
+    query['SignatureMethod'] = 'HmacSHA256';
+    query['SignatureVersion'] = 2;
+    query['Timestamp'] = timestamp;
+    
+    // Merge in any options that were passed in
+    if (typeof this.payload == 'Object') {
+      query = this.array_merge(query, this.payload);
+    }
+
+    // Do a case-sensitive, natural order sort on the array keys.
+    uksort(query, 'strcmp');
+
+
+
+
+
+
+
+    
     var request = new Request();
     
     return request;

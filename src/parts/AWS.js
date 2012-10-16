@@ -44,7 +44,6 @@ AWS.prototype = {
     {
       operation = this.operation_prefix . operation;
     }
-    
     var signer = this.get_signer(this.auth_class);
     signer.key = this.key;
     signer.secret_key = this.secret_key;
@@ -71,16 +70,10 @@ AWS.prototype = {
       this.use_batch_flow = false;
       return handle;
     }
-    
-    
-    
     request.send_request();
+    
     var headers = request.get_response_header();
     headers['x-aws-stringtosign'] = signer.string_to_sign;
-    
-    
-    
-    
     var response;
     return response;
   },

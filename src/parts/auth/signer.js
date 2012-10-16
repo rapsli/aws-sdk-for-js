@@ -43,11 +43,12 @@ Signer.prototype = {
     this.secret_key = secret_key;
   },
   authenticate:function(){
+    var request = new Request();
     
+    return request;
   }
 
 };
-
 
 var Request = function(){
   this.initialize();
